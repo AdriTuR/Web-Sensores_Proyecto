@@ -11,6 +11,12 @@ a {
     text-align: center;
     font-size: 17px;
 }
+
+p {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 17px;
+}
 /*-----------------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------*/
@@ -32,13 +38,46 @@ div {
 }
 
 .morado {
-    color: purple
+    color: #830053
 }
 
 /*-----------------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------*/
 /*Aquí van las fotos de fondo*/
+
+#footer {
+    background: url(../images/footer.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    left: 20px;
+    width: 105%;
+}
+
+#footer .footertext{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px !important;
+    color: #830053;
+    position: relative;
+    left: 15px !important;
+
+    text-align: left !important; 
+}
+
+.banner {
+    background-color: #830053;
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    margin: -500px 0;
+    padding: 0.5em 1em;
+    width: 80%;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .encabezado {
     background-image: url("../images/header.jpg");
     background-size: contain;
@@ -86,6 +125,8 @@ div {
 .btn-login{
     padding: 28px 9px;
 }
+
+
 /* menu */
 
 .encabezado .menu {
@@ -94,7 +135,7 @@ div {
     transition: max-height .2s ease-out;
     text-align: center;
     border-style: solid;
-    border-color: #830053;
+    border-color: transparent;
 }
 
 /* menu icon */
@@ -103,7 +144,7 @@ div {
     cursor: pointer;
     display: inline-block;
     float: right;
-    padding: 28px 9px;
+    padding: 20px 10px;
     position: relative;
     user-select: none;
 
@@ -116,6 +157,7 @@ div {
     position: relative;
     transition: background .2s ease-out;
     width: 18px;
+  
 }
 
 .encabezado .menu-icon .navicon:before,
@@ -207,61 +249,77 @@ body {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*Estilo del menu del encabezado*/
-/*.menu {
-
-    float: right;
-    margin-top: 2.5%;
-    margin-right: 2.5%;
-
-
-
-}
-
-.menufoto{
-
-    width: 100px;
-    height: 100px ;
-
-}
-*/
-
-/*.menu:hover{
-    transform: scale(1.05);
-    transition: 150ms;
-}
-
-.menu:active{
-    transform: scale(1.5);
-}
-/*-----------------------------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------------------------*/
 /*Estilo de los botones morados*/
 .boton {
     color: rgb(255, 255, 255);
     font-size: 20px;
     line-height: 28px;
     padding: 17px;
-    border-radius: 15px;
+    border-radius: 7px;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
-    background-color: purple;
+    background-color: #830053;
     display: inline-block;
 }
 
-/*.boton:hover {
-    background: rgb(112, 0, 112);
+.boton:hover {
+    background: #77004b;
     transform: scale(1.05);
     transition: 150ms;
 }
 
 .boton:active {
-    background: rgb(95, 0, 95);
+    background: #660041;
     transform: scale(1.06);
 
-}*/
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------*/
+/*Flexbox*/
+
+.acerca1{
+    display: flex;
+
+}
+
+.acerca2{
+    display: flex;
+
+    flex-direction: row;
+
+    margin-left: 20%;
+    
+}
+
+.caja1{
+    margin-right: 20%;
+}
+
+.caja2{
+
+    margin-right: 20%;
+    
+}
+
+.flecha{
+   height: 7%;
+   width: 7%;
+}
+
+.flecha:hover{
+
+    transform: scale(1.15);
+    transition: 150ms;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
