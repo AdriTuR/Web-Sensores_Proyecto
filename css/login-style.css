@@ -1,0 +1,155 @@
+body {
+    background: url(../images/login_page/login_bg.jpeg) no-repeat;
+    background-size: cover;
+    background-position-x: -425px;    
+}
+
+a{
+    text-decoration: none;
+}
+
+@media screen and (min-width: 500px){
+    body{
+        background-position-x: 0px;
+    }
+
+    #header i{
+        transform: scale(1.2);
+        margin: 25px 30px 0 0 !important;
+     }
+
+     #header i:hover{
+        transform: scale(1.4) !important;
+     }
+
+}
+
+
+/* MAIN BOX */
+#login-form #box {
+    margin-top: 125px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20%;
+    box-shadow: 5px 8px 18px black;
+}
+/* MAIN TEXT */
+#login-form #box #box1 {
+    margin-bottom: -5px;
+    color: white;
+    background-color: #830053;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    border: solid 1px black;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+/* FORM BOX */
+#login-form #box #box2 {
+    border: solid 1px;
+    border-top-color: transparent;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+    background-color: #E8E8E8;
+}
+/*PASSWD TEXT */
+#login-form #box #box2 p {
+    text-align: right;
+    color: #830053;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: -7px;
+    margin-right: 40px;
+}
+
+
+/* FORM INPUTS STYLING */
+
+/* FIELDS */
+#login-form #box #box2 input[type=text], input[type=password]{
+    width: 75%;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+  }
+
+  /* SUBMIT BUTTON */
+  #login-form #box #box2 input[type=submit]{
+    width: 50%;
+    padding: 10px;
+    margin-top: 34px;
+    margin-bottom: 15px;
+    display: inline-block;
+    background-color: #830053;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    border: solid 1px #830053;
+    border-radius: 5px;
+  }
+
+  #login-form #box #box2 input[type=submit]:hover{
+    background-color: #520335;
+    transition: 0.3s;
+  }
+
+
+
+  /* HEADER & FOOTER STYLES */
+#header {
+    background: url(../images/header.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    top: -10px;
+    left: -8px;
+    width: 105%;
+ }
+
+ #header i{
+    float: right;
+    margin: 18px 25px;
+    color: white;
+ }
+
+ #header i:hover{
+    color: #ddd;
+    transform: scale(1.05);
+    transition: 0.4s;
+ }
+
+ #footer {
+    background: url(../images/footer.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    bottom: -11px;
+    left: -8px;
+    width: 105%;
+ }
+
+ #footer p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    color: #830053;
+    position: relative;
+    left: 15px;
+ }
+
+ /* LOGO */
+#header img{
+    width: 35%;
+    height: 35%;
+}
