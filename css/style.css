@@ -1,0 +1,267 @@
+/*-----------------------------------------------------------------------------------*/
+/*Aquí van las fonts y tamaños de letras*/
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 17px;
+}
+/*-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*Alinear textos*/
+section {
+    text-align: center;
+}
+
+div {
+    text-align: center;
+}
+/*-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*Aquí van los colores*/
+
+.blanco {
+    color: white
+}
+
+.morado {
+    color: purple
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*Aquí van las fotos de fondo*/
+.encabezado {
+    background-image: url("../images/header.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #830053;
+    position: relative;
+    width:100%;
+    z-index: 3;
+    top: 0;
+    margin: 0 auto;
+}
+
+.encabezado ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: white;
+}
+
+.encabezado li a {
+    display: block;
+    padding: 20px 20px;
+    border-bottom: 1px solid #830053;
+    text-decoration: none;
+    color: #830053;
+}
+
+
+.encabezado li #color-login-btn:hover{
+    background-color: #830053;
+    color: white;
+}
+.encabezado li a:hover{
+    background-color: #830053;
+    color: white;
+}
+.encabezado .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.btn-login{
+    padding: 28px 9px;
+}
+/* menu */
+
+.encabezado .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    text-align: center;
+    border-style: solid;
+    border-color: #830053;
+}
+
+/* menu icon */
+
+.encabezado .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 9px;
+    position: relative;
+    user-select: none;
+
+}
+
+.encabezado .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.encabezado .menu-icon .navicon:before,
+.encabezado .menu-icon .navicon:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.encabezado .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.encabezado .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.encabezado .menu-btn {
+    display: none;
+}
+
+.encabezado .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.encabezado .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.encabezado .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.encabezado .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.call_to_action {
+    background-image: url("../images/landing_page/landing_page1.jpg");
+    background-size: cover;
+}
+
+.mas_informacion {
+    background-image: url("../images/landing_page/landing_page2.jpg");
+    background-size: cover;
+}
+
+.acerca_de_nosotros {
+    background-image: url("../images/landing_page/landing_page3.jpg");
+    background-size: cover;
+}
+
+.pie_de_pagina {
+    background-image: url("../images/footer.jpg");
+    background-size: cover;
+}
+/*-----------------------------------------------------------------------------------*/
+
+.logo {
+    width: 35%;
+    height: 35%;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*Estilo del menu del encabezado*/
+/*.menu {
+
+    float: right;
+    margin-top: 2.5%;
+    margin-right: 2.5%;
+
+
+
+}
+
+.menufoto{
+
+    width: 100px;
+    height: 100px ;
+
+}
+*/
+
+/*.menu:hover{
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.menu:active{
+    transform: scale(1.5);
+}
+/*-----------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*Estilo de los botones morados*/
+.boton {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    line-height: 28px;
+    padding: 17px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: purple;
+    display: inline-block;
+}
+
+/*.boton:hover {
+    background: rgb(112, 0, 112);
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.boton:active {
+    background: rgb(95, 0, 95);
+    transform: scale(1.06);
+
+}*/
