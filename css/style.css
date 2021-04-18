@@ -1,21 +1,42 @@
 /*-----------------------------------------------------------------------------------*/
-/*Aquí van las fonts y tamaños de letras*/
+/*Aquí van las fonts, tamaños de letras y cosas principales*/
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 187%;
 }
 
 a {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 17px;
+    font-size: 106.25%;
+    text-decoration: none;
 }
 
 p {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 17px;
+    font-size: 106.25%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 /*-----------------------------------------------------------------------------------*/
 
@@ -27,6 +48,11 @@ section {
 
 div {
     text-align: center;
+}
+
+.justifyText {
+    text-align: justify;
+    word-spacing: -2px;
 }
 /*-----------------------------------------------------------------------------------*/
 
@@ -51,8 +77,7 @@ div {
     background-size: cover;
     overflow: hidden;
     position: relative;
-    left: 20px;
-    width: 105%;
+    width: 100%;
 }
 
 #footer .footertext{
@@ -61,7 +86,6 @@ div {
     color: #830053;
     position: relative;
     left: 15px !important;
-
     text-align: left !important; 
 }
 
@@ -76,23 +100,20 @@ div {
     font-size: 20px;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 .encabezado {
     background-image: url("../images/header.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: #830053;
-    position: relative;
-    width:100%;
-    z-index: 3;
-    top: 0;
-    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
 }
 
+/* MENU */
 .encabezado ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
     overflow: hidden;
     background-color: white;
@@ -102,32 +123,26 @@ div {
     display: block;
     padding: 20px 20px;
     border-bottom: 1px solid #830053;
-    text-decoration: none;
     color: #830053;
 }
 
-
-.encabezado li #color-login-btn:hover{
+.encabezado li #color-login-btn:hover {
     background-color: #830053;
     color: white;
 }
-.encabezado li a:hover{
+.encabezado li a:hover {
     background-color: #830053;
     color: white;
 }
 .encabezado .logo {
-    display: block;
     float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-.btn-login{
-    padding: 28px 9px;
+    padding: 5px 20px;
+    margin: 1px;
 }
 
-
-/* menu */
+.logo {
+    width: 45%;
+}
 
 .encabezado .menu {
     clear: both;
@@ -136,28 +151,26 @@ div {
     text-align: center;
     border-style: solid;
     border-color: transparent;
+    margin-bottom: -6px;
 }
 
 /* menu icon */
 
 .encabezado .menu-icon {
     cursor: pointer;
-    display: inline-block;
     float: right;
-    padding: 20px 10px;
-    position: relative;
+    padding: 8% 5%;
     user-select: none;
-
+    transform: scale(1.6);
 }
 
 .encabezado .menu-icon .navicon {
     background: white;
     display: block;
-    height: 2px;
+    height: 1.7px;
     position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
-  
+    transition: .2s ease-out;
+    width: 20px;
 }
 
 .encabezado .menu-icon .navicon:before,
@@ -206,25 +219,24 @@ div {
     top: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body {
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
+/* FIN MENU */
 
 .call_to_action {
     background-image: url("../images/landing_page/landing_page1.jpg");
     background-size: cover;
+}
+
+.call_to_action .fistText {
+    margin-top: 100px; 
+    margin-bottom: 70px;
+    margin-left: 5px; 
+    margin-right: 5px;
+}
+
+.call_to_action .secondText {
+    margin-bottom: 50px;
+    margin-left: 5px; 
+    margin-right: 5px;
 }
 
 .mas_informacion {
@@ -232,21 +244,35 @@ body {
     background-size: cover;
 }
 
+.mas_informacion .headSection{
+    margin-bottom: 40px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+/* MARGENES EN TEXTOS */
+.mas_informacion p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.objetivos p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+/* --------------------- */
+
 .acerca_de_nosotros {
     background-image: url("../images/landing_page/landing_page3.jpg");
     background-size: cover;
 }
 
-.pie_de_pagina {
-    background-image: url("../images/footer.jpg");
-    background-size: cover;
+/* Colores de los iconos */
+.acerca_de_nosotros i {
+    color: white;
 }
 /*-----------------------------------------------------------------------------------*/
 
-.logo {
-    width: 35%;
-    height: 35%;
-}
 
 /*-----------------------------------------------------------------------------------*/
 /*Estilo de los botones morados*/
@@ -275,51 +301,75 @@ body {
 .boton:active {
     background: #660041;
     transform: scale(1.06);
-
 }
 
 /*-----------------------------------------------------------------------------------*/
 
 
 /*-----------------------------------------------------------------------------------*/
-/*Flexbox*/
-
-.acerca1{
+/* ACERCA DE NOSOTROS */
+.acerca1 {
     display: flex;
-
+    margin-bottom: 70px;
 }
 
-.acerca2{
-    display: flex;
+.acerca1 p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
 
+.acerca1 i {
+    float: right;
+    margin-right: 40px; 
+    margin-top: 40px;
+}
+
+.acerca2 {
+    display: flex;
     flex-direction: row;
-
     margin-left: 20%;
-    
+    margin-bottom: 90px;
 }
 
-.caja1{
+.acerca2 p {
+    margin-top: 16px;
+}
+
+.acerca2 i:hover{
+    transform: scale(1.15);
+    transition: 0.3s;
+}
+
+.caja1 {
     margin-right: 20%;
 }
 
-.caja2{
-
+.caja2 {
     margin-right: 20%;
-    
 }
 
-.flecha{
-   height: 7%;
-   width: 7%;
+/*-----------------------------------------------------------------------------------*/
+/* Botón de Ir Arriba/Abajo */
+
+.scrollBttn {
+    background-size: cover;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
 }
 
-.flecha:hover{
+.srollBttnUp {
+    background-image: url("../images/landing_page/arrow-up_icon.png");
+}
 
+.srollBttnDown {
+    background-image: url("../images/landing_page/arrow-down_icon.png");
+}
+
+.scrollBttn:hover {
     transform: scale(1.15);
     transition: 150ms;
-
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/*-----------------------------------------------------------------------------------*/
