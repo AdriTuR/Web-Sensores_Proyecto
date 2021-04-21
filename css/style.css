@@ -1,31 +1,29 @@
 /*-----------------------------------------------------------------------------------*/
+/*                                  CSS-Index.html                                   */
+/*-----------------------------------------------------------------------------------*/
 /*Aquí van las fonts, tamaños de letras y cosas principales*/
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 187%;
 }
-
 a {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     font-size: 106.25%;
     text-decoration: none;
 }
-
 p {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     font-size: 106.25%;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
 body {
     align-items: center;
     justify-content: center;
@@ -33,66 +31,41 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-
 html {
     scroll-behavior: smooth;
 }
 /*-----------------------------------------------------------------------------------*/
-
 /*-----------------------------------------------------------------------------------*/
 /*Alinear textos*/
+
 section {
     text-align: center;
 }
-
 div {
     text-align: center;
 }
-
 .justifyText {
     text-align: justify;
     word-spacing: -2px;
 }
 /*-----------------------------------------------------------------------------------*/
-
 /*-----------------------------------------------------------------------------------*/
 /*Aquí van los colores*/
 
 .blanco {
     color: white
 }
-
 .morado {
     color: #830053
 }
-
 /*-----------------------------------------------------------------------------------*/
-
 /*-----------------------------------------------------------------------------------*/
-/*Aquí van las fotos de fondo*/
-
-#footer {
-    background: url(../images/footer.jpg) no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-#footer .footertext{
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px !important;
-    color: #830053;
-    position: relative;
-    left: 15px !important;
-    text-align: left !important; 
-}
+/*Elemento BANNER DE LOS TITULOS*/
 
 .banner {
     background-color: #830053;
     -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     margin: -500px 0;
     padding: 0.5em 1em;
     width: 80%;
@@ -103,179 +76,11 @@ div {
     margin-top: 40px;
     margin-bottom: 50px;
 }
-
-.encabezado {
-    background-image: url("../images/header.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    overflow: hidden;
-}
-
-/* MENU */
-.encabezado ul {
-    list-style: none;
-    overflow: hidden;
-    background-color: white;
-}
-
-.encabezado li a {
-    display: block;
-    padding: 20px 20px;
-    border-bottom: 1px solid #830053;
-    color: #830053;
-}
-
-.encabezado li #color-login-btn:hover {
-    background-color: #830053;
-    color: white;
-}
-.encabezado li a:hover {
-    background-color: #830053;
-    color: white;
-}
-.encabezado .logo {
-    float: left;
-    padding: 5px 20px;
-    margin: 1px;
-}
-
-.logo {
-    width: 45%;
-}
-
-.encabezado .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-    text-align: center;
-    border-style: solid;
-    border-color: transparent;
-    margin-bottom: -6px;
-}
-
-/* menu icon */
-
-.encabezado .menu-icon {
-    cursor: pointer;
-    float: right;
-    padding: 8% 5%;
-    user-select: none;
-    transform: scale(1.6);
-}
-
-.encabezado .menu-icon .navicon {
-    background: white;
-    display: block;
-    height: 1.7px;
-    position: relative;
-    transition: .2s ease-out;
-    width: 20px;
-}
-
-.encabezado .menu-icon .navicon:before,
-.encabezado .menu-icon .navicon:after {
-    background: white;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-
-.encabezado .menu-icon .navicon:before {
-    top: 5px;
-}
-
-.encabezado .menu-icon .navicon:after {
-    top: -5px;
-}
-
-/* menu btn */
-
-.encabezado .menu-btn {
-    display: none;
-}
-
-.encabezado .menu-btn:checked ~ .menu {
-    max-height: 240px;
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    top: 0;
-}
-
-/* FIN MENU */
-
-.call_to_action {
-    background-image: url("../images/landing_page/landing_page1.jpg");
-    background-size: cover;
-}
-
-.call_to_action .fistText {
-    margin-top: 100px; 
-    margin-bottom: 70px;
-    margin-left: 5px; 
-    margin-right: 5px;
-}
-
-.call_to_action .secondText {
-    margin-bottom: 50px;
-    margin-left: 5px; 
-    margin-right: 5px;
-}
-
-.mas_informacion {
-    background-image: url("../images/landing_page/landing_page2.jpg");
-    background-size: cover;
-}
-
-.mas_informacion .headSection{
-    margin-bottom: 40px;
-    margin-left: 35px;
-    margin-right: 35px;
-}
-
-/* MARGENES EN TEXTOS */
-.mas_informacion p{
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-.objetivos p{
-    margin-left: 2%;
-    margin-right: 2%;
-}
-/* --------------------- */
-
-.acerca_de_nosotros {
-    background-image: url("../images/landing_page/landing_page3.jpg");
-    background-size: cover;
-}
-
-/* Colores de los iconos */
-.acerca_de_nosotros i {
-    color: white;
-}
 /*-----------------------------------------------------------------------------------*/
-
-
 /*-----------------------------------------------------------------------------------*/
-/*Estilo de los botones morados*/
+/*Estilo de los BOTONES*/
+
+/*-----------Botones morados-----------*/
 .boton {
     color: rgb(255, 255, 255);
     font-size: 20px;
@@ -302,54 +107,8 @@ div {
     background: #660041;
     transform: scale(1.06);
 }
-
-/*-----------------------------------------------------------------------------------*/
-
-
-/*-----------------------------------------------------------------------------------*/
-/* ACERCA DE NOSOTROS */
-.acerca1 {
-    display: flex;
-    margin-bottom: 70px;
-}
-
-.acerca1 p {
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-.acerca1 i {
-    float: right;
-    margin-right: 40px; 
-    margin-top: 40px;
-}
-
-.acerca2 {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20%;
-    margin-bottom: 90px;
-}
-
-.acerca2 p {
-    margin-top: 16px;
-}
-
-.acerca2 i:hover{
-    transform: scale(1.15);
-    transition: 0.3s;
-}
-
-.caja1 {
-    margin-right: 20%;
-}
-
-.caja2 {
-    margin-right: 20%;
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* Botón de Ir Arriba/Abajo */
+/*-------------------------------------*/
+/*------ Botón de Ir Arriba/Abajo -----*/
 
 .scrollBttn {
     background-size: cover;
@@ -371,5 +130,227 @@ div {
     transform: scale(1.15);
     transition: 150ms;
 }
+/*-------------------------------------*/
 
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*Elementos del HEADER*/
+
+.encabezado {
+    background-image: url("../images/header.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+}
+/*-------------------------------- MENU --------------------------------*/
+
+.encabezado ul {
+    list-style: none;
+    overflow: hidden;
+    background-color: white;
+}
+.encabezado li a {
+    display: block;
+    padding: 20px 20px;
+    border-bottom: 1px solid #830053;
+    color: #830053;
+}
+.encabezado li #color-login-btn:hover {
+    background-color: #830053;
+    color: white;
+}
+.encabezado li a:hover {
+    background-color: #830053;
+    color: white;
+}
+.encabezado .logo {
+    float: left;
+    padding: 5px 20px;
+    margin: 1px;
+}
+.logo {
+    width: 45%;
+}
+.encabezado .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    text-align: center;
+    border-style: solid;
+    border-color: transparent;
+    margin-bottom: -6px;
+}
+/*------------- menu icon -------------*/
+
+.encabezado .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 8% 5%;
+    user-select: none;
+    transform: scale(1.6);
+}
+.encabezado .menu-icon .navicon {
+    background: white;
+    display: block;
+    height: 1.7px;
+    position: relative;
+    transition: .2s ease-out;
+    width: 20px;
+}
+.encabezado .menu-icon .navicon:before,
+.encabezado .menu-icon .navicon:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.encabezado .menu-icon .navicon:before {
+    top: 5px;
+}
+.encabezado .menu-icon .navicon:after {
+    top: -5px;
+}
+/*------------- menu btn -------------*/
+
+.encabezado .menu-btn {
+    display: none;
+}
+.encabezado .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+.encabezado .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+.encabezado .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+.encabezado .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+/*-------------------------------- FIN MENU --------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*Elementos de la PRIMERA SECCIÓN*/
+.call_to_action {
+    background-image: url("../images/landing_page/landing_page1.jpg");
+    background-size: cover;
+}
+.call_to_action .fistText {
+    margin-top: 100px; 
+    margin-bottom: 70px;
+    margin-left: 5px; 
+    margin-right: 5px;
+}
+.call_to_action .secondText {
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*Elementos de la SEGUNDA SECCIÓN*/
+.mas_informacion {
+    background-image: url("../images/landing_page/landing_page2.jpg");
+    background-size: cover;
+}
+.mas_informacion .headSection{
+    margin-bottom: 40px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+/*------------- MARGENES EN TEXTOS -------------*/
+.mas_informacion p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.objetivos p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*Elementos de la TERCERA SECCIÓN*/
+
+.nuestro_servicio{
+    background-image: url("../images/landing_page/landing_page2.jpg");
+}
+.nuestro_servicio .headSection{
+    margin-bottom: 40px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*Elementos de la CUARTA SECCIÓN*/
+
+.acerca_de_nosotros {
+    background-image: url("../images/landing_page/landing_page3.jpg");
+    background-size: cover;
+}
+/*--- Colores de los iconos ---*/
+.acerca_de_nosotros i {
+    color: white;
+}
+/*----------------------------*/
+.acerca1 {
+    display: flex;
+    margin-bottom: 70px;
+}
+.acerca1 p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.acerca1 i {
+    float: right;
+    margin-right: 40px; 
+    margin-top: 40px;
+}
+.datos_contacto {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-bottom: 90px;
+}
+.datos_contacto p {
+    margin-top: 16px;
+}
+.datos_contacto i:hover{
+    transform: scale(1.15);
+    transition: 0.3s;
+}
+.caja1 {
+    margin-right: 20%;
+}
+.caja2 {
+    margin-right: 20%;
+}
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/*Elementos del FOOTER*/
+
+#footer {
+    background: url(../images/footer.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+#footer .footertext{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px !important;
+    color: #830053;
+    position: relative;
+    left: 15px !important;
+    text-align: left !important;
+}
+/*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
