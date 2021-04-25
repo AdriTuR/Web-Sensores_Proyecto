@@ -18,7 +18,7 @@
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
 
-<body>
+<body id="body">
     <!---------------------------------------- HEADER DE LA PÁGINA  -------------------------------------------------->
     <header class="encabezado" id="header">
         <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
@@ -41,18 +41,71 @@
 
 
     <!------------------------------------- PRIMERA SECCIÓN DE LA PÁGINA --------------------------------------------->
-    <section class="call_to_action" style=>
-        <h1 class="fistText morado">CONTROLA TUS CULTIVOS DESDE CUALQUIER SITIO</h1>
-        <br>
-        <p class="secondText justifyText">¿Eres una agricultor con una explotación
-            agraria y te gustaría ahorrarte tiempo
-            y trabajo? </p>
-        <p class="secondText justifyText">Con nuestros sensores es posible, te
-            damos la oportunidad de ver el estado de
-            tus cultivos desde cualquier
-            sitio. </p>
-        <br>
-        <a class="boton" href="#contacto">CONTÁCTANOS</a>
+    <section class="call_to_action">
+        <div id="contenido call_to_action">
+            <h1 class="fistText morado">CONTROLA TUS CULTIVOS DESDE CUALQUIER SITIO</h1>
+            <br>
+            <p class="secondText justifyText">¿Eres una agricultor con una explotación
+                agraria y te gustaría ahorrarte tiempo
+                y trabajo? </p>
+            <p class="secondText justifyText">Con nuestros sensores es posible, te
+                damos la oportunidad de ver el estado de
+                tus cultivos desde cualquier
+                sitio. </p>
+            <br>
+            <a class="boton"  onclick="abrirFormulario()">CONTÁCTANOS</a>
+        </div>
+        <!--------------------------------FORMULARIO DE CONTACTO------------------------------->
+        <div class="popup-formulario-contacto" id="formulario_contacto">
+            <div class="box" id="box-contacto">
+                <div id="header-box">
+                    <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
+                    <h1 id="title">CONTÁCTANOS</h1>
+                    <hr id="line" width="283" size=2px color="#830053">
+                    <p id="intro-text">Envíanos tu consulta y te contestaremos en un plazo de 24 horas.</p>
+                </div>
+                <div id="content-form-box">
+                    <form action="#" method="post">
+                        <p>
+                            <label for="nombre" class="colocar_nombre">Nombre:</label>
+                            <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre" required maxlength="60">
+                        </p>
+                        <p>
+                            <label for="apellidos" class="colocar_apellidos">Apellidos: <i class="cursiva">(Opcional)</i></label>
+                            <input type="text" name="introducir_apellidos" id="apellidos" placeholder="Escribe tus apellidos" maxlength="120">
+                        </p>
+                        <p>
+                            <label for="correo" class="colocar_correo">Correo:</label>
+                            <input type="correo" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120">
+                        </p>
+                        <p>
+                            <label for="mensaje" class="colocar_mensaje">Motivo de la consulta:</label>
+                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" placeholder="Deja aquí tu consulta" required></textarea>
+                        </p>
+                        <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---------------------SCRIPTS PARA EL FORMULARIO DE CONTACTO--------------------->
+        <script>
+           //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
+            function abrirFormulario() {
+                document.getElementById("formulario_contacto").style.display = "flex";
+                document.getElementById("body").style.overflow = "hidden"
+                document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
+            }
+           //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
+            function cerrarFormulario() {
+                document.getElementById("formulario_contacto").style.display = "none";
+                document.getElementById("body").style.overflow = "scroll";
+                document.getElementById("contenido call_to_action").style.filter = "none";
+            }
+           //----------------------------------------------------------------//
+        </script>
+
+        <!------------------------------------------------------------------------------------->
+
         <br>
         <a class="scrollBttn srollBttnDown" href="#mas_informacion"></a>
     </section>

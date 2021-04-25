@@ -477,3 +477,131 @@ div {
 
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
+/*FORMULARIO DE CONTACTO*/
+
+.popup-formulario-contacto{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+/*---------------------------------------------------------------------*/
+/*------------------------------ MAIN BOX -----------------------------*/
+
+.box{
+    width:349px;
+    height:625px;
+    border-radius: 20px;
+    border: solid 1px #830053;
+    background-color: #E8E8E8;
+    padding: 7px;
+}
+/*---------------------------------------------------------------------*/
+/*----------------------- ELEMENTOS DE LA BOX -------------------------*/
+
+/* icono de cerrar formulario */
+.cerrar-formulario{
+  position: relative;
+  top: -27px;
+  right: -170px;
+
+}
+/*---------------- HEADER DE LA BOX ----------------*/
+#formulario_contacto #box-contacto #header-box #title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #830053;
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: 2px;
+}
+#formulario_contacto #box-contacto #header-box #line{
+    margin-left: 25px;
+    margin-right: 100%;
+
+}
+#formulario_contacto #box-contacto #header-box #intro-text{
+    font-size: 14px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+}
+/*--------------------------------------------------*/
+/*------------ CONTENIDO DEL FORMULARIO ------------*/
+
+/* Nombres de los campos */
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    float: left;
+    padding: 9px 5px 1px;
+    margin-left: 12px;
+}
+
+/* Campos */
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 40px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+}
+
+/* Campo consulta */
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 150px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+    resize: none;
+}
+.cursiva{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+/*--------------------------------------------------*/
+/*----------------- BOTÓN ENVIAR -------------------*/
+
+#formulario_contacto #box-contacto #content-form-box #enviar{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: white;
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0px 10px;
+    display: inline-block;
+    background-color: #830053;
+    border: solid 1px #830053;
+    border-radius: 5px;
+}
+#formulario_contacto #box-contacto #content-form-box #enviar:hover{
+    background: #660041;
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+#formulario_contacto #box-contacto #content-form-box #enviar:active {
+    background: #660041;
+    transform: scale(1.06);
+}
+/*--------------------------------------------------*/
+/*--------------------------------------------------*/
