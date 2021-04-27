@@ -12,17 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
-   
-    <!-- SCRIPT DE CERRAR EL MENU -->
-    <script>
-                 function menucerrar(){
-            
-            document.getElementById("menu-btn").checked = false
-            
-           }
-    </script>
-
-     <!-- FIN DEL SCRIPT DE CERRAR EL MENU -->
 </head>
 
 <!-------------------------------------------------------------------------------------------------------------------->
@@ -45,6 +34,18 @@
                 <li onclick="menucerrar()"><a href="login.html">Area de cliente</a></li>
             </ul>
         </nav>
+
+        <!-- SCRIPT DE CERRAR EL MENU -->
+        <script>
+            function menucerrar(){
+
+                document.getElementById("menu-btn").checked = false
+
+            }
+        </script>
+
+        <!-- FIN DEL SCRIPT DE CERRAR EL MENU -->
+
         <!---------------------------------------->
 
     </header>
@@ -160,11 +161,32 @@
 
 
     <!------------------------------------- TERCERA SECCIÓN DE LA PÁGINA --------------------------------------------->
-    <section class="nuestro_servicio" id="nuestro_servicio">
-        <h1 class="banner">NUESTRO SERVICIO</h1>
-        <br>
-        <p class="blanco justifyText headSection">Por completar </p>
-        <br>
+    <section class="informacion_web" id="informacion_web">
+        <div id="contenido_informacion_web">
+
+            <h1 class="banner">INFORMACIÓN SOBRE LA WEB</h1>
+            <p class="blanco justifyText headSection" id="headSection">
+                Una vez obtenga su cuenta podra consultar sus parcelas de forma remota desde nuestra
+                web y segir el estado de los cultivos de manera sencilla y rápida.
+            </p>
+
+            <div id="mapa_interactivo-apartado">
+                <img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo">
+                <p class="blanco justifyText" id="texto1_información_web">
+                    Podrá ver en todo momento la localización de sus sensores en un mapa interactivo.
+                </p>
+            </div>
+
+            <div id="grafico-apartado">
+                <img id= "iconografico" src="images/landing_page/graphic_icon.png" alt="icono de un gráfico">
+                <p class="blanco justifyText" id="texto2_información_web">
+                    Además podrá ver de manera gráfica los valores de <strong>SALINIDAD</strong>, <strong>HUMEDAD</strong>,
+                    <strong>TEMPERATURA</strong>  y </strong>LUMINOSIDAD</strong> en el espacio de tiempo más comodo para usted.
+                </p>
+            </div>
+
+        </div>
+
     </section>
     <!------------------------------------ FIN TERCERA SECCIÓN DE LA PÁGINA ------------------------------------------>
 
