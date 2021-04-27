@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login-style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
@@ -13,12 +20,12 @@
 <!-------------------------------------------------------------------------------------------------------------------->
 <body>
     <!---------------------------- HEADER DE LA PÁGINA  ------------------------------------------->
-    <nav id="header">    
-        <a href="index.html">
-            <img class="logo" src="images/logoGTI.png" alt="logo">
-            <i class="fas fa-home fa-2x"></i>
-        </a>
-    </nav>
+    <header id="header">    
+        
+            <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
+            <a href="index.html"><img class="close" src="images/landing_page/close.png" alt="botón de cerrar"></a>
+       
+    </header>
     <!---------------------------- FIN HEADER DE LA PÁGINA  --------------------------------------->
 
 
@@ -26,16 +33,18 @@
     <section id="login-form">
         <div id="box">
             <div id="box1">
-                <p>PANEL DE USUARIO</p>
+                <h1>INICIO DE SESIÓN</h1>
+                <hr id="line" width="283" size=2px color="#830053">
+                <p class="introtext">Introduce tus datos para acceder al panel de usuario</p>
             </div>
 
             <div id="box2">
                 <form action="#">
-                    <br><br>
+                   
                     </i><input type="text" placeholder="&#xf2bd; Usuario" style="font-family:Arial, FontAwesome" required><br><br>
                     </i><input type="password" placeholder="&#xf084; Contraseña" style="font-family:Arial, FontAwesome" required><br><br>
-                    <a href="#"><p>¿Has olvidado tu contraseña?</p></a>
-                    <input type="submit" value="INICIAR SESIÓN" required><br><br><br>
+                    <a href="#"><p class="olvidado">¿Has olvidado tu contraseña?</p></a>
+                    <input type="submit" value="INICIAR SESIÓN" required><br>
                   </form> 
                 </form>
             </div>

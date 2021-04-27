@@ -9,6 +9,31 @@ body {
 a{
     text-decoration: none;
 }
+h1{
+    font-family: 'Montserrat', sans-serif !important;
+    color: #830053;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 2px;
+}
+
+.introtext{
+
+    font-size: 14px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.olvidado{
+    font-family: 'Montserrat', sans-serif !important;
+}
 /*------------------------------------------*/
 @media screen and (min-width: 500px){
     body{
@@ -48,11 +73,7 @@ a{
 #login-form #box #box1 {
     margin-bottom: -5px;
     color: white;
-    background-color: #830053;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: center;
+    background-color: white;
     border: solid 1px black;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -67,7 +88,7 @@ a{
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     text-align: center;
-    background-color: #E8E8E8;
+    background-color: white;
 }
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
@@ -101,14 +122,13 @@ a{
 /*-------------- SUBMIT BUTTON -------------*/
   #login-form #box #box2 input[type=submit]{
     width: 50%;
-    padding: 10px;
-    margin-top: 34px;
+    padding: 15px;
+    margin-top: 10px;
     margin-bottom: 15px;
     display: inline-block;
     background-color: #830053;
     color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     border: solid 1px #830053;
     border-radius: 5px;
@@ -167,9 +187,21 @@ a{
  }
 
 /*-------------- LOGO --------------*/
-#header img{
+.logo{
     width: 35%;
-    height: 35%;
+    margin-left: 3vh;
+    margin-top: 1vh;
+    
+}
+/*----------------------------------*/
+
+/*-------------- LOGO --------------*/
+.close{
+    width: 8%;
+    height: 8%;
+    float: right;
+    margin-right: 2vh;
+    margin-top: 2.5vh;
 }
 /*----------------------------------*/
 
