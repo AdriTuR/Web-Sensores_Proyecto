@@ -1,6 +1,8 @@
 <?php
-//-----------------------------ENVIAR DATOS DEL FORMULARIO-----------------------------//
-if (isset($_POST['enviar_formulario'])){
+
+$method = $_SERVER['REQUEST_METHOD'];
+
+if ($method === 'POST'){
 
     require 'connection.php';
 
@@ -14,18 +16,12 @@ if (isset($_POST['enviar_formulario'])){
         $resultado = mysqli_query($conn, $consulta);
 
         if($resultado){
-            ?>
-            <h3>Tu consulta ha sido enviada</h3>
-            <?php
+            http_response_code(200);
+            exit();
         }else{
-            ?>
-            <h3>Error</h3>
-            <?php
+            http_response_code(400);
+            die();
         }
-    }else {
-        ?>
-        <h3>Error, profavor complete los campos obligatorios que faltan </h3>
-        <?php
     }
-
 }
+
