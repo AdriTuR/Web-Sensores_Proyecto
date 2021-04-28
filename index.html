@@ -38,9 +38,7 @@
         <!-- SCRIPT DE CERRAR EL MENU -->
         <script>
             function menucerrar(){
-
                 document.getElementById("menu-btn").checked = false
-
             }
         </script>
 
@@ -80,19 +78,19 @@
                     <form>
                         <p>
                             <label for="nombre" class="colocar_nombre">Nombre:</label>
-                            <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre" required maxlength="60">
+                            <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre" required maxlength="30" minlength="3">
                         </p>
                         <p>
                             <label for="apellidos" class="colocar_apellidos">Apellidos: <i class="cursiva">(Opcional)</i></label>
-                            <input type="text" name="introducir_apellidos" id="apellidos" placeholder="Escribe tus apellidos" maxlength="120">
+                            <input type="text" name="introducir_apellidos" id="apellidos" placeholder="Escribe tus apellidos" maxlength="60"  minlength="3">
                         </p>
                         <p>
                             <label for="correo" class="colocar_correo">Correo:</label>
-                            <input type="correo" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120">
+                            <input type="correo" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="50"  minlength="5">
                         </p>
                         <p>
                             <label for="mensaje" class="colocar_mensaje">Motivo de la consulta:</label>
-                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" placeholder="Deja aquí tu consulta" required></textarea>
+                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" placeholder="Deja aquí tu consulta" required  minlength="5"></textarea>
                         </p>
                         <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
                     </form>

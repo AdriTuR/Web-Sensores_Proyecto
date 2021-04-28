@@ -9,6 +9,6 @@ $db_name = 'sql11407928';
 $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 
 if (!$conn) {
-    echo("Error while connecting with database: " + mysqli_connect_error());
+    die("Error while connecting with database: " . mysqli_connect_error());
 }
 //-------------------------------------------------------------------------//
