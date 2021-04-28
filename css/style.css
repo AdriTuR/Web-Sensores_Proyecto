@@ -19,6 +19,7 @@ p {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     font-size: 106.25%;
+    word-spacing: 1px;
 }
 
 * {
@@ -40,50 +41,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-@media screen and (max-height: 640px){
-    .call_to_action {
-
-        height: 90vh;
-    }
-    section{
-
-        height: 100vh;
-    }
-    h1 {
-        font-size: 150%;
-    }
-
-    a {
-        font-size: 80%;
-    }
-
-    p {
-        font-size: 80%;
-    }
-
-    .boton{
-        font-size: 14px !important;
-        padding: 12px !important;
-        margin-bottom: 5vh !important;
-    }
-
-    .call_to_action .fistText {
-
-        margin-bottom: 5vh  !important;
-
-    }
-
-    .call_to_action .secondText {
-        margin-bottom: 4vh;
-
-    }
-}
-@media screen and (max-height: 812px){
-
-
-}
-
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                                 ALINEAR TEXTOS                                                    */
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -102,6 +59,7 @@ div {
 .justifyText {
     text-align: justify;
     word-spacing: -2px;
+    
 
     margin-left: 35px !important;
     margin-right: 35px !important;
@@ -173,6 +131,34 @@ div {
     transform: scale(1.06);
 }
 
+/*-----------------------Botones blancos-----------------------*/
+.boton2 {
+    color: #660041;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 10px;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.boton2:hover {
+    background: rgb(255, 255, 255);
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.boton2:active {
+    background: rgb(255, 255, 255);
+    transform: scale(1.06);
+}
 /*--------------------------------------------------------------*/
 /*------------------ Botón de Ir Arriba/Abajo ------------------*/
 
@@ -336,8 +322,8 @@ div {
 .call_to_action .fistText {
     margin-top: 8vh;
     margin-bottom: 5vh;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .call_to_action .secondText {
@@ -395,30 +381,31 @@ div {
 }
 
 #informacion_web #contenido_informacion_web #headSection{
-    margin:31px 35px;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
     text-align: center;
 }
 #informacion_web #contenido_informacion_web #mapa_interactivo-apartado #texto1_información_web{
-    margin-top: 15px;
+    margin-top: 3vh;
     text-align: center;
 }
 #informacion_web #contenido_informacion_web #grafico-apartado #texto2_información_web{
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
     text-align: center;
 }
 
 
 /*---------------------Iconos de la sección-------------------*/
 #informacion_web #contenido_informacion_web #mapa_interactivo-apartado #iconomapainteractivo{
-    width: 125px;
-    height: 121px;
-    margin-top: 20px;
+    width: 30%;
+    height: 30%;
+    margin-top: 3vh;
 }
 #informacion_web #contenido_informacion_web #grafico-apartado #iconografico{
-    width: 137px;
-    height: 125px;
-    margin-top: 30px;
+    width: 30%;
+    height: 30%;
+    margin-top: 4vh;
 }
 /*-----------------------------------------------------------*/
 
@@ -441,13 +428,14 @@ div {
 }
 
 .objetivos{
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
 }
 /*----------------------------*/
 
 .acerca1 {
-    display: flex;
-    margin-bottom: 5vh;
+    
+    margin-bottom: 4vh;
+
 }
 
 .acerca1 p {
@@ -456,20 +444,20 @@ div {
 }
 
 .acerca1 i {
-    float: right;
-    margin-right: 40px;
-    margin-top: 40px;
+    margin-top: 3vh;
+   
 }
 
 .datos_contacto {
     display: flex;
-    flex-direction: row;
-    margin-left: 10vh;
+    
+    justify-content: space-around;
+    margin-bottom: 3vh;
 }
 
 .datos_contacto p {
     margin-top: 2vh;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
 }
 
 .datos_contacto i:hover{
@@ -477,13 +465,7 @@ div {
     transition: 0.3s;
 }
 
-.caja1 {
-    margin-right: 20%;
-}
 
-.caja2 {
-    margin-right: 20%;
-}
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                              Elementos del FOOTER                                                 */
@@ -498,13 +480,12 @@ div {
     width: 100%;
 }
 
-#footer .footertext{
-    font-family: 'Poppins', sans-serif;
+#footertext{
+    font-family: 'Montserrat', sans-serif;
     font-size: 10px !important;
-    color: #830053;
     position: relative;
-    left: 15px !important;
     text-align: left !important;
+    padding: 5%;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -638,3 +619,94 @@ textarea {
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                Estilo de otros formatos                                           */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------*/
+/*-------------------- iPhone5 ---------------------*/
+
+@media screen and (max-height: 640px){
+    .call_to_action {
+
+        height: 90vh;
+    }
+    section{
+
+        height: 100vh;
+    }
+    h1 {
+        font-size: 150%;
+    }
+
+    a {
+        font-size: 80%;
+    }
+
+    p {
+        font-size: 80%;
+        
+    }
+
+    .justifyText{
+        word-spacing: 1px;
+    }
+
+
+    .banner{
+        margin-top: 4vh;
+        font-size: 14px;
+        width: 85%;
+    }
+
+    .boton{
+        font-size: 14px !important;
+        padding: 12px !important;
+        margin-bottom: 5vh !important;
+    }
+
+    .call_to_action .fistText {
+
+        margin-bottom: 5vh  !important;
+
+    }
+
+    .call_to_action .secondText {
+        margin-bottom: 4vh;
+
+    }
+
+    #headSection{
+        margin-top: 3vh;
+    }
+
+    .acerca1{
+        margin-bottom: 1vh;
+    }
+
+    .acerca1 i {
+        margin-top: 3vh;
+        font-size: 7vh;
+       
+    }
+
+    .boton2{
+        font-size: 8px;
+        line-height: 18px;
+        padding: 10px;
+    }
+    .datos_contacto{
+        margin-bottom: 1vh;
+    }
+}
+
+
+
+@media screen and (min-height: 736px){
+
+   
+
+}
