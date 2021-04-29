@@ -40,10 +40,17 @@
 
             <div id="box2">
                 <form id="loginForm">
-                    </i><input type="text" name="username" placeholder="&#xf2bd; Usuario" style="font-family:Arial, FontAwesome" required><br><br>
-                    </i><input type="password" name="passwd" placeholder="&#xf084; Contraseña" style="font-family:Arial, FontAwesome" required><br><br>
-                    <a href="#" id="olvidar" onclick="abrirFormulario()"><p>¿Has olvidado tu contraseña?</p></a>
-                    <input type="submit" id="loginBtn" value="INICIAR SESIÓN" required><br><br><br>
+                    <p class="textologin">Usuario:</p>
+                    </i><input type="text" name="username" placeholder="&#xf2bd; Introduce tu usuario" style="font-family:Arial, FontAwesome" required>
+                    <br>
+                    <p class="textologin">Contraseña:</p>
+                    </i><input type="password" name="passwd" placeholder="&#xf084; Introduce tu contraseña" style="font-family:Arial, FontAwesome" required>
+                    <br>
+                    <a href="#" id="olvidar" onclick="abrirFormulario()">
+                        <p id="olvidado">¿Has olvidado tu contraseña?</p>
+                    </a>
+                    <input type="submit" id="loginBtn" value="INICIAR SESIÓN" required>
+                    <br>
                 </form>
             </div>
         </div>
