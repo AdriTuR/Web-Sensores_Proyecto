@@ -106,7 +106,7 @@ h1 {
 /* FORM INPUTS STYLING */
 
 /*----------------- FIELDS -----------------*/
-#login-form #box #box2 input[type=text], input[type=password]{
+input[type=text], input[type=password]{
     width: 75%;
     padding: 6px 5px;
     display: inline-block;
@@ -249,8 +249,7 @@ h1 {
 
 #formulario_olvidar #box-contacto #header-box #line {
     margin-left: 25px;
-    margin-right: 100%;
-    
+    margin-right: 100%; 
 }
 
 #formulario_olvidar #box-contacto #header-box #intro-text {
@@ -264,49 +263,9 @@ h1 {
 /*--------------------------------------------------*/
 /*------------ CONTENIDO DEL FORMULARIO ------------*/
 
-/* Nombres de los campos */
-label {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    text-align: left;
-    float: left;
-    padding: 9px 5px 1px;
-    margin-left: 12px;
-}
-
 /* Campos */
-input {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    width: 90%;
-    height: 40px;
-    padding: 6px 5px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    background-color: rgb(229, 217, 217, 47%);
-    border: solid 1px #830053;
-}
 
-/* Campo consulta */
-textarea {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    width: 90%;
-    height: 150px;
-    padding: 6px 5px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    background-color: rgb(229, 217, 217, 47%);
-    border: solid 1px #830053;
-    resize: none;
-}
 
-.cursiva{
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-}
 /*--------------------------------------------------*/
 /*----------------- BOTÓN ENVIAR -------------------*/
 
@@ -328,23 +287,25 @@ textarea {
 .correo_formulario_olvidar{
     font-style: bold;
     font-family: 'Montserrat', sans-serif;
-    margin-right: 60%;
+    float: left;
+    margin-left: 18px;
 }
 /*El texto de abajo del titulo"*/
-.container_text_olvidar p{
+.container_text_olvidar p {
     font-style: bold;
     font-family: 'Montserrat', sans-serif;
-    
 }
+
 /*El titulo de "¿Has olvidado tu contraseña?"*/
-.titulo_olvidar{
+.titulo_olvidar {
     font-size: x-large;
     color: #830053;
     font-family: 'Montserrat', sans-serif;   
 }
+
 /*Donde se escribe el correo*/
 .colocar_correo_olvidar{
-    
+    width: 85% !important;
 }
 
 /*------------------ANIMACION------------------*/
