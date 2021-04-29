@@ -241,6 +241,9 @@ div {
     border-color: transparent;
     margin-bottom: -6px;
 }
+.encabezado menu:active{
+    transition: .2s ease-in-out 1s;
+}
 
 /*------------- menu icono ------------*/
 
@@ -287,7 +290,7 @@ div {
 }
 
 .encabezado .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 300px;
 }
 
 .encabezado .menu-btn:checked ~ .menu-icon .navicon {

@@ -30,6 +30,7 @@
 
             <ul class="menu">
                 <li onclick="menucerrar()"><a href="#mas_informacion">Qué te ofrecemos</a></li>
+                <li onclick="menucerrar()"><a href="#informacion_web">Más información</a></li>
                 <li onclick="menucerrar()"><a href="#acerca_de_nosotros">Acerca de nosotros</a></li>
                 <li onclick="menucerrar()"><a href="login.html">Area de cliente</a></li>
             </ul>
@@ -38,7 +39,9 @@
         <!------- SCRIPT DE CERRAR EL MENU ------->
         <script>
             function menucerrar(){
+            setTimeout(function (){
                 document.getElementById("menu-btn").checked = false
+            },1000)
             }
         </script>
 
@@ -192,7 +195,7 @@
     <section class="informacion_web" id="informacion_web">
         <div id="contenido_informacion_web">
 
-            <h1 class="banner">INFORMACIÓN SOBRE LA WEB</h1>
+            <h1 class="banner">MÁS INFORMACIÓN</h1>
             <p class="blanco justifyText headSection" id="headSection">
                 Una vez obtenga su cuenta podra consultar sus parcelas de forma remota desde nuestra
                 web y segir el estado de los cultivos de manera sencilla y rápida.
@@ -209,7 +212,7 @@
                 <img id= "iconografico" src="images/landing_page/graphic_icon.png" alt="icono de un gráfico">
                 <p class="blanco justifyText" id="texto2_información_web">
                     Además podrá ver de manera gráfica los valores de <strong>SALINIDAD</strong>, <strong>HUMEDAD</strong>,
-                    <strong>TEMPERATURA</strong>  y </strong>LUMINOSIDAD</strong> en el espacio de tiempo más comodo para usted.
+                    <strong>TEMPERATURA</strong>  y <strong>LUMINOSIDAD</strong> en el espacio de tiempo más comodo para usted.
                 </p>
             </div>
 
@@ -251,7 +254,6 @@
                 <a href="tel:666666666">
                     <i class="fas fa-phone-alt fa-3x"></i>
                     <p class="blanco">666 666 666</p>
-                </a>
                 </a>
             </div>
 
