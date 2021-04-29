@@ -23,19 +23,18 @@
 <body>
     <!---------------------------- HEADER DE LA PÁGINA  ------------------------------------------->
     <header id="header">    
-        
-            <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
-            <a href="index.html"><img class="close" src="images/landing_page/close.png" alt="botón de cerrar"></a>
-       
+        <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
+        <a href="index.html"><img class="close" src="images/landing_page/close.png" alt="botón de cerrar"></a>
     </header>
     <!---------------------------- FIN HEADER DE LA PÁGINA  --------------------------------------->
-
 
     <!--------------------------------- FORM CONTENT ----------------------------------------------->
     <section id="login-form">
         <div id="box">
             <div id="box1">
-                <p>PANEL DE USUARIO</p>
+                <h1>INICIO DE SESIÓN</h1>
+                <hr id="line" width="283" size=2px color="#830053">
+                <p class="introtext">Introduce tus datos para acceder al panel de usuario</p>
             </div>
 
             <div id="box2">
@@ -45,7 +44,6 @@
                     </i><input type="password" placeholder="&#xf084; Contraseña" style="font-family:Arial, FontAwesome" required><br><br>
                     <a href="#" id="olvidar" onclick="abrirFormulario()"><p>¿Has olvidado tu contraseña?</p></a>
                     <input type="submit" value="INICIAR SESIÓN" required><br><br><br>
-                  </form> 
                 </form>
             </div>
         </div>
@@ -54,19 +52,16 @@
 
 
     <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
- 
-
     <div class="formulario-olvidar" id="formulario_olvidar">
         <div class="box" id="box-olvidar">
-             <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
-            <div class="container_text_olvidar"id="header-box">
-               
+            <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
+
+            <div class="container_text_olvidar"id="header-box"> 
                 <h1 id="title" class="titulo_olvidar">¿HAS OLVIDADO TU CONTRASEÑA?</h1>
                 <p>Introduce tu correo electronico 
-                y recibiras en breves tu contraseña</p>
-                
-                
+                y recibiras en breves tu contraseña</p>  
             </div>
+
             <div id="content-form-box">
                 <form action="#" method="post">
                     <p> <p class="correo_formulario_olvidar">Correo:</p>
@@ -78,36 +73,23 @@
             </div>
         </div>
     </div>
-            <!---------------------SCRIPTS PARA LA VENTANA DE CONTRASEÑA OLVIDADA--------------------->
-            <script>
-                //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
-            function abrirFormulario() {
-                
-               
-                
-                document.getElementById("formulario_olvidar").style.visibility = "visible";
-                 document.getElementById("formulario_olvidar").style.display = "flex";
-                 document.getElementById("body").style.overflow = "hidden"
-                 
 
-               
-                
-               
-            }
-           //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
-            function cerrarFormulario() {
-                document.getElementById("formulario_olvidar").style.visibility = "hidden";
-                document.getElementById("formulario_olvidar").style.display = "none";
-                document.getElementById("body").style.overflow = "scroll";
-                
-            
-                
-                
-                
-            }
-                 
-                //----------------------------------------------------------------//
-             </script>
+    <!---------------------SCRIPTS PARA LA VENTANA DE CONTRASEÑA OLVIDADA--------------------->
+    <script>
+        //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
+        function abrirFormulario() {
+            document.getElementById("formulario_olvidar").style.visibility = "visible";
+            document.getElementById("formulario_olvidar").style.display = "flex";
+            document.getElementById("body").style.overflow = "hidden";
+        }
+        //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
+        function cerrarFormulario() {
+            document.getElementById("formulario_olvidar").style.visibility = "hidden";
+            document.getElementById("formulario_olvidar").style.display = "none";
+            document.getElementById("body").style.overflow = "scroll";   
+        }
+        //----------------------------------------------------------------//
+     </script>
      
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
     <footer id="footer">
