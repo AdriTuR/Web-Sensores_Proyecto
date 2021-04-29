@@ -35,14 +35,15 @@
                 <h1>INICIO DE SESIÓN</h1>
                 <hr id="line" width="283" size=2px color="#830053">
                 <p class="introtext">Introduce tus datos para acceder al panel de usuario</p>
+                <p id="loginError"></p>
             </div>
 
             <div id="box2">
-                <form action="#">
-                    </i><input type="text" placeholder="&#xf2bd; Usuario" style="font-family:Arial, FontAwesome" required><br><br>
-                    </i><input type="password" placeholder="&#xf084; Contraseña" style="font-family:Arial, FontAwesome" required><br><br>
+                <form id="loginForm">
+                    </i><input type="text" name="username" placeholder="&#xf2bd; Usuario" style="font-family:Arial, FontAwesome" required><br><br>
+                    </i><input type="password" name="passwd" placeholder="&#xf084; Contraseña" style="font-family:Arial, FontAwesome" required><br><br>
                     <a href="#" id="olvidar" onclick="abrirFormulario()"><p>¿Has olvidado tu contraseña?</p></a>
-                    <input type="submit" value="INICIAR SESIÓN" required><br><br><br>
+                    <input type="submit" id="loginBtn" value="INICIAR SESIÓN" required><br><br><br>
                 </form>
             </div>
         </div>
@@ -62,7 +63,7 @@
             </div>
 
             <div id="content-form-box">
-                <form action="#" method="post">
+                <form>
                     <p> <p class="correo_formulario_olvidar">Correo:</p>
                         <label for="correo" class="colocar_correo"></label>
                         <input type="text" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
@@ -88,6 +89,21 @@
             document.getElementById("body").style.overflow = "scroll";   
         }
         //----------------------------------------------------------------//
+
+        window.addEventListener("load", function(){
+            fetch("/api/v1/", {
+                method: "GET"
+            }).then(function (result) {
+                return result.json();
+            }).then(function (data) {
+                if(data.role == "USER"){
+                    location.href = "/user_panel.html";
+                }else if(data.role == "ADMIN"){
+                    location.href = "/admin_panel.html";
+                }
+            }); 
+        });
+
      </script>
      
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
@@ -97,6 +113,7 @@
     <!------------------------------- FIN FOOTER DE LA PÁGINA ---------------------------------------->
 
 </body>
+<script src="../js/login.js"></script>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
 <!-------------------------------------------------------------------------------------------------------------------->

@@ -136,8 +136,23 @@ input[type=text], input[type=password]{
     background-color: #520335;
     transition: 0.3s;
 }
-/*------------------------------------------*/
 
+#loginError{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: red !important;
+    font-weight: bold;
+    margin-left: 29% !important;
+    float: left;
+}
+
+.shakeAnimation {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+/*------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
@@ -218,7 +233,7 @@ input[type=text], input[type=password]{
 
 /*---------------------------------------------------------------------*/
 /*------------------------------ MAIN BOX -----------------------------*/
-.box{
+.box {
     width:349px;
     height:625px;
     border-radius: 20px;
@@ -233,8 +248,7 @@ input[type=text], input[type=password]{
 .cerrar-formulario {
     position: relative;
     top: -27px;
-    right: -170px;
-    
+    right: -170px;  
 }
 /*---------------- HEADER DE LA BOX ----------------*/
 #formulario_olvidar #box-contacto #header-box #title {
@@ -285,14 +299,14 @@ input[type=text], input[type=password]{
 
 /*Donde pone "Correo:"*/
 .correo_formulario_olvidar{
-    font-style: bold;
+    font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     float: left;
     margin-left: 18px;
 }
 /*El texto de abajo del titulo"*/
 .container_text_olvidar p {
-    font-style: bold;
+    font-weight: bold;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -308,7 +322,7 @@ input[type=text], input[type=password]{
     width: 85% !important;
 }
 
-/*------------------ANIMACION------------------*/
+/*------------------ANIMACIONES------------------*/
 @keyframes anim {
     0% {
         display: none;
@@ -324,6 +338,24 @@ input[type=text], input[type=password]{
         transform: scale(1);
     }
 }
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
 
 /*--------------------------------------------------*/
 /*RESPONSIVE */

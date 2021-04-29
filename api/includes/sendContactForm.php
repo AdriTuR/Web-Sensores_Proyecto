@@ -12,7 +12,10 @@ if ($method === 'POST'){
         $correo = trim($_POST['introducir_correo']);
         $mensaje = trim($_POST['introducir_mensaje']);
 
-        $consulta = "INSERT INTO `inquiries` (name, surname, email, message) VALUES ('" . $nombre . "', '" . $apellidos . "', '" . $correo . "', '" . $mensaje . "');";
+        $sql = "SET NAMES 'utf8'";
+        $consulta = "INSERT INTO `inquiries` (`name`, `surname`, `email`, `message`) VALUES ('$nombre','$apellidos','$correo','$mensaje');";
+
+        mysqli_query($conn, $sql);
         $resultado = mysqli_query($conn, $consulta);
 
         if($resultado){
@@ -24,4 +27,3 @@ if ($method === 'POST'){
         }
     }
 }
-
