@@ -9,7 +9,8 @@ document.querySelector("form").addEventListener("submit", function(event){
     }).then(function (result) {
         if(result.ok){
             cerrarFormulario();
-			
+            limpiarFormulario();
+            mostrarConfirmacion();
         }else{
            // console.log("error al enviar formulario.");
         }

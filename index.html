@@ -35,16 +35,15 @@
             </ul>
         </nav>
 
-        <!-- SCRIPT DE CERRAR EL MENU -->
+        <!------- SCRIPT DE CERRAR EL MENU ------->
         <script>
             function menucerrar(){
-
                 document.getElementById("menu-btn").checked = false
-
             }
         </script>
 
-        <!-- FIN DEL SCRIPT DE CERRAR EL MENU -->
+        <!--- FIN DEL SCRIPT DE CERRAR EL MENU --->
+
 
         <!---------------------------------------->
 
@@ -77,7 +76,7 @@
                     <p id="intro-text">Envíanos tu consulta y te contestaremos en un plazo de 24 horas.</p>
                 </div>
                 <div id="content-form-box">
-                    <form>
+                    <form id="form_contact">
                         <p>
                             <label for="nombre" class="colocar_nombre">Nombre:</label>
                             <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre" required maxlength="30" minlength="3">
@@ -100,21 +99,49 @@
                 </div>
             </div>
         </div>
+        <!----------------- MENSAJE DE CONFIRMACION ----------------->
+        <div class="popup-mensaje_confirmacion" id="mensaje_confirmacion">
+            <div class="box_confirmacion" id="box-confirmacion">
+                <div id="content-confirm-box">
+                    <h1 id="title">TU CONSULTA HA SIDO ENVIADA CORRECTAMENTE</h1>
+                    <img src="images/landing_page/check_icon.png" alt="confirmación" width="85px" height="79px" class ="confirmacion">
+                    <p id="text">En un plazo de 24 horas. recibirá su respuesta</p>
+                    <button id="cerrar_confirmacion" onclick="cerrarConfirmacion()">CERRAR</button>
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------------------------>
+
         <!---------------------SCRIPTS PARA EL FORMULARIO DE CONTACTO--------------------->
         <script>
-           //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
+            //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
             function abrirFormulario() {
                 document.getElementById("formulario_contacto").style.display = "flex";
                 document.getElementById("body").style.overflow = "hidden"
                 document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
             }
-           //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
+            //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
             function cerrarFormulario() {
                 document.getElementById("formulario_contacto").style.display = "none";
                 document.getElementById("body").style.overflow = "scroll";
                 document.getElementById("contenido call_to_action").style.filter = "none";
             }
-           //----------------------------------------------------------------//
+            //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
+            function mostrarConfirmacion(){
+                document.getElementById("mensaje_confirmacion").style.display = "flex";
+                document.getElementById("body").style.overflow = "hidden"
+                document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
+            }
+            //-----------------FUNCIÓN CERRAR CONFIRMACION-------------------//
+            function cerrarConfirmacion(){
+                document.getElementById("mensaje_confirmacion").style.display = "none";
+                document.getElementById("body").style.overflow = "scroll";
+                document.getElementById("contenido call_to_action").style.filter = "none";
+            }
+            //-------------------FUNCIÓN LIMPIAR FORMULARIO--------------------//
+            function limpiarFormulario() {
+                document.getElementById("form_contact").reset();
+            }
         </script>
 
         <!------------------------------------------------------------------------------------->

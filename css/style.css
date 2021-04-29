@@ -492,6 +492,8 @@ div {
 /*                                       Estilo del FORMULARIO DE CONTACTO                                           */
 /*-------------------------------------------------------------------------------------------------------------------*/
 
+/*---------------------------------------------------------------------*/
+/*---------------------------- POPUP FORM -----------------------------*/
 
 .popup-formulario-contacto{
     width: 100%;
@@ -503,28 +505,24 @@ div {
     text-align: center;
     display: none;
     animation: anim .4s ease-in-out;
-    
+
 }
-
-    
-
-
-/* ANIMACION POPUP */
+/*---------------- ANIMACION POPUP ----------------*/
 @keyframes anim {
     0% {
-      display: none;
-      opacity: 0;
+        display: none;
+        opacity: 0;
     }
     1% {
-      display: block;
-      opacity: 0;
-      transform: scale(0);
+        display: block;
+        opacity: 0;
+        transform: scale(0);
     }
     100% {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
+}
 /*---------------------------------------------------------------------*/
 /*------------------------------ Main BOX -----------------------------*/
 
@@ -638,8 +636,92 @@ textarea {
     background: #660041;
     transform: scale(1.06);
 }
+
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------- MENSAJE CONFIRMACIÓN -------------------------------------*/
+.popup-mensaje_confirmacion{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+/*--------------------- Main BOX ------------------*/
+.box_confirmacion{
+    width:349px;
+    height:625px;
+    border-radius: 20px;
+    border: solid 1px #4F0230;
+    background-color: #4F0230;
+    padding: 7px;
+}
+/*------------- Elementos BOX -------------*/
+#box-confirmacion #content-confirm-box #title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    margin: 90px 10px 50px ;
+    padding: 10px;
+}
+#box-confirmacion #content-confirm-box #text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+}
+/*------------- Boton cerrar -------------*/
+#box-confirmacion #content-confirm-box #cerrar_confirmacion{
+    color: #4F0230;
+    font-size: 13px;
+    padding: 17px 50px;
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #FFFAFA;
+    display: inline-block;
+    margin: 95px 200px 100px 95px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/*-------------------------------FORMULARIO CONSULTA RESPONSIVE-----------------------------------*/
+
+@media only screen and (max-width: 600px){
+    .popup-formulario-contacto{
+        align-content:space-around;
+    }
+
+    /*la linea de debajo de contactanos*/
+    .linea_formulario{
+        width:80%;
+        align-self:center;
+    }
+    .box{
+        width:80%;
+        height:auto;
+        word-wrap:break-word;
+        align-content:space-around;
+    }
+
+    .cerrar-formulario{
+        position: relative;
+        right: -50%;
+    }
+}
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
+
 
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -669,7 +751,7 @@ textarea {
 
     p {
         font-size: 80%;
-        
+
     }
 
     .justifyText{
@@ -711,7 +793,7 @@ textarea {
     .acerca1 i {
         margin-top: 3vh;
         font-size: 7vh;
-       
+
     }
 
     .boton2{
@@ -723,37 +805,6 @@ textarea {
         margin-bottom: 1vh;
     }
 }
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
 
-/* CONSULTA RESPONSIVE */
-@media only screen and (max-width: 600px){
-    .popup-formulario-contacto{
-        align-content:space-around;
-    }
-    /*la linea de debajo de contactanos*/
-    .linea_formulario{
-
-        width:60%;
-        align-self:center;
-        
-    }
-    .box{
-        width:70%;
-        height:auto;
-        word-wrap:break-word;
-        align-content:space-around;
-        
-    }
-    textarea{
-        width:60%;
-        height:60%;
-        flex: 2 1 0;
-
-
-    }
-    .cerrar-formulario{
-        position: relative;
-        top: -27%;
-        right: -50%;
-
-    }
-}
