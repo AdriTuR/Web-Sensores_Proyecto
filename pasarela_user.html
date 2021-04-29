@@ -1,0 +1,95 @@
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/user-pan.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
+    
+</head>
+   
+   <body>
+    <!---------------------------- HEADER DE LA PÁGINA  ------------------------------------------->
+    <header id="header">    
+        
+            <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
+            <a href="index.html"><img class="close" src="images/landing_page/close.png" alt="botón de cerrar"></a>
+       
+    </header>
+    <!---------------------------- FIN HEADER DE LA PÁGINA  --------------------------------------->
+    
+       <section class="text_map">
+       <h1 class="bienvenida">¡BIENVENIDO!</h1>
+       <p class="text">Elige el sensor que desees ver:</p>
+       <ul class="map_graf">
+
+        <li>
+        <div id="map"></div>
+        </li>
+           <li>
+             <canvas id="humedad"></canvas>
+           </li>
+           </ul>
+    </section>
+    <section class="graficas">
+        <ul>
+            <li>
+              <canvas id="salinidad"></canvas>  
+            </li>
+            <li>
+              <canvas id="temperatura"></canvas>  
+            </li>
+            <li>                         
+              <p class="text">Soleado</p> 
+            </li>
+        </ul>
+        
+        
+        
+    </section>
+    
+    <footer id="footer">
+        <p>Company © Grado en Tecnologías Interactivas.<br> All rights reserved.</p>
+    </footer>
+    
+    <script>
+    var map;
+    function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 38.9965055, lng: -0.1674364},
+    zoom: 15,
+    mapTypeId: 'hybrid',
+        styles: [
+        {
+        featureType: 'poi',
+        stylers: [{visibility: 'off'}]
+        },
+        {
+        featureType: 'transit',
+        stylers: [{visibility: 'off'}]
+        }
+        ],
+        mapTypeControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+    });
+        map.setTilt(0);
+        var marker = new google.maps.Marker({
+            position: {lat: 38.996243, lng: -0.168021},
+            label: "1",
+            animation: google.maps.Animation.DROP,
+            map: map
+        });
+    }
+    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="images/mapa-graficos.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRHqRSJ1m0aKT_nMca-_-3vb23agxp8g8&callback=initMap"
+  type="text/javascript"></script>
+    </body>
