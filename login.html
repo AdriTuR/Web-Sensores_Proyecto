@@ -20,7 +20,7 @@
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
-<body>
+<body id="body">
     <!---------------------------- HEADER DE LA PÁGINA  ------------------------------------------->
     <header id="header">    
         <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
@@ -54,64 +54,69 @@
                 </form>
             </div>
         </div>
+
+        <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
+        <div class="formulario-olvidar" id="formulario_olvidar">
+            <div class="box" id="box-olvidar">
+                <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
+
+                <div class="container_text_olvidar"id="header-box">
+                    <h1 id="title" class="titulo_olvidar">¿HAS OLVIDADO TU CONTRASEÑA?</h1>
+                    <p class="introtext">Introduce tu correo electronico
+                        y recibiras en breves tu contraseña</p>
+                </div>
+
+                <div id="content-form-box">
+                    <form>
+                        <p> <p class="correo_formulario_olvidar">Correo:</p>
+                        <label for="correo" class="colocar_correo"></label>
+                        <input type="text" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
+                        </p>
+                        <button type="submit" name="enviar_contraseña_olvidada" id="enviar"><a>ENVIAR</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------SCRIPTS PARA LA VENTANA DE CONTRASEÑA OLVIDADA--------------------->
+        <script>
+            //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
+            function abrirFormulario() {
+                document.getElementById("formulario_olvidar").style.visibility = "visible";
+                document.getElementById("formulario_olvidar").style.display = "flex";
+                document.getElementById("box").style.display = "none";
+                document.getElementById("body").style.overflow = "hidden";
+                document.getElementById("footer").style.marginTop = "620px";
+            }
+            //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
+            function cerrarFormulario() {
+                document.getElementById("formulario_olvidar").style.visibility = "hidden";
+                document.getElementById("formulario_olvidar").style.display = "none";
+                document.getElementById("box").style.display = "flex";
+                document.getElementById("body").style.overflow = "scroll";
+                document.getElementById("footer").style.marginTop = "0px";
+            }
+            //----------------------------------------------------------------//
+
+            window.addEventListener("load", function(){
+                fetch("/api/v1/", {
+                    method: "GET"
+                }).then(function (result) {
+                    return result.json();
+                }).then(function (data) {
+                    if(data.role == "USER"){
+                        location.href = "/user_panel.html";
+                    }else if(data.role == "ADMIN"){
+                        location.href = "/admin_panel.html";
+                    }
+                });
+            });
+
+        </script>
     </section>
     <!--------------------------------- FIN FORM CONTENT -------------------------------------------->
 
 
-    <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
-    <div class="formulario-olvidar" id="formulario_olvidar">
-        <div class="box" id="box-olvidar">
-            <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
-
-            <div class="container_text_olvidar"id="header-box"> 
-                <h1 id="title" class="titulo_olvidar">¿HAS OLVIDADO TU CONTRASEÑA?</h1>
-                <p>Introduce tu correo electronico 
-                y recibiras en breves tu contraseña</p>  
-            </div>
-
-            <div id="content-form-box">
-                <form>
-                    <p> <p class="correo_formulario_olvidar">Correo:</p>
-                        <label for="correo" class="colocar_correo"></label>
-                        <input type="text" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
-                    </p>
-                    <button type="submit" name="enviar_contraseña_olvidada" id="enviar"><a>ENVIAR</a></button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!---------------------SCRIPTS PARA LA VENTANA DE CONTRASEÑA OLVIDADA--------------------->
-    <script>
-        //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
-        function abrirFormulario() {
-            document.getElementById("formulario_olvidar").style.visibility = "visible";
-            document.getElementById("formulario_olvidar").style.display = "flex";
-            document.getElementById("body").style.overflow = "hidden";
-        }
-        //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
-        function cerrarFormulario() {
-            document.getElementById("formulario_olvidar").style.visibility = "hidden";
-            document.getElementById("formulario_olvidar").style.display = "none";
-            document.getElementById("body").style.overflow = "scroll";   
-        }
-        //----------------------------------------------------------------//
-
-        window.addEventListener("load", function(){
-            fetch("/api/v1/", {
-                method: "GET"
-            }).then(function (result) {
-                return result.json();
-            }).then(function (data) {
-                if(data.role == "USER"){
-                    location.href = "/user_panel.html";
-                }else if(data.role == "ADMIN"){
-                    location.href = "/admin_panel.html";
-                }
-            }); 
-        });
-
-     </script>
      
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
     <footer id="footer">

@@ -242,7 +242,14 @@ input[type=text], input[type=password]{
 .cerrar-formulario {
     position: relative;
     top: -27px;
-    right: -170px;  
+    right: -170px;
+}
+
+@media only screen and (max-width: 600px){
+    .cerrar-formulario {
+        position: relative;
+        right: -50%;
+    }
 }
 /*---------------- HEADER DE LA BOX ----------------*/
 #formulario_olvidar #box-contacto #header-box #title {
