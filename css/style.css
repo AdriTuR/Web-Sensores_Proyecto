@@ -502,29 +502,8 @@ div {
     align-items: center;
     text-align: center;
     display: none;
-    animation: anim .4s ease-in-out;
-    
 }
 
-    
-
-
-/* ANIMACION POPUP */
-@keyframes anim {
-    0% {
-      display: none;
-      opacity: 0;
-    }
-    1% {
-      display: block;
-      opacity: 0;
-      transform: scale(0);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 /*---------------------------------------------------------------------*/
 /*------------------------------ Main BOX -----------------------------*/
 
@@ -724,36 +703,10 @@ textarea {
     }
 }
 
-/* CONSULTA RESPONSIVE */
-@media only screen and (max-width: 600px){
-    .popup-formulario-contacto{
-        align-content:space-around;
-    }
-    /*la linea de debajo de contactanos*/
-    .linea_formulario{
-
-        width:60%;
-        align-self:center;
-        
-    }
-    .box{
-        width:70%;
-        height:auto;
-        word-wrap:break-word;
-        align-content:space-around;
-        
-    }
-    textarea{
-        width:60%;
-        height:60%;
-        flex: 2 1 0;
 
 
-    }
-    .cerrar-formulario{
-        position: relative;
-        top: -27%;
-        right: -50%;
+@media screen and (min-height: 736px){
 
-    }
+   
+
 }

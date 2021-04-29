@@ -12,8 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
@@ -35,16 +33,18 @@
     <section id="login-form">
         <div id="box">
             <div id="box1">
-                <p>PANEL DE USUARIO</p>
+                <h1>INICIO DE SESIÓN</h1>
+                <hr id="line" width="283" size=2px color="#830053">
+                <p class="introtext">Introduce tus datos para acceder al panel de usuario</p>
             </div>
 
             <div id="box2">
                 <form action="#">
-                    <br><br>
+                   
                     </i><input type="text" placeholder="&#xf2bd; Usuario" style="font-family:Arial, FontAwesome" required><br><br>
                     </i><input type="password" placeholder="&#xf084; Contraseña" style="font-family:Arial, FontAwesome" required><br><br>
-                    <a href="#" id="olvidar" onclick="abrirFormulario()"><p>¿Has olvidado tu contraseña?</p></a>
-                    <input type="submit" value="INICIAR SESIÓN" required><br><br><br>
+                    <a href="#"><p class="olvidado">¿Has olvidado tu contraseña?</p></a>
+                    <input type="submit" value="INICIAR SESIÓN" required><br>
                   </form> 
                 </form>
             </div>
@@ -53,62 +53,6 @@
     <!--------------------------------- FIN FORM CONTENT -------------------------------------------->
 
 
-    <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
- 
-
-    <div class="formulario-olvidar" id="formulario_olvidar">
-        <div class="box" id="box-olvidar">
-             <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
-            <div class="container_text_olvidar"id="header-box">
-               
-                <h1 id="title" class="titulo_olvidar">¿HAS OLVIDADO TU CONTRASEÑA?</h1>
-                <p>Introduce tu correo electronico 
-                y recibiras en breves tu contraseña</p>
-                
-                
-            </div>
-            <div id="content-form-box">
-                <form action="#" method="post">
-                    <p> <p class="correo_formulario_olvidar">Correo:</p>
-                        <label for="correo" class="colocar_correo"></label>
-                        <input type="correo" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
-                    </p>
-                    <button type="submit" name="enviar_contraseña_olvidada" id="enviar"><a>ENVIAR</a></button>
-                </form>
-            </div>
-        </div>
-    </div>
-            <!---------------------SCRIPTS PARA LA VENTANA DE CONTRASEÑA OLVIDADA--------------------->
-            <script>
-                //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
-            function abrirFormulario() {
-                
-               
-                
-                document.getElementById("formulario_olvidar").style.visibility = "visible";
-                 document.getElementById("formulario_olvidar").style.display = "flex";
-                 document.getElementById("body").style.overflow = "hidden"
-                 
-
-               
-                
-               
-            }
-           //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
-            function cerrarFormulario() {
-                document.getElementById("formulario_olvidar").style.visibility = "hidden";
-                document.getElementById("formulario_olvidar").style.display = "none";
-                document.getElementById("body").style.overflow = "scroll";
-                
-            
-                
-                
-                
-            }
-                 
-                //----------------------------------------------------------------//
-             </script>
-     
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
     <footer id="footer">
         <p>Company © Grado en Tecnologías Interactivas.<br> All rights reserved.</p>
