@@ -11,7 +11,7 @@
 <!-------------------------------------------------------------------------------------------------------------------->
 <body>
     <h1>Bienvenido usuario</h1>
-
+    <button class="btn_logout" type="button" onclick="disconnect()">Cerrar sesión</button>
     <script>
         window.addEventListener("load", function(){
             fetch("/api/v1/", {
@@ -31,4 +31,5 @@
             }); 
         });
     </script>
+    <script src="./js/closeSession.js"></script>
 </html>

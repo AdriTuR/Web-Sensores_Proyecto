@@ -41,6 +41,12 @@ if ($method === 'GET'){
     }
 }
 
+if ($method === 'DELETE'){
+    session_start();
+	unset($_SESSION);
+	session_destroy();
+}
+
 function error($id){
     if($id > 0){
         $data = [];
