@@ -1,37 +1,73 @@
-/*-----------------------------------------------------------------------------------*/
-/*Aquí van las fonts y tamaños de letras*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                 CSS-Index.html                                                    */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*Aquí van las fonts, tamaños de letras y cosas principales*/
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 187%;
 }
 
 a {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 17px;
+    font-size: 106.25%;
+    text-decoration: none;
 }
 
 p {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 17px;
+    font-size: 106.25%;
+    word-spacing: 1px;
 }
-/*-----------------------------------------------------------------------------------*/
 
-/*-----------------------------------------------------------------------------------*/
-/*Alinear textos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                 ALINEAR TEXTOS                                                    */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
 section {
     text-align: center;
+    height: 100vh;
+
 }
 
 div {
     text-align: center;
 }
-/*-----------------------------------------------------------------------------------*/
 
-/*-----------------------------------------------------------------------------------*/
-/*Aquí van los colores*/
+.justifyText {
+    text-align: justify;
+    word-spacing: -2px;
+    
+
+    margin-left: 35px !important;
+    margin-right: 35px !important;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                  COLORES                                                          */
+/*-------------------------------------------------------------------------------------------------------------------*/
 
 .blanco {
     color: white
@@ -41,58 +77,129 @@ div {
     color: #830053
 }
 
-/*-----------------------------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------------------------*/
-/*Aquí van las fotos de fondo*/
-
-#footer {
-    background: url(../images/footer.jpg) no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    left: 20px;
-    width: 105%;
-}
-
-#footer .footertext{
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px !important;
-    color: #830053;
-    position: relative;
-    left: 15px !important;
-
-    text-align: left !important; 
-}
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                             BANNER DE LOS TITULOS                                                 */
+/*-------------------------------------------------------------------------------------------------------------------*/
 
 .banner {
     background-color: #830053;
     -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     margin: -500px 0;
     padding: 0.5em 1em;
     width: 80%;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-top: 7vh;
+    margin-bottom: 2vh;
 }
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                Estilo de los BOTONES                                              */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-----------------------Botones morados-----------------------*/
+.boton {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    line-height: 28px;
+    padding: 17px;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #830053;
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.boton:hover {
+    background: #77004b;
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.boton:active {
+    background: #660041;
+    transform: scale(1.06);
+}
+
+/*-----------------------Botones blancos-----------------------*/
+.boton2 {
+    color: #660041;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 10px;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+.boton2:hover {
+    background: rgb(255, 255, 255);
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.boton2:active {
+    background: rgb(255, 255, 255);
+    transform: scale(1.06);
+}
+/*--------------------------------------------------------------*/
+/*------------------ Botón de Ir Arriba/Abajo ------------------*/
+
+.scrollBttn {
+    background-size: cover;
+    margin-bottom: 5vh;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+.srollBttnUp {
+    background-image: url("../images/landing_page/arrow-up_icon.png");
+}
+
+.srollBttnDown {
+    background-image: url("../images/landing_page/arrow-down_icon.png");
+}
+
+.scrollBttn:hover {
+    transform: scale(1.15);
+    transition: 150ms;
+}
+/*--------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                              Elementos del HEADER                                                 */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
 
 .encabezado {
     background-image: url("../images/header.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: #830053;
-    position: relative;
-    width:100%;
-    z-index: 3;
-    top: 0;
-    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
 }
 
+/*-------------------------------- MENU --------------------------------*/
+
 .encabezado ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
     overflow: hidden;
     background-color: white;
@@ -102,32 +209,28 @@ div {
     display: block;
     padding: 20px 20px;
     border-bottom: 1px solid #830053;
-    text-decoration: none;
     color: #830053;
 }
 
+.encabezado li #color-login-btn:hover {
+    background-color: #830053;
+    color: white;
+}
 
-.encabezado li #color-login-btn:hover{
+.encabezado li a:hover {
     background-color: #830053;
     color: white;
 }
-.encabezado li a:hover{
-    background-color: #830053;
-    color: white;
-}
+
 .encabezado .logo {
-    display: block;
     float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-.btn-login{
-    padding: 28px 9px;
+    padding: 5px 20px;
+    margin: 1px;
 }
 
-
-/* menu */
+.logo {
+    width: 45%;
+}
 
 .encabezado .menu {
     clear: both;
@@ -136,28 +239,29 @@ div {
     text-align: center;
     border-style: solid;
     border-color: transparent;
+    margin-bottom: -6px;
+}
+.encabezado menu:active{
+    transition: .2s ease-in-out 1s;
 }
 
-/* menu icon */
+/*------------- menu icono ------------*/
 
 .encabezado .menu-icon {
     cursor: pointer;
-    display: inline-block;
     float: right;
-    padding: 20px 10px;
-    position: relative;
+    padding: 8% 5%;
     user-select: none;
-
+    transform: scale(1.6);
 }
 
 .encabezado .menu-icon .navicon {
     background: white;
     display: block;
-    height: 2px;
+    height: 1.7px;
     position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
-  
+    transition: .2s ease-out;
+    width: 20px;
 }
 
 .encabezado .menu-icon .navicon:before,
@@ -179,14 +283,14 @@ div {
     top: -5px;
 }
 
-/* menu btn */
+/*------------- menu btn -------------*/
 
 .encabezado .menu-btn {
     display: none;
 }
 
 .encabezado .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 300px;
 }
 
 .encabezado .menu-btn:checked ~ .menu-icon .navicon {
@@ -206,120 +310,504 @@ div {
     top: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
+/*-------------------------------- Fin Menu --------------------------------*/
 
-body {
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                      Elementos de la PRIMERA SECCIÓN                                              */
+/*-------------------------------------------------------------------------------------------------------------------*/
 
 .call_to_action {
     background-image: url("../images/landing_page/landing_page1.jpg");
     background-size: cover;
+    height: 93vh;
 }
+
+.call_to_action .fistText {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.call_to_action .secondText {
+    margin-bottom: 5vh;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*                                       Elementos de la SEGUNDA SECCIÓN                                              */
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 .mas_informacion {
     background-image: url("../images/landing_page/landing_page2.jpg");
     background-size: cover;
+    font-size: 14px;
 }
 
-.acerca_de_nosotros {
+.mas_informacion .headSection{
+    margin-bottom: 5vh;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.headSection{
+    margin-bottom: 2vh !important;
+
+}
+
+.secondText{
+    margin-left: 35px !important;
+    margin-right: 35px !important;
+}
+/*------------- Margenes textos -------------*/
+.mas_informacion p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.objetivos p{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                            Elementos de la TERCERA SECCIÓN                                        */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+.informacion_web{
     background-image: url("../images/landing_page/landing_page3.jpg");
     background-size: cover;
+    font-size: 14px;
 }
 
-.pie_de_pagina {
-    background-image: url("../images/footer.jpg");
+#informacion_web #contenido_informacion_web #headSection{
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+    text-align: center;
+}
+#informacion_web #contenido_informacion_web #mapa_interactivo-apartado #texto1_información_web{
+    margin-top: 3vh;
+    text-align: center;
+}
+#informacion_web #contenido_informacion_web #grafico-apartado #texto2_información_web{
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+
+/*---------------------Iconos de la sección-------------------*/
+#informacion_web #contenido_informacion_web #mapa_interactivo-apartado #iconomapainteractivo{
+    width: 30%;
+    height: 30%;
+    margin-top: 3vh;
+}
+#informacion_web #contenido_informacion_web #grafico-apartado #iconografico{
+    width: 30%;
+    height: 30%;
+    margin-top: 4vh;
+}
+/*-----------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                          Elementos de la CUARTA SECCIÓN                                           */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+.acerca_de_nosotros {
+    background-image: url("../images/landing_page/landing_page4.jpg");
     background-size: cover;
-}
-/*-----------------------------------------------------------------------------------*/
-
-.logo {
-    width: 35%;
-    height: 35%;
+    font-size: 14px;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*Estilo de los botones morados*/
-.boton {
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    line-height: 28px;
-    padding: 17px;
-    border-radius: 7px;
+/*--- Colores de los iconos ---*/
+.acerca_de_nosotros i {
+    color: white;
+}
+
+.objetivos{
+    margin-bottom: 5vh;
+}
+/*----------------------------*/
+
+.acerca1 {
+    
+    margin-bottom: 4vh;
+
+}
+
+.acerca1 p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.acerca1 i {
+    margin-top: 3vh;
+   
+}
+
+.datos_contacto {
+    display: flex;
+    
+    justify-content: space-around;
+    margin-bottom: 3vh;
+}
+
+.datos_contacto p {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+
+.datos_contacto i:hover{
+    transform: scale(1.15);
+    transition: 0.3s;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                              Elementos del FOOTER                                                 */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+#footer {
+    background: url(../images/footer.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#footertext{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px !important;
+    position: relative;
+    text-align: left !important;
+    padding: 5%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                       Estilo del FORMULARIO DE CONTACTO                                           */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------*/
+/*---------------------------- POPUP FORM -----------------------------*/
+
+.popup-formulario-contacto{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+    animation: anim .4s ease-in-out;
+
+}
+/*---------------- ANIMACION POPUP ----------------*/
+@keyframes anim {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/*---------------------------------------------------------------------*/
+/*------------------------------ Main BOX -----------------------------*/
+
+.box{
+    width:349px;
+    height:625px;
+    border-radius: 20px;
+    border: solid 1px #830053;
+    background-color: #E8E8E8;
+    padding: 7px;
+}
+/*---------------------------------------------------------------------*/
+/*----------------------- Elementos DE LA BOX -------------------------*/
+
+/* icono de cerrar formulario */
+.cerrar-formulario{
+    position: relative;
+    top: -20px;
+    right: -167px;
+
+}
+/*---------------- Header de la BOX ----------------*/
+#formulario_contacto #box-contacto #header-box #title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #830053;
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: 2px;
+}
+#formulario_contacto #box-contacto #header-box #line{
+    margin-left: 25px;
+    margin-right: 100%;
+
+}
+#formulario_contacto #box-contacto #header-box #intro-text{
+    font-size: 14px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+}
+/*--------------------------------------------------*/
+/*------------ Contenido deL formulario ------------*/
+
+/* Nombres de los campos */
+label {
     font-family: 'Poppins', sans-serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-color: #830053;
-    display: inline-block;
+    font-size: 16px;
+    text-align: left;
+    float: left;
+    padding: 9px 5px 1px;
+    margin-left: 12px;
 }
 
-.boton:hover {
-    background: #77004b;
+/* Campos */
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 40px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+}
+
+/* Campo consulta */
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 150px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+    resize: none;
+}
+.cursiva{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+/*--------------------------------------------------*/
+/*----------------- Botón ENVIAR -------------------*/
+
+#formulario_contacto #box-contacto #content-form-box #enviar{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: white;
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0px 10px;
+    display: inline-block;
+    background-color: #830053;
+    border: solid 1px #830053;
+    border-radius: 5px;
+}
+#formulario_contacto #box-contacto #content-form-box #enviar:hover{
+    background: #660041;
     transform: scale(1.05);
     transition: 150ms;
 }
 
-.boton:active {
+#formulario_contacto #box-contacto #content-form-box #enviar:active {
     background: #660041;
     transform: scale(1.06);
-
 }
 
-/*-----------------------------------------------------------------------------------*/
-
-
-/*-----------------------------------------------------------------------------------*/
-/*Flexbox*/
-
-.acerca1{
-    display: flex;
-
+/*------------------------------------------------------------------------------------------------*/
+/*------------------------------------- MENSAJE CONFIRMACIÓN -------------------------------------*/
+.popup-mensaje_confirmacion{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+/*--------------------- Main BOX ------------------*/
+.box_confirmacion{
+    width:349px;
+    height:625px;
+    border-radius: 20px;
+    border: solid 1px #4F0230;
+    background-color: #4F0230;
+    padding: 7px;
+}
+/*------------- Elementos BOX -------------*/
+#box-confirmacion #content-confirm-box #title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: lighter;
+    color: white;
+    text-align: center;
+    margin: 90px 10px 50px ;
+    padding: 10px;
+}
+#box-confirmacion #content-confirm-box #text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 8px;
+}
+/*------------- Boton cerrar -------------*/
+#box-confirmacion #content-confirm-box #cerrar_confirmacion{
+    color: #4F0230;
+    font-size: 13px;
+    padding: 17px 50px;
+    border-radius: 7px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #FFFAFA;
+    display: inline-block;
+    margin: 95px 200px 100px 95px;
 }
 
-.acerca2{
-    display: flex;
+/*------------------------------------------------------------------------------------------------*/
+/*-------------------------------FORMULARIO CONSULTA RESPONSIVE-----------------------------------*/
 
-    flex-direction: row;
+@media only screen and (max-width: 600px){
+    .popup-formulario-contacto{
+        align-content:space-around;
+    }
 
-    margin-left: 20%;
-    
+    /*la linea de debajo de contactanos*/
+    .linea_formulario{
+        width:80%;
+        align-self:center;
+    }
+    .box{
+        width:80%;
+        height:auto;
+        word-wrap:break-word;
+        align-content:space-around;
+    }
+
+    .cerrar-formulario{
+        position: relative;
+        right: -50%;
+    }
 }
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
 
-.caja1{
-    margin-right: 20%;
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                Estilo de otros formatos                                           */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------*/
+/*-------------------- iPhone5 ---------------------*/
+
+@media screen and (max-height: 640px){
+    .call_to_action {
+
+        height: 90vh;
+    }
+    section{
+
+        height: 100vh;
+    }
+    h1 {
+        font-size: 150%;
+    }
+
+    a {
+        font-size: 80%;
+    }
+
+    p {
+        font-size: 80%;
+
+    }
+
+    .justifyText{
+        word-spacing: 1px;
+    }
+
+
+    .banner{
+        margin-top: 4vh;
+        font-size: 14px;
+        width: 85%;
+    }
+
+    .boton{
+        font-size: 14px !important;
+        padding: 12px !important;
+        margin-bottom: 5vh !important;
+    }
+
+    .call_to_action .fistText {
+
+        margin-bottom: 5vh  !important;
+
+    }
+
+    .call_to_action .secondText {
+        margin-bottom: 4vh;
+
+    }
+
+    #headSection{
+        margin-top: 3vh;
+    }
+
+    .acerca1{
+        margin-bottom: 1vh;
+    }
+
+    .acerca1 i {
+        margin-top: 3vh;
+        font-size: 7vh;
+
+    }
+
+    .boton2{
+        font-size: 8px;
+        line-height: 18px;
+        padding: 10px;
+    }
+    .datos_contacto{
+        margin-bottom: 1vh;
+    }
 }
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
 
-.caja2{
-
-    margin-right: 20%;
-    
-}
-
-.flecha{
-   height: 7%;
-   width: 7%;
-}
-
-.flecha:hover{
-
-    transform: scale(1.15);
-    transition: 150ms;
-
-}
-
-html {
-    scroll-behavior: smooth;
-}
