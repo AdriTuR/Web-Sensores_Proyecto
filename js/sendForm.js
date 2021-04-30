@@ -8,7 +8,6 @@ document.querySelector("form").addEventListener("submit", function(event){
         body: formInfo
     }).then(function (result) {
         if(result.ok){
-            cerrarFormulario();
             limpiarFormulario();
             mostrarConfirmacion();
         }else{
