@@ -3,7 +3,7 @@ document.querySelector("form").addEventListener("submit", function(event){
 
     let loginData = new FormData(event.target);
 
-    fetch("/api/v1/", {
+    fetch("./api/v1/", {
         method: "POST",
         body: loginData
     }).then(function (result) {

@@ -58,7 +58,7 @@
         <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
         <div class="formulario-olvidar" id="formulario_olvidar">
             <div class="box" id="box-olvidar">
-                <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
+                <img src="images/landing_page/close_icon3png.png" id="closeForm" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
 
                 <div class="container_text_olvidar"id="header-box">
                     <h1 id="title" class="titulo_olvidar">¿HAS OLVIDADO TU CONTRASEÑA?</h1>
@@ -67,14 +67,25 @@
                 </div>
 
                 <div id="content-form-box">
-                    <form>
+                    <form class="formulario_contraseña">
                         <p> <p class="correo_formulario_olvidar">Correo:</p>
                         <label for="correo" class="colocar_correo"></label>
                         <input type="text" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
                         </p>
                         <button type="submit" name="enviar_contraseña_olvidada" id="enviar"><a>ENVIAR</a></button>
                     </form>
-                    <script src="./js/sendmail.js"></script>
+                    <script src="./js/sendMail.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-mensaje_confirmacion" id="mensaje_confirmacion">
+            <div class="box_confirmacion" id="box-confirmacion">
+                <div id="content-confirm-box">
+                    <h1 id="title">CAMBIO DE CONTRASEÑA</h1>
+                    <img src="images/landing_page/check_icon.png" id="confirmBtn" alt="confirmación" width="85px" height="79px" class ="confirmacion">
+                    <p id="text">Revisa tu correo para encontrar la nueva contraseña.</p>
+                    <button id="cerrar_confirmacion" onclick="cerrarConfirmacion()">CERRAR</button>
                 </div>
             </div>
         </div>
@@ -86,29 +97,42 @@
                 document.getElementById("formulario_olvidar").style.visibility = "visible";
                 document.getElementById("formulario_olvidar").style.display = "flex";
                 document.getElementById("box").style.display = "none";
-                document.getElementById("body").style.overflow = "hidden";
                 document.getElementById("footer").style.marginTop = "620px";
             }
             //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
             function cerrarFormulario() {
                 document.getElementById("formulario_olvidar").style.visibility = "hidden";
                 document.getElementById("formulario_olvidar").style.display = "none";
-                document.getElementById("box").style.display = "flex";
-                document.getElementById("body").style.overflow = "scroll";
                 document.getElementById("footer").style.marginTop = "0px";
+                document.getElementById("box").style.display = "inherit";
             }
             //----------------------------------------------------------------//
+            function mostrarConfirmacion(){
+                document.getElementById("mensaje_confirmacion").style.display = "flex";
+                document.getElementById("closeForm").style.display = "none";
+            }
+            //-----------------FUNCIÓN CERRAR CONFIRMACION-------------------//
+            function cerrarConfirmacion(){
+                cerrarFormulario();
+                document.getElementById("mensaje_confirmacion").style.display = "none";
+                document.getElementById("closeForm").style.display = "unset";
+                document.getElementById("box").style.display = "inherit";
+            }
 
             window.addEventListener("load", function(){
-                fetch("/api/v1/", {
+                fetch("./api/v1/", {
                     method: "GET"
                 }).then(function (result) {
-                    return result.json();
+                    if(result.status == 201){
+                        return result.json();
+                    }
                 }).then(function (data) {
-                    if(data.role == "USER"){
-                        location.href = "/user_panel.html";
-                    }else if(data.role == "ADMIN"){
-                        location.href = "/admin_panel.html";
+                    if(data != null){
+                        if(data.role == "USER"){
+                            location.href = "/user_panel.html";
+                        }else if(data.role == "ADMIN"){
+                            location.href = "/admin_panel.html";
+                        }
                     }
                 });
             });

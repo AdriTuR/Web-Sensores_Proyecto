@@ -8,11 +8,10 @@ document.querySelector(".formulario_contraseña").addEventListener("submit", fun
         body: formInfo
     }).then(function (result) {
         if(result.ok){
-            alert("Correcto");
-
+            mostrarConfirmacion();
         }else{
             // console.log("error al enviar formulario.");
-            alert("NO CORRECTO");
+            //alert("NO CORRECTO");
         }
     });
 });
