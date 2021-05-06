@@ -22,13 +22,6 @@ p {
     word-spacing: 1px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
 body {
     align-items: center;
     justify-content: center;
@@ -185,134 +178,6 @@ div {
 /*--------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------------------*/
-/*                                              Elementos del HEADER                                                 */
-/*-------------------------------------------------------------------------------------------------------------------*/
-
-
-.encabezado {
-    background-image: url("../images/header.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    overflow: hidden;
-}
-
-/*-------------------------------- MENU --------------------------------*/
-
-.encabezado ul {
-    list-style: none;
-    overflow: hidden;
-    background-color: white;
-}
-
-.encabezado li a {
-    display: block;
-    padding: 20px 20px;
-    border-bottom: 1px solid #830053;
-    color: #830053;
-}
-
-.encabezado li #color-login-btn:hover {
-    background-color: #830053;
-    color: white;
-}
-
-.encabezado li a:hover {
-    background-color: #830053;
-    color: white;
-}
-
-.encabezado .logo {
-    float: left;
-    padding: 5px 20px;
-    margin: 1px;
-}
-
-.logo {
-    width: 45%;
-}
-
-.encabezado .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-    text-align: center;
-    border-style: solid;
-    border-color: transparent;
-    margin-bottom: -6px;
-}
-.encabezado menu:active{
-    transition: .2s ease-in-out 1s;
-}
-
-/*------------- menu icono ------------*/
-
-.encabezado .menu-icon {
-    cursor: pointer;
-    float: right;
-    padding: 8% 5%;
-    user-select: none;
-    transform: scale(1.6);
-}
-
-.encabezado .menu-icon .navicon {
-    background: white;
-    display: block;
-    height: 1.7px;
-    position: relative;
-    transition: .2s ease-out;
-    width: 20px;
-}
-
-.encabezado .menu-icon .navicon:before,
-.encabezado .menu-icon .navicon:after {
-    background: white;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-
-.encabezado .menu-icon .navicon:before {
-    top: 5px;
-}
-
-.encabezado .menu-icon .navicon:after {
-    top: -5px;
-}
-
-/*------------- menu btn -------------*/
-
-.encabezado .menu-btn {
-    display: none;
-}
-
-.encabezado .menu-btn:checked ~ .menu {
-    max-height: 300px;
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon .navicon {
-    background: transparent;
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-}
-
-.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.encabezado .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    top: 0;
-}
-
-/*-------------------------------- Fin Menu --------------------------------*/
-
-/*-------------------------------------------------------------------------------------------------------------------*/
 /*                                      Elementos de la PRIMERA SECCIÓN                                              */
 /*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -453,9 +318,8 @@ div {
 
 .datos_contacto {
     display: flex;
-    
     justify-content: space-around;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
 }
 
 .datos_contacto p {
@@ -468,107 +332,29 @@ div {
     transition: 0.3s;
 }
 
-
-
-/*-------------------------------------------------------------------------------------------------------------------*/
-/*                                              Elementos del FOOTER                                                 */
-/*-------------------------------------------------------------------------------------------------------------------*/
-
-
-#footer {
-    background: url(../images/footer.jpg) no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-#footertext{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px !important;
-    position: relative;
-    text-align: left !important;
-    padding: 5%;
-}
-
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                       Estilo del FORMULARIO DE CONTACTO                                           */
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 /*---------------------------------------------------------------------*/
-/*---------------------------- POPUP FORM -----------------------------*/
-
-.popup-formulario-contacto{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 40px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: none;
-    animation: anim .4s ease-in-out;
-
-}
-/*---------------- ANIMACION POPUP ----------------*/
-@keyframes anim {
-    0% {
-        display: none;
-        opacity: 0;
-    }
-    1% {
-        display: block;
-        opacity: 0;
-        transform: scale(0);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-/*---------------------------------------------------------------------*/
 /*------------------------------ Main BOX -----------------------------*/
 
+/*common*/
 .box{
-    width:349px;
-    height:625px;
-    border-radius: 20px;
-    border: solid 1px #830053;
-    background-color: #E8E8E8;
-    padding: 7px;
+    width: 349px !important;
+    height: 625px !important;
 }
+
 /*---------------------------------------------------------------------*/
 /*----------------------- Elementos DE LA BOX -------------------------*/
 
-/* icono de cerrar formulario */
-.cerrar-formulario{
-    position: relative;
-    top: -20px;
-    right: -167px;
 
-}
 /*---------------- Header de la BOX ----------------*/
-#formulario_contacto #box-contacto #header-box #title{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
-    font-weight: bold;
-    color: #830053;
-    text-align: center;
-    margin-top: -25px;
-    margin-bottom: 2px;
-}
-#formulario_contacto #box-contacto #header-box #line{
+.popup-formulario #box-contacto #header-box #line{
     margin-left: 25px;
     margin-right: 100%;
+}
 
-}
-#formulario_contacto #box-contacto #header-box #intro-text{
-    font-size: 14px;
-    margin-top: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 8px;
-}
 /*--------------------------------------------------*/
 /*------------ Contenido deL formulario ------------*/
 
@@ -613,114 +399,6 @@ textarea {
 .cursiva{
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
-}
-/*--------------------------------------------------*/
-/*----------------- Botón ENVIAR -------------------*/
-
-#formulario_contacto #box-contacto #content-form-box #enviar{
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    color: white;
-    width: 50%;
-    padding: 10px;
-    margin: 10px 0px 10px;
-    display: inline-block;
-    background-color: #830053;
-    border: solid 1px #830053;
-    border-radius: 5px;
-}
-#formulario_contacto #box-contacto #content-form-box #enviar:hover{
-    background: #660041;
-    transform: scale(1.05);
-    transition: 150ms;
-}
-
-#formulario_contacto #box-contacto #content-form-box #enviar:active {
-    background: #660041;
-    transform: scale(1.06);
-}
-
-/*------------------------------------------------------------------------------------------------*/
-/*------------------------------------- MENSAJE CONFIRMACIÓN -------------------------------------*/
-.popup-mensaje_confirmacion{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 40px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: none;
-}
-/*--------------------- Main BOX ------------------*/
-.box_confirmacion{
-    width:349px;
-    height:625px;
-    border-radius: 20px;
-    border: solid 1px #4F0230;
-    background-color: #4F0230;
-    padding: 7px;
-}
-/*------------- Elementos BOX -------------*/
-#box-confirmacion #content-confirm-box #title{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    font-weight: lighter;
-    color: white;
-    text-align: center;
-    margin: 90px 10px 50px ;
-    padding: 10px;
-}
-#box-confirmacion #content-confirm-box #text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: white;
-    text-align: center;
-    margin-top: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 8px;
-}
-/*------------- Boton cerrar -------------*/
-#box-confirmacion #content-confirm-box #cerrar_confirmacion{
-    color: #4F0230;
-    font-size: 13px;
-    padding: 17px 50px;
-    border-radius: 7px;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-color: #FFFAFA;
-    display: inline-block;
-    margin: 95px 200px 100px 95px;
-}
-
-/*------------------------------------------------------------------------------------------------*/
-/*-------------------------------FORMULARIO CONSULTA RESPONSIVE-----------------------------------*/
-
-@media only screen and (max-width: 600px){
-    .popup-formulario-contacto{
-        align-content:space-around;
-    }
-
-    /*la linea de debajo de contactanos*/
-    .linea_formulario{
-        width:80%;
-        align-self:center;
-    }
-    .box{
-        width:80%;
-        height:auto;
-        word-wrap:break-word;
-        align-content:space-around;
-    }
-
-    .cerrar-formulario{
-        position: relative;
-        right: -50%;
-    }
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -804,6 +482,7 @@ textarea {
         line-height: 18px;
         padding: 10px;
     }
+    
     .datos_contacto{
         margin-bottom: 1vh;
     }
