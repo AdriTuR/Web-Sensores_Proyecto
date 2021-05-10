@@ -3,7 +3,7 @@ function disconnect(){
         method: "DELETE"
     }).then(function (result) {
         if(result.status == 200){
-            location.href = "/login.html";
+            location.href = "/login.php";
         }
     }); 
 }

@@ -1,17 +1,15 @@
-<?php include '/includes/header.php';?>
-<head>
-    <link rel="stylesheet" href="./css/login-style.css">
-    <link rel="stylesheet" href="css/common.css" />
-    <title>Login</title>
-</head>
+<?php
+    $t = 1;
+    $name = "Login";
+    include_once './includes/header.php';
+    function customHead(){?>
+        <link rel="stylesheet" href="./css/login-style.css">
+    <?php }
+?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
 <body id="body">
-    <!---------------------------- HEADER DE LA PÁGINA  ------------------------------------------->
-
-    <!---------------------------- FIN HEADER DE LA PÁGINA  --------------------------------------->
-
     <!--------------------------------- FORM CONTENT ----------------------------------------------->
     <section id="login-form">
         <div id="box">
@@ -116,18 +114,18 @@
                         if(data.role == "USER"){
                             location.href = "/user_panel.html";
                         }else if(data.role == "ADMIN"){
-                            location.href = "/admin_panel.html";
+                            location.href = "/admin_panel.php";
                         }
                     }
                 });
             });
 
         </script>
-		<script src="/js/login.js"></script>
+		<script src="./js/login.js"></script>
     <!--------------------------------- FIN FORM CONTENT -------------------------------------------->
   
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
-    <?php include '/includes/footer.php';?>
+    <?php include_once './includes/footer.php';?>
     <!------------------------------- FIN FOOTER DE LA PÁGINA ---------------------------------------->
 </body>
 
