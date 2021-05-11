@@ -20,11 +20,16 @@
 <body>
 <header class="encabezado" id="header">    
         <a href="index.php"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
+<<<<<<< HEAD
     <?php
     if(isset($t) && $t == 1){
         include './includes/menu.php';
     }
     ?>
+=======
+        
+        <?php include 'menu.php';?>
+>>>>>>> parent of e20f697 (Merge branch 'development' of https://github.com/kb079/9studios-web into development)
     </header>
 </body>
 </html>
