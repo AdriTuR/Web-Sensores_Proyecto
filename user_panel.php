@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Admin</title>
-</head>
+<?php
+    $t = 1;
+    $name = "Panel Usuario";
+    include_once './includes/header.php';
+    function customHead(){?>
+        <!-- <link rel="stylesheet" href="./css/adminp-style.css"> --->
+    <?php }
+?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
-<body>
-    <h1>Bienvenido admin</h1>
+
+    <h1>Bienvenido usuario</h1>
     <button class="btn_logout" type="button" onclick="disconnect()">Cerrar sesión</button>
     <script>
         window.addEventListener("load", function(){
@@ -20,12 +20,14 @@
                 if(result.status == 200){
                     return result.json();
                 }else{
-                    location.href = "/login.html";
+                    location.href = "./login.html";
                 }  
             }).then(function (data) {
-                if(data.role == "USER"){
-                    location.href = "/user_panel.html";
+                /*
+                if(data.role == "ADMIN"){
+                    location.href = "/admin_panel.html";
                 }
+                */
             }); 
         });
     </script>
