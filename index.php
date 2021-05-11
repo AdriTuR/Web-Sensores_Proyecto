@@ -1,11 +1,9 @@
-<?php
-    $t = 1;
-    $name = "Home";
-    include_once './includes/header.php';
-    function customHead(){?>
-        <link rel="stylesheet" href="./css/style.css" />
-    <?php }
-?>
+<?php include '/includes/header.php';?>
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <title>Home</title>
+</head>
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
@@ -56,7 +54,7 @@
                         </p>
                         <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
                     </form>
-                    <script src="./js/sendForm.js"></script>
+                    <script src="/js/sendForm.js"></script>
                 </div>
             </div>
         </div>
@@ -236,7 +234,7 @@
 
 
     <!----------------------------------------- FOOTER DE LA PÁGINA -------------------------------------------------->
-    <?php include_once './includes/footer.php';?>
+    <?php include '/includes/footer.php';?>
     <!---------------------------------------- FIN FOOTER DE LA PÁGINA ----------------------------------------------->
 
 </body>
