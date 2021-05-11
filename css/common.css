@@ -6,7 +6,7 @@
 }
 
 .encabezado {
-    background-image: url("../images/header.jpg");
+    background-image: url("../images/image13.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -132,7 +132,7 @@
 /*                                              Elementos del FOOTER                                                 */
 /*-------------------------------------------------------------------------------------------------------------------*/
 #footer {
-    background: url(../images/footer.jpg) no-repeat;
+    background: url(../images/image15.jpeg) no-repeat;
     background-size: cover;
     width: 100%;
 }
@@ -317,3 +317,43 @@
         transform: scale(1);
     }
 }
+
+/*-------------------------RESPONSIVE-----------------*/
+@media (min-width: 48em) {
+    .encabezado li {
+    float: left; 
+  }
+  .encabezado .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .encabezado .menu-icon {
+    display: none;
+  }
+    .logo {
+    width: 20%;
+}
+    .encabezado ul {
+    background-color: transparent;
+}
+    .encabezado li a {
+    color: white; 
+  }
+    .encabezado li a:hover {
+    background-color: white;
+    color: #830053;
+}
+    #footertext {
+    font-size: 15px;
+    color: #830053;
+    padding-top: 1.5%;
+    padding-bottom: 2.5%;
+}
+    #footer {
+    height: 10%;
+}
+
+    }
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
