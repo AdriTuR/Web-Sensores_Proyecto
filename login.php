@@ -1,13 +1,9 @@
-
-<?php
-$t = 1;
-$name = "Login";
-include_once './includes/header.php';
-function customHead(){?>
+<?php include '/includes/header.php';?>
+<head>
     <link rel="stylesheet" href="./css/login-style.css">
-    <link rel="stylesheet" href="./css/common.css">
-<?php }
-?>
+    <link rel="stylesheet" href="css/common.css" />
+    <title>Login</title>
+</head>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
@@ -30,10 +26,10 @@ function customHead(){?>
             <div id="box2">
                 <form id="loginForm">
                     <p class="textologin">Usuario:</p>
-                    <input type="text" name="username" placeholder="&#xf2bd; Introduce tu usuario" style="font-family:Arial, FontAwesome" required>
+                    </i><input type="text" name="username" placeholder="&#xf2bd; Introduce tu usuario" style="font-family:Arial, FontAwesome" required>
                     <br>
                     <p class="textologin">Contraseña:</p>
-                    <input type="password" name="passwd" placeholder="&#xf084; Introduce tu contraseña" style="font-family:Arial, FontAwesome" required>
+                    </i><input type="password" name="passwd" placeholder="&#xf084; Introduce tu contraseña" style="font-family:Arial, FontAwesome" required>
                     <br>
                     <a href="#" id="olvidar" onclick="abrirFormulario()">
                         <p id="olvidado">¿Has olvidado tu contraseña?</p>
@@ -57,10 +53,10 @@ function customHead(){?>
 
                 <div id="content-form-box">
                     <form class="formulario_contraseña">
-                        <p class="correo_formulario_olvidar">Correo:</p>
+                        <p> <p class="correo_formulario_olvidar">Correo:</p>
                         <label for="correo" class="colocar_correo"></label>
                         <input type="text" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
-                        
+                        </p>
                         <button type="submit" name="enviar_contraseña_olvidada" id="enviar"><a>ENVIAR</a></button>
                     </form>
                     <script src="./js/sendMail.js"></script>
@@ -109,7 +105,7 @@ function customHead(){?>
             }
 
             window.addEventListener("load", function(){
-                fetch("./api/v1/", {
+                fetch("/api/v1/", {
                     method: "GET"
                 }).then(function (result) {
                     if(result.status == 200){
@@ -118,23 +114,24 @@ function customHead(){?>
                 }).then(function (data) {
                     if(data != null){
                         if(data.role == "USER"){
-                            location.href = "./user_panel.php";
+                            location.href = "/user_panel.html";
                         }else if(data.role == "ADMIN"){
-                            location.href = "./admin_panel.php";
+                            location.href = "/admin_panel.html";
                         }
                     }
                 });
             });
 
         </script>
-		<script src="./js/login.js"></script>
+		<script src="/js/login.js"></script>
     <!--------------------------------- FIN FORM CONTENT -------------------------------------------->
   
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
-    <?php include_once './includes/footer.php';?>
+    <?php include '/includes/footer.php';?>
     <!------------------------------- FIN FOOTER DE LA PÁGINA ---------------------------------------->
 </body>
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
 <!-------------------------------------------------------------------------------------------------------------------->
+</html>

@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="css/common.css" />
-<?php if (function_exists('customHead')){
-    customHead();
-}?>
-<title><?= isset($name) ? $name : "GTI"?></title>
-</head>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,11 +14,7 @@
 <body>
 <header class="encabezado" id="header">    
         <a href="index.php"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
-    <?php
-    if(isset($t) && $t == 1){
-        include './includes/menu.php';
-    }
-    ?>
+        
+        <?php include 'menu.php';?>
     </header>
 </body>
-</html>

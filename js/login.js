@@ -13,9 +13,9 @@ document.querySelector("form").addEventListener("submit", function(event){
         if(data.end == "ok"){
             console.log(data.role);
             if(data.role == "ADMIN"){
-                location.href = "./admin_panel.php";
+                location.href = "/admin_panel.html";
             }else{
-                location.href = "./user_panel.php";
+                location.href = "/user_panel.html";
             }
         }else{
             loginError.innerHTML = data.error;
