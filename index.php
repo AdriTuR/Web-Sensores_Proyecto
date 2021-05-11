@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 $t = 1;
 $name = "Home";
@@ -7,14 +6,6 @@ function customHead(){?>
     <link rel="stylesheet" href="./css/style.css" />
 <?php }
 ?>
-=======
-<?php include '/includes/header.php';?>
-<head>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/common.css" />
-    <title>Home</title>
-</head>
->>>>>>> parent of e20f697 (Merge branch 'development' of https://github.com/kb079/9studios-web into development)
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
@@ -65,7 +56,7 @@ function customHead(){?>
                         </p>
                         <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
                     </form>
-                    <script src="/js/sendForm.js"></script>
+                    <script src="./js/sendForm.js"></script>
                 </div>
             </div>
         </div>
@@ -245,7 +236,7 @@ function customHead(){?>
 
 
     <!----------------------------------------- FOOTER DE LA PÁGINA -------------------------------------------------->
-    <?php include '/includes/footer.php';?>
+    <?php include_once './includes/footer.php';?>
     <!---------------------------------------- FIN FOOTER DE LA PÁGINA ----------------------------------------------->
 
 </body>
