@@ -11,11 +11,10 @@ document.querySelector("form").addEventListener("submit", function(event){
         
     }).then(function(data){
         if(data.end == "ok"){
-            console.log(data.role);
             if(data.role == "ADMIN"){
-                location.href = "/admin_panel.html";
+                location.href = "/admin_panel.php";
             }else{
-                location.href = "/user_panel.html";
+                location.href = "/user_panel.php";
             }
         }else{
             loginError.innerHTML = data.error;
