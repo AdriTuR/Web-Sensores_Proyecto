@@ -67,7 +67,7 @@ h1 {
     display: flex;
     flex-direction: column;
     border-radius: 20%;
-    box-shadow: 5px 8px 18px black;
+    
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -170,9 +170,10 @@ input[type=text], input[type=password]{
 /*------------------------------ MAIN BOX -----------------------------*/
 .box {
     width: 43vh !important;
-    height: 50vh !important;
+    height: 40vh;
     position: relative;
     top: -65px;
+    background-color:white !important;
 }
 
 .line {
@@ -192,6 +193,7 @@ input[type=text], input[type=password]{
 .box_confirmacion{
     width: 40vh !important; /* */
     height: 49vh !important; /* */
+    
 }
 
 /*------------- Elementos BOX -------------*/
@@ -202,33 +204,35 @@ input[type=text], input[type=password]{
 /*------------- Boton cerrar -------------*/
 #box-confirmacion #content-confirm-box #cerrar_confirmacion {
     margin: 30px 200px 100px 95px !important; /* */
+    
 }
 
 
 /*Donde pone "Correo:"*/
 .correo_formulario_olvidar{
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     float: left;
     margin-left: 18px;
 }
 /*El texto de abajo del titulo"*/
 .container_text_olvidar p {
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 /*El titulo de "¿Has olvidado tu contraseña?"*/
 .titulo_olvidar {
     font-size: x-large;
     color: #830053;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*Donde se escribe el correo*/
 .colocar_correo_olvidar{
     width: 85% !important;
+    
 }
+
 
 /*------------------ANIMACIONES------------------*/
 @keyframes shake {
@@ -265,7 +269,8 @@ header{
     margin-left: auto;
     margin-right: auto;
 }
+
  }
-}
+
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
