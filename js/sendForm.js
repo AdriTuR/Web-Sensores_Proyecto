@@ -3,7 +3,7 @@ document.querySelector("form").addEventListener("submit", function(event){
 
     let formInfo = new FormData(event.target);
 
-    fetch("/api/includes/sendContactForm.php", {
+    fetch("./api/includes/sendContactForm.php", {
         method: "POST",
         body: formInfo
     }).then(function (result) {

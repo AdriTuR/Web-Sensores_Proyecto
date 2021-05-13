@@ -4,10 +4,10 @@
     include_once './includes/header.php';
     function customHead(){?>
         <script src="https://maps.googleapis.com/maps/api/js" async defer></script>
-        <link rel="stylesheet" href="./css/userp-style.css">
+        <link rel="stylesheet" href="./css/panelMenu-style.css">
         <style>
             #map {
-                height: 70vh;
+                height: 100vh;
                 border: solid 1px black;
             }
         </style>
@@ -37,10 +37,7 @@
         <footer> <i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer>
         
     </nav>
-    <h1>Bienvenido usuario</h1>
-    
     <div id="map"></div>
-
     <!------------------------------- FIN BODY DE LA PÁGINA ---------------------------------------->
 
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
@@ -55,7 +52,7 @@
             if(result.status == 200){
                 return result.json();
             }else{
-                location.href = "./login.html";
+                location.href = "./login.php";
             }  
         }).then(async function (data) {
             await initMap();
@@ -69,22 +66,14 @@
     });
 
     function addCustomerMap(username){
+        userName = username;
         var formData = new FormData();
-        formData.append('user', username);
+        formData.append('data', "field");
 
-        fetch("./api/v1/probes.php", {
-            method: "POST",
-            body: formData
-        }).then(function (result) {
-            if(result.status == 200){
-                return result.json();
-            }
-        }).then(async function (data) {
-            if(data != null){
-                var json = JSON.parse(JSON.stringify(data));
-                showUserMap(parseJSONLocationFormat(json.fieldData), parseJSONLocationFormat(json.plotData), parseJSONLocationFormat(json.probeData));
-            }
-        });
+        fetchData(formData, function(data){
+            showUserFields(data);
+        })
+
     }
 </script>
 <script src="./js/closeSession.js"></script>

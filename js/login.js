@@ -10,8 +10,7 @@ document.querySelector("form").addEventListener("submit", function(event){
         return result.json();
         
     }).then(function(data){
-        if(data.end == "ok"){
-            console.log(data.role);
+        if(data.end == "ok"){;
             if(data.role == "ADMIN"){
                 location.href = "./admin_panel.php";
             }else{

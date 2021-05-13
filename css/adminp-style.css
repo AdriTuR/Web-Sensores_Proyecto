@@ -1,102 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
-
-.sidebar{
-    z-index: 2;
-    position: fixed;
-    left: -225px;  /**/
-    width: 225px;
-    height: 100%;
-    background: lightblue;
-    transition: .3s;
-}
-
-.sidebar ul a{
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 50px;
-    font-size: 20px;
-    color: white;
-    padding-left: 20px;
-    box-sizing: border-box;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid black;
-}
-
-ul li:hover a{
-    padding-left: 25px;
-}
-
-.sidebar ul a i{
-    margin-right: 16px;
-}
-
-#check{
-    display: none;
-}
-
-label #btn, label #cancel{
-    position: absolute;
-    margin-left: 10px;
-    cursor: pointer;
-    background: transparent;
-    border-radius: 3px;
-}
-
-.menuIcon {
-    left: 83%;
-    top: 10px;
-    font-size: 30px;
-    color: white;
-    padding: 6px 12px;
-}
-
-label #cancel{
-    left: -83%;
-}
-
-#check:checked ~ .sidebar{
-    left: 0;
-}
-
-#check:checked ~ label #btn{
-    left: 250px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-#check:checked ~ label #btn{
-    left: 250px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-#check:checked ~ label #cancel{
-    left: 83%;
-}
                       /*    ADMIN       */
 /*------------------------------------------------------------*/
-
-
-
-
-
-
-
 p{
     color:#830053;
     font-size:larger;
-    
 }
+
 hr{
    border: 1px solid #830053;
 }
+
 body h1 {
     color:#830053;
     text-align: center;
@@ -107,18 +19,20 @@ body h1 {
     text-align: center;
     margin: 0 auto;
 }
+
 .box h1{
     color:#830053;
-   font-size:500%;
+    font-size:500%;
 }
+
 .container{
     display:flex;
     flex-wrap:wrap;
     margin:0 auto;
     max-width:600px;
     justify-content: center;
-    
 }
+
 .box{
     background-color:rgba(255, 255, 255, 0.5);
     border-radius:10px;
@@ -127,12 +41,13 @@ body h1 {
     margin:10px;
     width:250px;
     text-align:center;
-
 }
+
 footer{
     position: absolute;
     bottom: 0;
 }
+
 body{
     background-image: url("../images/admin_general/admin_panel1.jpg");
     background-repeat: no-repeat;
@@ -163,9 +78,7 @@ body{
 
 @media only screen and (max-width: 300px) {
     .container{
-        max-width:400px;
-        
-        
+        max-width:400px; 
     }
     .box{
         width:28%;
@@ -177,7 +90,4 @@ body{
     .box p{
         font-size:100%;
     }
-
 }
-
-
