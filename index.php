@@ -81,6 +81,7 @@ function customHead(){?>
                 document.getElementById("body").style.overflow = "hidden"
                 document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
                 document.getElementById("menu-btn").disabled = true;
+                document.getElementById("boton_abajo").style.display = "none";
                 document.documentElement.scrollTop = 0;
             }
             //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
@@ -88,6 +89,7 @@ function customHead(){?>
                 document.getElementById("formulario_contacto").style.display = "none";
                 document.getElementById("body").style.overflow = "scroll";
                 document.getElementById("contenido call_to_action").style.filter = "none";
+                document.getElementById("boton_abajo").style.display = "flex";
                 document.getElementById("menu-btn").disabled = false;
             }
             //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
@@ -104,6 +106,7 @@ function customHead(){?>
                 document.getElementById("body").style.overflow = "scroll";
                 document.getElementById("contenido call_to_action").style.filter = "none";
                 document.getElementById("menu-btn").disabled = false;
+                document.getElementById("boton_abajo").style.display = "flex";
             }
             //-------------------FUNCIÓN LIMPIAR FORMULARIO--------------------//
             function limpiarFormulario() {
@@ -113,8 +116,38 @@ function customHead(){?>
 
         <!------------------------------------------------------------------------------------->
 
-        <br>
-        <a class="scrollBttn srollBttnDown" href="#mas_informacion"></a>
+        <!--------------------------------BOTÓN IR ARRIBA------------------------------->
+
+        <button id="boton_abajo">
+            <i class="fas fa-arrow-down"></i>
+        </button>
+
+        <button onclick="topFunction()" id="boton_ir_arriba" title="Go to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!---------------SCRIPTS PARA EL BOTON IR ARRIBA----------------->
+        <script>
+
+            var mybutton = document.getElementById("boton_ir_arriba");
+
+            window.onscroll = function() {scrollFunction()};
+
+            //-----------SCROLLFUNCTION--------------//
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            //------------TOPFUNCTION--------------//
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+
     </section>
     <!------------------------------------ FIN PRIMERA SECCIÓN DE LA PÁGINA ------------------------------------------>
 
@@ -229,7 +262,6 @@ function customHead(){?>
             </div>
         </div>
 
-        <a class="boton2" href="#header">VOLVER ARRIBA</a>
         
     </section>
     <!------------------------------------- FIN CUARTA SECCIÓN DE LA PÁGINA ------------------------------------------>

@@ -124,57 +124,39 @@ div {
     transform: scale(1.06);
 }
 
-/*-----------------------Botones blancos-----------------------*/
-.boton2 {
-    color: #660041;
-    font-size: 15px;
-    line-height: 24px;
-    padding: 10px;
-    border-radius: 7px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-color: rgb(255, 255, 255);
-    display: inline-block;
-    margin-bottom: 10%;
-}
-
-.boton2:hover {
-    background: rgb(255, 255, 255);
-    transform: scale(1.05);
-    transition: 150ms;
-}
-
-.boton2:active {
-    background: rgb(255, 255, 255);
-    transform: scale(1.06);
-}
 /*--------------------------------------------------------------*/
 /*------------------ Botón de Ir Arriba/Abajo ------------------*/
 
-.scrollBttn {
-    background-size: cover;
-    margin-bottom: 5vh;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
+#boton_ir_arriba {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #830053;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50px;
+}
+#boton_abajo{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #830053;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50px;
 }
 
-.srollBttnUp {
-    background-image: url("../images/landing_page/arrow-up_icon.png");
-}
-
-.srollBttnDown {
-    background-image: url("../images/landing_page/arrow-down_icon.png");
-}
-
-.scrollBttn:hover {
-    transform: scale(1.15);
-    transition: 150ms;
-}
 /*--------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------------------------------------------*/
