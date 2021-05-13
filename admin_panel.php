@@ -53,7 +53,23 @@ function customHead(){?>
         <p>Nº de sensores en funcionamiento</p>
         </div>
     </div>
-
+<script>
+    window.addEventListener("load", function(){
+        fetch("./api/v1/", {
+            method: "GET"
+        }).then(function (result) {
+            if(result.status == 200){
+                return result.json();
+            }
+        }).then(function (data) {
+            if(data != null){
+                if(data.role == "USER"){
+                    location.href = "./user_panel.php";
+                }
+            }
+        });
+    });
+</script>
 <?php include_once './includes/footer.php';?>
 </body>
 <script src="./js/closeSession.js"></script>
