@@ -2,7 +2,7 @@
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-//if ($method === 'POST'){
+if ($method === 'POST'){
 
     require_once '../includes/connection.php';
 
@@ -13,11 +13,6 @@ $method = $_SERVER['REQUEST_METHOD'];
         $extra = trim($_POST['extra']);
     }
     
-    /*
-    $owner = "user";
-    $data = "plot";
-    $extra = 2;
-*/
     switch($data){
         case "field":
             $finalData = getFieldData($owner);
@@ -36,7 +31,7 @@ $method = $_SERVER['REQUEST_METHOD'];
         http_response_code(401);
         die();
     }  
-//}
+}
 
 function getFieldData($owner){
     $sql = "SELECT `id`, `location`, `m2` FROM `field` WHERE `owner` = '$owner';";
@@ -130,37 +125,6 @@ function getProbeData($plotID){
     return $probeData;
 }
 
-/*
-if ($method === 'GET'){
-    session_start();
-    if(isset($_SESSION['role']) && $_SESSION['role'] !== ''){
-        encodeData($_SESSION);
-    }else{
-        error(0);
-    }
-}
-
-if ($method === 'DELETE'){
-    session_start();
-	unset($_SESSION);
-	session_destroy();
-}
-
-function error($id){
-    if($id > 0){
-        $data = [];
-        if($id == '1'){
-            $data["error"] = "Contraseña incorrecta";
-        }else if ($id == '2'){
-            $data["error"] = "Usuario no existente";
-        }
-        encodeData($data);
-    }
-    
-    http_response_code(401);
-    die();
-}
-*/
 function encodeData($data){
     header('Content-Type: application/json');
     echo json_encode($data);

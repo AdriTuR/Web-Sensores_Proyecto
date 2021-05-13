@@ -49,7 +49,7 @@ function drawUserPlot(plotData, fieldShape, lblName){
         formData.append('extra', plotData.plotID);
         fetchData(formData, function(res){
             for (let i = 0; i < res.length; i++) {
-                addMarkerSensorClick(addMarker(JSON.parse(res[i].location), "Sensor " + (i+1), "probe", true));
+                addMarkerSensorClick(addMarker(JSON.parse(res[i].location), " ", "probe", true), res[i]);
             } 
         })
     })
@@ -102,10 +102,11 @@ function addMarkerPlotClick(marker, field, bounds, cb){
     });
 }
 
-function addMarkerSensorClick(marker){
-    //CLAUDIO
+function addMarkerSensorClick(marker, sensorData){
     marker.addListener("click", () => {
-        //
+        infowindow = new google.maps.InfoWindow();
+        infowindow.setContent("Datos sensor:<br><br> Temperatura: " + sensorData.temperature + "<br>Humedad:" + sensorData.humidity + "<br>Salinidad: " + sensorData.salinity + "<br>Luminosidad: " + sensorData.luminity + "<br>");
+        infowindow.open(map, marker);
     });
 }
 
