@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./css/panelMenu-style.css">
         <style>
             #map {
-                height: 100vh;
+                height: 80vh;
                 border: solid 1px black;
             }
         </style>
