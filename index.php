@@ -1,59 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
-</head>
+<?php
+$t = 1;
+$name = "Home";
+include_once './includes/header.php';
+function customHead(){?>
+    <link rel="stylesheet" href="./css/style.css" />
+<?php }
+?>
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
 
 <body id="body">
-    <!---------------------------------------- HEADER DE LA PÁGINA  -------------------------------------------------->
-    <header class="encabezado" id="header">
-        <a href="index.html"><img class="logo" src="images/logoGTI.png" alt="logo del sitio web"></a>
-
-        <!----------------- MENÚ ----------------->
-        <nav>
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-
-            <ul class="menu">
-                <li onclick="menucerrar()"><a href="#mas_informacion">Qué te ofrecemos</a></li>
-                <li onclick="menucerrar()"><a href="#informacion_web">Más información</a></li>
-                <li onclick="menucerrar()"><a href="#acerca_de_nosotros">Acerca de nosotros</a></li>
-                <li onclick="menucerrar()"><a href="login.html">Area de cliente</a></li>
-            </ul>
-        </nav>
-
-        <!------- SCRIPT DE CERRAR EL MENU ------->
-        <script>
-            function menucerrar(){
-            setTimeout(function (){
-                document.getElementById("menu-btn").checked = false
-            },1000)
-            }
-        </script>
-
-        <!--- FIN DEL SCRIPT DE CERRAR EL MENU --->
-
-
-        <!---------------------------------------->
-
-    </header>
-    <!---------------------------------------- FIN HEADER DE LA PÁGINA ----------------------------------------------->
-
-
     <!------------------------------------- PRIMERA SECCIÓN DE LA PÁGINA --------------------------------------------->
     <section class="call_to_action">
         <div id="contenido call_to_action">
@@ -70,7 +28,7 @@
             <a class="boton" onclick="abrirFormulario()">CONTÁCTANOS</a>
         </div>
         <!--------------------------------FORMULARIO DE CONTACTO------------------------------->
-        <div class="popup-formulario-contacto" id="formulario_contacto">
+        <div class="popup-formulario" id="formulario_contacto">
             <div class="box" id="box-contacto">
                 <div id="header-box">
                     <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
@@ -98,7 +56,7 @@
                         </p>
                         <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
                     </form>
-                    <script src="/js/sendForm.js"></script>
+                    <script src="./js/sendForm.js"></script>
                 </div>
             </div>
         </div>
@@ -123,6 +81,7 @@
                 document.getElementById("body").style.overflow = "hidden"
                 document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
                 document.getElementById("menu-btn").disabled = true;
+                document.getElementById("boton_abajo").style.display = "none";
                 document.documentElement.scrollTop = 0;
             }
             //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
@@ -130,6 +89,7 @@
                 document.getElementById("formulario_contacto").style.display = "none";
                 document.getElementById("body").style.overflow = "scroll";
                 document.getElementById("contenido call_to_action").style.filter = "none";
+                document.getElementById("boton_abajo").style.display = "flex";
                 document.getElementById("menu-btn").disabled = false;
             }
             //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
@@ -146,6 +106,7 @@
                 document.getElementById("body").style.overflow = "scroll";
                 document.getElementById("contenido call_to_action").style.filter = "none";
                 document.getElementById("menu-btn").disabled = false;
+                document.getElementById("boton_abajo").style.display = "flex";
             }
             //-------------------FUNCIÓN LIMPIAR FORMULARIO--------------------//
             function limpiarFormulario() {
@@ -155,8 +116,36 @@
 
         <!------------------------------------------------------------------------------------->
 
-        <br>
-        <a class="scrollBttn srollBttnDown" href="#mas_informacion"></a>
+        <!--------------------------------BOTÓN IR ARRIBA------------------------------->
+        <a href="#mas_informacion">
+            <button id="boton_abajo">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </a>
+
+        <a href="#header">
+            <button id="boton_ir_arriba" title="Go to top">
+                <i class="fas fa-arrow-up"></i>
+            </button> 
+        </a>
+
+        <!---------------SCRIPTS PARA EL BOTON IR ARRIBA----------------->
+        <script>
+
+            var mybutton = document.getElementById("boton_ir_arriba");
+
+            window.onscroll = function() {scrollFunction()};
+
+            //-----------SCROLLFUNCTION--------------//
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+        </script>
+
     </section>
     <!------------------------------------ FIN PRIMERA SECCIÓN DE LA PÁGINA ------------------------------------------>
 
@@ -271,23 +260,16 @@
             </div>
         </div>
 
-        <a class="boton2 " href="#header">VOLVER ARRIBA</a>
         
     </section>
     <!------------------------------------- FIN CUARTA SECCIÓN DE LA PÁGINA ------------------------------------------>
 
 
     <!----------------------------------------- FOOTER DE LA PÁGINA -------------------------------------------------->
-    <footer id="footer">
-        <p id="footertext" class="morado" style="text-align:left; font-size: 12px;">
-            Company © Grado en Tecnologías Interactivas.<br> All rights reserved.
-        </p>
-    </footer>
+    <?php include_once './includes/footer.php';?>
     <!---------------------------------------- FIN FOOTER DE LA PÁGINA ----------------------------------------------->
 
 </body>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
 <!-------------------------------------------------------------------------------------------------------------------->
-
-</html>

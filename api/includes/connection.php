@@ -1,10 +1,10 @@
 <?php
 
 //-----------------------------CONEXIÓN MYSLQL------------------------------//
-$db_server = 'sql11.freesqldatabase.com';
-$db_user = 'sql11407928';
-$db_password = 'm9v239sv1m';
-$db_name = 'sql11407928';
+$db_server = 'localhost';
+$db_user = 'root';
+$db_password = '';
+$db_name = 'grupo9';
 
 $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 

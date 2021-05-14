@@ -1,0 +1,15 @@
+Datos para acceder:
+
+Primer usuario:
+usuario: user
+contraseña: 1234
+
+Segundo usuario:
+usuario: AdriTur
+contraseña: adrian12
+
+------------------------------------------------------
+
+Usuario admin:
+usuario: admin
+contraseña: 1234
