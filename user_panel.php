@@ -7,9 +7,14 @@
         <link rel="stylesheet" href="./css/panelMenu-style.css">
         <style>
             #map {
-                height: 80vh;
+                height: 84vh;
                 border: solid 1px black;
             }
+
+            footer{
+                position: absolute;
+                bottom: 0;
+            }   
         </style>
 <?php }
 ?>
@@ -24,18 +29,17 @@
     </label>
 
     <nav class="sidebar">
-    <header> PANEL DE USUARIO </header>    
-    <hr class="line">
-        <ul>
-            <li><a href="#"><i class="fas fa-map-marked-alt"></i>TERRENO</a></li>
-            <li><a href="#"><i class="fas fa-chart-line"></i>GRÁFICAS</a></li>
-            <li><a href="#"><i class="fas fa-user"></i>PERFIL</a></li>
-            <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
-        </ul>
-        <br>
+        <header> PANEL DE USUARIO </header>    
         <hr class="line">
-        <footer> <i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer>
-        
+            <ul>
+                <li><a href="#"><i class="fas fa-map-marked-alt"></i>TERRENO</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i>GRÁFICAS</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>PERFIL</a></li>
+                <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
+            </ul>
+            <br>
+            <hr class="line">
+           <!---- <div class="userZone"> <footer><i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer></div> --->
     </nav>
     <div id="map"></div>
     <!------------------------------- FIN BODY DE LA PÁGINA ---------------------------------------->
