@@ -3,8 +3,8 @@
 //-----------------------------CONEXIÓN MYSLQL------------------------------//
 $db_server = 'localhost';
 $db_user = 'root';
-$db_password = '8SBjBWjUfAvgYGAz';
-$db_name = 'web';
+$db_password = '';
+$db_name = 'grupo9';
 
 $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 

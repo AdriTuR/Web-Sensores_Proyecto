@@ -117,14 +117,17 @@ function customHead(){?>
         <!------------------------------------------------------------------------------------->
 
         <!--------------------------------BOTÓN IR ARRIBA------------------------------->
+        <a href="#mas_informacion">
+            <button id="boton_abajo">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </a>
 
-        <button id="boton_abajo">
-            <i class="fas fa-arrow-down"></i>
-        </button>
-
-        <button onclick="topFunction()" id="boton_ir_arriba" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+        <a href="#header">
+            <button id="boton_ir_arriba" title="Go to top">
+                <i class="fas fa-arrow-up"></i>
+            </button> 
+        </a>
 
         <!---------------SCRIPTS PARA EL BOTON IR ARRIBA----------------->
         <script>
@@ -140,11 +143,6 @@ function customHead(){?>
                 } else {
                     mybutton.style.display = "none";
                 }
-            }
-            //------------TOPFUNCTION--------------//
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
             }
         </script>
 
