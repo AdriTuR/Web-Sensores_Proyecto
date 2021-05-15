@@ -43,8 +43,10 @@ if ($method === 'GET'){
 
 if ($method === 'DELETE'){
     session_start();
-	unset($_SESSION);
-	session_destroy();
+    if(isset($_SESSION)){
+        unset($_SESSION);
+        session_destroy();
+    }
 }
 
 function error($id){

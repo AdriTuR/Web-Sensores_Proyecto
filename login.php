@@ -1,6 +1,6 @@
 
 <?php
-$t = 1;
+$t = 3;
 $name = "Login";
 include_once './includes/header.php';
 function customHead(){?>
@@ -59,11 +59,11 @@ function customHead(){?>
                     <form class="formulario_contraseña">
                         <p class="correo_formulario_olvidar">Correo:</p>
                         <label for="correo" class="colocar_correo"></label>
-                        <input type="text" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
+                        <input type="text" name="mail" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
                         
-                        <button type="submit" name="enviar_contraseña_olvidada" id="enviar"><a>ENVIAR</a></button>
+                        <button type="submit" id="enviar"><a>ENVIAR</a></button>
                     </form>
-                    <script src="./js/sendMail.js"></script>
+                    <script src="./js/sendRecoveryMail.js"></script>
                 </div>
             </div>
         </div>

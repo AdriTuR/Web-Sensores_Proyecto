@@ -59,8 +59,10 @@
                 location.href = "./login.php";
             }  
         }).then(async function (data) {
-            await initMap();
-            addCustomerMap(data.name);
+            if(data != null){
+                await initMap();
+                addCustomerMap(data.name);
+            }
             /*
             if(data.role == "ADMIN"){
                 location.href = "/admin_panel.html";

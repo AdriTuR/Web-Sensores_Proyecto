@@ -3,15 +3,14 @@ document.querySelector(".formulario_contraseña").addEventListener("submit", fun
 
     let formInfo = new FormData(event.target);
 
-    fetch("./api/includes/mail.php", {
+    fetch("./api/includes/sendRecoveryMail.php", {
         method: "POST",
         body: formInfo
     }).then(function (result) {
-        if(result.ok){
+        if(result.ok) return result.json();
+    }).then(function(data){
+        if(data != null && data.status == "ok"){
             mostrarConfirmacion();
-        }else{
-            // console.log("error al enviar formulario.");
-            //alert("NO CORRECTO");
         }
     });
 });
