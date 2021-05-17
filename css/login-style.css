@@ -12,6 +12,7 @@ body {
 
 header{
     background-color: white;
+    z-index: 1;
 }
 footer{
     position: absolute;
@@ -54,6 +55,9 @@ h1 {
     margin-bottom: 0.5vh;
 }
 
+#textobienvenido{
+    display: none;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
@@ -256,19 +260,92 @@ input[type=text], input[type=password]{
 /*--------------------------------------------------*/
 /*RESPONSIVE */
 @media (min-width: 48em) {
-footer {
-    position: fixed;
-    bottom: 0;
- }
-header{
-    background-color: #830053;
- }
-#login-form #box{
-    width: 500px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
+
+    body{
+        background: url(../images/login_page/login_formPC.jpg) no-repeat;
+        background-size: cover;
+        background-position-x: 230%;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    header{
+        background-color: #830053;
+    }
+
+    #main{
+       display: flex;
+    }
+    
+    #textobienvenido{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #textobienvenido h1{
+        font-size: 45px;
+        margin-top: 17%;
+    }
+
+    #textobienvenido p{
+        font-size: 20px;
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }    
+
+    #login-form #box{
+        width: 1100px;
+        height: 400px;
+        margin-right: auto;
+        z-index: 0;
+        margin-top: -20px;
+        
+    }
+
+    #login-form #box1 h1{
+      margin-top: 12%;
+      font-size: 37px;
+    }
+
+    .line{
+        margin-bottom: 5%;
+    }
+
+    .introtext{
+        font-size: 17px;
+    }
+
+    .textologin{
+        margin-top: 5%;
+        margin-left: 13%;
+    }
+
+    #olvidado{
+        margin-top: 2%;
+        margin-bottom: 7%;
+    }
+
+    #loginBtn{
+        margin-bottom: 20% !important;
+        width: 22% !important;
+        padding: 19px !important;
+    }
+
+    input[type=text], input[type=password]{
+        width: 75%;
+        padding: 10px 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        background-color: rgb(229, 217, 217, 47%);
+        border: solid 1px #830053;
+    }
 
  }
 

@@ -18,31 +18,41 @@ function customHead(){?>
 
     <!--------------------------------- FORM CONTENT ----------------------------------------------->
     <section id="login-form">
-        <div id="box">
-            <div id="box1">
-                <h1>INICIO DE SESIÓN</h1>
-                <hr class="line">
+        <div id="main">
+            <div id="textobienvenido">
 
-                <p class="introtext">Introduce tus datos para acceder al panel de usuario</p>
-                <p id="loginError"></p>
+                <h1>BIENVENIDO</h1>
+                <p>Accede al panel de usuario con su cuenta para visualizar sus terrenos desde la web y controlar el estado de sus cultivos</p>
+
             </div>
 
-            <div id="box2">
-                <form id="loginForm">
-                    <p class="textologin">Usuario:</p>
-                    <input type="text" name="username" placeholder="&#xf2bd; Introduce tu usuario" style="font-family:Arial, FontAwesome" required>
-                    <br>
-                    <p class="textologin">Contraseña:</p>
-                    <input type="password" name="passwd" placeholder="&#xf084; Introduce tu contraseña" style="font-family:Arial, FontAwesome" required>
-                    <br>
-                    <a href="#" id="olvidar" onclick="abrirFormulario()">
-                        <p id="olvidado">¿Has olvidado tu contraseña?</p>
-                    </a>
-                    <input type="submit" id="loginBtn" value="INICIAR SESIÓN" required>
-                    <br>
-                </form>
+            <div id="box">
+                <div id="box1">
+                   <h1>INICIO DE SESIÓN</h1>
+                   <hr class="line">
+
+                    <p class="introtext">Introduce tus datos para acceder al panel de usuario</p>
+                    <p id="loginError"></p>
+                </div>
+
+                <div id="box2">
+                    <form id="loginForm">
+                        <p class="textologin">Usuario:</p>
+                        <input type="text" name="username" placeholder="&#xf2bd; Introduce tu usuario" style="font-family:Arial, FontAwesome" required>
+                        <br>
+                        <p class="textologin">Contraseña:</p>
+                        <input type="password" name="passwd" placeholder="&#xf084; Introduce tu contraseña" style="font-family:Arial, FontAwesome" required>
+                        <br>
+                        <a href="#" id="olvidar" onclick="abrirFormulario()">
+                            <p id="olvidado">¿Has olvidado tu contraseña?</p>
+                        </a>
+                        <input type="submit" id="loginBtn" value="INICIAR SESIÓN" required>
+                        <br>
+                    </form>
+                </div>
             </div>
         </div>
+        
 
         <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
         <div class="popup-formulario" id="formulario_olvidar">
@@ -78,7 +88,8 @@ function customHead(){?>
                 </div>
             </div>
         </div>
-        </section>
+    </section>
+
         <!---------------------SCRIPTS PARA LA VENTANA DE CONTRASEÑA OLVIDADA--------------------->
         <script>
             //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
@@ -128,6 +139,7 @@ function customHead(){?>
 
         </script>
 		<script src="./js/login.js"></script>
+    
     <!--------------------------------- FIN FORM CONTENT -------------------------------------------->
   
     <!-------------------------------- FOOTER DE LA PÁGINA ------------------------------------------>
