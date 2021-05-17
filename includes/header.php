@@ -24,6 +24,10 @@
     if(isset($t) && $t == 1){
         include './includes/menu.php';
     }
+
+    if(isset($t) && $t == 3){
+        include './includes/menu-login.php';
+    }
     ?>
     </header>
 </body>
