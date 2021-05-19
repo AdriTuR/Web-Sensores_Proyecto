@@ -167,7 +167,18 @@ div {
     background-attachment: fixed;
 }
 
-
+.fa-hand-holding{
+    display: none !important;
+}
+.fa-info-circle{
+    display: none !important;
+}
+.fa-users{
+    display: none !important;
+}
+.fa-user-circle{
+    display: none !important;
+}
 
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -505,7 +516,19 @@ textarea {
      background-color:white; 
      color: #830053;
     }
-    .fa, .fas {
+    .fa-hand-holding{
+    display: block !important;
+    }
+    .fa-info-circle{
+    display: block !important;
+    }
+    .fa-users{
+    display: block !important;
+    }
+    .fa-user-circle{
+    display: block !important;
+    }
+   .fa, .fas {
     padding-top: 5%; 
     }
     .popup-formulario{
