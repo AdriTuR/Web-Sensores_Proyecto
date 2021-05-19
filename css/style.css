@@ -520,6 +520,7 @@ textarea {
     }
     .encabezado{
         background-size: cover;
+        background-attachment: inherit;
     }
     .encabezado li {
         float: left; 
