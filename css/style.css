@@ -164,6 +164,7 @@ div {
 .encabezado {
     background-image: url(../images/header2.jpeg);
     background-size: contain;
+    background-attachment: fixed;
 }
 
 
