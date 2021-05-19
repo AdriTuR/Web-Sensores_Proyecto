@@ -6,8 +6,8 @@
 }
 
 .encabezado {
-    background-image: url("../images/header2.jpeg");
-    background-size: cover;
+    background-image: url("../images/header.jpg");
+    background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
     overflow: hidden;
@@ -320,6 +320,38 @@
 }
 
 /*-------------------------RESPONSIVE-----------------*/
-
+@media (min-width: 48em) {
+    .encabezado li {
+        float: left; 
+    }
+    .encabezado .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .encabezado .menu-icon {
+        display: none;
+    }
+    .logo {
+        width: 20%;
+    }
+    .encabezado ul {
+        background-color: transparent;
+    }
+    .encabezado li a {
+        color: white; 
+    }
+    .encabezado li a:hover {
+        background-color: white;
+        color: #830053;
+    }
+    #footertext {
+        font-size: 15px;
+        color: #830053;
+        padding-top: 1.5%;
+        padding-bottom: 2.5%;
+    }
+ 
+}
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
