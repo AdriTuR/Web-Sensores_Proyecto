@@ -495,7 +495,19 @@ textarea {
 
 /*------------------------RESPONSIVE--------------------------------*/
 
-@media (min-width: 50em) {
+@media (min-width: 48em) {
+    .menu_icon{
+     display: flex;
+     background-color:#830053; 
+     color: white;
+    }
+    .menu_icon:hover {
+     background-color:white; 
+     color: #830053;
+    }
+    .fa, .fas {
+    padding-top: 5%; 
+    }
     .popup-formulario{
         top:10px;
     }
@@ -539,19 +551,20 @@ textarea {
         display: none;
     }
     .logo {
-        width: 17%;
+        width: 20%;
     }
     .encabezado ul {
         background-color: white;
     }
     .encabezado li a {
-        color: #830053;
+        color: white;
         padding: 10px 20px; 
+        background-color: #830053;
 ; 
     }
     .encabezado li a:hover {
-        background-color: #830053;
-        color: white;
+        background-color: white;
+        color: #830053;;
     }
     .headSection{
     padding-right: 5%;
@@ -588,17 +601,18 @@ textarea {
         padding-left: 10%;
     }
     .iconosensor{
-        width: 80%;
+        width: 60%;
+        padding-top: 12%;
     }
     .iconoherramienta{
-        padding-top: 15%;
-        padding-bottom: 20%;
-        width: 45%;
+        padding-top: 22%;
+       padding-bottom: 20%;
+        width: 30%;
     }
     .iconopersona{
-     width: 48%;
-     padding-top: 15%;
-     padding-bottom: 15%;
+     padding-top: 22%;
+    padding-bottom: 20%;
+    width: 30%;
     }
     .informacion_web{
         background-image: url("../images/landing_page/landing_page3(PC).jpg");
@@ -614,9 +628,9 @@ textarea {
         text-align: center;
     }
     #informacion_web #contenido_informacion_web #mapa_interactivo-apartado #iconomapainteractivo {
-    width: 65%;
-    height: 60%;
-    margin-top: 8vh;      
+        width: 50%;
+    height: 45%;
+    margin-top: 10vh;      
     }
     #informacion_web #contenido_informacion_web #grafico-apartado #texto2_información_web {
     text-align: center;
@@ -630,9 +644,9 @@ textarea {
         text-align: center;
     }
     #informacion_web #contenido_informacion_web #grafico-apartado #iconografico {
-    width: 40%;
-    height: 61%;
-    margin-top: 9vh;
+    width: 30%;
+    height: 51%;
+    margin-top: 8vh;
     }
     .conteidoInfo{
         display: flex;
@@ -698,7 +712,7 @@ textarea {
         padding-bottom: 2.5%;
     }
     p {
-        font-size: 100%;
+        font-size: 2.5vh;
     }
 }
 /*-------------------------------------------------------------------------------------------------------------------*/

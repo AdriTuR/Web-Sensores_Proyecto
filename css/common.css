@@ -6,12 +6,13 @@
 }
 
 .encabezado {
-    background-image: url("../images/header.jpg");
-    background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
     overflow: hidden;
     background-color: #830053;
+    background-image: url(../images/header2.jpeg);
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 /*-------------------------------- MENU --------------------------------*/
@@ -321,13 +322,23 @@
 
 /*-------------------------RESPONSIVE-----------------*/
 @media (min-width: 48em) {
+.encabezado{
+        background-size: cover;
+        background-attachment: inherit;
+    background-image: url(../images/header2.jpeg);
+    }
     .encabezado li {
         float: left; 
+        
     }
     .encabezado .menu {
         clear: none;
         float: right;
         max-height: none;
+        margin-top: 1.6em;
+        margin-bottom: 1em;
+        margin-right: 0.5em;
+        border-style: none;
     }
     .encabezado .menu-icon {
         display: none;
@@ -336,22 +347,24 @@
         width: 20%;
     }
     .encabezado ul {
-        background-color: transparent;
+        background-color: white;
     }
     .encabezado li a {
-        color: white; 
+        color: white;
+        padding: 10px 20px; 
+        background-color: #830053;
+; 
     }
     .encabezado li a:hover {
         background-color: white;
-        color: #830053;
+        color: #830053;;
     }
-    #footertext {
+#footertext {
         font-size: 15px;
         color: #830053;
         padding-top: 1.5%;
         padding-bottom: 2.5%;
     }
- 
 }
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/

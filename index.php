@@ -194,10 +194,17 @@ function customHead(){?>
         <div id="contenido_informacion_web">
 
             <h1 class="banner">MÁS INFORMACIÓN</h1>
+            <div class="texto_movil">
             <p class="blanco justifyText headSection" id="headSection">
                 Una vez obtenga su cuenta podra consultar sus parcelas de forma remota desde nuestra
                 web y segir el estado de los cultivos de manera sencilla y rápida.
             </p>
+        </div>
+        <div class="texto_pc">
+        <p class="blanco justifyText headSection" id="headSection">
+            Una vez obtenida una cuenta podrá consultar y controlar las parcelas de sus terrenos  de forma remota desde nuestra página web,  lo que le dará la oportunidad de seguir el estado de sus cultivos de manera sencilla y rápida desde cualquier sitio.
+        </p>
+        </div>
          <div class="conteidoInfo">
             <div id="mapa_interactivo-apartado">
                 <img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo">
