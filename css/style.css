@@ -572,7 +572,7 @@ textarea {
     .mas_informacion {
     background-image: url("../images/landing_page/landing_page2(PC).jpg");
     background-size: cover;
-        width: 100%;
+    width: 100%;
     }
     .secondText{
     margin-left: 35px !important;
@@ -584,6 +584,7 @@ textarea {
     
     .thirdtext{
         display: flex;
+        padding-left: 10%;
     }
     .iconosensor{
         width: 80%;
@@ -599,7 +600,8 @@ textarea {
      padding-bottom: 15%;
     }
     .informacion_web{
-        background-image: url("../images/landing_page/landing_page3(PC).jpg")
+        background-image: url("../images/landing_page/landing_page3(PC).jpg");
+            width: 100%;
     }
     #informacion_web #contenido_informacion_web #headSection{
         text-align: start;
@@ -633,6 +635,8 @@ textarea {
     }
     .conteidoInfo{
         display: flex;
+        padding-left: 10%;
+
     }
     .acerca1{
         width: 55%;
@@ -649,6 +653,7 @@ textarea {
     }
    .acerca_de_nosotros {
     background-image: url("../images/landing_page/landing_page4(PC).jpg");
+       width: 100%;
     }
     h2{
         padding-left: 5.7%;
