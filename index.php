@@ -163,23 +163,26 @@ function customHead(){?>
         <br>
 
         <div class="features_info thirdtext">
-            <a><img class="iconosensor" src="images/landing_page/sensor_icon3.png" alt="icono de un sensor"
-                    style="width: 23%;"></a>
+            <div class="item">
+            <a><img class="iconosensor" src="images/landing_page/sensor_icon3.png" alt="icono de un sensor"></a>
 
             <p class="blanco">El número de sensores que necesites.</p>
-            <br>
-            <a><img class="iconoherramienta" src="images/landing_page/instalacion_icon.png" alt="icono de herramientas"
-                    style="width: 12%;"></a>
+
+            </div>
+            <div class="item">
+            <a><img class="iconoherramienta" src="images/landing_page/instalacion_icon.png" alt="icono de herramientas"></a>
 
             <p class="blanco">Instalación de los sensores.</p>
             <br>
-            <a><img class="iconopersona" src="images/landing_page/user_icon.png" alt="icono de una persona"
-                    style="width: 12%;"></a>
+            </div>
+            <div class="item">
+            <a><img class="iconopersona" src="images/landing_page/user_icon.png" alt="icono de una persona"></a>
 
             <p class="blanco" style="margin-bottom: 20px; margin-left: 70px; margin-right: 70px;">Cuenta para acceder a
                 las
                 funcionalidades de la web</p>
             <br>
+            </div>
         </div>
 
     </section>
@@ -195,7 +198,7 @@ function customHead(){?>
                 Una vez obtenga su cuenta podra consultar sus parcelas de forma remota desde nuestra
                 web y segir el estado de los cultivos de manera sencilla y rápida.
             </p>
-
+         <div class="conteidoInfo">
             <div id="mapa_interactivo-apartado">
                 <img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo">
                 <p class="blanco justifyText" id="texto1_información_web">
@@ -210,7 +213,7 @@ function customHead(){?>
                     <strong>TEMPERATURA</strong>  y <strong>LUMINOSIDAD</strong> en el espacio de tiempo más comodo para usted.
                 </p>
             </div>
-
+          </div>
         </div>
 
     </section>
@@ -233,8 +236,10 @@ function customHead(){?>
         <br>
 
         <div class="objetivos">
+
             <h2 class="blanco">CONTACTA CON NOSOTROS</h2>
             <br>
+            <div class = "texto_movil">
             <p class="blanco justifyText">
                 Si te interesa lo que te podemos ofrecer, puedes contactarnos a través del formulario anterior
             </p>
@@ -242,18 +247,25 @@ function customHead(){?>
             <p class="blanco justifyText">
                 Si tienes alguna duda, aclarala llamando al siguiente número de teléfono o por correo electrónico
             </p>
+            </div>
+            <div class = "texto_pc">
+                <p class="blanco justifyText">
+                    Si te interesa lo que te podemos ofrecer, puedes contactarnos a través del formulario del inicio y también puedes aclarar tus dudas llamando al siguiente número de teléfono o por correo electrónico
+                </p>
+            </div>
+
         </div>
 
         <div class="datos_contacto">
             <div class="caja1">
-                <a href="tel:666 666 666">
+                <a class="telefono" href="tel:666 666 666">
                     <i class="fas fa-phone-alt fa-3x"></i>
                     <p class="blanco">666 666 666</p>
                 </a>
             </div>
 
             <div class="caja2">
-                <a href="mailto:gti@upv.es">
+                <a class="correo" href="mailto:gti@upv.es">
                     <i class="fas fa-envelope fa-3x"></i>
                     <p class="blanco">gti@upv.es</p>
                 </a>
