@@ -15,9 +15,15 @@ body h1 {
 }
 
 .texto_debajo_titulo {
+    padding: 2rem;
     color:#830053;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 1vh;
+}
+
+.title{
+    padding: 1.3rem;
 }
 
 .box h1{

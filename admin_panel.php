@@ -11,7 +11,7 @@ function customHead(){?>
 <body>
     <input type="checkbox" id="check">
     <label for="check">
-        <id class="fas fa-bars menuIcon" id="btn"></i>
+        <i class="fas fa-bars menuIcon" id="btn"></i>
         <i class="fas fa-times menuIcon" id="cancel"></i>
     </label>
     <div class="sidebar">
@@ -28,7 +28,7 @@ function customHead(){?>
         <footer> <i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer> 
     </div>
 
-    <h1>BIENVENIDO AL PANEL DE ADMINISTRADOR</h1>
+    <div class="title"><h1>BIENVENIDO AL PANEL DE ADMINISTRADOR</h1></div>
     <hr>
     <div class="texto_debajo_titulo">
         <h3>Desde aqui podras gestionar y administrar todas las cuentas de tus
