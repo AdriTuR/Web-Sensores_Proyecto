@@ -692,6 +692,7 @@ textarea {
    .acerca_de_nosotros {
     background-image: url("../images/landing_page/landing_page4(PC).jpg");
        width: 100%;
+     height: fit-content;
     }
     h2{
         padding-left: 5.7%;

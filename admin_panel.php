@@ -20,7 +20,7 @@ function customHead(){?>
         <li><a href="#"><i class="fas fa-home"></i>Panel</a></li>
         <li><a href="#"><i class="fas fa-users"></i>Gestionar Clientes</a></li>
         <li><a href="#"><i class="fas fa-tractor"></i>Gestionar Parcelas</a></li>
-        <li><a href="#"><i class="fas fa-comment-alt"></i>Consultas</a></li>
+        <li><a href="admin_consultas.php"><i class="fas fa-comment-alt"></i>Consultas</a></li>
         <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
     </ul>
     <br>
