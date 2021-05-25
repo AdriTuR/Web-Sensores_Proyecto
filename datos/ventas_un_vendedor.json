@@ -1,0 +1,730 @@
+[
+  {
+    "id": 1,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 6,
+      "nombre": "Oodoo"
+    },
+    "fecha": "2020-03-20",
+    "importe": "6771.92"
+  },
+  {
+    "id": 2,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 1,
+      "nombre": "Dabfeed"
+    },
+    "fecha": "2020-03-19",
+    "importe": "3141.46"
+  },
+  {
+    "id": 9,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 13,
+      "nombre": "Quinu"
+    },
+    "fecha": "2020-03-16",
+    "importe": "2038.29"
+  },
+  {
+    "id": 10,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 14,
+      "nombre": "Youbridge"
+    },
+    "fecha": "2020-03-20",
+    "importe": "1109.17"
+  },
+  {
+    "id": 13,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 10,
+      "nombre": "Tavu S.L."
+    },
+    "fecha": "2020-03-20",
+    "importe": "6835.22"
+  },
+  {
+    "id": 16,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 7,
+      "nombre": "Thoughtmix"
+    },
+    "fecha": "2020-03-19",
+    "importe": "4840.54"
+  },
+  {
+    "id": 19,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 19,
+      "nombre": "Kwinu"
+    },
+    "fecha": "2020-03-18",
+    "importe": "9159.27"
+  },
+  {
+    "id": 21,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 17,
+      "nombre": "Jetpulse Inc."
+    },
+    "fecha": "2020-03-18",
+    "importe": "9855.42"
+  },
+  {
+    "id": 23,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 8,
+      "nombre": "LiveZ"
+    },
+    "fecha": "2020-03-18",
+    "importe": "8733.76"
+  },
+  {
+    "id": 28,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 15,
+      "nombre": "Bubblebox"
+    },
+    "fecha": "2020-03-18",
+    "importe": "9297.67"
+  },
+  {
+    "id": 30,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 3,
+      "nombre": "Rhybox"
+    },
+    "fecha": "2020-03-20",
+    "importe": "8361.05"
+  },
+  {
+    "id": 36,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 5,
+      "nombre": "Skaboo"
+    },
+    "fecha": "2020-03-20",
+    "importe": "2534.22"
+  },
+  {
+    "id": 39,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 19,
+      "nombre": "Kwinu"
+    },
+    "fecha": "2020-03-15",
+    "importe": "9761.89"
+  },
+  {
+    "id": 40,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 13,
+      "nombre": "Quinu"
+    },
+    "fecha": "2020-03-16",
+    "importe": "7264.08"
+  },
+  {
+    "id": 41,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 18,
+      "nombre": "Yacero"
+    },
+    "fecha": "2020-03-18",
+    "importe": "9310.89"
+  },
+  {
+    "id": 42,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 11,
+      "nombre": "Tagchat"
+    },
+    "fecha": "2020-03-15",
+    "importe": "5925.98"
+  },
+  {
+    "id": 43,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 11,
+      "nombre": "Tagchat"
+    },
+    "fecha": "2020-03-19",
+    "importe": "7863.82"
+  },
+  {
+    "id": 62,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 8,
+      "nombre": "LiveZ"
+    },
+    "fecha": "2020-03-15",
+    "importe": "7982.37"
+  },
+  {
+    "id": 64,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 12,
+      "nombre": "Quimba"
+    },
+    "fecha": "2020-03-18",
+    "importe": "2762.52"
+  },
+  {
+    "id": 65,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 18,
+      "nombre": "Yacero"
+    },
+    "fecha": "2020-03-18",
+    "importe": "5378.12"
+  },
+  {
+    "id": 72,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 7,
+      "nombre": "Thoughtmix"
+    },
+    "fecha": "2020-03-15",
+    "importe": "8902.20"
+  },
+  {
+    "id": 73,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 4,
+      "nombre": "Devcast"
+    },
+    "fecha": "2020-03-17",
+    "importe": "9773.59"
+  },
+  {
+    "id": 75,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 4,
+      "nombre": "Devcast"
+    },
+    "fecha": "2020-03-18",
+    "importe": "5319.60"
+  },
+  {
+    "id": 76,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 15,
+      "nombre": "Bubblebox"
+    },
+    "fecha": "2020-03-18",
+    "importe": "2858.75"
+  },
+  {
+    "id": 84,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 14,
+      "nombre": "Youbridge"
+    },
+    "fecha": "2020-03-16",
+    "importe": "2380.26"
+  },
+  {
+    "id": 94,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 12,
+      "nombre": "Quimba"
+    },
+    "fecha": "2020-03-17",
+    "importe": "2145.24"
+  },
+  {
+    "id": 98,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 17,
+      "nombre": "Jetpulse Inc."
+    },
+    "fecha": "2020-03-16",
+    "importe": "4293.37"
+  },
+  {
+    "id": 108,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 4,
+      "nombre": "Devcast"
+    },
+    "fecha": "2020-03-19",
+    "importe": "9581.23"
+  },
+  {
+    "id": 110,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 8,
+      "nombre": "LiveZ"
+    },
+    "fecha": "2020-03-20",
+    "importe": "5172.57"
+  },
+  {
+    "id": 111,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 8,
+      "nombre": "LiveZ"
+    },
+    "fecha": "2020-03-20",
+    "importe": "2708.49"
+  },
+  {
+    "id": 115,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 16,
+      "nombre": "Flashdog"
+    },
+    "fecha": "2020-03-20",
+    "importe": "6941.38"
+  },
+  {
+    "id": 116,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 18,
+      "nombre": "Yacero"
+    },
+    "fecha": "2020-03-20",
+    "importe": "406.28"
+  },
+  {
+    "id": 120,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 3,
+      "nombre": "Rhybox"
+    },
+    "fecha": "2020-03-15",
+    "importe": "6278.62"
+  },
+  {
+    "id": 121,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 19,
+      "nombre": "Kwinu"
+    },
+    "fecha": "2020-03-19",
+    "importe": "6892.82"
+  },
+  {
+    "id": 129,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 5,
+      "nombre": "Skaboo"
+    },
+    "fecha": "2020-03-16",
+    "importe": "7036.69"
+  },
+  {
+    "id": 130,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 8,
+      "nombre": "LiveZ"
+    },
+    "fecha": "2020-03-15",
+    "importe": "1081.55"
+  },
+  {
+    "id": 131,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 14,
+      "nombre": "Youbridge"
+    },
+    "fecha": "2020-03-17",
+    "importe": "5147.09"
+  },
+  {
+    "id": 142,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 1,
+      "nombre": "Dabfeed"
+    },
+    "fecha": "2020-03-18",
+    "importe": "2383.85"
+  },
+  {
+    "id": 148,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 2,
+      "nombre": "Photojam"
+    },
+    "fecha": "2020-03-15",
+    "importe": "7043.99"
+  },
+  {
+    "id": 149,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 9,
+      "nombre": "Muxo"
+    },
+    "fecha": "2020-03-15",
+    "importe": "5466.02"
+  },
+  {
+    "id": 153,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 6,
+      "nombre": "Oodoo"
+    },
+    "fecha": "2020-03-20",
+    "importe": "5042.41"
+  },
+  {
+    "id": 158,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 11,
+      "nombre": "Tagchat"
+    },
+    "fecha": "2020-03-20",
+    "importe": "5853.17"
+  },
+  {
+    "id": 161,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 3,
+      "nombre": "Rhybox"
+    },
+    "fecha": "2020-03-16",
+    "importe": "2871.17"
+  },
+  {
+    "id": 165,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 17,
+      "nombre": "Jetpulse Inc."
+    },
+    "fecha": "2020-03-16",
+    "importe": "4444.54"
+  },
+  {
+    "id": 172,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 9,
+      "nombre": "Muxo"
+    },
+    "fecha": "2020-03-16",
+    "importe": "9190.25"
+  },
+  {
+    "id": 174,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 20,
+      "nombre": "Yadel"
+    },
+    "fecha": "2020-03-17",
+    "importe": "8589.72"
+  },
+  {
+    "id": 181,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 8,
+      "nombre": "LiveZ"
+    },
+    "fecha": "2020-03-15",
+    "importe": "7883.19"
+  },
+  {
+    "id": 186,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 4,
+      "nombre": "Devcast"
+    },
+    "fecha": "2020-03-20",
+    "importe": "7411.64"
+  },
+  {
+    "id": 187,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 10,
+      "nombre": "Tavu S.L."
+    },
+    "fecha": "2020-03-17",
+    "importe": "7247.44"
+  },
+  {
+    "id": 191,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 10,
+      "nombre": "Tavu S.L."
+    },
+    "fecha": "2020-03-20",
+    "importe": "2299.55"
+  },
+  {
+    "id": 192,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 15,
+      "nombre": "Bubblebox"
+    },
+    "fecha": "2020-03-15",
+    "importe": "4097.14"
+  },
+  {
+    "id": 198,
+    "vendedor": {
+      "id": 3,
+      "nombre": "Carla",
+      "apellidos": "McCree"
+    },
+    "cliente": {
+      "id": 6,
+      "nombre": "Oodoo"
+    },
+    "fecha": "2020-03-19",
+    "importe": "2249.19"
+  }
+]
