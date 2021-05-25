@@ -9,7 +9,7 @@ function customHead(){?>
 <?php }
 ?>
 <body>
-<input type="checkbox" id="check"><
+<input type="checkbox" id="check">
 <label for="check">
     <i class="fas fa-bars menuIcon" id="btn"></i>
         <i class="fas fa-times menuIcon" id="cancel"></i>

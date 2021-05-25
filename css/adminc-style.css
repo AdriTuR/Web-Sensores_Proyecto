@@ -1,6 +1,11 @@
 .conjunto{
-
+background-image: url("../images/admin_consult/consult_manage(mobile).jpg");
+    width: 100%;
+    height: auto;
+}
+.espacio_canvas{
+width: 100%;
+height: 90%
 }
 #myCanvas{
-
 }
