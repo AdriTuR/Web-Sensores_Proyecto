@@ -184,6 +184,12 @@
     margin-top: -25px;
     margin-bottom: 2px;
 }
+.line {
+    margin: auto;
+    width: 85%;
+    height: 4px;
+    background-color: #830053;
+}
 
 .popup-formulario #box-contacto #header-box #intro-text{
     font-size: 14px;
@@ -253,25 +259,27 @@
 /*--------------------------------------------------*/
 /*----------------- Botón ENVIAR -------------------*/
 
-.popup-formulario #box-contacto #content-form-box #enviar{
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+.submit{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     color: white;
     width: 50%;
-    padding: 10px;
+    padding: 15px 10px 15px;
     margin: 10px 0px 10px;
     display: inline-block;
     background-color: #830053;
     border: solid 1px #830053;
     border-radius: 5px;
+
 }
-.popup-formulario #box-contacto #content-form-box #enviar:hover{
+
+.submit:hover{
     background: #660041;
     transform: scale(1.05);
     transition: 150ms;
 }
 
-.popup-formulario #box-contacto #content-form-box #enviar:active {
+.submit:active {
     background: #660041;
     transform: scale(1.06);
 }
@@ -321,14 +329,14 @@
 
 /*-------------------------RESPONSIVE-----------------*/
 @media (min-width: 48em) {
-.encabezado{
+    .encabezado{
         background-size: cover;
         background-attachment: inherit;
-    background-image: url(../images/header2.jpeg);
+        background-image: url(../images/header2.jpeg);
     }
     .encabezado li {
-        float: left; 
-        
+        float: left;
+
     }
     .encabezado .menu {
         clear: none;
@@ -350,15 +358,15 @@
     }
     .encabezado li a {
         color: white;
-        padding: 10px 20px; 
+        padding: 10px 20px;
         background-color: #830053;
-; 
+    ;
     }
     .encabezado li a:hover {
         background-color: white;
         color: #830053;;
     }
-#footertext {
+    #footertext {
         font-size: 15px;
         color: #830053;
         padding-top: 1.5%;

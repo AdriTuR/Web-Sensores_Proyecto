@@ -52,7 +52,7 @@ div {
 .justifyText {
     text-align: justify;
     word-spacing: -2px;
-    
+
 
     margin-left: 35px !important;
     margin-right: 35px !important;
@@ -184,7 +184,6 @@ div {
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                      Elementos de la PRIMERA SECCIÓN                                              */
 /*-------------------------------------------------------------------------------------------------------------------*/
-
 .call_to_action {
     background-image: url("../images/landing_page/landing_page1.jpg");
     background-size: cover;
@@ -192,7 +191,7 @@ div {
 }
 
 .call_to_action .fistText {
-    margin-top: 8vh;
+    margin-top: 15vh;
     margin-bottom: 5vh;
     margin-left: 10px;
     margin-right: 10px;
@@ -202,6 +201,7 @@ div {
     margin-bottom: 5vh;
     margin-left: 40px;
     margin-right: 40px;
+    text-align: center;
 }
 
 
@@ -259,7 +259,7 @@ div {
     width: 12%;
 }
 .iconopersona{
-     width: 12%;
+    width: 12%;
 }
 #informacion_web #contenido_informacion_web #headSection{
     margin-top: 5vh;
@@ -314,7 +314,7 @@ div {
 /*----------------------------*/
 
 .acerca1 {
-    
+
     margin-bottom: 4vh;
 
 }
@@ -326,7 +326,7 @@ div {
 
 .acerca1 i {
     margin-top: 3vh;
-   
+
 }
 
 .datos_contacto {
@@ -390,7 +390,7 @@ input {
     font-size: 12px;
     width: 90%;
     height: 40px;
-    padding: 6px 5px;
+    padding: 6px 16px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -404,7 +404,7 @@ textarea {
     font-size: 12px;
     width: 90%;
     height: 150px;
-    padding: 6px 5px;
+    padding: 6px 16px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -498,7 +498,7 @@ textarea {
         line-height: 18px;
         padding: 10px;
     }
-    
+
     .datos_contacto{
         margin-bottom: 1vh;
     }
@@ -508,47 +508,47 @@ textarea {
 
 @media (min-width: 48em) {
     .menu_icon{
-     display: flex;
-     background-color:#830053; 
-     color: white;
+        display: flex;
+        background-color:#830053;
+        color: white;
     }
     .menu_icon:hover {
-     background-color:white; 
-     color: #830053;
+        background-color:white;
+        color: #830053;
     }
     .fa-hand-holding{
-    display: block !important;
+        display: block !important;
     }
     .fa-info-circle{
-    display: block !important;
+        display: block !important;
     }
     .fa-users{
-    display: block !important;
+        display: block !important;
     }
     .fa-user-circle{
-    display: block !important;
+        display: block !important;
     }
-   .fa, .fas {
-    padding-top: 5%; 
+    .fa, .fas {
+        padding-top: 5%;
     }
     .popup-formulario{
         top:10px;
     }
     .box {
-    width: 63%;
-    height: 97%
-}
+        width: 63%;
+        height: 97%
+    }
     .cerrar-formulario {
         right: -50%;
-}
+    }
     #box-confirmacion #content-confirm-box #cerrar_confirmacion {
         margin-left: 40%;
         margin-top: 15%;
         display: flex;
     }
     .banner {
-    font-size: 3vh;
-    width: 60%
+        font-size: 3vh;
+        width: 60%
     }
     .box_confirmacion {
         width: 70%;
@@ -558,8 +558,8 @@ textarea {
         background-attachment: inherit;
     }
     .encabezado li {
-        float: left; 
-        
+        float: left;
+
     }
     .encabezado .menu {
         clear: none;
@@ -581,21 +581,21 @@ textarea {
     }
     .encabezado li a {
         color: white;
-        padding: 10px 20px; 
+        padding: 10px 20px;
         background-color: #830053;
-; 
+    ;
     }
     .encabezado li a:hover {
         background-color: white;
         color: #830053;;
     }
     .headSection{
-    padding-right: 5%;
-    padding-left: 5%
+        padding-right: 5%;
+        padding-left: 5%
     }
     .call_to_action {
-    background-image: url("../images/landing_page/landing_page1(PC).jpg");
-    width: 100%;
+        background-image: url("../images/landing_page/landing_page1(PC).jpg");
+        width: 100%;
     }
     .call_to_action .fistText{
         text-align: center;
@@ -607,18 +607,18 @@ textarea {
         text-align: center;
     }
     .mas_informacion {
-    background-image: url("../images/landing_page/landing_page2(PC).jpg");
-    background-size: cover;
-    width: 100%;
+        background-image: url("../images/landing_page/landing_page2(PC).jpg");
+        background-size: cover;
+        width: 100%;
     }
     .secondText{
-    margin-left: 35px !important;
-    margin-right: 35px !important;
-    text-align: justify;
-    padding-right: 5%;
-    padding-left: 5%
+        margin-left: 35px !important;
+        margin-right: 35px !important;
+        text-align: justify;
+        padding-right: 5%;
+        padding-left: 5%
     }
-    
+
     .thirdtext{
         display: flex;
         padding-left: 10%;
@@ -629,47 +629,47 @@ textarea {
     }
     .iconoherramienta{
         padding-top: 22%;
-       padding-bottom: 20%;
+        padding-bottom: 20%;
         width: 30%;
     }
     .iconopersona{
-     padding-top: 22%;
-    padding-bottom: 20%;
-    width: 30%;
+        padding-top: 22%;
+        padding-bottom: 20%;
+        width: 30%;
     }
     .informacion_web{
         background-image: url("../images/landing_page/landing_page3(PC).jpg");
-            width: 100%;
+        width: 100%;
     }
     #informacion_web #contenido_informacion_web #headSection{
         text-align: start;
     }
     #mapa_interactivo-apartado{
-     padding-left: 10%;   
+        padding-left: 10%;
     }
     .blanco .justifyText #texto1_información_web{
         text-align: center;
     }
     #informacion_web #contenido_informacion_web #mapa_interactivo-apartado #iconomapainteractivo {
         width: 50%;
-    height: 45%;
-    margin-top: 10vh;      
+        height: 45%;
+        margin-top: 10vh;
     }
     #informacion_web #contenido_informacion_web #grafico-apartado #texto2_información_web {
-    text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     #grafico-apartado{
-     padding-right: 10%; 
+        padding-right: 10%;
     }
     #texto2_información_web{
         text-align: center;
     }
     #informacion_web #contenido_informacion_web #grafico-apartado #iconografico {
-    width: 30%;
-    height: 51%;
-    margin-top: 8vh;
+        width: 30%;
+        height: 51%;
+        margin-top: 8vh;
     }
     .conteidoInfo{
         display: flex;
@@ -689,10 +689,10 @@ textarea {
         padding-top: 3%;
         width: 55%
     }
-   .acerca_de_nosotros {
-    background-image: url("../images/landing_page/landing_page4(PC).jpg");
-       width: 100%;
-     height: fit-content;
+    .acerca_de_nosotros {
+        background-image: url("../images/landing_page/landing_page4(PC).jpg");
+        width: 100%;
+        height: fit-content;
     }
     h2{
         padding-left: 5.7%;
@@ -721,14 +721,14 @@ textarea {
         display: -webkit-inline-box;
     }
     .acerca_de_nosotros i {
-    font-size: 5em;
+        font-size: 5em;
     }
     .texto_movil{
         display: none;
     }
     .texto_pc{
-    display: block;
-}
+        display: block;
+    }
     #footertext {
         font-size: 15px;
         color: #830053;

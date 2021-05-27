@@ -17,21 +17,19 @@ function customHead(){?>
 <!-----------------------------------------MENU---------------------------------------------->
 <input type="checkbox" id="check">
 <label for="check">
-    <i class="fas fa-bars menuIcon" id="btn"></i>
-    <i class="fas fa-times menuIcon" id="cancel"></i>
+    <i class="fas fa-bars menuIcon fa-3x" id="btn"><span class="navicon"></span></i>
+    <i class="fas fa-times menuIcon fa-3x" id="cancel"></i>
 </label>
 
 <nav class="sidebar">
     <header> PANEL DE USUARIO </header>
-    <hr class="line">
+    <hr class="line_panel">
     <ul>
-        <li><a href="#"><i class="fas fa-map-marked-alt"></i>TERRENO</a></li>
-        <li><a href="#"><i class="fas fa-chart-line"></i>GRÁFICAS</a></li>
-        <li><a href="#"><i class="fas fa-user"></i>PERFIL</a></li>
+        <li><a href="#"><i class="fas fa-user "></i>PERFIL</a></li>
         <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
     </ul>
     <br>
-    <hr class="line">
+    <hr class="line_panel">
     <!---- <div class="userZone"> <footer><i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer></div> --->
 </nav>
 <!------------------------------------------------------------------------------------------->

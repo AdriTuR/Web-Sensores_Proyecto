@@ -7,10 +7,10 @@
 
 
 .sidebar{
-    z-index: 200;
+    z-index: 201;
     position: fixed;
-    left: -225px;  /**/
-    width: 225px;
+    left: -265px;  /**/
+    width: 265px;
     height: 100%;
     background: #830053;
     transition: .3s;
@@ -23,19 +23,19 @@
     line-height: 70px;
     font-size: 18px;
     color: white;
-    padding-left: 20px;
+    padding-left: 25px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
+
 .sidebar header{
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     text-align: center;
     line-height: 60px;
     font-family: 'Montserrat', sans-serif;
-    background: #680042;
-
+    background: #830053;
 }
 
 .sidebar footer{
@@ -43,7 +43,7 @@
     color: white;
     line-height: 60px;
     font-family: 'Montserrat', sans-serif;
-    background: #680042;
+    background: #830053;
     text-align: center;
 
 }
@@ -54,7 +54,7 @@
 
 .line {
     margin: auto;
-    width: 100%;
+    width: 85%;
     color: white;
 }
 
