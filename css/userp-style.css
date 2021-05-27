@@ -7,7 +7,7 @@
 
 
 .sidebar{
-    z-index: 2;
+    z-index: 200;
     position: fixed;
     left: -225px;  /**/
     width: 225px;
@@ -109,3 +109,60 @@ label #cancel{
 #check:checked ~ label #cancel{
     left: 83%;
 }
+
+/*-------------------------------------------------------------------------------------------*/
+/*----------------------------------CONTENIDO PANEL DE USUARIO-------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+.contenido_panel-usuario{
+    position: relative;
+}
+/*-------------------- WIDGET FECHA/HORA -------------------*/
+.widget_banner {
+    background-color: #830053;
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    padding: 0.5em 1em;
+    width: 280px;
+    color: white;
+    font-size: 17px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-top: 45px;
+}
+
+#widget_reloj-fecha{
+    display: flex;
+    position: absolute;
+    z-index: 100;
+}
+
+#widget_reloj-fecha #reloj, #fecha{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+/*--------------------------- MAPA -------------------------*/
+#map {
+    height: 84vh;
+    border: solid 1px black;
+    z-index: 50;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------FOOTER------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+footer{
+    position: absolute;
+    bottom: 0;
+    z-index: 200;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+
