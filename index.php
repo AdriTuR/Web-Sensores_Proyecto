@@ -95,7 +95,7 @@ function customHead(){?>
             //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
             function mostrarConfirmacion(){
                 document.getElementById("mensaje_confirmacion").style.display = "flex";
-                document.getElementById("body").style.overflow = "hidden"º
+                document.getElementById("body").style.overflow = "hidden"
                 document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
                 document.getElementById("menu-btn").disabled = true;
                 cerrarFormulario();
