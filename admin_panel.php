@@ -36,7 +36,7 @@ function customHead(){?>
     </div>
     
     <div class="container">
-        <div class="box">
+        <div class="box" onclick="location.href='admin_clientes.php'">
           <h1><?php echo $nCustomers?></h1>
           <p>Nº de clientes</p>
         </div>
@@ -44,7 +44,7 @@ function customHead(){?>
         <h1><?php echo $nCompanies?></h1>
         <p>Nº de corporativas</p>
         </div>
-        <div class="box">
+        <div class="box"onclick="location.href='admin_consultas.php'">
         <h1><?php echo $todayInquiries?></h1>
         <p>Nº de consultas enviadas hoy</p>
         </div>

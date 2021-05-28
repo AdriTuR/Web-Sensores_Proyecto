@@ -1,11 +1,287 @@
-.conjunto{
-background-image: url("../images/admin_consult/consult_manage(mobile).jpg");
-    width: 100%;
-    height: auto;
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                             BANNER DEL TITULO                                              */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.banner {
+    background-color: #830053;
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    margin: -500px 0;
+    padding: 0.5em 1em;
+    width: 80%;
+    color: white;
+    font-size: 17px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-top: 7vh;
+    margin-bottom: 2vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 187%;
 }
-.espacio_canvas{
-width: 100%;
-height: 90%
+.banner img{
+    width:2.5rem;
+    float:left;
+
 }
-#myCanvas{
+/* CUADRADOS USUARIO */
+p{
+    color:white;
+    font-size:larger;
+    
+}
+hr{
+   border: 1px solid #830053;
+}
+body h1 {
+    color:white;
+    text-align: center;
+}
+
+.texto_debajo_titulo {
+    color:white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container{
+    width:500px;
+}
+
+/*  BODY   */
+body{
+    background-image: url("../images/admin_general/hierba.jpg");
+    background-repeat: no-repeat;
+    background-size:2000px 200% ;
+    font-family:'Poppins', sans-serif;
+    overflow-x:hidden;
+}
+footer{
+    
+    bottom: 0 !important;
+    
+    
+}
+#footertext{
+    margin-left:10%;
+   
+}
+
+/*--------------LISTA/TABLA ---------------*/
+#tabla{
+ 
+}
+#lista_contener{
+
+}
+/*el search*/
+.form-control{
+    background-image: url("../images/admin_general/search.png") !important;
+    background-size:12px 12px;
+    background-repeat:no-repeat;
+    background-position-y:center;
+    width:auto !important;
+    margin: 0 auto !important;
+    border:1px #830053 solid !important;
+    
+}
+/* tipos de datos de la tabla*/
+thead{
+    background-color:#830053;
+    color:white;
+    border:none;
+    font-size:larger !important;
+}
+/* texto de la tabla de datos */
+#myTable tr td{
+    color:#830053;
+    font-size:larger !important;
+}
+/*IMAGENES DE USUARIO*/
+#myTable tr td img{
+    height:13px;
+    margin:5px;
+}
+/*FONDO DE TABLA*/
+tbody tr{
+    background-color: white;
+    
+}
+/*BOTON*/
+.eliminar{
+    background-color:#83002c;
+    border: none;
+    color: white !important;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-style:bold;
+}
+.eliminar_casilla{
+ width:57px !important;
+ display:none;
+}
+/* TABLA*/
+.table{
+
+}
+/*QUITAR SCROLL EN MOBIL*/
+*{
+    padding: 0;
+}
+html{
+    overflow-x:hidden !important;
+}
+
+/*----------------------------*/
+/*BOTONES DE DAR DE ALTA O DAR DE BAJA*/
+.container_opciones{
+    
+    display:flex;
+    margin:0 auto;
+    
+    
+}
+.dar_alta{
+    background-color:#830053;
+    margin: 0 auto;
+    padding:20px;    
+    flex-direction:column;
+    width:140px;
+    height:150px;
+    border-radius:20px;
+    color:white;
+}
+.fa-user-minus{
+   font-size:75px;
+   margin-left:10px;
+   margin-top:10px;
+   padding:5px;
+}
+.fa-user-plus{
+    font-size:75px;
+   margin-left:10px;
+   margin-top:10px;
+   padding:5px;
+}
+/*EL FORMULARIO DE DAR DE ALTA */
+/*----------------------------*/
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    color:#830053;
+    float: left;
+    padding: 9px 5px 1px;
+    margin-left: 12px;
+}
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 40px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+}
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 150px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 47%);
+    border: solid 1px #830053;
+    resize: none;
+}
+.cursiva{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a :hover{
+    color:white;
+    text-decoration: none;
+}
+.popup-formulario{
+    margin-right:50%;
+    font-size:10px !important;
+    position: inherit;
+}
+/*SELECTOR DE CUENTA EN EL FORMULARIO*/
+#cuenta{
+    color:black;
+  
+}
+/* ARREGLAR ERROR */
+button, input, optgroup, select, textarea {
+  color:black !important;
+}
+/*RESPONSIVE*/
+@media only screen and (max-width: 600px) {
+    .form-control{
+       display:inline !important;
+    }
+
+    body{
+        background-size:cover !important ;
+        background-repeat: no-repeat;
+        margin:0;
+        padding:0;
+    }
+    .table{
+            width:70% !important;
+            margin:0 auto !important;
+            margin-left:20px !important;
+        }
+    .dar_alta{
+            margin:5% !important;
+        }
+       
+    
+    .popup-formulario{
+      align-items:baseline !important;
+      position: inherit;
+    }  
+    footer{
+        position:inherit !important;
+    }
+    .eliminar_casilla{
+      width: auto !important;
+    }
 }
