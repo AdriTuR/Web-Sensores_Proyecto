@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2021 a las 08:16:00
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.1
+-- Tiempo de generación: 28-05-2021 a las 11:53:41
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -214,7 +214,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `role`, `type`, `lastLogin`) VALUES
-(1, 'user', '$2y$10$jJzjh6E1f1LDsqzH6dzzyOX5yBDOjQdk3axSoBdsDoQxkS9oUmpDy', 'user@user.es', 'USER', 'USER', '2021-05-03 07:35:24'),
+(1, 'user', '$2y$10$fk21ElxONqJlR8OigppUMuhRSDAdybBIgESiV.P2RqdgzjRXkbYmK', 'krystian8844@gmail.com', 'USER', 'USER', '2021-05-03 07:35:24'),
 (2, 'admin', '$2y$10$jJzjh6E1f1LDsqzH6dzzyOX5yBDOjQdk3axSoBdsDoQxkS9oUmpDy', 'admin@admin.es', 'ADMIN', 'USER', '2021-05-03 07:37:41'),
 (3, 'AdriTur', '$2y$10$ee5XpAo.tPeAe1jBKL1EwuxSQkmkkzwLU44fwoUkC7eO33udoUUOC', 'adri@tur.es', 'USER', 'USER', '2021-05-13 16:07:44');
 
@@ -233,6 +233,25 @@ CREATE TABLE `user_info` (
   `phone` varchar(15) CHARACTER SET latin1 NOT NULL,
   `registerDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user_recovery`
+--
+
+CREATE TABLE `user_recovery` (
+  `userID` int(11) NOT NULL,
+  `token` varchar(128) NOT NULL,
+  `expiration_time` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `user_recovery`
+--
+
+INSERT INTO `user_recovery` (`userID`, `token`, `expiration_time`) VALUES
+(1, 'f7a806e6c1e9a712c17e11a88b9df7ecaa37dcff135cf92ff8f9dd626292a4ea9b8513c1a0403624442540cdeefd70a8af43db9ae7dc99d6a97bd75017734fec', '2021-05-24 07:42:45');
 
 --
 -- Índices para tablas volcadas
@@ -285,6 +304,12 @@ ALTER TABLE `user_info`
   ADD PRIMARY KEY (`userID`);
 
 --
+-- Indices de la tabla `user_recovery`
+--
+ALTER TABLE `user_recovery`
+  ADD PRIMARY KEY (`userID`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -310,7 +335,7 @@ ALTER TABLE `plot`
 -- AUTO_INCREMENT de la tabla `probe`
 --
 ALTER TABLE `probe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
@@ -351,6 +376,12 @@ ALTER TABLE `probe_history`
 --
 ALTER TABLE `user_info`
   ADD CONSTRAINT `FK_USERDATA` FOREIGN KEY (`userID`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `user_recovery`
+--
+ALTER TABLE `user_recovery`
+  ADD CONSTRAINT `FK_USERRECOVERY` FOREIGN KEY (`userID`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

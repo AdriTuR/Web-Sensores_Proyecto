@@ -36,9 +36,11 @@ function customHead(){?>
 <!--------------------------CONTENIDO PANEL DE USUARIO--------------------------------------->
 
 <div class="contenido_panel-usuario">
-    <iframe id="grafica_panel" class="grafica_panel">
 
-    </iframe>
+
+    <div id="grafica"></div>
+
+
     <!---------WIDGET FECHA/HORA--------->
     <div class="widget_banner" id="widget_reloj-fecha">
         <div id="fecha"></div>
@@ -128,7 +130,8 @@ function customHead(){?>
     }
 </script>
 <script>
-    function abrirIframe(){
+    function abrirIframe(id){
+        grafica.innerHTML = '<iframe src="http://localhost/graphic.php?id=' + id + '" id="grafica_panel" class="grafica_panel"> </iframe>';
         document.getElementById("grafica_panel").style.display = "flex"
     }
 </script>

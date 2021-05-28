@@ -99,6 +99,7 @@ function getProbeData($plotID){
 
     if(mysqli_num_rows($result) > 0){        
         class Probe {
+            public $id;
             public $location;
             public $humidity; 
             public $temperature; 
@@ -106,7 +107,8 @@ function getProbeData($plotID){
             public $luminity; 
             public $lastUpdate; 
             
-            function __construct($a, $b, $c, $d, $e, $f) {
+            function __construct($z, $a, $b, $c, $d, $e, $f) {
+              $this->id = $z;
               $this->location = $a;
               $this->humidity = $b;
               $this->temperature = $c;
@@ -117,7 +119,7 @@ function getProbeData($plotID){
           }
 
         while($row = mysqli_fetch_array($result)) {
-            $probe = new Probe($row["location"], $row["humidity"], $row["temperature"], $row["salinity"], $row["luminity"], $row["lastUpdate"]);
+            $probe = new Probe($row["id"], $row["location"], $row["humidity"], $row["temperature"], $row["salinity"], $row["luminity"], $row["lastUpdate"]);
             array_push($probeData, $probe);
         }
     }

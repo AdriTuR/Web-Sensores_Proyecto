@@ -117,7 +117,7 @@ function addMarkerSensorClick(marker, sensorData){
         "</p></li>" +
         "<li class=\"infobox\">" +
         "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
-        "</p></li><li><a class=\"boton\" onclick='abrirIframe()' ><i class=\"fas fa-chart-line\"></i></a></li></ul></div>"
+        "</p></li><li><a class=\"boton\" onclick='abrirIframe(" + sensorData.id + ")'><i class=\"fas fa-chart-line\"></i></a></li></ul></div>"
 
 
 
