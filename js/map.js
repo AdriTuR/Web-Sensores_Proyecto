@@ -20,7 +20,7 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
         zoomControl: false,
-    });  
+    });
 }
 
 function drawUserField(fieldData, lblName){
@@ -34,7 +34,7 @@ function drawUserField(fieldData, lblName){
         fetchData(formData, function(res){
             for (let i = 0; i < res.length; i++) {
                 drawUserPlot(res[i], shape, "Parcela " + (i+1));
-            } 
+            }
         })
     });
 }
@@ -50,7 +50,7 @@ function drawUserPlot(plotData, fieldShape, lblName){
         fetchData(formData, function(res){
             for (let i = 0; i < res.length; i++) {
                 addMarkerSensorClick(addMarker(JSON.parse(res[i].location), " ", "probe", true), res[i]);
-            } 
+            }
         })
     })
 }
@@ -60,7 +60,7 @@ function showUserFields(data){
     //START TO LOAD ALL USER FIELDS
     for (let i = 0; i < data.length; i++) {
         drawUserField(data[i], "Campo " + (i+1));
-    }       
+    }
 }
 
 function addMarker(center, lblName, imgName, extra) {
@@ -68,7 +68,7 @@ function addMarker(center, lblName, imgName, extra) {
         var data = parseJSONLocationFormat(center);
         center = { lat: data[0].lat, lng: data[0].lng }
     }
-   
+
     var marker = new google.maps.Marker({
         position: center,
         icon: {
@@ -98,14 +98,32 @@ function addMarkerPlotClick(marker, field, bounds, cb){
         map.fitBounds(bounds);
         marker.setMap(null);
         field.setOptions({fillOpacity: 0});
-        cb();        
+        cb();
     });
 }
 
 function addMarkerSensorClick(marker, sensorData){
+    var content =
+        "<div id=\"infow\">" +
+        "<ul><li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + " Cº" +
+        "</p>" +
+        "</li>" +
+        "<li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + " %" +
+        "</p></li>" +
+        "<li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + " %" +
+        "</p></li>" +
+        "<li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
+        "</p></li><li><a class=\"boton\" onclick='abrirIframe()' ><i class=\"fas fa-chart-line\"></i></a></li></ul></div>"
+
+
+
     marker.addListener("click", () => {
         infowindow = new google.maps.InfoWindow();
-        infowindow.setContent("Datos sensor:<br><br> Temperatura: " + sensorData.temperature + "<br>Humedad:" + sensorData.humidity + "<br>Salinidad: " + sensorData.salinity + "<br>Luminosidad: " + sensorData.luminity + "<br>");
+        infowindow.setContent(content);
         infowindow.open(map, marker);
     });
 }

@@ -151,6 +151,73 @@ label #cancel{
     z-index: 50;
 }
 
+#infow {
+    padding: 30px;
+    color: #830053;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#infow .infobox{
+
+    background-repeat: no-repeat;
+    display:flex;
+}
+
+#infow li img{
+    position: relative;
+    float: left;
+    width: 60%;
+    margin: 5px;
+}
+
+#infow li{
+    height: 7vh;
+}
+
+.medidas_numero{
+    text-align: center;
+    width: 55%;
+    margin-top:12%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.boton {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    line-height: 28px;
+    padding: 17px;
+    border-radius: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #830053;
+    display: inline-block;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    margin-top: 10%;
+    width: 80%;
+    height: 8vh;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.fa-chart-line{
+    font-size: 4vh;
+}
+
+.grafica_panel{
+    display: none;
+    width: 85%;
+    height: 85%;
+    background-color: white;
+    position: absolute;
+    z-index: 101;
+    margin: 10% 8%;
+}
+
 /*-------------------------------------------------------------------------------------------*/
 /*-------------------------------------------FOOTER------------------------------------------*/
 /*-------------------------------------------------------------------------------------------*/

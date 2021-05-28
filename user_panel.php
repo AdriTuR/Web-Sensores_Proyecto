@@ -36,7 +36,9 @@ function customHead(){?>
 <!--------------------------CONTENIDO PANEL DE USUARIO--------------------------------------->
 
 <div class="contenido_panel-usuario">
+    <iframe id="grafica_panel" class="grafica_panel">
 
+    </iframe>
     <!---------WIDGET FECHA/HORA--------->
     <div class="widget_banner" id="widget_reloj-fecha">
         <div id="fecha"></div>
@@ -123,6 +125,11 @@ function customHead(){?>
             showUserFields(data);
         })
 
+    }
+</script>
+<script>
+    function abrirIframe(){
+        document.getElementById("grafica_panel").style.display = "flex"
     }
 </script>
 <script src="./js/closeSession.js"></script>
