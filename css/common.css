@@ -19,17 +19,15 @@
 .encabezado ul {
     list-style: none;
     overflow: hidden;
-    background-color: white;
 }
-
-.encabezado li a {
+    .encabezado li a {
     display: block;
     padding: 20px 20px;
     border-bottom: 1px solid #830053;
-    color: #830053;
+        background-color: white ;
+        color: #830053 ;
 }
-
-.encabezado li #color-login-btn:hover {
+/*.encabezado li #color-login-btn:hover {
     background-color: #830053;
     color: white;
 }
@@ -37,7 +35,7 @@
 .encabezado li a:hover {
     background-color: #830053;
     color: white;
-}
+}*/
 
 .encabezado .logo {
     float: left;
@@ -329,14 +327,27 @@
 
 /*-------------------------RESPONSIVE-----------------*/
 @media (min-width: 48em) {
+    #footertext {
+        font-size: 15px;
+        color: #830053;
+        padding-top: 1.5%;
+        padding-bottom: 2.5%;
+    }
+}
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+@media (min-width: 68em){
+    .menu_icon{
+        display: flex;
+        background-color: #830053;
+        color: white
+    }
     .encabezado{
         background-size: cover;
         background-attachment: inherit;
-        background-image: url(../images/header2.jpeg);
     }
     .encabezado li {
         float: left;
-
     }
     .encabezado .menu {
         clear: none;
@@ -353,25 +364,39 @@
     .logo {
         width: 20%;
     }
-    .encabezado ul {
-        background-color: white;
-    }
-    .encabezado li a {
-        color: white;
+    .encabezado li a {  
         padding: 10px 20px;
-        background-color: #830053;
-    ;
+        background-color: #830053  ;
+        color: white;
     }
-    .encabezado li a:hover {
-        background-color: white;
-        color: #830053;;
-    }
-    #footertext {
-        font-size: 15px;
+    .encabezado .menu_icon:hover{
         color: #830053;
-        padding-top: 1.5%;
-        padding-bottom: 2.5%;
+        background-color: white;
+    }
+    .encabezado .menu_icon:hover a{
+        color: #830053;
+        background-color: white;
+    }
+    encabezado li #color-login-btn:hover{
+        color: #830053;
+        background-color: white;
+            
+    }
+    .headSection{
+        padding-right: 5%;
+        padding-left: 5%
     }
 }
-/*-----------------------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------------------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   

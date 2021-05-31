@@ -131,7 +131,7 @@ function customHead(){?>
 </script>
 <script>
     function abrirIframe(id){
-        grafica.innerHTML = '<iframe src="http://localhost/graphic.php?id=' + id + '" id="grafica_panel" class="grafica_panel"> </iframe>';
+        grafica.innerHTML = '<iframe src="http://localhost/9studios-web/graphic.php?id=' + id + '" id="grafica_panel" class="grafica_panel"> </iframe>';
         document.getElementById("grafica_panel").style.display = "flex"
     }
 </script>

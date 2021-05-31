@@ -161,11 +161,6 @@ div {
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                   HEADER                                            */
 /*-------------------------------------------------------------------------------------------------------------------*/
-.encabezado {
-    background-image: url(../images/header2.jpeg);
-    background-size: contain;
-    background-attachment: fixed;
-}
 
 .fa-hand-holding{
     display: none !important;
@@ -347,6 +342,9 @@ div {
 .texto_pc{
     display: none;
 }
+.acerca_de_nosotros .fa-users{
+    display: block !important;
+    }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                       Estilo del FORMULARIO DE CONTACTO                                           */
@@ -507,30 +505,7 @@ textarea {
 /*------------------------RESPONSIVE--------------------------------*/
 
 @media (min-width: 48em) {
-    .menu_icon{
-        display: flex;
-        background-color:#830053;
-        color: white;
-    }
-    .menu_icon:hover {
-        background-color:white;
-        color: #830053;
-    }
-    .fa-hand-holding{
-        display: block !important;
-    }
-    .fa-info-circle{
-        display: block !important;
-    }
-    .fa-users{
-        display: block !important;
-    }
-    .fa-user-circle{
-        display: block !important;
-    }
-    .fa, .fas {
-        padding-top: 5%;
-    }
+    
     .popup-formulario{
         top:10px;
     }
@@ -552,46 +527,6 @@ textarea {
     }
     .box_confirmacion {
         width: 70%;
-    }
-    .encabezado{
-        background-size: cover;
-        background-attachment: inherit;
-    }
-    .encabezado li {
-        float: left;
-
-    }
-    .encabezado .menu {
-        clear: none;
-        float: right;
-        max-height: none;
-        margin-top: 1.6em;
-        margin-bottom: 1em;
-        margin-right: 0.5em;
-        border-style: none;
-    }
-    .encabezado .menu-icon {
-        display: none;
-    }
-    .logo {
-        width: 20%;
-    }
-    .encabezado ul {
-        background-color: white;
-    }
-    .encabezado li a {
-        color: white;
-        padding: 10px 20px;
-        background-color: #830053;
-    ;
-    }
-    .encabezado li a:hover {
-        background-color: white;
-        color: #830053;;
-    }
-    .headSection{
-        padding-right: 5%;
-        padding-left: 5%
     }
     .call_to_action {
         background-image: url("../images/landing_page/landing_page1(PC).jpg");
@@ -686,7 +621,6 @@ textarea {
     }
     .objetivos {
         padding-left: 2%;
-        padding-top: 3%;
         width: 55%
     }
     .acerca_de_nosotros {
@@ -697,20 +631,23 @@ textarea {
     h2{
         padding-left: 5.7%;
         text-align: left;
+        font-weight: 500;
+        font-size: x-large;
     }
     .datos_contacto {
         display: table;
-        padding-left: 5%;
+        padding-left: 10%;
     }
     .datos_contacto p{
-        padding-left: 5em;
-        font-size: 2em;
+        padding-left: 2em;
+        font-size: 1.3em;
     }
     .caja1{
         display: flex;
     }
     .caja2{
-        margin-top: 20%;
+        margin-top: 12%;
+        padding-bottom: 50%
     }
     .telefono{
         flex-direction: row;
@@ -721,13 +658,16 @@ textarea {
         display: -webkit-inline-box;
     }
     .acerca_de_nosotros i {
-        font-size: 5em;
+        font-size: 2.5em;
     }
     .texto_movil{
         display: none;
     }
     .texto_pc{
         display: block;
+    }
+    .acerca_de_nosotros .fa-users{
+    display: none !important;
     }
     #footertext {
         font-size: 15px;
@@ -737,6 +677,23 @@ textarea {
     }
     p {
         font-size: 2.5vh;
+    }
+}
+@media (min-width: 68em){
+    .fa-hand-holding{
+        display: block !important;
+    }
+    .fa-info-circle{
+        display: block !important;
+    }
+    .fa-users{
+        display: block !important;
+    }
+    .fa-user-circle{
+        display: block !important;
+    }
+    .fa, .fas {
+        padding-top: 5%;
     }
 }
 /*-------------------------------------------------------------------------------------------------------------------*/
