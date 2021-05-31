@@ -41,8 +41,19 @@ function customHead(){?>
         <label for="contraseña">Confirmar nueva contraseña:</label>
         <input type="password" id="repetir" placeholder="Confirmar nueva contraseña" required maxlength="30" minlength="3">
 
-        <button class="boton" type="submit" id="boton1">CAMBIAR</button>
+        <button class="boton" type="submit" id="boton1" onclick="abrirCheck()">CAMBIAR</button>
 
+    </div>
+
+    <div id="cambiada">
+        <h1 id="titulo3">
+            CONTRASEÑA CAMBIADA
+        </h1>
+        <img id="check" src="images/landing_page/check_icon2.png" alt="icono de check">
+        <p id="texto3">
+            Su contraseña ha sido cambiada con éxito
+        </p>
+        <button class="boton" id="boton3">CERRAR</button>
     </div>
 
     <script>
@@ -55,6 +66,14 @@ function customHead(){?>
             document.getElementById("confirmacion_contra").style.display = "none";
         }
         
+        //-------------------FUNCIÓN ABRIR CHECK---------------------//
+        function abrirCheck() {
+            document.getElementById("cambiada").style.display = "contents";
+            cerrarFormularioContra()
+        }
+        function cerrarFormularioContra() {
+            document.getElementById("formulario_contra").style.display = "none";
+        }
     </script>
 
     <?php include_once './includes/footer.php';?>
