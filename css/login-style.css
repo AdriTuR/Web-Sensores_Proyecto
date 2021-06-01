@@ -244,9 +244,8 @@ input[type=text], input[type=password]{
 @media (min-width: 48em) {
 
     body{
-        background: url(../images/login_page/login_formPC.jpg) no-repeat;
-        background-size: cover;
-        background-position-x: 230%;
+        background: transparent;
+        
     }
 
     footer {
@@ -263,6 +262,8 @@ input[type=text], input[type=password]{
     }
 
     #textobienvenido{
+        background: url(../images/login_page/login_bg.jpeg) no-repeat;
+        background-position: center;
         display: flex;
         flex-direction: column;
     }
@@ -295,6 +296,14 @@ input[type=text], input[type=password]{
         font-size: 37px;
     }
 
+    #login-form #box1{
+        border: transparent !important;
+    }
+
+    #login-form #box2{
+        border: transparent !important;
+    }
+
     .line{
         margin-bottom: 5%;
     }
@@ -314,9 +323,10 @@ input[type=text], input[type=password]{
     }
 
     #loginBtn{
-        margin-bottom: 20% !important;
+        margin-bottom: 20vh !important;
         width: 22% !important;
         padding: 19px !important;
+        min-width: 200px;
     }
 
     input[type=text], input[type=password]{
@@ -329,7 +339,15 @@ input[type=text], input[type=password]{
         border: solid 1px #830053;
     }
 
-}
+    #box-contacto{
+        margin-left: auto;
+        z-index: 0;
+        margin-top: -20px;
+    }
 
+    #closeForm{
+        display: none;
+    }
+}    
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
