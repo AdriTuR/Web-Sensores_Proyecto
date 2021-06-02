@@ -5,7 +5,6 @@
     text-decoration: none;
 }
 
-
 .sidebar{
     z-index: 201;
     position: fixed;
@@ -28,7 +27,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
 .sidebar header{
     font-size: 20px;
     color: white;
@@ -45,7 +43,6 @@
     font-family: 'Montserrat', sans-serif;
     background: #830053;
     text-align: center;
-
 }
 
 .btn_logout{
@@ -117,7 +114,9 @@ label #cancel{
 .contenido_panel-usuario{
     position: relative;
 }
+
 /*-------------------- WIDGET FECHA/HORA -------------------*/
+
 .widget_banner {
     background-color: #830053;
     -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
@@ -144,7 +143,9 @@ label #cancel{
     margin-left: 5%;
     margin-right: 5%;
 }
+
 /*--------------------------- MAPA -------------------------*/
+
 #map {
     height: 84vh;
     border: solid 1px black;
@@ -182,28 +183,6 @@ label #cancel{
     font-family: 'Montserrat', sans-serif;
 }
 
-.boton {
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    line-height: 28px;
-    padding: 17px;
-    border-radius: 100px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-color: #830053;
-    display: inline-block;
-    margin-bottom: 10%;
-    margin-left: 15%;
-    margin-top: 10%;
-    width: 80%;
-    height: 8vh;
-    text-align: center;
-    padding-bottom: 10px;
-}
 .fa-chart-line{
     font-size: 4vh;
 }
@@ -216,6 +195,81 @@ label #cancel{
     position: absolute;
     z-index: 101;
     margin: 10% 8%;
+}
+
+/*---------------------------PANEL CERRAR SESIÓN-------------------------*/
+
+.modal-content{
+    border-radius: 20px;
+}
+
+#titulo1{
+    font-family: 'Montserrat', sans-serif !important;
+    color: #830053;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header{
+    display: block;
+    border-color: transparent;
+    justify-content: center;
+    
+}
+
+.line {
+    margin: auto;
+    width: 62%;
+    color: #830053;
+}
+
+#texto1{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    word-spacing: 1px;
+    margin-top: 20px;
+}
+
+.modal-footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border-top: transparent;
+}
+
+.boton {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 28px;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #830053;
+    display: inline-block;
+    border-width: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 6vh;
+    margin-bottom: 3vh;
+}
+
+.boton:hover {
+    background: #77004b;
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.boton:active {
+    background: #660041;
+    transform: scale(1.06);
 }
 
 /*-------------------------------------------------------------------------------------------*/
@@ -231,5 +285,3 @@ footer{
 /*-------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------*/
-
-

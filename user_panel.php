@@ -4,6 +4,8 @@ $name = "Panel Usuario";
 include_once './includes/header.php';
 function customHead(){?>
     <script src="https://maps.googleapis.com/maps/api/js" async defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/panelMenu-style.css">
     <link rel="stylesheet" href="./css/userp-style.css">
 <?php }
@@ -26,7 +28,7 @@ function customHead(){?>
     <hr class="line_panel">
     <ul>
         <li><a href="#"><i class="fas fa-user "></i>PERFIL</a></li>
-        <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
+        <li><a class="btn_logout" type="button" data-toggle="modal" data-target="#panelsesion"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
     </ul>
     <br>
     <hr class="line_panel">
@@ -48,6 +50,42 @@ function customHead(){?>
     </div>
     <!---------MAPA--------->
     <div id="map"></div>
+
+    <!-----PANEL CERRAR SESIÓN------>
+    <!--<div id="cerrarsesion">
+        <h1 id="titulo1">
+            CERRAR SESION
+        <h1>
+        <hr class="line">
+        <p id="texto1">
+            ¿Estas seguro de que quieres cerrar sesión?
+        </p>
+        <div id="botones">
+            <button class="boton" onclick="disconnect()">SI</button>
+            <button class="boton">NO</button>
+        </div>
+    </div>
+</div> -->
+
+<!-- Modal -->
+<div class="modal" id="panelsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titulo1">CERRAR SESIÓN</h5>
+                <hr class="line">
+            </div>
+            <div class="modal-body">
+                <p id="texto1">
+                    ¿Estas seguro de que quieres cerrar sesión?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="boton" onclick="disconnect()">SI</button>
+                <button type="button" class="boton" data-dismiss="modal">NO</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!------------------------------------------------------------------------------------------->
@@ -137,6 +175,14 @@ function customHead(){?>
 </script>
 <script src="./js/closeSession.js"></script>
 <script src="./js/map.js"></script>
+<!-------------------------------------------------------------------------------------------------------------------->
+<!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" 
+integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 <!-------------------------------------------------------------------------------------------------------------------->
 </body>
 </html>
