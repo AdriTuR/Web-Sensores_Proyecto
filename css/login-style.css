@@ -1,6 +1,19 @@
 /*-----------------------------------------------------------------------------------*/
 /*                                  CSS-login.html                                   */
 /*-----------------------------------------------------------------------------------*/
+.fa-hand-holding{
+    display: none !important;
+}
+.fa-info-circle{
+    display: none !important;
+}
+.fa-users{
+    display: none !important;
+}
+.fa-user-circle{
+    display: none !important;
+}
+
 body {
     background: url(../images/login_page/login_form.jpg) no-repeat;
     background-size: cover;
@@ -15,7 +28,7 @@ header{
     z-index: 1;
 }
 footer{
-    position: absolute;
+    position: unset;
     bottom: 0;
 }
 
@@ -241,20 +254,33 @@ input[type=text], input[type=password]{
 
 /*--------------------------------------------------*/
 /*RESPONSIVE */
-@media (min-width: 48em) {
+@media (min-width: 68em) {
 
     body{
         background: transparent;
         
     }
 
-    footer {
-        position: fixed;
-        bottom: 0;
-    }
-
     header{
         background-color: #830053;
+    }
+    fa-hand-holding{
+        display: block !important;
+    }
+    .fa-info-circle{
+        display: block !important;
+    }
+    .fa-users{
+        display: block !important;
+    }
+    .fa-user-circle{
+        display: block !important;
+    }
+    .fa, .fas {
+        padding-top: 5%;
+    }
+    footer{
+        position: inherit;
     }
 
     #main{
@@ -283,14 +309,15 @@ input[type=text], input[type=password]{
     }
 
     #login-form #box{
-        width: 1100px;
-        height: 400px;
+        width: 130vh;
         margin-right: auto;
         z-index: 0;
-        margin-top: -20px;
-
-    }
-
+        margin-top: 0px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+   }
     #login-form #box1 h1{
         margin-top: 12%;
         font-size: 37px;
@@ -298,10 +325,15 @@ input[type=text], input[type=password]{
 
     #login-form #box1{
         border: transparent !important;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        
     }
 
     #login-form #box2{
         border: transparent !important;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     .line{
