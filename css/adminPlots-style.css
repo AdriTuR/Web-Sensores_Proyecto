@@ -1,0 +1,118 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                CSS-admin_parcelas.php                                             */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/* BODY BACKGROUND */
+body{
+    background: url("../images/admin_general/admin_panel3.jpg") no-repeat top center ;
+    background-size: cover;
+    height: 100%;
+    overflow-x:hidden;
+}
+.banner{
+    margin-top: 0px;
+    font-size: 17px;
+}
+
+
+/*--------------------------------------------------------------------------------*/
+/*                                     TABLA                                      */
+/*--------------------------------------------------------------------------------*/
+
+/*------------HEADER - GESTION DE PARCELAS-------------*/
+
+.listado_sensores{
+    width: 30%;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*                                     FOOTER                                     */
+/*--------------------------------------------------------------------------------*/
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                        MEDIA QUERY - GESTIONAR PARCELAS                                           */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*--------APARICIÓN DE APARTADOS OCULTOS DEL LISTADO--------------*/
+@media screen and (min-width: 900px){
+
+    /*---------------------CONFIGURACIÓN BACKGROUND--------------------*/
+
+    body{
+        background: url("../images/admin_general/admin_panel3-desktop.jpg") no-repeat top ;
+        background-size: cover;
+    }
+
+    /*------------------CONFIGURACIÓN BANNER TITULO-------------------*/
+
+    .banner{
+        margin-top: 1rem;
+        width: 30%;
+        font-size: 1.5rem;
+    }
+
+    /*--------APARICIÓN DE APARTADOS OCULTOS DEL LISTADO--------------*/
+
+    .listado_cliente{
+        display: flex;
+    }
+
+    /*---CONFIGURACIÓN APARTADOS DEL HEADER Y CONTENIDO DEL LISTADO---*/
+
+    td{
+        font-size: 1.5rem;
+    }
+
+    th{
+        font-size: 1rem;
+    }
+
+    /*---------------------CONFIGURACIÓN ICONOS ----------------------*/
+
+    .listado_icono-visualizar{
+        width: 8%;
+    }
+
+    .listado_icono-cuenta{
+        width: 8%;
+    }
+
+    .fa-user-circle{
+        padding: 0;
+    }
+
+    /*-------CONFIGURACIÓN HEIGHT DEL SCROLLEABLE LA LISTA-----------*/
+
+    .scrollbar_table{
+        height: 50vh;
+    }
+
+    .has-search .form-control{
+        margin-left: 5vh;
+        width: 45vh;
+    }
+    .has-search .form-control-feedback{
+        left: 5vh;
+        margin-top: 1.2rem;
+    }
+
+}
+/*------------------------------------------------------------------------------------------------*/
+/*---------------------------------------- FORMATO MOBILE ----------------------------------------*/
+
+/*----------------------REDUCIÓN DE TAMAÑO DE TABLA--------------------*/
+
+
+@media (min-height: 600px){
+    .scrollbar_table{
+        height: 45vh;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/

@@ -1,3 +1,32 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                 CSS - Common.css                                                  */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+/*---------------------------------- Variables ---------------------------------------*/
+:root{
+
+    /*--------------PATRÓN DE COLORES-------------*/
+
+    --color_principal: #830053;
+    --color_secundario: #4F0230;
+    --color_negro: #333333;
+    --color_blanco: white;
+    --color_inputs-background:rgb(229, 217, 217, 47%);
+
+    /*--------------------------------------------*/
+    /*------------------FUENTES-------------------*/
+
+    --fuente_titulo: 'Montserrat', sans-serif;
+    --fuente_texto: 'Poppins', sans-serif;
+
+    /*--------------------------------------------*/
+
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+
 * {
     margin: 0;
     padding: 0;
@@ -33,12 +62,12 @@
     list-style: none;
     overflow: hidden;
 }
-    .encabezado li a {
+.encabezado li a {
     display: block;
     padding: 20px 20px;
     border-bottom: 1px solid #830053;
-        background-color: white ;
-        color: #830053 ;
+    background-color: white ;
+    color: #830053 ;
 }
 /*.encabezado li #color-login-btn:hover {
     background-color: #830053;
@@ -140,6 +169,25 @@
 
 /*-------------------------------- Fin Menu --------------------------------*/
 
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                             BANNER DE LOS TITULOS                                                 */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.banner {
+    background-color: var(--color_principal);
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    margin: -500px 0;
+    padding: 0.5em 1em;
+    width: 80%;
+    color: var(--color_blanco);
+    font-size: 20px;
+    text-align: left;
+    font-family: var(--fuente_titulo);
+    font-weight: 300;
+    margin-top: 8%;
+    margin-bottom: 2vh;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                              Elementos del FOOTER                                                 */
@@ -337,8 +385,159 @@
         transform: scale(1);
     }
 }
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                 LISTADOS DE ADMIN                                                 */
+/*-------------------------------------------------------------------------------------------------------------------*/
 
-/*-------------------------RESPONSIVE-----------------*/
+.listado{
+    width: 95%;
+    margin: 0 auto;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*---------------------------------HEADER - LISTADOS---------------------------------*/
+
+.listado-header{
+    background-color: #830053;
+}
+
+.listado_cliente{
+    display: none;
+}
+
+.listado_icono-cuenta, .listado_icono-visualizar{
+    width: 15%;
+    padding: 0px;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*-------------------------------CONTENIDO - LISTADOS--------------------------------*/
+
+.listado_contenido{
+    overflow-x:auto;
+}
+
+/*-----------------------------------------------------*/
+/*----------------ESTRUCTURA DE LA TABLA---------------*/
+
+table{
+    width:100%;
+    table-layout: fixed;
+}
+
+th{
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    font-family: var(--fuente_titulo);
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td{
+    padding: 1rem 1rem;
+    background-color: rgba(255,255,255,0.7);
+    text-align: center;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--color_negro);
+    border-bottom: solid 1px rgba(255,255,255,0.3);
+}
+
+/*-----------SCROLL TABLA----------*/
+.scrollbar_table {
+    position: relative;
+    height: 60vh;
+    overflow: auto;
+}
+
+/*-----------------------------------------------------*/
+/*-------------AVISO DE NO EXISTE USUARIO--------------*/
+
+#sin_resultados{
+    display: none;
+    font-family: var(--fuente_titulo);
+    color: var(--color_principal);
+    width: 100%;
+    height: 100%;
+}
+
+#sin_resultados-texto1{
+    font-family: var(--fuente_titulo);
+    font-size: 5vh;
+    color: var(--color_principal);
+    font-weight: bold;
+    margin-bottom: 0 ;
+}
+
+#sin_resultados-texto2{
+    font-family: var(--fuente_titulo);
+    font-size: 0.7rem;
+    color: var(--color_principal);
+}
+
+.fa-user-alt-slash{
+    margin-top: 1rem;
+    color: var(--color_principal);
+}
+
+
+
+/*----ICONO DE CUENTA----*/
+.fa-user-circle{
+    color: var(--color_principal);
+}
+.fa-eye{
+    color: var(--color_principal);
+    opacity: 70%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                 CAMPO DE BUSQUEDA                                                 */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.form-group{
+    display: flex;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    width: 90%;
+    height: 3.5rem;
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid var(--color_principal);
+    color: var(--color_negro);
+    font-family: var(--fuente_texto);
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    left: 5%;
+    margin-top: 1rem;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: var(--color_principal);
+    padding-top: 0;
+}
+
+::placeholder{
+    color: var(--color_principal);
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                    RESPONSIVE                                                     */
+/*-------------------------------------------------------------------------------------------------------------------*/
 @media (min-width: 48em) {
     #footertext {
         font-size: 15px;
@@ -377,7 +576,7 @@
     .logo {
         width: 20%;
     }
-    .encabezado li a {  
+    .encabezado li a {
         padding: 10px 20px;
         background-color: #830053  ;
         color: white;
@@ -393,7 +592,7 @@
     encabezado li #color-login-btn:hover{
         color: #830053;
         background-color: white;
-            
+
     }
     .headSection{
         padding-right: 5%;
@@ -415,7 +614,7 @@
         padding-top: 5%;
     }
 }
-}
+
     
     
     
