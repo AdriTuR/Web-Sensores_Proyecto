@@ -29,9 +29,14 @@ if($method == 'POST'){
         
         if($done){	
             require_once 'mail.php';
+
+            $body = utf8_decode(file_get_contents("../../includes/mail_templates/mail.html"));
+            $body = str_replace("%nombre%", "Jose Juan", $body); 
+            $body = str_replace("%recoverLink%", "http://localhost/recover.php?token=". $token, $body); 
+
             $template = [];
             $template["title"] = 'GTI Sensores - Cambio de contraseña';
-            $template["body"] = '<h1>GTI SENSORES</h1> <br> <b>Se ha solicitado un cambio de contraseña para su cuenta en nuestra web. Para cambiarla sigue el siguiente enlace.<br> <span>' . '<a href="http://localhost/recover.php?token='. $token . '"><button>Click</button></a></span>';
+            $template["body"] = $body;
             sendMail($email, $template);
 
             $res["status"] = "ok";

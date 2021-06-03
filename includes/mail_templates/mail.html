@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 100%;
+            table-layout: fixed;
+            padding-top: 40px;
+            padding-bottom: 100px;
+        }
+
+        .webkit{
+            max-width: 550px;
+            background-color: #f6f9fc;
+        }
+
+        .outer {
+            width: 100%;
+            max-width: 600px;
+            border-spacing: 0;
+            background-color: rgb(227, 228, 224);
+        }
+
+        .encabezado {
+            background-image: url("https://cdn.discordapp.com/attachments/826007239517011989/846067709505699860/header2-min.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 15vh;
+            float: left;
+        }
+
+        .content {
+            background-color: #F2F2F2;
+            height: 25vh;
+            padding: 0 15px 50px;
+        }
+
+        .content #title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 21px;
+            font-weight: bold;
+            padding: 8px 0;
+            float: left;
+        }
+
+        .content #line {
+            color: #830053;
+            border: 2px solid;
+            width: 100%;
+            float: left;
+        }
+
+        .content #intro {
+            padding-top: 15px;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #333333;
+            float: left;
+        }
+
+        .content #body {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: regular;
+            display: block;
+            float: left;
+        }
+
+        .content #body p{
+            text-align: justify;
+            padding-bottom: 20px;
+        }
+
+        button {
+            background: #830053;
+            color: white;
+            width: 28%;
+            height: 5vh;
+            border: none;
+            margin-left: 35%;
+        }
+
+    </style>
+</head>
+<body>
+    <center class="wrapper">
+        <div class="webkit">
+            <table class="outer" align="center">
+                <tr>
+                    <td>
+                        <table width="100%" style="border-spacing: 0;">
+                            <tr>
+                                <header class="encabezado" id="header">    
+                                <a href="localhost"><img class="logo" src="https://cdn.discordapp.com/attachments/826007239517011989/846067998958813184/logoGTI-min.png" alt="logo del sitio web"></a> 
+                            </tr>
+                            <tr>
+                                <td class="content">
+                                    <div id="title">Recuperar contraseña</div>
+                                    <hr id="line">
+                                    <div id="intro">Hola %nombre%</div>
+                                    <div id="body"><p>Parece que te has olvidado tu contraseña y has solicitado restablecerla.
+                                                    Para crear una nueva contraseña haz click en el siguiente botón.
+                                                    </p>
+                                    <a href="%recoverLink%"><button>CAMBIAR</button></a>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+
+
+            </table>
+
+        </div>
+    </center>
+</body>
+</html>

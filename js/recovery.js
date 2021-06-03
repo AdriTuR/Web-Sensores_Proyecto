@@ -36,8 +36,7 @@ document.querySelector("form").addEventListener("submit", function(event){
             fetch("./api/v1/", {
                 method: "DELETE"
             });
-            console.log("clave cambiada correctamete");
-            //TODO: MOSTRAR POPUP DE CLAVE CAMBIADA Y BOTON PARA IR AL LOGIN
+            abrirCheck();
         }
     });
     
