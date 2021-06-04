@@ -112,7 +112,7 @@ function customHead(){?>
         <table cellpadding="0" cellspacing="0" border="0" id="tabla">
             <tbody>
             <tr class="tr_user">
-                <td class="listado_icono-cuenta"><i class="fas fa-user-circle"></i></td>
+                <td class="listado_icono-cuenta"><i class="fas fa-user-circle" id="user"></i></td>
                 <td class="listado_cliente">Adrián Tur Rubio</td>
                 <td class="listado_DNI">20960381K</td>
                 <td class="listado_sensores">14</td>

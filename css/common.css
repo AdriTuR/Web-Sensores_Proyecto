@@ -52,7 +52,7 @@
 .fa-users{
     display: none !important;
 }
-.fa-user-circle{
+#usermenu{
     display: none !important;
 }
 
@@ -87,6 +87,7 @@
 
 .logo {
     width: 45%;
+    max-width: 280px;
 }
 
 .encabezado .menu {
@@ -487,7 +488,7 @@ td{
 
 
 /*----ICONO DE CUENTA----*/
-.fa-user-circle{
+#user{
     color: var(--color_principal);
 }
 .fa-eye{
@@ -538,6 +539,14 @@ td{
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                                    RESPONSIVE                                                     */
 /*-------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 500px){
+    .encabezado .menu-icon{
+        padding: 50px 5%;
+    }
+}
+
+/*------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------*/
 @media (min-width: 48em) {
     #footertext {
         font-size: 15px;
@@ -607,7 +616,7 @@ td{
     .fa-users{
         display: block !important;
     }
-    .fa-user-circle{
+    #usermenu{
         display: block !important;
     }
     .fa, .fas {
