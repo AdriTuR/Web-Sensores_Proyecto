@@ -104,51 +104,98 @@ div {
     transform: scale(1.06);
 }
 
-/*--------------------------------------------------------------*/
-/*------------------ Botón de Ir Arriba/Abajo ------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------- Botón de Ir Arriba/Abajo ---------------------------------------------*/
+
 
 #boton_ir_arriba {
     display: none;
     position: fixed;
-    bottom: 20px;
     right: 30px;
+    bottom: 2rem;
     z-index: 99;
-    font-size: 16px;
-    border: none;
+    font-size: 2rem;
+    background-color: rgba(255,255,255,0.9);
+    border:  none;
     outline: none;
-    background-color: #830053;
-    color: white;
+    color: var(--color_principal);
     cursor: pointer;
-    padding: 15px;
+    padding: 7px 20px;
     border-radius: 50px;
 }
+
 #boton_abajo{
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    left: 45%;
+    bottom: 2rem;
     z-index: 99;
-    font-size: 16px;
+    font-size: 2rem;
+    background-color: var(--color_blanco);
     border: none;
     outline: none;
-    background-color: #830053;
-    color: white;
+    color: var(--color_principal);
     cursor: pointer;
-    padding: 15px;
+    padding: 7px 20px;
     border-radius: 50px;
+
 }
 
-/*--------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------------*/
-/*                                   HEADER                                            */
-/*-------------------------------------------------------------------------------------------------------------------*/
+.fa-angle-down{
+    animation: flecha-animada 2s ease-in-out infinite;
+}
 
+.fa-angle-up{
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------ANIMACIÓN FLECHA-------------------------------*/
+
+@keyframes flecha-animada {
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(8px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------MEDIA QUERY - ARRIBA/ABAJO-------------------------------*/
+
+/*Esto es para hacer que el botón de ir abajo se quede en el
+        centro cuando el ancho de pantalla cambia*/
+
+@media (max-width: 450px)  {
+    #boton_abajo{
+        left: 39%;
+    }
+}
+
+@media (max-width: 500px)  {
+    #boton_abajo{
+        left: 42%;
+    }
+}
+
+@media (min-width: 48em){
+    #boton_abajo{
+        left: 48%;
+    }
+}
 
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                      Elementos de la PRIMERA SECCIÓN                                              */
 /*-------------------------------------------------------------------------------------------------------------------*/
 .call_to_action {
-    background-image: url("../images/landing_page/landing_page1.jpg");
+    background: url("../images/landing_page/landing_page1.jpg") no-repeat top center;
     background-size: cover;
     height: 93vh;
 }
@@ -312,7 +359,7 @@ div {
 }
 .acerca_de_nosotros .fa-users{
     display: block !important;
-    }
+}
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                       Estilo del FORMULARIO DE CONTACTO                                           */
@@ -473,7 +520,7 @@ textarea {
 /*------------------------RESPONSIVE--------------------------------*/
 
 @media (min-width: 48em) {
-    
+
     .popup-formulario{
         top:10px;
     }
@@ -635,7 +682,7 @@ textarea {
         display: block;
     }
     .acerca_de_nosotros .fa-users{
-    display: none !important;
+        display: none !important;
     }
     #footertext {
         font-size: 15px;
@@ -647,7 +694,7 @@ textarea {
         font-size: 2.5vh;
     }
 }
-    
+
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
 

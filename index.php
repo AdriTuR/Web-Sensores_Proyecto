@@ -12,11 +12,11 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 
 <body id="body">
-<!------------------------------------- PRIMERA SECCIÓN DE LA PÁGINA --------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------- PRIMERA SECCIÓN DE LA PÁGINA --------------------------------------------->
 <section class="call_to_action">
     <div id="contenido call_to_action">
         <h1 class="fistText morado">CONTROLA TUS CULTIVOS DESDE CUALQUIER SITIO</h1>
-        <br>
         <p class="secondText">¿Eres una agricultor con una explotación
             agraria y te gustaría ahorrarte tiempo
             y trabajo? </p>
@@ -24,10 +24,18 @@ function customHead(){?>
             damos la oportunidad de ver el estado de
             tus cultivos desde cualquier
             sitio. </p>
-        <br>
         <a class="boton" onclick="abrirFormulario()">CONTÁCTANOS</a>
+        <!---------------------------------------------------------------------------------------------------->
+        <!----------------------------------------BOTÓN IR ARRIBA/ABAJO--------------------------------------->
+
+        <a id="boton_abajo" href="#mas_informacion"><i class="fas fa-angle-down"></i></a>
+        <a id="boton_ir_arriba" href="#header"><i class="fas fa-angle-up"></i></a>
+
+        <!---------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------->
     </div>
-    <!--------------------------------FORMULARIO DE CONTACTO------------------------------->
+    <!--------------------------------------------------------------------------------------------------->
+    <!------------------------------------FORMULARIO DE CONTACTO----------------------------------------->
     <div class="popup-formulario" id="formulario_contacto">
         <div class="box" id="box-contacto">
             <div id="header-box">
@@ -60,7 +68,8 @@ function customHead(){?>
             </div>
         </div>
     </div>
-    <!----------------- MENSAJE DE CONFIRMACION ----------------->
+    <!--------------------------------------------------------------------------------------------------->
+    <!------------------------------------ MENSAJE DE CONFIRMACION -------------------------------------->
     <div class="popup-mensaje_confirmacion" id="mensaje_confirmacion">
         <div class="box_confirmacion" id="box-confirmacion">
             <div id="content-confirm-box">
@@ -71,81 +80,8 @@ function customHead(){?>
             </div>
         </div>
     </div>
-    <!------------------------------------------------------------>
-
-    <!---------------------SCRIPTS PARA EL FORMULARIO DE CONTACTO--------------------->
-    <script>
-        //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
-        function abrirFormulario() {
-            document.getElementById("formulario_contacto").style.display = "flex";
-            document.getElementById("body").style.overflow = "hidden"
-            document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
-            document.getElementById("menu-btn").disabled = true;
-            document.getElementById("boton_abajo").style.display = "none";
-            document.documentElement.scrollTop = 0;
-        }
-        //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
-        function cerrarFormulario() {
-            document.getElementById("formulario_contacto").style.display = "none";
-            document.getElementById("body").style.overflow = "scroll";
-            document.getElementById("contenido call_to_action").style.filter = "none";
-            document.getElementById("boton_abajo").style.display = "flex";
-            document.getElementById("menu-btn").disabled = false;
-        }
-        //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
-        function mostrarConfirmacion(){
-            document.getElementById("mensaje_confirmacion").style.display = "flex";
-            document.getElementById("body").style.overflow = "hidden"
-            document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
-            document.getElementById("menu-btn").disabled = true;
-            cerrarFormulario();
-        }
-        //-----------------FUNCIÓN CERRAR CONFIRMACION-------------------//
-        function cerrarConfirmacion(){
-            document.getElementById("mensaje_confirmacion").style.display = "none";
-            document.getElementById("body").style.overflow = "scroll";
-            document.getElementById("contenido call_to_action").style.filter = "none";
-            document.getElementById("menu-btn").disabled = false;
-            document.getElementById("boton_abajo").style.display = "flex";
-        }
-        //-------------------FUNCIÓN LIMPIAR FORMULARIO--------------------//
-        function limpiarFormulario() {
-            document.getElementById("form_contact").reset();
-        }
-    </script>
-
-    <!------------------------------------------------------------------------------------->
-
-    <!--------------------------------BOTÓN IR ARRIBA------------------------------->
-    <a href="#mas_informacion">
-        <button id="boton_abajo">
-            <i class="fas fa-arrow-down"></i>
-        </button>
-    </a>
-
-    <a href="#header">
-        <button id="boton_ir_arriba" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </a>
-
-    <!---------------SCRIPTS PARA EL BOTON IR ARRIBA----------------->
-    <script>
-
-        var mybutton = document.getElementById("boton_ir_arriba");
-
-        window.onscroll = function() {scrollFunction()};
-
-        //-----------SCROLLFUNCTION--------------//
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-    </script>
-
+    <!--------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------->
 </section>
 <!------------------------------------ FIN PRIMERA SECCIÓN DE LA PÁGINA ------------------------------------------>
 
@@ -278,8 +214,6 @@ function customHead(){?>
             </a>
         </div>
     </div>
-
-
 </section>
 <!------------------------------------- FIN CUARTA SECCIÓN DE LA PÁGINA ------------------------------------------>
 
@@ -288,7 +222,81 @@ function customHead(){?>
 <?php include_once './includes/footer.php';?>
 <!---------------------------------------- FIN FOOTER DE LA PÁGINA ----------------------------------------------->
 
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------SCRIPTS------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+
+<!------------------------------------FORMULARIO DE CONTACTO------------------------------------>
+
+<script>
+    //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
+    function abrirFormulario() {
+        document.getElementById("formulario_contacto").style.display = "flex";
+        document.getElementById("body").style.overflow = "hidden"
+        document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
+        document.getElementById("menu-btn").disabled = true;
+        document.getElementById("boton_abajo").style.display = "none";
+        document.documentElement.scrollTop = 0;
+    }
+    //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
+    function cerrarFormulario() {
+        document.getElementById("formulario_contacto").style.display = "none";
+        document.getElementById("body").style.overflow = "scroll";
+        document.getElementById("contenido call_to_action").style.filter = "none";
+        document.getElementById("boton_abajo").style.display = "flex";
+        document.getElementById("menu-btn").disabled = false;
+    }
+    //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
+    function mostrarConfirmacion(){
+        document.getElementById("mensaje_confirmacion").style.display = "flex";
+        document.getElementById("body").style.overflow = "hidden"
+        document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
+        document.getElementById("menu-btn").disabled = true;
+        cerrarFormulario();
+    }
+    //-----------------FUNCIÓN CERRAR CONFIRMACION-------------------//
+    function cerrarConfirmacion(){
+        document.getElementById("mensaje_confirmacion").style.display = "none";
+        document.getElementById("body").style.overflow = "scroll";
+        document.getElementById("contenido call_to_action").style.filter = "none";
+        document.getElementById("menu-btn").disabled = false;
+        document.getElementById("boton_abajo").style.display = "flex";
+    }
+    //-------------------FUNCIÓN LIMPIAR FORMULARIO--------------------//
+    function limpiarFormulario() {
+        document.getElementById("form_contact").reset();
+    }
+</script>
+
+<!------------------------------------BOTON IR ARRIBA/ABAJO------------------------------------>
+
+<script>
+
+    var buttonUp = document.getElementById("boton_ir_arriba");
+    var buttonDown = document.getElementById("boton_abajo");
+
+    window.onscroll = function() {scrollFunction()};
+
+    //------------------------SCROLLFUNCTION-----------------------------//
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            buttonUp.style.display = "block";
+            buttonDown.style.display="none";
+
+        } else {
+            buttonUp.style.display = "none";
+            buttonDown.style.display="";
+        }
+    }
+</script>
+<!-------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
 </body>
+
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
 <!-------------------------------------------------------------------------------------------------------------------->
