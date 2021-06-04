@@ -1,7 +1,10 @@
+//TODO: CAMBIAR ZOOM SEGÚN NUMERO CAMPOS USUARIO
+
 let map;
 let userName;
 let fieldData;
 let infowindow;
+
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
