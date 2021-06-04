@@ -38,7 +38,7 @@ function customHead(){?>
 <!--------------------------CONTENIDO PANEL DE USUARIO--------------------------------------->
 
 <div class="contenido_panel-usuario">
-
+    <button id="resetMap" onclick="resetMap()">VOLVER ATRAS</button>
 
     <div id="grafica"></div>
 
@@ -162,7 +162,8 @@ function customHead(){?>
         formData.append('data', "field");
 
         fetchData(formData, function(data){
-            showUserFields(data);
+            fieldData = data;
+            showUserFields();
         })
 
     }

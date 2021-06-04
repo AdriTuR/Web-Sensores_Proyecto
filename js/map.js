@@ -1,5 +1,7 @@
 let map;
 let userName;
+let fieldData;
+let infowindow;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -21,12 +23,14 @@ function initMap() {
         rotateControl: false,
         zoomControl: false,
     });
+
+    infowindow = new google.maps.InfoWindow();
 }
 
 function drawUserField(fieldData, lblName){
     var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(fieldData.location)));
     var bounds = createBounds(shape);
-
+    
     addMarkerFieldClick(addMarker(bounds.getCenter(), lblName, "field"), bounds, function(){
         var formData = new FormData();
         formData.append('data', "plot");
@@ -42,8 +46,8 @@ function drawUserField(fieldData, lblName){
 function drawUserPlot(plotData, fieldShape, lblName){
     var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(plotData.location)));
     var bounds = createBounds(shape);
-
-    addMarkerPlotClick(addMarker(bounds.getCenter(), lblName, "field"), fieldShape, bounds, function(){
+    
+    addMarkerPlotClick(addMarker(bounds.getCenter(), lblName, "plot"), fieldShape, bounds, function(){
         var formData = new FormData();
         formData.append('data', "probe");
         formData.append('extra', plotData.plotID);
@@ -55,11 +59,11 @@ function drawUserPlot(plotData, fieldShape, lblName){
     })
 }
 
-function showUserFields(data){
+function showUserFields(){
     //START
     //START TO LOAD ALL USER FIELDS
-    for (let i = 0; i < data.length; i++) {
-        drawUserField(data[i], "Campo " + (i+1));
+    for (let i = 0; i < fieldData.length; i++) {
+        drawUserField(fieldData[i], "Campo " + (i+1));
     }
 }
 
@@ -68,7 +72,7 @@ function addMarker(center, lblName, imgName, extra) {
         var data = parseJSONLocationFormat(center);
         center = { lat: data[0].lat, lng: data[0].lng }
     }
-
+    
     var marker = new google.maps.Marker({
         position: center,
         icon: {
@@ -79,17 +83,20 @@ function addMarker(center, lblName, imgName, extra) {
         animation: google.maps.Animation.DROP,
         map: map
     });
+    
+    $('#resetMap').on('click', function() {
+        marker.setMap(null);
+    });
 
     return marker;
 }
 
+//FUNCION CUANDO HACES CLICK EN EL ICONO CAMPO
 function addMarkerFieldClick(marker, bounds, cb){
     marker.addListener("click", () => {
+        marker.setMap(null);
         map.fitBounds(bounds);
-        marker.addListener("click", () => {
-            marker.setMap(null);
-            cb();
-        });
+        cb();
     });
 }
 
@@ -104,26 +111,24 @@ function addMarkerPlotClick(marker, field, bounds, cb){
 
 function addMarkerSensorClick(marker, sensorData){
     var content =
-        "<div id=\"infow\">" +
-        "<ul><li class=\"infobox\">" +
-        "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + " Cº" +
-        "</p>" +
-        "</li>" +
-        "<li class=\"infobox\">" +
-        "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + " %" +
-        "</p></li>" +
-        "<li class=\"infobox\">" +
-        "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + " %" +
-        "</p></li>" +
-        "<li class=\"infobox\">" +
-        "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
-        "</p></li><li><a class=\"boton\" onclick='abrirIframe(" + sensorData.id + ")'><i class=\"fas fa-chart-line\"></i></a></li></ul></div>"
-
-
-
+    "<div id=\"infow\">" + sensorData.id + 
+    "<ul><li class=\"infobox\">" +
+    "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + " Cº" +
+    "</p>" +
+    "</li>" +
+    "<li class=\"infobox\">" +
+    "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + " %" +
+    "</p></li>" +
+    "<li class=\"infobox\">" +
+    "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + " %" +
+    "</p></li>" +
+    "<li class=\"infobox\">" +
+    "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
+    "</p></li><li><a class=\"boton\" onclick='abrirIframe(" + sensorData.id + ")'><i class=\"fas fa-chart-line\"></i></a></li></ul></div>"
+    
     marker.addListener("click", () => {
-        infowindow = new google.maps.InfoWindow();
         infowindow.setContent(content);
+
         infowindow.open(map, marker);
     });
 }
@@ -138,7 +143,10 @@ function createCoordShape(data){
         fillOpacity: 0.35,
         map: map
     });
-
+    
+    $('#resetMap').on('click', function() {
+        polygon.setMap(null);
+    });
     return polygon;
 }
 
@@ -147,7 +155,7 @@ function createBounds(polygon){
     polygon.getPath().getArray().forEach(function (v) {
         bounds.extend(v);
     })
-
+    
     return bounds;
 }
 
@@ -157,13 +165,24 @@ function parseJSONLocationFormat(data){
         e.lat = parseFloat(e.lat)
         e.lng = parseFloat(e.lng)
     }
-
+    
     return data;
 }
 
+function resetMap(){   
+    setTimeout(() => {
+        showUserFields();
+    }, 1000);
+    map.setCenter(new google.maps.LatLng(39.0085631, -4.0779268));
+    map.setZoom(5);
+    map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+
+}
+
+
 function fetchData(formData, cb){
     formData.append('user', userName);
-
+    
     fetch("./api/v1/probes.php", {
         method: "POST",
         body: formData

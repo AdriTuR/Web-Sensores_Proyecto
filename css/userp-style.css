@@ -285,3 +285,15 @@ footer{
 /*-------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------*/
+
+/* GMAP INFOWINDOW/POPUP - CLOSE BUTTON */
+button.gm-ui-hover-effect {
+    background: url(../images/landing_page/close_icon3png.png) no-repeat !important;
+    background-size: contain !important;
+    margin-top: 5% !important;
+    padding-right: 20% !important;
+}
+    
+button.gm-ui-hover-effect img {
+    display: none !important;
+}
