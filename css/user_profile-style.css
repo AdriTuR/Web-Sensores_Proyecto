@@ -1,0 +1,196 @@
+/*---------------------------GENERAL-------------------------*/
+
+.banner{
+    width: 65%;
+}
+
+.texto1{
+    font-family: 'Poppins', sans-serif !important;
+    color: #830053;
+    font-size: 14px;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.line {
+    margin: auto;
+    width: 80%;
+    color: #830053;
+    margin-bottom: 2vh;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    z-index: 200;
+}
+
+#iconomapainteractivo{
+    width: 15%;
+}
+
+/*---------------------------PANEL CERRAR SESIÓN-------------------------*/
+
+.modal-content{
+    border-radius: 20px;
+}
+
+#titulo1{
+    font-family: 'Montserrat', sans-serif !important;
+    color: #830053;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header{
+    display: block;
+    border-color: transparent;
+    justify-content: center;
+    
+}
+
+.line {
+    margin: auto;
+    width: 62%;
+    color: #830053;
+}
+
+#texto1{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    word-spacing: 1px;
+    margin-top: 20px;
+}
+
+.modal-footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border-top: transparent;
+}
+
+.boton {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 28px;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #830053;
+    display: inline-block;
+    border-width: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 6vh;
+    margin-bottom: 3vh;
+}
+
+.boton:hover {
+    background: #77004b;
+    transform: scale(1.05);
+    transition: 150ms;
+}
+
+.boton:active {
+    background: #660041;
+    transform: scale(1.06);
+}
+
+/*---------------------------CONTENEDOR 1-------------------------*/
+
+#iconouser{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nombre{
+    font-family: 'Montserrat', sans-serif !important;
+    color: #830053;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: initial;
+}
+
+#iduser{
+    font-family: 'Montserrat', sans-serif !important;
+    color: #830053;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*------------------------------BANNER----------------------------*/
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+/*---------------------------CONTENEDOR 2-------------------------*/
+
+#identidad{
+    display: flex;
+
+}
+
+/*---------------------------CONTENEDOR 3-------------------------*/
+
+
+
+/*---------------------------CONTENEDOR 4-------------------------*/
+
+
+
+
+/*---------------------------RESPONSIVE-------------------------*/
+
+@media(min-width:1000px){
+
+    #cont1{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #contenedor1{
+        order:2;
+        margin-bottom: 5%;
+
+    }
+
+    .banner{
+        order:1;
+        margin-top: 2%;
+        width: 20%;
+    }
+
+    #cont2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .line{
+        display: none;
+    }
+    
+    .texto1{
+        font-size: 18px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 4vh;
+    }
+
+    #identidad{
+        flex-direction: column;
+    }
+}
+
