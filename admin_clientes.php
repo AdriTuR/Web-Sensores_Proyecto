@@ -23,11 +23,12 @@ function customHead(){?>
     <header> PANEL DE ADMIN </header>   
     <ul>
         <li><a href="#"><i class="fas fa-home"></i>Panel</a></li>
+        <li><a href="#"><i class="fas fa-users"></i>Gestionar Clientes</a></li>
         <li><a href="#"><i class="fas fa-tractor"></i>Gestionar Parcelas</a></li>
         <li><a href="admin_consultas.php"><i class="fas fa-comment-alt"></i>Consultas</a></li>
         <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
     </ul>
-<h1 class="banner"><img src="./images/admin_general/user-gestion_icon.png" alt="imagen usuario gestion">Clientes</h1>
+   
 
 
 </div>  
@@ -48,12 +49,13 @@ window.addEventListener("load", function(){
   });
 });
 </script>
+<h1 class="banner">GESTIÓN DE PARCELAS</h1>
 <!--  FORMULARIO DAR DE ALTA  -->
 <div class="popup-formulario" id="formulario_contacto">
             <div class="box" id="box-contacto">
                 <div id="header-box">
                     <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
-                    <h1 id="title">DAR DE ALTA</h1>
+                    <div class="titulo_morado"><h1 id="title">DAR DE ALTA</h1></div>
                 </div>
                 <div id="content-form-box">
                     <form id="form_contact">
@@ -70,23 +72,23 @@ window.addEventListener("load", function(){
                             <input type="DNI" name="introducir_DNI" id="DNI" placeholder="Escribe tu DNI" required pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra">
                         </p>
                         <p>
-                            <label for="correo" class="colocar_correo">Correo: </label>
+                         <label for="correo" class="colocar_correo"><i class="fas fa-envelope"></i>Correo: </label> 
                             <input type="mail" name="introducir_correo" id="correo" required placeholder="Escribe tu correo" maxlength="60"  minlength="3">
                         </p>
                         <p>
-                            <label for="telefono" class="colocar_telefono">Telefono: </label>
+                            <label for="telefono" class="colocar_telefono"><i class="fas fa-phone-alt"></i>Telefono: </label>
                             <input type="number" name="introducir_telefono" id="telefono" required placeholder="Escribe tus apellidos" maxlength="60"  minlength="3">
                         </p>
                         <p>
-                            <label for="nombre_cuenta" class="colocar_nombre_cuenta">Nombre de la cuenta:</label>
+                            <label for="nombre_cuenta" class="colocar_nombre_cuenta"><i class="fas fa-user-circle"></i>Nombre de la cuenta:</label>
                             <input type="text" name="introducir_nombre_cuenta" id="nombre_cuenta" placeholder="Escribe tu nombre de la cuenta" required maxlength="30" minlength="3">
                         </p>
                         <p>
-                            <label for="contraseña" class="colocar_contraseña">Contraseña:</label>
+                            <label for="contraseña" class="colocar_contraseña"><i class="fas fa-key"></i>Contraseña:</label>
                             <input type="password" name="introducir_contraseña" id="contraseña" placeholder="Escribe tu contraseña" required maxlength="30" minlength="3">
                         </p>
                         <p>
-                            <label for="cuenta" class="colocar_cuenta">Tipo de cuenta:</label>
+                            <label for="cuenta" class="colocar_cuenta"><i class="fas fa-id-badge"></i>Tipo de cuenta:</label>
                             <br>
                             <select id="cuenta">
                               <option value="Usuario">Usuario</option>
@@ -107,13 +109,16 @@ $conn = mysqli_connect("localhost","root","","grupo9");
 if($conn-> connect_error) {
   die("Connection failed".$conn);
 }
-$query = "SELECT id, username, role from user";
+$query = "SELECT id, username, role from user where role='USER'";
 $result=mysqli_query($conn,$query);
 ?>
 <div class="container" id="container_lista">
 
 <div id="lista_contener">
-<input class="form-control" id="myInput" type="text" placeholder="Buscar.."> 
+<div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" class="form-control search" id="input_buscar" placeholder="Buscar" onkeyup="buscarUsuario()">
+</div>
 
 
 <br>
@@ -131,33 +136,48 @@ $result=mysqli_query($conn,$query);
 <tbody id="myTable">
 <?php     
  while($rows=mysqli_fetch_assoc($result)){
+  $dnikey = $rows["id"];
+  $dni = "SELECT dni from user_info where userID ='$dnikey'";
+  $dniXD=mysqli_query($conn,$dni);
   ?>
   <tr>
  
   <td><img  src="./images/admin_general/usuario.png"><?php echo $rows['username']?></td>
-  <td><?php echo $rows['id'] ?></td>
-  <td><?php echo $rows['role'] ?></td>
-  <td class="eliminar_casilla" id="eliminar-casilla"><button class="eliminar" id="eliminar_boton"><i class="fas fa-trash-alt"></i></button></td>
-  
+  <td><?php while($rowsDNI=mysqli_fetch_assoc($dniXD)){
+    echo $rowsDNI['dni'];
+  }?></td>
+  <td class="rol_y_baja"><?php echo $rows['role']?><?php?><div class="eliminar_casilla" id="eliminar-casilla"><button class="eliminar" id="eliminar_boton"><i class="fas fa-trash-alt"></i></button></div></td>
   </tr>
  <?php
- 
  }
-
 ?>
 </tbody>
 </table>
 </div>
 <!-- CODIGO DE BUSCAR EN TABLA -->
 <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
+    function buscarUsuario() {
+
+var input, filter, table, tr, td, i, txtValue, notFound;
+input = document.getElementById("input_buscar");
+filter = input.value.toUpperCase();
+table = document.getElementById("tabla");
+tr = table.getElementsByClassName("tr_user");
+notFound = document.getElementById("sin_resultados")
+
+for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];  /*BUSCA SIMILITUD CON LA COLUMNA CLIENTE*/
+    if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+            notFound.style.display = "";
+        }
+    }
+}
+}
 </script>
 <!-- BOTONES DE DAR DE ALTA O DE BAJA -->
   <div class="container_opciones" id="container_opciones">
@@ -166,14 +186,13 @@ $(document).ready(function(){
   </div>
  
 </body>
+
+<?php include_once './includes/footer.php';?>
 <script>
  function abrirFormulario() {
                 document.getElementById("lista_contener").style.display = "none";
                 document.getElementById("container_opciones").style.display = "none";
                 document.getElementById("formulario_contacto").style.display = "flex";
-                document.getElementById("body").style.overflow = "hidden";
-                document.body.style.filter = "blur(8px)";
-                
             }
   function cerrarFormulario() {
                 document.getElementById("lista_contener").style.display = "block";
@@ -200,5 +219,4 @@ $(document).ready(function(){
   }
 
 </script>
-<?php include_once './includes/footer.php';?>
-</html>
+</html> 
