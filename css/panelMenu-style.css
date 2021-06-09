@@ -8,17 +8,15 @@
 
 .sidebar{
     z-index: 2;
-    position: fixed;
-    left: -265px;  /**/
+    position: absolute;
+    max-height: 0;
+    transition: max-height .2s ease-out;  /**/
     width: 265px;
-    height: 100%;
-    background: #830053;
-    transition: .3s;
 }
 .sidebar ul{
-    margin-top: 2rem;
+    background-color: #830053;
+    margin-bottom: 0;
 }
-
 .sidebar ul a{
     display: block;
     height: 100%;
@@ -31,6 +29,9 @@
     font-family: 'Montserrat', sans-serif;
     padding-top: 8px;
 }
+.sidebar li a{
+    background-color: #830053;
+}
 
 .sidebar header{
     font-size: 20px;
@@ -39,7 +40,6 @@
     line-height: 60px;
     font-family: 'Montserrat', sans-serif;
     background: #830053;
-    margin-top: 1rem;
 }
 
 .sidebar footer{
@@ -49,7 +49,7 @@
     font-family: 'Montserrat', sans-serif;
     background: #830053;
     text-align: center;
-
+    position: inherit;
 }
 
 .btn_logout{
@@ -113,3 +113,17 @@ label #cancel{
 #check:checked ~ label #cancel{
     left: 83%;
 }
+.encabezado .menu-btn:checked ~ .sidebar {
+    max-width: 256px;
+}
+.encabezado .sidebar {
+    max-width: 0;
+    transition: max-width .2s ease-out;
+    margin-top: 18%;
+}
+@media (min-width: 500px){
+    .encabezado .sidebar{
+        margin-top: 113px; 
+    }
+}
+

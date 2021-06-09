@@ -15,23 +15,6 @@ function customHead(){?>
 <?php }
 ?>
 <body>
-    <input type="checkbox" id="check">
-    <label for="check">
-        <i class="fas fa-bars menuIcon" id="btn"></i>
-        <i class="fas fa-times menuIcon" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-    <header> PANEL DE ADMIN </header>   
-    <ul>
-        <li><a href="admin_clientes.php"><i class="fas fa-users"></i>Gestionar Clientes</a></li>
-        <li><a href="admin_plots.php"><i class="fas fa-tractor"></i>Gestionar Parcelas</a></li>
-        <li><a href="admin_consultas.php"><i class="fas fa-comment-alt"></i>Consultas</a></li>
-        <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
-    </ul>
-    <br>
-        <hr class="line">
-        <footer> <i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer> 
-    </div>
 
     <div class="title"><h1>BIENVENIDO AL PANEL DE ADMINISTRADOR</h1></div>
     <hr>

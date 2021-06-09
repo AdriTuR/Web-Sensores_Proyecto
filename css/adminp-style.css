@@ -4,7 +4,9 @@ p{
     color:#830053;
     font-size:larger;
 }
-
+texto_debajo_titulo h3{
+    font-size: 1.2rem;
+}
 
 body h1 {
     color:#830053;
@@ -46,11 +48,11 @@ body h1 {
     margin:10px;
     width:250px;
     text-align:center;
+    border: none;
 }
 
 footer{
     position: absolute;
-    bottom: 0;
 }
 
 body{
@@ -94,5 +96,14 @@ body{
     }
     .box p{
         font-size:100%;
+    }
+}
+@media (min-width: 50em){
+   .container{
+    max-width: none;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20%;
+    margin-top: 10%;
     }
 }

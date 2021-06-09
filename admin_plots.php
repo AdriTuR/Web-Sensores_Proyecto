@@ -1,5 +1,5 @@
 <?php
-$t = 2;
+$t = 4;
 $name = "Panel Admin - Gestion de Parcelas";
 include_once './includes/header.php';
 
@@ -21,29 +21,6 @@ function customHead(){?>
 <body>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------MENU------------------------------------------------------------>
-
-<input type="checkbox" id="check">
-<label for="check">
-    <i class="fas fa-bars menuIcon" id="btn"><span class="navicon"></span></i>
-    <i class="fas fa-times menuIcon" id="cancel"></i>
-</label>
-<!--------------------------------SLIDEBAR------------------------------------------->
-
-<nav class="sidebar">
-    <header> PANEL DE USUARIO </header>
-    <hr class="line_panel">
-    <ul>
-        <li><a href="admin_panel.php"><i class="fas fa-home"></i>Panel</a></li>
-        <li><a href="admin_clientes.php"><i class="fas fa-users"></i>Gestionar Clientes</a></li>
-        <li><a href="#"><i class="fas fa-tractor"></i>Gestionar Parcelas</a></li>
-        <li><a href="admin_consultas.php"><i class="fas fa-comment-alt"></i>Consultas</a></li>
-        <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
-    </ul>
-    <br>
-    <hr class="line_panel">
-    <!---- <div class="userZone"> <footer><i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer></div> --->
-</nav>
-
 <!------------------------------------------------------------------------------------>
 
 

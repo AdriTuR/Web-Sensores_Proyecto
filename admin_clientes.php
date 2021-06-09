@@ -1,11 +1,10 @@
 <?php
-$t = 2;
+$t = 4;
 $name = "Panel de admin, seccion de clientes";
   include_once './includes/header.php'; 
 function customHead(){?>
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
   <link rel="stylesheet" href="./css/adminc-style.css" />
   <link rel="stylesheet" href="./css/panelMenu-style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,24 +13,6 @@ function customHead(){?>
 <?php }
 ?>
 <body>
-<input type="checkbox" id="check">
-    <label for="check">
-        <i class="fas fa-bars menuIcon" id="btn"></i>
-        <i class="fas fa-times menuIcon" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-    <header> PANEL DE ADMIN </header>   
-    <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Panel</a></li>
-        <li><a href="#"><i class="fas fa-users"></i>Gestionar Clientes</a></li>
-        <li><a href="#"><i class="fas fa-tractor"></i>Gestionar Parcelas</a></li>
-        <li><a href="admin_consultas.php"><i class="fas fa-comment-alt"></i>Consultas</a></li>
-        <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
-    </ul>
-   
-
-
-</div>  
 <script>
 window.addEventListener("load", function(){
   fetch("./api/v1/", {
@@ -184,10 +165,10 @@ for (i = 0; i < tr.length; i++) {
     <div class="dar_alta" onclick="abrirFormulario()"><i class="fas fa-user-plus"></i><br>DAR DE ALTA</div>
     <div class="dar_alta" id="baja_boton"onclick="baja()" ><i class="fas fa-user-minus"></i>DAR DE BAJA</div>
   </div>
- 
+</div>
+<?php include_once './includes/footer.php';?>
 </body>
 
-<?php include_once './includes/footer.php';?>
 <script>
  function abrirFormulario() {
                 document.getElementById("lista_contener").style.display = "none";
@@ -219,4 +200,5 @@ for (i = 0; i < tr.length; i++) {
   }
 
 </script>
+
 </html> 
