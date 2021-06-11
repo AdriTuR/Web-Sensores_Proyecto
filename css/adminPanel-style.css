@@ -13,7 +13,9 @@ body{
     height: 100%;
     overflow-x:hidden;
 }
-
+p {
+    margin-bottom: 0px;
+}
 /*----------------------------------------------------------------------*/
 /*------------------------------BIENVENIDA------------------------------*/
 
@@ -138,17 +140,18 @@ a:active{
     margin: 0 4rem 0 4rem;
     text-align:center;
 }
-.stat_box:hover {
+/*.stat_box:hover {
     transform: scale(1.125);
-}
+}*/
 
 
 /*----------------------------------------------------------------------*/
 /*--------------------------------FOOTER--------------------------------*/
 
 footer{
-    position: absolute;
+    position: inherit;
     bottom: 0;
+    margin-top: 30%
 }
 
 
@@ -168,6 +171,9 @@ footer{
 
     .titulo_panel_admin{
         font-size: 2rem;
+    }
+    footer{
+        margin-top: 10%;
     }
 
 }

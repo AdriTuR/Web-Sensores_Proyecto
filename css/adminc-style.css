@@ -252,15 +252,11 @@ input {
     border-image: initial;
 }
 a {
-    color: white !important;
     text-decoration: none;
     font-size:3vh;
     width:20%;
 }
-a :hover{
-    color:white;
-    text-decoration: none;
-}
+
 /* boton de enviar */
 #enviar{
     background-color: #830053;
