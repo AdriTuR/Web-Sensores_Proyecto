@@ -4,7 +4,9 @@
     list-style: none;
     text-decoration: none;
 }
-
+ul li:hover a{
+    padding-left: 25px;
+}
 
 .sidebar{
     z-index: 2;
@@ -154,7 +156,7 @@ label #cancel{
     }
     .sidebar li a{
         display: flex;
-        text-decoration: none;
+        justify-content: flex-end
     }
     .fa, .fas {
     padding-top: 2%;

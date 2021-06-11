@@ -57,13 +57,9 @@ body{
     overflow-x:hidden;
 }
 footer{
-    position:absolute;
+    position:relative;
     bottom: 0 !important;
     left: 0;
-}
-#footertext{
-    margin-left:10%;
-   
 }
 
 /*--------------LISTA/TABLA ---------------*/
@@ -135,7 +131,6 @@ tbody tr{
     padding: 0;
 }
 html{
-    overflow: hidden !important;
     height:100%;
 }
 
@@ -145,7 +140,8 @@ html{
     
     display:flex;
     margin:0 auto;
-    
+    margin-bottom: 10%;
+    margin-top: 10%;
     
 }
 .dar_alta{
