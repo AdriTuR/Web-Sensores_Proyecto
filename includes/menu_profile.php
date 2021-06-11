@@ -1,4 +1,3 @@
-
 <nav>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn">
@@ -7,7 +6,7 @@
     <div class="sidebar">
         <ul>
             <li><header> PANEL DE ADMIN </header></li>
-            <li onclick="menucerrar()"><div class="menu_icon"><a href="user_profile.php"><i class="fas fa-user "></i>PERFIL</a></div></li>
+            <li onclick="menucerrar()"><div class="menu_icon"><a href="user_panel.php"><img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo"></i>TERRENO</a></div></li>
             <li onclick="menucerrar()"><div class="menu_icon"><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></div></li>
         </ul>
 

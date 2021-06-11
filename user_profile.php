@@ -1,5 +1,5 @@
 <?php
-$t = 2;
+$t = 6;
 $name = "Panel Usuario Perfil";
 include_once './includes/header.php';
 function customHead(){?>
@@ -17,23 +17,7 @@ function customHead(){?>
 
 <!------------------------------------------------------------------------------------------->
 <!-----------------------------------------MENU---------------------------------------------->
-<input type="checkbox" id="check">
-<label for="check">
-    <i class="fas fa-bars menuIcon fa-3x" id="btn"><span class="navicon"></span></i>
-    <i class="fas fa-times menuIcon fa-3x" id="cancel"></i>
-</label>
 
-<nav class="sidebar">
-    <header> PANEL DE USUARIO </header>
-    <hr class="line_panel">
-    <ul>
-        <li><a href="user_panel.php"><img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo"></i>TERRENO</a></li>
-        <li><a class="btn_logout" type="button" data-toggle="modal" data-target="#panelsesion"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
-    </ul>
-    <br>
-    <hr class="line_panel">
-    <!---- <div class="userZone"> <footer><i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer></div> --->
-</nav>
 
 <!-- Modal -->
 <div class="modal" id="panelsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
