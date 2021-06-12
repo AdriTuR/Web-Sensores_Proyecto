@@ -35,21 +35,36 @@ function customHead(){?>
     <!---------MAPA--------->
     <div id="map"></div>
 
-    <!-----PANEL CERRAR SESIÓN------>
-    <!--<div id="cerrarsesion">
-        <h1 id="titulo1">
-            CERRAR SESION
-        <h1>
-        <hr class="line">
-        <p id="texto1">
-            ¿Estas seguro de que quieres cerrar sesión?
-        </p>
-        <div id="botones">
-            <button class="boton" onclick="disconnect()">SI</button>
-            <button class="boton">NO</button>
+    <!-----DROPUP------>
+    <div class="btn-group dropup">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            FINCA DE JOSEBA
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item">
+                <div id="nsens">
+                    <p class="num">
+                        10
+                    </p>
+                    <p class="texto">
+                        nº de sensores
+                    </p>
+                </div>
+                <hr class="line2">
+                <div id="mterr">
+                    <p class="num">
+                        10.385
+                    </p>
+                    <p class="texto">
+                        m² de terreno
+                    </p>
+                </div>
+            </a>
+            
         </div>
     </div>
-</div> -->
+    <br>
+
 
 <!-- Modal -->
 <div class="modal" id="panelsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
@@ -110,7 +125,7 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FOOTER DE LA PÁGINA -------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
-<?php include_once './includes/footer.php';?>
+
 <!-------------------------------------------------------------------------------------------------------------------->
 
 

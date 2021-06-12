@@ -175,6 +175,78 @@ label #cancel{
     margin: 10% 8%;
 }
 
+/*---------------------------DROPUP-------------------------*/
+.dropup{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    
+}
+.btn-secondary{
+    background-color: var(--color_principal);
+    border-color: var(--color_principal);
+    border-radius: initial;
+}
+
+.btn-secondary:hover{
+    background-color: #5E063B;
+    border-color: #5E063B;
+    border-radius: initial;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+    background-color: #5E063B;
+    border-color: #5E063B;
+    border-radius: initial;
+}
+
+.dropdown-toggle{
+    width:fit-content !important;
+}
+
+.line2{
+    border-left: 3px solid var(--color_principal);
+    height: 50px;
+}
+
+.dropdown-menu{
+    width: 100%;
+}
+
+.dropdown-item{
+    display: flex;
+}
+
+.dropdown-menu{
+    transform: translate3d(-5px, -110px, 0px) !important;
+}
+
+#nsens{
+    color: var(--color_principal);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#mterr{
+    color: var(--color_principal);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.num{
+    margin-top: 10px !important;
+    margin: 0 auto;
+    font-size: 26px;
+}
+
+.texto{
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+
 /*---------------------------PANEL CERRAR SESIÓN-------------------------*/
 
 .modal-content{
