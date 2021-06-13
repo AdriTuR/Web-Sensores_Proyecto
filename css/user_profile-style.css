@@ -20,7 +20,7 @@
 }
 
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     z-index: 200;
 }
@@ -149,8 +149,29 @@ h1 {
 /*---------------------------CONTENEDOR 4-------------------------*/
 
 
-
-
+/*---------------------------TEXTO EDITABLE----------------------*/
+.inline{
+    display:inline-block;
+}
+.editable{
+    color:#00000093;
+    font-size:smaller;
+}
+#boton-editar{
+    text-decoration: none;
+    border:none;
+    font-size:2.5rem;
+    height:10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.boton-confirmar{
+    background-color:#660041;
+    color:white;
+    border-radius:10px;
+}
 /*---------------------------RESPONSIVE-------------------------*/
 
 @media(min-width:1000px){

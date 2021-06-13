@@ -17,7 +17,23 @@ function customHead(){?>
 
 <!------------------------------------------------------------------------------------------->
 <!-----------------------------------------MENU---------------------------------------------->
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fas fa-bars menuIcon fa-3x" id="btn"><span class="navicon"></span></i>
+    <i class="fas fa-times menuIcon fa-3x" id="cancel"></i>
+</label>
 
+<nav class="sidebar">
+    <header> PANEL DE USUARIO </header>
+    <hr class="line_panel">
+    <ul>
+        <li><a href="user_panel.php"><img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo"></i>TERRENO</a></li>
+        <li><a class="btn_logout" type="button" data-toggle="modal" data-target="#panelsesion"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
+    </ul>
+    <br>
+    <hr class="line_panel">
+    <!---- <div class="userZone"> <footer><i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer></div> --->
+</nav>
 
 <!-- Modal -->
 <div class="modal" id="panelsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
@@ -54,7 +70,7 @@ function customHead(){?>
             <img id="iconouser" src="images/landing_page/account_icon2.png" alt="icono de un usuario">
             <p id="nombre">Nombre </p>
             <p id="iduser">ID: </p>
-
+            <button class="texto1" id="boton-editar" onclick="editacion()"><i class="fas fa-edit"></i></button>
         </div>
 
         <div class="banner">
@@ -66,71 +82,109 @@ function customHead(){?>
         </div>
 
     </div>
-
+  
     <div id="cont2">
-
+        
         <div id="contenedor2">
 
-            <div id="identidad">
-
-                <p class="texto1">
+         
+               <p>
+                <p class="texto1 inline">
                     Nombre:
                 </p>
+                <p class="inline editable texto1">.</p>
+              </p>
+              <p>
 
-                <p class="texto1">
-                    Apellidos:
+                <p class="inline texto1">
+                Apellidos:
                 </p>
-
-            </div>
-
-            <p class="texto1">
+                <p class="inline editable texto1">.</p>
+                 </p>
+           
+            <p>
+            <p class="texto1 inline">
                 <i class="fas fa-address-card"></i>
                 DNI:
             </p>
-
-            <p class="texto1">
+            <p class="inline editable texto1">.</p>
+            </p>
+          
+            <p>
+                
+                <p class="inline texto1">
                 <i class="fas fa-map-marker-alt"></i>
                 Dirección:
+                <p class="inline editable texto1">.</p>
+                </p>
             </p>
 
             <hr class="line">
-
+        
         </div>
 
         <div id="contenedor3">
-
-            <p class="texto1">
+         <p>
+            <p class="texto1 inline">
                 <i class="fas fa-envelope"></i>
                 Correo:
             </p>
-
-            <p class="texto1">
+            <p class="inline editable texto1">.</p>
+          </p>
+          <p>
+            <p class="texto1 inline">
                 <i class="fas fa-phone-alt"></i>
                 Teléfono:
+                <p class="inline editable texto1">.</p>
             </p>
-
+        </p>
             <hr class="line">
 
         </div>
 
         <div id="contenedor4">
-
-            <p class="texto1">
+             <p>
+            <p class="texto1 inline">
                 <i class="fas fa-calendar-alt"></i>
                 Fecha de registro:
+                <p class="inline editable texto1">.</p>
             </p>
+          </p>
 
-            <p class="texto1">
+          <p>
+            <p class="texto1 inline">
                 <i class="fas fa-microchip"></i>
                 Nº de sensores:
             </p>
-
+            <p class="inline editable texto1">.</p>
+          </p>
         </div>
 
     </div>
 
 </section>
-
+<script>    function editacion(){
+        var editables = document.getElementsByClassName("editable")
+        var boton = document.getElementById("boton-editar")    
+        for(var i = 0;i<editables.length;i++){
+            /*si el contenido ya es editable se activa esto*/
+         if(editables[i].isContentEditable){
+            editables[i].contentEditable = false
+            boton.innerHTML = "<i class='fas fa-edit'>";
+            if(editables[i].innerHTML == "Haga click aqui para editar la informacion"){
+                editables[i].innerHTML = ""
+            }
+             }
+            /*si el contenido no es editable se activa esto */
+         else{
+            editables[i].contentEditable = true
+            editables[i].innerHTML = "Haga click aqui para editar la informacion"; 
+            boton.innerHTML = "<div class='boton-confirmar'>CONFIRMAR</div>";
+            
+         }
+            }
+        }
+</script>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FOOTER DE LA PÁGINA -------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
