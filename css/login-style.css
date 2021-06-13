@@ -157,10 +157,9 @@ input[type=text], input[type=password]{
 /*---------------------------------------------------------------------*/
 /*------------------------------ MAIN BOX -----------------------------*/
 .box {
-    width: 43vh !important;
-    height: 40vh;
+    width: 40%;
+    height: 50%;
     position: relative;
-    top: -65px;
     background-color:white !important;
 }
 
@@ -168,6 +167,11 @@ input[type=text], input[type=password]{
     margin: auto;
     width: 62%;
     color: #830053;
+}
+.cerrar-formulario {
+    position: relative;
+    left: 50% !important;
+    bottom: 7% !important;
 }
 /*---------------------------------------------------------------------*/
 /*----------------------- ELEMENTOS DE LA BOX -------------------------*/
@@ -219,7 +223,9 @@ input[type=text], input[type=password]{
     width: 85% !important;
 
 }
-
+#boton_cerrar{
+    display: none;
+}
 
 /*------------------ANIMACIONES------------------*/
 @keyframes shake {
@@ -243,6 +249,9 @@ input[type=text], input[type=password]{
 /*--------------------------------------------------*/
 /*RESPONSIVE */
 @media (min-width: 68em) {
+    .cerrar-formulario{
+        display: none !important;
+    }
 
     body{
         background: transparent;
@@ -254,10 +263,12 @@ input[type=text], input[type=password]{
     }
     footer{
         position: inherit;
+        z-index: 1;
     }
 
     #main{
         display: flex;
+        position: relative;
     }
 
     #textobienvenido{
@@ -315,6 +326,7 @@ input[type=text], input[type=password]{
 
     .introtext{
         font-size: 17px;
+        margin-top: 10%;
     }
 
     .textologin{
@@ -347,11 +359,37 @@ input[type=text], input[type=password]{
     #box-contacto{
         margin-left: auto;
         z-index: 0;
-        margin-top: -20px;
+        top: 0px;
+        width: 41%;
+        height: 90%;
+        border: none;
+        border-radius: 0px
     }
-
-    #closeForm{
-        display: none;
+    .popup-formulario{
+        top: 90px !important;
+    }
+    .titulo_olvidar{
+        margin-top: 10% !important;
+    }
+    #content-form-box{
+        margin-top: 8%;
+    }
+    #enviar_recuperar-contarseña{
+        margin: 0px;
+        margin-top: 10%;
+        display: block;
+        margin-left: 8%;
+        width: 40%;
+    }
+    #boton_cerrar{
+        margin: 0px;
+        margin-top: 10%;
+        display: block;
+        margin-left: 8%;
+        width: 36.5%;
+    }
+    .botones{
+        display: flex;
     }
 }    
 /*-----------------------------------------------------------------------------------*/

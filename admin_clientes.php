@@ -200,5 +200,9 @@ for (i = 0; i < tr.length; i++) {
   }
 
 </script>
+<script>
+        var removeMe = document.getElementById("gestion_clientes");
+        removeMe.innerHTML = '';
+</script>
 
 </html> 

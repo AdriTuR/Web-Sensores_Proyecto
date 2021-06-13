@@ -70,8 +70,10 @@ function customHead(){?>
                     <p class="correo_formulario_olvidar">Correo:</p>
                     <label for="correo" class="colocar_correo"></label>
                     <input type="text" name="mail" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
-
-                    <button type="submit" class="submit" id="enviar_recuperar-contarseña"><a>ENVIAR</a></button>
+                    <div class="botones">
+                        <button type="submit" class="submit" id="enviar_recuperar-contarseña"><a>ENVIAR</a></button>
+                        <button class="submit" id="boton_cerrar" onclick="cerrarFormulario()" c><a>VOLVER</a></button>
+                    </div>
                 </form>
                 <script src="./js/sendRecoveryMail.js"></script>
             </div>
@@ -94,10 +96,17 @@ function customHead(){?>
 <script>
     //-------------------FUNCIÓN ABRIR FORMULARIO---------------------//
     function abrirFormulario() {
-        document.getElementById("formulario_olvidar").style.visibility = "visible";
-        document.getElementById("formulario_olvidar").style.display = "flex";
-        document.getElementById("box").style.display = "none";
-        document.getElementById("footer").style.marginTop = "620px";
+        if (window.matchMedia("(min-width: 68em)").matches) {
+            document.getElementById("formulario_olvidar").style.visibility = "visible";
+            document.getElementById("formulario_olvidar").style.display = "flex";
+            document.getElementById("box").style.display = "visible";
+            document.getElementById("footer").style.marginTop = "0px";
+        } else {
+            document.getElementById("formulario_olvidar").style.visibility = "visible";
+            document.getElementById("formulario_olvidar").style.display = "flex";
+            document.getElementById("box").style.display = "none";
+            document.getElementById("footer").style.marginTop = "620px";
+        }
     }
     //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
     function cerrarFormulario() {

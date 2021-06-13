@@ -17,7 +17,10 @@ function customHead(){?>
     </canvas>
 </div>
 
-
+    <script>
+        var removeMe = document.getElementById("consult");
+        removeMe.innerHTML = '';
+    </script>
 
 
 
