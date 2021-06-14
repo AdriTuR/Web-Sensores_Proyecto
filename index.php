@@ -40,27 +40,35 @@ function customHead(){?>
         <div class="box" id="box-contacto">
             <div id="header-box">
                 <img src="images/landing_page/close_icon3png.png" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
-                <h1 id="title">CONTÁCTANOS</h1>
+                <h1 class="contactar" id="title">CONTÁCTANOS</h1>
                 <hr class="line">
                 <p id="intro-text">Envíanos tu consulta y te contestaremos en un plazo de 24 horas.</p>
             </div>
             <div id="content-form-box">
                 <form id="form_contact">
                     <p>
+                        <div class="text_label">
                         <label for="nombre" class="colocar_nombre">Nombre:</label>
                         <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre" required maxlength="30" minlength="3">
+                    </div>
                     </p>
                     <p>
+                    <div class="text_label">
                         <label for="apellidos" class="colocar_apellidos">Apellidos: <i class="cursiva">(Opcional)</i></label>
                         <input type="text" name="introducir_apellidos" id="apellidos" placeholder="Escribe tus apellidos" maxlength="60"  minlength="3">
+                    </div>
                     </p>
                     <p>
+                    <div class="text_label">
                         <label for="correo" class="colocar_correo">Correo:</label>
                         <input type="correo" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="50"  minlength="5">
+                        <div class="text_label">
                     </p>
                     <p>
+                    <div class="text_label">
                         <label for="mensaje" class="colocar_mensaje">Motivo de la consulta:</label>
                         <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" placeholder="Deja aquí tu consulta" required  minlength="5"></textarea>
+                    </div>
                     </p>
                     <button type="submit" name="enviar_formulario" class="submit"><a>ENVIAR</a></button>
                 </form>

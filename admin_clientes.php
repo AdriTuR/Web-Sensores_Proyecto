@@ -204,5 +204,8 @@ for (i = 0; i < tr.length; i++) {
         var removeMe = document.getElementById("gestion_clientes");
         removeMe.innerHTML = '';
 </script>
+<!------------------CERRAR SESIÓN----------------------->
+    <script src="./js/closeSession.js"></script>
+
 
 </html> 

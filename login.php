@@ -56,6 +56,12 @@ function customHead(){?>
 
     <!--------------------------------- Formulario de "¿Has olvidado tu contraseña?"----------------->
     <div class="popup-formulario" id="formulario_olvidar">
+        <div id="espacio">
+
+            <h1>BIENVENIDO</h1>
+            <p>Accede al panel de usuario con su cuenta para visualizar sus terrenos desde la web y controlar el estado de sus cultivos.</p>
+
+        </div>
         <div class="box" id="box-contacto">
             <img src="images/landing_page/close_icon3png.png" id="closeForm" alt="cerrar formulario" width="40px" height="40px" class="cerrar-formulario" onclick="cerrarFormulario()">
 
@@ -65,14 +71,17 @@ function customHead(){?>
                     y recibiras en breves tu contraseña</p>
             </div>
 
+
             <div id="content-form-box">
                 <form class="formulario_contraseña">
+                    <div id="botones">
                     <p class="correo_formulario_olvidar">Correo:</p>
                     <label for="correo" class="colocar_correo"></label>
                     <input type="text" name="mail" id="correo" placeholder="Escribe tu correo" required maxlength="120" class="colocar_correo_olvidar">
+                    </div>
                     <div class="botones">
                         <button type="submit" class="submit" id="enviar_recuperar-contarseña"><a>ENVIAR</a></button>
-                        <button class="submit" id="boton_cerrar" onclick="cerrarFormulario()" c><a>VOLVER</a></button>
+                        <button class="submit" id="boton_cerrar" onclick="cerrarFormulario()"><a>VOLVER</a></button>
                     </div>
                 </form>
                 <script src="./js/sendRecoveryMail.js"></script>

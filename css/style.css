@@ -693,6 +693,30 @@ textarea {
     p {
         font-size: 2.5vh;
     }
+    .text_label{
+        display: flex;
+    flex-direction: column;
+    }
+    input{
+        margin-left: 5%;
+    }
+    label{
+        margin-top: 1%;
+    }
+    textarea{
+        margin-left: 5%;
+        margin-top: 1%;
+        height: 25vh;
+    }
+    .submit{
+        margin-left: 25%;
+    }
+    .contactar{
+        font-size: 5vh !important;
+    }
+    .popup-formulario #box-contacto #header-box #intro-tex{
+        font-size: 1.5rem !important;
+    }
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
