@@ -140,9 +140,9 @@ a:active{
     margin: 0 4rem 0 4rem;
     text-align:center;
 }
-/*.stat_box:hover {
+.stat_box:hover {
     transform: scale(1.125);
-}*/
+}
 
 
 /*----------------------------------------------------------------------*/

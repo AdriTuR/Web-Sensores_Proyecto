@@ -1,9 +1,16 @@
 <?php
 $t = 4;
-$name = "Panel Admin - Gestion de Parcelas";
+$name = "Panel Admin - Gestión de Parcelas";
 include_once './includes/header.php';
 
+//--------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------HEADER DE LA PÁGINA----------------------------------------------------//
+//--------------------------------------------------------------------------------------------------------------------//
+
 function customHead(){?>
+
+    <!-----------------------------------------BOOSTRAP--------------------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!------------------CSS-------------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -21,7 +28,6 @@ function customHead(){?>
 <body>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------MENU------------------------------------------------------------>
-<!------------------------------------------------------------------------------------>
 
 
 <!--<input type="checkbox" id="check">
@@ -42,13 +48,13 @@ function customHead(){?>
     <hr class="line">
     <footer> <i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer>
 </nav>-->
-<!------------------------------------------------------------------------------------>
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------CONTENIDO PANEL DE USUARIO----------------------------------------------->
 
 <h1 class="banner">GESTIÓN DE PARCELAS</h1>
 
+<!---------------------------------------------------------------------------------------->
 <!--------------------------------------BUSQUEDA------------------------------------------>
 
 <div class="form-group has-search">
@@ -56,9 +62,13 @@ function customHead(){?>
     <input type="text" class="form-control search" id="input_buscar" placeholder="Buscar" onkeyup="buscarUsuario()">
 </div>
 
-<!---------------------------------LISTADO DE USUARIOS----------------------------------->
+<!---------------------------------------------------------------------------------------->
+<!---------------------------------LISTADO DE USUARIOS------------------------------------>
 
 <div class="listado">
+
+    <!-------------------------------------------------------------->
+    <!-----------------------Header listado------------------------->
     <div class="listado-header">
         <table cellpadding="0" cellspacing="0" border="0" >
             <thead>
@@ -73,7 +83,9 @@ function customHead(){?>
         </table>
     </div>
     <div class="listado_contenido scrollbar_table" >
-        <!-----------------AVISO DE NO EXISTE EL USUARIO QUE BUSCAS-------------------->
+
+        <!------------------------------------------------------------->
+        <!--------------Aviso de Usuario no existente------------------>
         <table cellpadding="0" cellspacing="0" border="0" id="sin_resultados">
             <tbody>
             <tr>
@@ -85,7 +97,8 @@ function customHead(){?>
             </tr>
             </tbody>
         </table>
-        <!---------------------------------------------------------------------------->
+        <!------------------------------------------------------------->
+        <!---------------------Listado Usuarios------------------------>
         <table cellpadding="0" cellspacing="0" border="0" id="tabla">
             <tbody>
             <tr class="tr_user">
@@ -100,15 +113,16 @@ function customHead(){?>
     </div>
 </div>
 
-<!--------------------------------------------------------------------------------------->
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------FOOTER-------------------------------------------------------->
+
 <?php include_once './includes/footer.php';?>
+
 <!-------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------SCRIPTS------------------------------------------------------->
 
-<!--------------------------------------SESION CONECTADA---------------------------------->
+<!--------------------------------------Login-------------------------------------------->
 <script>
     window.addEventListener("load", function(){
         fetch("./api/v1/", {
@@ -126,10 +140,9 @@ function customHead(){?>
         });
     });
 </script>
-<!----------------------------------------CERRAR SESION------------------------------------>
+<!-------------------------------Cerrar Sesion------------------------------------------->
 <script src="./js/closeSession.js"></script>
-<!------------------------------------FUNCION BUSCAR USUARIO------------------------------->
-
+<!------------------------------Buscar Usuario------------------------------------------->
 <script>
     function buscarUsuario() {
 
@@ -154,23 +167,18 @@ function customHead(){?>
         }
     }
 </script>
-<script>
-    var removeMe = document.getElementById("gestion_parcel");
-    removeMe.innerHTML = '';
-</script>
 <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 <!-------------------------------------------------------------------------------------------------------------------->
+
 </body>
+
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
 <!-------------------------------------------------------------------------------------------------------------------->
-</html>
-<!-------------------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------------------------------------------------->
+
 
 
 

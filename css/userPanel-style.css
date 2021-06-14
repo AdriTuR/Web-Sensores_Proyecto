@@ -1,0 +1,658 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                          CSS - PANEL DE USUARIO                                                   */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar{
+    z-index: 201;
+}
+
+.sidebar header{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background: #830053;
+}
+
+.sidebar footer{
+    font-size: 18px;
+    color: white;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background: #830053;
+    text-align: center;
+}
+
+.line {
+    margin: auto;
+    width: 85%;
+    color: white;
+}
+
+ul li:hover a{
+    padding-left: 25px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    margin-left: 10px;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 3px;
+}
+
+.menuIcon {
+    left: 83%;
+    top: 10px;
+    font-size: 30px;
+    color: white;
+    padding: 6px 12px;
+}
+
+label #cancel{
+    left: -83%;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 83%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------CONTENIDO PANEL DE USUARIO------------------------------------------------*/
+
+
+/*----------------------------------------------------------*/
+/*-------------------- WIDGET FECHA/HORA -------------------*/
+
+.widget_banner {
+    background-color: var(--color_principal);
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
+    padding: 0.5em 1em;
+    width: 325px;
+    color: var(--color_blanco);
+    font-size: 17px;
+    text-align: left;
+    font-family: var(--fuente_titulo);
+    font-weight: 300;
+    margin-top: 45px;
+}
+
+#widget_reloj-fecha{
+    display: flex;
+    position: absolute;
+    z-index: 100;
+}
+
+#widget_reloj-fecha #reloj, #fecha{
+    font-family:  var(--fuente_titulo);
+    font-size: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+/*----------------------------------------------------------*/
+/*------------------- BOTONES DEL MAPA ---------------------*/
+
+.botones_panel-usuario{
+    display:flex;
+    position: absolute;
+    z-index: 100;
+    top: 125px;
+    right: 10px;
+}
+
+.boton_volver_atras, .boton_centrar{
+    height: 80px;
+    width: 80px;
+    background-color: var(--color_principal);
+    border: none;
+    border-radius: 15px;
+    box-shadow: none;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.boton_volver_atras:hover, .boton_centrar:hover{
+    transform: scale(1.15);
+}
+
+/*-----------------------------------------------------------*/
+/*--------------------- IFO - BOX ---------------------------*/
+
+.dropup{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+}
+.btn-secondary{
+    background-color: var(--color_principal);
+    border-color: var(--color_principal);
+    border-radius: initial;
+}
+
+.btn-secondary:hover{
+    background-color: #5E063B;
+    border-color: #5E063B;
+    border-radius: initial;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+    background-color: #5E063B;
+    border-color: #5E063B;
+    border-radius: initial;
+}
+
+.dropdown-toggle{
+    width:fit-content !important;
+}
+
+.line2{
+    border-left: 3px solid var(--color_principal);
+    height: 50px;
+}
+
+.dropdown-menu{
+    width: 100%;
+}
+
+.dropdown-item{
+    display: flex;
+}
+
+.dropdown-menu{
+    transform: translate3d(-5px, -110px, 0px) !important;
+}
+
+#nsens{
+    color: var(--color_principal);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#mterr{
+    color: var(--color_principal);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.num{
+    margin-top: 10px !important;
+    margin: 0 auto;
+    font-size: 26px;
+}
+
+.texto{
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------- MAPA --------------------------------------------------------------*/
+
+#map {
+    height: 84vh;
+    z-index: 50;
+}
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------GMAP INFOWINDOW/POPUP-------------------------------*/
+
+#infow {
+    margin: 10px 90px 50px 90px;
+    color: var(--color_principal);
+    font-size: 1.8rem;
+    font-family: var(--fuente_titulo)
+}
+
+#infow .infobox{
+    background-repeat: no-repeat;
+    display:flex;
+    margin-top: 10px;
+}
+
+/*-----------Identificador sensor----------*/
+
+#sensor_id{
+    font-family: var(--fuente_titulo);
+    font-weight: bold;
+    font-size: 1.5rem !important;
+    margin-left: 30px;
+    margin-bottom: 28.5px;
+}
+
+#infow li{
+    height: 7vh;
+}
+/*----------------------------------------------------------*/
+/*------------------------MEDIDAS---------------------------*/
+
+#infow li img{
+    position: relative;
+    float: left;
+    width: 60%;
+    height: 64px;
+    margin: 5px;
+}
+
+.medidas_numero{
+    text-align: center;
+    width: 90%;
+    margin-top:12px;
+    margin-left: 20px;
+    font-family: var(--fuente_titulo);
+}
+
+/*------------------------------------------------------------*/
+/*------------------------ CLOSE BUTTON ----------------------*/
+
+button.gm-ui-hover-effect {
+    background: url(../images/landing_page/close_icon3png.png) no-repeat !important;
+    background-size: contain !important;
+    margin-top: 5% !important;
+    padding-right: 12% !important;
+}
+
+button.gm-ui-hover-effect img {
+    display: none !important;
+}
+
+/*------------------------------------------------------*/
+/*--------------------BOTÓN GRÁFICA---------------------*/
+
+.boton_grafica{
+    padding: 17px 20px 17px 30px;
+    border-radius: 40px;
+    background-color: var(--color_principal);
+    display: inline-block;
+    margin-top: 0.75rem;
+    margin-bottom: 10%;
+    margin-left: 30px;
+}
+
+.boton_grafica:hover{
+    transform: scale(1.15);
+}
+
+#infow #icono_grafica{
+    height: 20%;
+    padding-left: 1rem;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------- GRÁFICA --------------------------------------------------------*/
+
+.grafica_panel{
+    display: none;
+    width: 90%;
+    height: 68%;
+    background-color: white;
+    position: absolute;
+    z-index: 101;
+    top: 26%;
+    left: 5%;
+    right: 10%;
+    border-radius: 15px;
+}
+
+.boton_cerrar_grafica{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    opacity: 70%;
+}
+
+.boton_cerrar_grafica:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+
+/*----------------------------------------*/
+/*-----------------HEADER-----------------*/
+.header_grafica{
+    margin: 0.50rem 1rem 0 1rem;
+}
+
+#title{
+    font-family: var(--fuente_titulo);
+    font-size: 1rem;
+    margin: 0.15rem;
+}
+
+#dataTitle{
+    font-family: var(--fuente_titulo);
+    font-size: 1.65rem;
+    font-weight: bold;
+    color: var(--color_principal);
+    text-transform: uppercase;
+    margin-top: 0.90rem;
+    margin-bottom: 0.15rem;
+}
+
+/*--------------------------------------*/
+/*--------INDICADORES MAX-MIN-----------*/
+
+.indicadores_min-max{
+    display: flex;
+    justify-content: center;
+}
+
+.indicador_max, .indicador_min {
+    margin:0.75rem;
+    display: block;
+}
+
+
+#max_value, #min_value{
+    font-family: var(--fuente_titulo);
+    font-size: 1rem;
+}
+
+#hValue, #lValue{
+    font-family: var(--fuente_texto);
+    font-size: 1.5rem;
+    color: var(--color_principal);
+}
+
+#hHourValue, #lHourValue{
+    font-family: var(--fuente_texto);
+    color: var(--color_negro);
+}
+
+
+/*--------------------------------------*/
+/*-----BOTONES FILTRAR PARÁMETROS-------*/
+
+.botones_filtrar_parametros{
+    margin: 1.5rem auto;
+}
+
+.boton_filtrar_salinidad, .boton_filtrar_humedad, .boton_filtrar_temperatura{
+    background-color: var(--color_principal);
+    color: var(--color_blanco);
+    font-family: var(--fuente_titulo);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+/*-------------------------------------*/
+/*------BOTONES DE FILTRAR FECHA-------*/
+
+.botones_filtrar_fecha{
+    margin-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.filtrar_por_fecha{
+    font-family: var(--fuente_texto);
+    font-size: 0.9rem;
+    margin: 0.5rem;
+}
+
+.comparar_por_fechas{
+    font-family: var(--fuente_texto);
+    font-size: 0.9rem;
+    margin: 0.5rem;
+}
+
+select{
+    border: solid 1.5px var(--color_principal);
+    border-radius: 7px;
+    font-family: var(--fuente_texto);
+    color: var(--color_principal);
+    background-color: var(--color_inputs-background);
+}
+
+select:focus{
+    border: solid 3px var(--color_principal);
+}
+
+option{
+    font-family: var(--fuente_texto);
+    background-color: var(--color_inputs-background);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------PANEL CERRAR SESIÓN--------------------------------------------------*/
+
+
+.modal-content{
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#titulo1{
+    font-family: var(--fuente_titulo) !important;
+    color: var(--color_principal);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.modal-header{
+    display: block;
+    border-color: transparent;
+    justify-content: center;
+}
+
+.line {
+    margin: auto;
+    height: 1.2px;
+    width: 80%;
+    color: var(--color_principal);
+}
+
+#texto1{
+    font-family: var(--fuente_texto);
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    word-spacing: 1px;
+    margin-top: 20px;
+}
+
+.modal-footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border-top: transparent;
+}
+
+.boton {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 28px;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: var(--fuente_titulo);
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-color: #830053;
+    display: inline-block;
+    border-width: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 7vh;
+    width: 12vh;
+    margin-bottom: 3vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.boton:hover {
+    background: #77004b;
+    transform: scale(1.3);
+    transition: 150ms;
+}
+
+.boton:active {
+    background: #660041;
+    transform: scale(1.3);
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                        MEDIA QUERY - PANEL DE USUARIO                                             */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width: 1200px){
+
+    /*-----------------------------------------------------------------*/
+    /*-----------------------------WIDGET------------------------------*/
+
+    .widget_banner{
+        width: 370px;
+        padding: 1rem;
+    }
+
+    #widget_reloj-fecha #fecha, #widget_reloj-fecha #reloj{
+        font-size: 25px;
+    }
+
+    /*-----------------------------------------------------------------*/
+    /*-----------------------------IFRAME------------------------------*/
+
+    .grafica_panel{
+        width: 60%;
+        height: 55%;
+        left: 20%;
+        top: 23%;
+    }
+
+    /*-----------------------------------------------------------------*/
+    /*----------------------CONTENIDO DE LA GRÁFICA--------------------*/
+
+    .contenido_grafica{
+        display: flex;
+        margin: 15vh 8vh;
+    }
+
+    /*-----------Gráfico-------------*/
+
+    .grafico_box{
+        width: 1100px;
+        margin-top: 5vh;
+        margin-left: -7.5vh;
+    }
+
+    .header_grafica{
+        margin-left: -5vh;
+    }
+
+    /*---Botones filtrar parametros--*/
+
+    .boton_filtrar_salinidad, .boton_filtrar_humedad, .boton_filtrar_temperatura{
+        font-size: 1rem;
+        padding: 0.60rem;
+        margin-right: 0.2rem ;
+        margin-left: 0.2rem ;
+    }
+
+    /*------------Titulo------------*/
+
+    #dataTitle{
+        margin-top: 1.5rem;
+        font-size: 2.20rem;
+    }
+
+    /*------------Max/Min------------*/
+
+    .indicador_max, .indicador_min {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    #max_value, #min_value{
+        font-size: 2rem;
+    }
+
+    #hValue, #lValue{
+        font-size: 3.2rem;
+    }
+
+    #hHourValue, #lHourValue{
+        font-size: 1.4rem;
+    }
+
+    /*---Botones filtrar por fecha---*/
+
+    .botones_filtrar_fecha{
+        margin: 1rem 1rem 1rem 2rem;
+        padding-left: 1rem;
+        text-align: left;
+    }
+
+    .filtrar_por_fecha, .comparar_por_fechas, select,  option {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    select{
+        margin-left: -0.10rem;
+    }
+
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+

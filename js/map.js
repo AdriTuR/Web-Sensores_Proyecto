@@ -25,6 +25,7 @@ function initMap() {
         streetViewControl: false,
         rotateControl: false,
         zoomControl: false,
+        fullscreenControl: false,
     });
 
     infowindow = new google.maps.InfoWindow();
@@ -33,7 +34,7 @@ function initMap() {
 function drawUserField(fieldData, lblName){
     var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(fieldData.location)));
     var bounds = createBounds(shape);
-    
+
     addMarkerFieldClick(addMarker(bounds.getCenter(), lblName, "field"), bounds, function(){
         var formData = new FormData();
         formData.append('data', "plot");
@@ -49,7 +50,7 @@ function drawUserField(fieldData, lblName){
 function drawUserPlot(plotData, fieldShape, lblName){
     var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(plotData.location)));
     var bounds = createBounds(shape);
-    
+
     addMarkerPlotClick(addMarker(bounds.getCenter(), lblName, "plot"), fieldShape, bounds, function(){
         var formData = new FormData();
         formData.append('data', "probe");
@@ -75,7 +76,7 @@ function addMarker(center, lblName, imgName, extra) {
         var data = parseJSONLocationFormat(center);
         center = { lat: data[0].lat, lng: data[0].lng }
     }
-    
+
     var marker = new google.maps.Marker({
         position: center,
         icon: {
@@ -86,7 +87,7 @@ function addMarker(center, lblName, imgName, extra) {
         animation: google.maps.Animation.DROP,
         map: map
     });
-    
+
     $('#resetMap').on('click', function() {
         marker.setMap(null);
     });
@@ -114,21 +115,21 @@ function addMarkerPlotClick(marker, field, bounds, cb){
 
 function addMarkerSensorClick(marker, sensorData){
     var content =
-    "<div id=\"infow\">" + sensorData.id + 
-    "<ul><li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + " Cº" +
-    "</p>" +
-    "</li>" +
-    "<li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + " %" +
-    "</p></li>" +
-    "<li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + " %" +
-    "</p></li>" +
-    "<li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
-    "</p></li><li><a class=\"boton\" onclick='abrirIframe(" + sensorData.id + ")'><i class=\"fas fa-chart-line\"></i></a></li></ul></div>"
-    
+        "<div id=\"infow\">" + "<p id=\"sensor_id\">SENSOR " + sensorData.id + "</p>" +
+        "<ul><li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + " Cº" +
+        "</p>" +
+        "</li>" +
+        "<li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + " %" +
+        "</p></li>" +
+        "<li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + " %" +
+        "</p></li>" +
+        "<li class=\"infobox\">" +
+        "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
+        "</p></li><li><a class=\"boton_grafica\" onclick='abrirIframe(" + sensorData.id + ")'> <img id=\"icono_grafica\" src=\"./images/icons/grafica_icon.png\" alt=\"boton grafica\"></a></li></ul></div>"
+
     marker.addListener("click", () => {
         infowindow.setContent(content);
 
@@ -146,7 +147,7 @@ function createCoordShape(data){
         fillOpacity: 0.35,
         map: map
     });
-    
+
     $('#resetMap').on('click', function() {
         polygon.setMap(null);
     });
@@ -158,7 +159,7 @@ function createBounds(polygon){
     polygon.getPath().getArray().forEach(function (v) {
         bounds.extend(v);
     })
-    
+
     return bounds;
 }
 
@@ -168,11 +169,11 @@ function parseJSONLocationFormat(data){
         e.lat = parseFloat(e.lat)
         e.lng = parseFloat(e.lng)
     }
-    
+
     return data;
 }
 
-function resetMap(){   
+function resetMap(){
     setTimeout(() => {
         showUserFields();
     }, 1000);
@@ -185,7 +186,7 @@ function resetMap(){
 
 function fetchData(formData, cb){
     formData.append('user', userName);
-    
+
     fetch("./api/v1/probes.php", {
         method: "POST",
         body: formData
