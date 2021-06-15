@@ -138,24 +138,6 @@ function customHead(){?>
         document.getElementById("box").style.display = "inherit";
     }
 
-    window.addEventListener("load", function(){
-        fetch("./api/v1/", {
-            method: "GET"
-        }).then(function (result) {
-            if(result.status == 200){
-                return result.json();
-            }
-        }).then(function (data) {
-            if(data != null){
-                if(data.role == "USER"){
-                    location.href = "./user_panel.php";
-                }else if(data.role == "ADMIN"){
-                    location.href = "./admin_panel.php";
-                }
-            }
-        });
-    });
-
 </script>
 <script src="./js/login.js"></script>
 

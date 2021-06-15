@@ -159,40 +159,35 @@ function customHead(){?>
 
     <!--------------------------------------Login-------------------------------------------->
 
-    <script>
-        window.addEventListener("load", function(){
-            fetch("./api/v1/", {
-                method: "GET"
-            }).then(function (result) {
-                if(result.status == 200){
-                    return result.json();
-                }else{
-                    location.href = "./login.php";
-                }
-            }).then(async function (data) {
-                if(data != null){
-                    await initMap();
-                    addCustomerMap(data.name);
-                }
-                /*
-                if(data.role == "ADMIN"){
-                     location.href = "/admin_panel.html";
-                }
-                */
-            });
-        });
+	<script>
+		window.addEventListener("load", function(){
+			fetch("./api/v1/session", {
+				method: "GET"
+			}).then(function (result) {
+				if(result.ok){
+					return result.json();
+				}else{
+					location.href = "./login.php";
+				}
+			}).then(async function (data) {
+				if(data != null){
+					await initMap();
+					addCustomerMap(data.name);
+				}
+			});
+		});
 
-        function addCustomerMap(username){
-            userName = username;
-            var formData = new FormData();
-            formData.append('data', "field");
+		function addCustomerMap(username){
+			userName = username;
+			var formData = new FormData();
+			formData.append('data', "field");
 
-            fetchData(formData, function(data){
-                fieldData = data;
-                showUserFields();
-            })
-        }
-    </script>
+			fetchData(formData, function(data){
+				fieldData = data;
+				showUserFields();
+			})
+		}
+	</script>
     <!----------------------------------Cerrar Sesión----------------------------------------->
     <script src="./js/closeSession.js"></script>
     <!-------------------------------Mapa Interactivo----------------------------------------->

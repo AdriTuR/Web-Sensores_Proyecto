@@ -122,12 +122,10 @@ function customHead(){?>
 <!--------------------------------------Login-------------------------------------------->
 <script>
     window.addEventListener("load", function(){
-        fetch("./api/v1/", {
+        fetch("./api/v1/session", {
             method: "GET"
         }).then(function (result) {
-            if(result.status == 200){
-                return result.json();
-            }
+            if(result.ok) return result.json();
         }).then(function (data) {
             if(data != null){
                 if(data.role == "USER"){
