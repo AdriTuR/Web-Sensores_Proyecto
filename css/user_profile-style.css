@@ -1,4 +1,8 @@
 /*---------------------------GENERAL-------------------------*/
+body{
+    display: flex;
+    flex-direction: column;
+}
 
 .banner{
     width: 65%;

@@ -30,9 +30,10 @@ function customHead(){?>
             <div id="box1">
                 <h1>INICIO DE SESIÓN</h1>
                 <hr class="line">
-
+                <div class="centrar">
                 <p class="introtext">Introduce tus datos para acceder al panel de usuario.</p>
                 <p id="loginError"></p>
+                </div>
             </div>
 
             <div id="box2">
@@ -114,7 +115,7 @@ function customHead(){?>
             document.getElementById("formulario_olvidar").style.visibility = "visible";
             document.getElementById("formulario_olvidar").style.display = "flex";
             document.getElementById("box").style.display = "none";
-            document.getElementById("footer").style.marginTop = "620px";
+           // document.getElementById("footer").style.marginTop = "620px";//
         }
     }
     //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//

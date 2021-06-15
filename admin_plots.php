@@ -50,6 +50,10 @@ function customHead(){?>
 </nav>-->
 
 <!-------------------------------------------------------------------------------------------------------------------->
+<script>
+    var removeMe = document.getElementById("gestion_parcel");
+    removeMe.innerHTML = '';
+</script>
 <!-------------------------------------------CONTENIDO PANEL DE USUARIO----------------------------------------------->
 
 <h1 class="banner">GESTIÓN DE PARCELAS</h1>

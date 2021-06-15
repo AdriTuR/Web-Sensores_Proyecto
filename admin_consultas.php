@@ -98,7 +98,9 @@ $result=mysqli_query($conn,$query);
     </tbody>
 </table>
 </div>
-
+<!---------------CERRAR SESIÓN----------------->
+    <script src="./js/closeSession.js"></script>
+    <!------------------------------------------->
 </section>
 <?php include_once './includes/footer.php';?>
 </body>
