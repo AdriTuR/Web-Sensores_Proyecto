@@ -5,7 +5,6 @@ let userName;
 let fieldData;
 let infowindow;
 
-
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 39.0085631, lng: -4.0779268 },

@@ -134,7 +134,6 @@
         }
 
         select.value = hData.date;
-
     }
 
     window.addEventListener("load", function(){
