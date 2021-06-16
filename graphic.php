@@ -112,8 +112,7 @@
     function addDatesSelector(){
         var select = document.getElementById('selectDate');
         select.addEventListener('change', function(e) {
-
-            fetch("./api/v1/chart.php?probeID=" + probeID + "&date=" + e.target.value, {
+            fetch("./api/v1/probesData/" + probeID + "/" + e.target.value, {
             }).then(function (result) {
                 if(result.ok) return result.json();
             }).then(function (data) {
@@ -146,11 +145,9 @@
         ?>
         probeID = "<?php echo $_GET['id']; ?>";
 
-        fetch("./api/v1/chart.php?probeID=" + probeID, {
+        fetch("./api/v1/probesData/" + probeID, {
         }).then(function (result) {
-            if(result.ok){
-                return result.json();
-            }
+            if(result.ok) return result.json();
         }).then(function (data) {
             if(data != null){
                 hData = data;

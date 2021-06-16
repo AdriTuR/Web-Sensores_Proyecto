@@ -23,8 +23,8 @@ document.querySelector("form").addEventListener("submit", function(event){
                 loginForm.classList.remove("shakeAnimation");
             }, 1000);  
         }
-    }).catch(function () {
-
+    }).catch(function (err) {
+         console.log(err)
     })
 });
 

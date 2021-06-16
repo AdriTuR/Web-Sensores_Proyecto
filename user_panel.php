@@ -180,9 +180,8 @@ function customHead(){?>
 		function addCustomerMap(username){
 			userName = username;
 			var formData = new FormData();
-			formData.append('data', "field");
 
-			fetchData(formData, function(data){
+			fetchData(formData, "field", function(data){
 				fieldData = data;
 				showUserFields();
 			})
@@ -195,7 +194,7 @@ function customHead(){?>
     <!------------------------------------- Iframe ------------------------------------------->
     <script>
         function abrirIframe(id){
-            grafica.innerHTML = '<iframe src="http://localhost/9studios-web/graphic.php?id=' + id + '" id="grafica_panel" class="grafica_panel"> </iframe>';
+            grafica.innerHTML = '<iframe src="./graphic.php?id=' + id + '" id="grafica_panel" class="grafica_panel"> </iframe>';
             document.getElementById("grafica_panel").style.display = "flex"
         }
         function cerrarIframe(){
