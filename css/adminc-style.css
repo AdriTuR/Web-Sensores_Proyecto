@@ -8,7 +8,7 @@
     clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
     margin: -500px 0;
     padding: 0.5em 1em;
-    width: 80%;
+    width: 30%;
     color: white;
     font-size: 17px;
     text-align: left;
@@ -57,7 +57,7 @@ body{
     overflow-x:hidden;
 }
 footer{
-    position:relative;
+    position:absolute;
     bottom: 0 !important;
     left: 0;
 }

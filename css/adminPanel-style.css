@@ -149,7 +149,7 @@ a:active{
 /*--------------------------------FOOTER--------------------------------*/
 
 footer{
-    position: inherit;
+    position: absolute;
     bottom: 0;
     margin-top: 30%
 }
@@ -209,7 +209,7 @@ footer{
 
     .stat_container{
         display: flex;
-        margin-top: 5%;
+        margin-top: 2.5%;
     }
 
     #carouselExampleIndicators{

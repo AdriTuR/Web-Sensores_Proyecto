@@ -32,7 +32,7 @@ $result=mysqli_query($conn,$query);
 
 <div id="lista_contener">
 
-    <div id="filtroboton">
+    <!--<div id="filtroboton">
         <form id=Cfiltro>
             <select id="selectComparation">
                 <option>Todas las consultas</option>
@@ -50,7 +50,7 @@ $result=mysqli_query($conn,$query);
         <button id="refresh">
             <i class="fas fa-sync fa-1.5x"></i>
         </button>
-    </div>
+    </div> -->
 
 
 <table class="table table-bordered " id="tablacons">
