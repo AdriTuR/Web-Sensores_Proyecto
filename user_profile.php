@@ -1,5 +1,5 @@
 <?php
-$t = 6;
+$t = 5;
 $name = "Panel Usuario Perfil";
 include_once './includes/header.php';
 function customHead(){?>
@@ -17,7 +17,10 @@ function customHead(){?>
 
 <!------------------------------------------------------------------------------------------->
 <!-----------------------------------------MENU---------------------------------------------->
-
+<script>
+    var removeMe = document.getElementById("userprofile");
+    removeMe.innerHTML = '';
+</script>
 
 <!-- Modal -->
 <div class="modal" id="panelsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">

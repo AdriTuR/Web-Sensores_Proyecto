@@ -3,7 +3,9 @@ body{
     display: flex;
     flex-direction: column;
 }
-
+.btn_logout {
+    margin-bottom: 0px;
+}
 .banner{
     width: 65%;
 }

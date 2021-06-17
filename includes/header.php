@@ -42,9 +42,6 @@
     if(isset($t) && $t == 5){
         include './includes/menu_user.php';
     }
-    if(isset($t) && $t == 6){
-        include './includes/menu_profile.php';
-    }
     ?>
     </header>
 </body>

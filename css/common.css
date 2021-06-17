@@ -102,6 +102,9 @@
 .encabezado menu:active{
     transition: .2s ease-in-out 1s;
 }
+#iconomapainteractivo {
+    width: 15%;
+}
 
 /*------------- menu icono ------------*/
 
