@@ -181,7 +181,7 @@ function customHead(){?>
             mercado y queremos
             que los agricultores tengan capacidad de tomar decisiones correctas para que los cultivos funcionen
         </p>
-        <i class="fas fa-users fa-4x"></i>
+        
     </div>
 
     <br>
@@ -251,7 +251,7 @@ function customHead(){?>
     //-------------------FUNCIÓN CERRAR FORMULARIO--------------------//
     function cerrarFormulario() {
         document.getElementById("formulario_contacto").style.display = "none";
-        document.getElementById("body").style.overflow = "scroll";
+        document.getElementById("body").style.overflowY = "auto";
         document.getElementById("contenido call_to_action").style.filter = "none";
         document.getElementById("boton_abajo").style.display = "flex";
         document.getElementById("menu-btn").disabled = false;
@@ -267,7 +267,7 @@ function customHead(){?>
     //-----------------FUNCIÓN CERRAR CONFIRMACION-------------------//
     function cerrarConfirmacion(){
         document.getElementById("mensaje_confirmacion").style.display = "none";
-        document.getElementById("body").style.overflow = "scroll";
+        document.getElementById("body").style.overflowY = "auto";
         document.getElementById("contenido call_to_action").style.filter = "none";
         document.getElementById("menu-btn").disabled = false;
         document.getElementById("boton_abajo").style.display = "flex";

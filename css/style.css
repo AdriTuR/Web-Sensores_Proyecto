@@ -28,10 +28,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    overflow: visible;
+    
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -325,7 +329,7 @@ div {
 
 .acerca1 {
 
-    margin-bottom: 4vh;
+    margin-bottom: 7vh;
 
 }
 
@@ -522,11 +526,14 @@ textarea {
 @media (min-width: 48em) {
 
     .popup-formulario{
-        top:10px;
+        top: 15%;
+        left: 27%;
+        width: 50%;
+        height: 80%;
     }
     .box {
         width: 63%;
-        height: 97%
+        height: 100%
     }
     .cerrar-formulario {
         right: -50%;
@@ -538,7 +545,7 @@ textarea {
     }
     .banner {
         font-size: 3vh;
-        width: 60%
+        width: 35%
     }
     .box_confirmacion {
         width: 70%;
@@ -549,7 +556,7 @@ textarea {
     }
     .call_to_action .fistText{
         text-align: center;
-        font-size: 2em;
+        font-size: 3em;
         padding-left: 20%;
         padding-right: 20%;
     }
@@ -562,11 +569,12 @@ textarea {
         width: 100%;
     }
     .secondText{
-        margin-left: 35px !important;
-        margin-right: 35px !important;
+        margin-left: 40vh !important;
+        margin-right: 40vh !important;
         text-align: justify;
         padding-right: 5%;
-        padding-left: 5%
+        padding-left: 5%;
+        font-size: 22px;
     }
 
     .thirdtext{
@@ -583,9 +591,9 @@ textarea {
         width: 30%;
     }
     .iconopersona{
-        padding-top: 22%;
+        padding-top: 13%;
         padding-bottom: 10%;
-        width: 30%;
+        width: 24%;
     }
     .informacion_web{
         background-image: url("../images/landing_page/landing_page3(PC).jpg");
@@ -702,6 +710,7 @@ textarea {
     }
     label{
         margin-top: 1%;
+        margin-left: 25px;
     }
     textarea{
         margin-left: 5%;
