@@ -6,9 +6,8 @@
     </label>
     <div class="sidebar">
         <ul>
-            <li><header> PANEL DE USUARIO </header></li>
+            <li><header> PANEL DE ADMIN </header></li>
             <li onclick="menucerrar()"><a href="user_profile.php"><i class="fas fa-user "></i>PERFIL</a></li>
-            <li onclick="menucerrar()"><a href="user_consultas.php"><i class="fas fa-clipboard "></i>CONSULTAR</a></li>
             <li onclick="menucerrar()"><a class="btn_logout" type="button" data-toggle="modal" data-target="#panelsesion"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
         </ul>
 
