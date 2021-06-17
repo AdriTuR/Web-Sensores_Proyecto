@@ -13,7 +13,7 @@ function customHead(){?>
   <?php }
   ?>
   <body>
-  <h1 class="banner">GESTIÓN DE CLIENTES</h1>
+  <h1 class="banner">GESTIÓN DE PARCELAS</h1>
   <!--  FORMULARIO DAR DE ALTA  -->
   <div class="popup-formulario" id="formulario_contacto">
   <div class="box" id="box-contacto">
@@ -82,17 +82,10 @@ function customHead(){?>
           <th>Usuario</th>
           <th>DNI</th>
           <th>Tipo</th>
-
         </tr>
-        
       </thead>
       <tbody id="myTable" name="myTable">
-             <tr>
-              <td>que</td>
-              <td>que</td>
-              <td>que</td>
-              </tr>
-              
+
       </tbody>
       </table>
       </div>
@@ -100,7 +93,7 @@ function customHead(){?>
   <!-- BOTONES DE DAR DE ALTA O DE BAJA -->
         <div class="container_opciones" id="container_opciones">
         <div class="dar_alta" onclick="abrirFormulario()"><i class="fas fa-user-plus"></i><br>DAR DE ALTA</div>
-        <div class="dar_alta" id="baja_boton"onclick="baja()" ><i class="fas fa-user-minus"></i><br>DAR DE BAJA</div>
+        <div class="dar_alta" id="baja_boton"onclick="baja()" ><i class="fas fa-user-minus"></i>DAR DE BAJA</div>
       </div>
     </div>
     <?php include_once './includes/footer.php';?>

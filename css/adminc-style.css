@@ -57,7 +57,7 @@ body{
     overflow-x:hidden;
 }
 footer{
-    position:relative !important;
+    position:relative;
     bottom: 0 !important;
     left: 0;
 }
@@ -249,10 +249,6 @@ a {
     height:50% !important;
     margin-bottom:20px;
     border-radius: 20px;
-    outline:none !important;
-}
-#enviar a{
-    color:white !important;
 }
 .popup-formulario{
     margin-right:50%;
@@ -309,11 +305,10 @@ button, input, optgroup, select, textarea {
         }
     .dar_alta{
            
-            width:40%;
+            width:25%;
             height:20% !important;
             margin:0 auto !important;
             font-size:12px;
-            
         }
         .fa-user-minus{
             font-size:40px;
@@ -336,7 +331,7 @@ button, input, optgroup, select, textarea {
       width: auto !important;
     }
     .box{
-      height:300px!important;
+      height:400px!important;
     }
     .cerrar-formulario{
         margin-right:40px;
@@ -351,9 +346,7 @@ button, input, optgroup, select, textarea {
         font-size: 2rem;
     
     }
-   #footer{
-       position:absolute !important;
-   }
+
 
 }
    
@@ -385,7 +378,6 @@ button, input, optgroup, select, textarea {
     .fa-sync{
         padding: 12px !important;
     }
-  
 
 }
 
