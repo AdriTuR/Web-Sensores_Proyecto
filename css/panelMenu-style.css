@@ -9,7 +9,7 @@ ul li:hover a{
 }
 
 .sidebar{
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     max-height: 0;
     transition: max-height .2s ease-out; 
