@@ -288,8 +288,8 @@ label #cancel{
 button.gm-ui-hover-effect {
     background: url(../images/landing_page/close_icon3png.png) no-repeat !important;
     background-size: contain !important;
-    margin-top: 10% !important;
-    padding-right: 95% !important;
+    margin-top: 5% !important;
+    padding-right: 12% !important;
 }
 
 button.gm-ui-hover-effect img {
@@ -337,7 +337,7 @@ button.gm-ui-hover-effect img {
 .boton_cerrar_grafica{
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
     width: 35px;
     height: 35px;
     background: none;
@@ -566,6 +566,12 @@ option{
     /*-----------------------------------------------------------------*/
     /*-----------------------------IFRAME------------------------------*/
 
+    .grafica_panel{
+        width: 60%;
+        height: 55%;
+        left: 20%;
+        top: 23%;
+    }
 
 }
 
@@ -576,16 +582,7 @@ option{
     .contenido_grafica{
         display: flex;
         margin: 15vh 8vh;
-        justify-content: space-evenly;
     }
-
-    .grafica_panel{
-        width: 70%;
-        height: 55%;
-        left: 20%;
-        top: 23%;
-    }
-
 
     /*-----------Gráfico-------------*/
 
@@ -653,25 +650,6 @@ option{
         margin-left: -0.10rem;
     }
 
-}
-
-@media (max-width: 500px) {
-    .widget_banner{
-        top: 12.5%;
-        width: 200px;
-    }
-    #widget_reloj-fecha #reloj, #fecha {
-        font-size: 14px;
-    }
-    .botones_panel-usuario{
-        top: 15%;
-    }
-    .boton_volver_atras, .boton_centrar{
-        height: 60px;
-        width: 60px;
-        padding: 0px;
-        margin: 10px;
-    }
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
