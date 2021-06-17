@@ -7,6 +7,7 @@
         <ul>
             <li><header> PANEL DE ADMIN </header></li>
             <li onclick="menucerrar()"><a href="user_panel.php"><img id= "iconomapainteractivo" src="images/landing_page/interactive-map_icon.png" alt="icono de un mapa interactivo"></i>TERRENO</a></li>
+            <li onclick="menucerrar()"><a href="user_consult.php"><i class="fas fa-clipboard"></i>CONSULTAR</a></li>
             <li onclick="menucerrar()"><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
         </ul>
 
