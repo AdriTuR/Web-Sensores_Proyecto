@@ -2,7 +2,7 @@
 $t = 4;
 $name = "Panel Admin";
 include_once './includes/header.php';
-include_once './api/includes/adminStats.php';
+
 function customHead(){?>
     <link rel="stylesheet" href="./css/adminc-style.css">
     <link rel="stylesheet" href="./css/panelMenu-style.css">
@@ -10,7 +10,6 @@ function customHead(){?>
 ?>
 <body>
 <section class="conjunto">
-
     <script>
         var removeMe = document.getElementById("consult");
         removeMe.innerHTML = '';
@@ -20,18 +19,9 @@ function customHead(){?>
 
 <!--             TABLA                   -->
 <!--  -------------------------------    -->
-<?php 
-$conn = mysqli_connect("localhost","root","","grupo9");
-if($conn-> connect_error) {
-  die("Connection failed".$conn);
-}
-$query = "SELECT id, username, role from user where role='USER'";
-$result=mysqli_query($conn,$query);
-?>
 <div class="container" id="container_lista">
 
 <div id="lista_contener">
-
     <!--<div id="filtroboton">
         <form id=Cfiltro>
             <select id="selectComparation">
@@ -55,51 +45,36 @@ $result=mysqli_query($conn,$query);
 
 <table class="table table-bordered " id="tablacons">
     <tbody id="myTable2">
-
-        <tr>
-            <td>
-                <div class="arriba">
-                    <div id="Tnombre">
-                        Joseba Jimenez
-                    </div>
-
-                    <div id="Tfecha">
-                        09/05/2021 19:26
-                    </div>
-                </div>
-
-                <div id="Tconsulta">
-                    Buenas tardes, acabo de encontrar esta página y he leido sobre todo lo que ofreceis,
-                    estaria interesado en obtener...
-                <div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div class="arriba">
-                    <div id="Tnombre">
-                        Joseba Jimenez
-                    </div>
-
-                    <div id="Tfecha">
-                        09/05/2021 19:26
-                    </div>
-                </div>
-
-                <div id="Tconsulta">
-                    Buenas tardes, acabo de encontrar esta página y he leido sobre todo lo que ofreceis,
-                    estaria interesado en obtener...
-                <div>
-            </td>
-        </tr>
-        
-
     </tbody>
 </table>
 </div>
+
+<script>
+  window.addEventListener("load", function(){
+    fetch("./api/v1/consultas", {
+      method: "GET"
+    }).then(function (result) {
+      if(result.ok) return result.json();
+    }).then(function (data) {
+      if(data != null){
+        for (let i = 0; i < data.length; i++) {
+          const e = data[i];
+          myTable2.innerHTML += 
+          "<tr><td>" +
+                "<div class='arriba'>" +
+                "<div id='Tnombre'>" + e.name + " " + e.surname + "</div>" +
+                "<div id='Tfecha'>" + e.date + "</div>" +
+                "</div>" +
+                "<div id='Tconsulta'>" + e.message + "<div>" +
+                "</td></tr>"
+        }
+      }
+    });
+  });
+</script>
 <!---------------CERRAR SESIÓN----------------->
     <script src="./js/closeSession.js"></script>
+    <script src="./js/checkAdminLogin.js"></script>
     <!------------------------------------------->
 </section>
 <?php include_once './includes/footer.php';?>

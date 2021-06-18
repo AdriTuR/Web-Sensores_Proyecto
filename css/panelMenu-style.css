@@ -5,7 +5,8 @@
     text-decoration: none;
 }
 ul li:hover a{
-    padding-left: 25px;
+    /* padding-left: 10px; */
+    background-color: #700148;
 }
 
 .sidebar{
@@ -33,6 +34,7 @@ ul li:hover a{
 }
 .sidebar li a{
     background-color: #830053;
+    text-decoration: none;
 }
 
 .sidebar header{

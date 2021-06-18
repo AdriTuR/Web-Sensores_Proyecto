@@ -46,80 +46,66 @@ function customHead(){?>
 <!------------------------------------------------------------------------------------------->
 <!--------------------------CONTENIDO PERFIL DE USUARIO--------------------------------------->
 
-
-
 <section>
-
     <div id="cont1">
-
         <div id="contenedor1">
-
-            <img id="iconouser" src="images/landing_page/account_icon2.png" alt="icono de un usuario">
+            <img id="iconouser" src="./images/landing_page/account_icon2.png" alt="icono de un usuario">
             <p id="nombre">Nombre </p>
             <p id="iduser">ID: </p>
-            <button class="texto1" id="boton-editar" onclick="editacion()"><i class="fas fa-edit"></i></button>
+            <!-- <button class="texto1" id="boton-editar" onclick="editacion()"><i class="fas fa-edit"></i></button> -->
         </div>
 
         <div class="banner">
-
             <h1>
                 DATOS PERSONALES
             </h1>
-
         </div>
-
     </div>
   
     <div id="cont2">
-        
         <div id="contenedor2">
-
-         
                <p>
-                <p class="texto1 inline">
+                <p id="nombre2" class="texto1 inline">
                     Nombre:
                 </p>
-                <p class="inline editable texto1">.</p>
+                <!-- <p class="inline editable texto1">.</p> -->
               </p>
               <p>
-
-                <p class="inline texto1">
+                <p id="apellidos" class="inline texto1">
                 Apellidos:
                 </p>
-                <p class="inline editable texto1">.</p>
+                <!-- <p class="inline editable texto1">.</p> -->
                  </p>
            
             <p>
-            <p class="texto1 inline">
-                <i class="fas fa-address-card"></i>
+            <p id="dni" class="texto1 inline">
+                <i class="fas fa-address-card"></i> 
                 DNI:
             </p>
-            <p class="inline editable texto1">.</p>
+            <!--<p class="inline editable texto1">.</p> -->
             </p>
           
+            <hr class="line">
+
             <p>
-                
-                <p class="inline texto1">
+                <p id="direccion" class="inline texto1">
                 <i class="fas fa-map-marker-alt"></i>
                 Dirección:
                 <p class="inline editable texto1">.</p>
                 </p>
             </p>
-
-            <hr class="line">
-        
         </div>
 
         <div id="contenedor3">
          <p>
-            <p class="texto1 inline">
+            <p id="correo" class="texto1 inline">
                 <i class="fas fa-envelope"></i>
                 Correo:
             </p>
             <p class="inline editable texto1">.</p>
           </p>
           <p>
-            <p class="texto1 inline">
+            <p id="telefono" class="texto1 inline">
                 <i class="fas fa-phone-alt"></i>
                 Teléfono:
                 <p class="inline editable texto1">.</p>
@@ -131,28 +117,62 @@ function customHead(){?>
 
         <div id="contenedor4">
              <p>
-            <p class="texto1 inline">
+            <p id="registro" class="texto1 inline">
                 <i class="fas fa-calendar-alt"></i>
                 Fecha de registro:
-                <p class="inline editable texto1">.</p>
             </p>
           </p>
 
           <p>
-            <p class="texto1 inline">
+            <p id="sensores" class="texto1 inline">
                 <i class="fas fa-microchip"></i>
                 Nº de sensores:
             </p>
-            <p class="inline editable texto1">.</p>
           </p>
         </div>
 
     </div>
 
 </section>
-<script>    function editacion(){
+<script> 
+    let username;
+    
+    window.addEventListener("load", async function(){
+        await fetch("./api/v1/session", {
+            method: "GET"
+        }).then(function (result) {
+            if(result.ok){
+                return result.json();
+            }else{
+                location.href = "./login.php";
+            }
+        }).then(function (data) {
+            username = data.name;
+        });
+
+        await fetch("./api/v1/customer/" + username, {
+            method: "GET"
+        }).then(function (result) {
+            if(result.ok) return result.json();
+        }).then(function (data) {
+            if(data != null){
+                nombre.innerHTML = data[0].name;
+                nombre2.innerHTML += data[0].name;
+                apellidos.innerHTML += data[0].surname;
+                dni.innerHTML += data[0].dni;
+                direccion.innerHTML += data[0].address;
+                correo.innerHTML += data[0].email;
+                telefono.innerHTML += data[0].phone;
+                registro.innerHTML += data[0].registerDate;
+                sensores.innerHTML += data[0].qtyProbes;
+            }
+        });
+    });
+
+    function editacion(){
         var editables = document.getElementsByClassName("editable")
         var boton = document.getElementById("boton-editar")    
+        
         for(var i = 0;i<editables.length;i++){
             /*si el contenido ya es editable se activa esto*/
          if(editables[i].isContentEditable){
@@ -166,11 +186,10 @@ function customHead(){?>
          else{
             editables[i].contentEditable = true
             editables[i].innerHTML = "Haga click aqui para editar la informacion"; 
-            boton.innerHTML = "<div class='boton-confirmar'>CONFIRMAR</div>";
-            
+            boton.innerHTML = "<div class='boton-confirmar'>CONFIRMAR</div>";  
          }
             }
-        }
+    }
 </script>
 <!-------------------------------Cerrar Sesion------------------------------------------->
 <script src="./js/closeSession.js"></script>

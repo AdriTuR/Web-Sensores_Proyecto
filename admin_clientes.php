@@ -1,6 +1,6 @@
 <?php
 $t = 4;
-$name = "Panel de admin, seccion de clientes";
+$name = "Panel Administrador - Gestión de Clientes";
 include_once './includes/header.php'; 
 function customHead(){?>
   
@@ -13,7 +13,7 @@ function customHead(){?>
   <?php }
   ?>
   <body>
-  <h1 class="banner">GESTIÓN DE PARCELAS</h1>
+  <h1 class="banner">GESTIÓN DE CLIENTES</h1>
   <!--  FORMULARIO DAR DE ALTA  -->
   <div class="popup-formulario" id="formulario_contacto">
   <div class="box" id="box-contacto">
@@ -22,47 +22,47 @@ function customHead(){?>
   <div class="titulo_morado"><h1 id="title">DAR DE ALTA</h1></div>
   </div>
   <div id="content-form-box">
+
   <form id="form_contact">
-  <p>
-  <label for="nombre" class="colocar_nombre">Nombre:</label>
-  <input type="text" name="introducir_nombre" id="nombre" placeholder="Escribe tu nombre" required maxlength="30" minlength="3">
-  </p>
-  <p>
-  <label for="apellidos" class="colocar_apellidos">Apellidos: </label>
-  <input type="text" name="introducir_apellidos" id="apellidos" placeholder="Escribe tus apellidos" maxlength="60" required  minlength="3">
-  </p>
-  <p>
-  <label for="DNI" class="colocar_DNI">DNI:</label>
-  <input type="DNI" name="introducir_DNI" id="DNI" placeholder="Escribe tu DNI" required pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra">
-  </p>
-  <p>
-  <label for="correo" class="colocar_correo"><i class="fas fa-envelope"></i>Correo: </label> 
-  <input type="mail" name="introducir_correo" id="correo" required placeholder="Escribe tu correo" maxlength="60"  minlength="3">
-  </p>
-  <p>
-  <label for="telefono" class="colocar_telefono"><i class="fas fa-phone-alt"></i>Telefono: </label>
-  <input type="number" name="introducir_telefono" id="telefono" required placeholder="Escribe tus apellidos" maxlength="60"  minlength="3">
-  </p>
-  <p>
-  <label for="nombre_cuenta" class="colocar_nombre_cuenta"><i class="fas fa-user-circle"></i>Nombre de la cuenta:</label>
-  <input type="text" name="introducir_nombre_cuenta" id="nombre_cuenta" placeholder="Escribe tu nombre de la cuenta" required maxlength="30" minlength="3">
-  </p>
-  <p>
-  <label for="contraseña" class="colocar_contraseña"><i class="fas fa-key"></i>Contraseña:</label>
-  <input type="password" name="introducir_contraseña" id="contraseña" placeholder="Escribe tu contraseña" required maxlength="30" minlength="3">
-  </p>
-  <p>
-  <label for="cuenta" class="colocar_cuenta"><i class="fas fa-id-badge"></i>Tipo de cuenta:</label>
-  <br>
-  <select id="cuenta">
-  <option value="Usuario">Usuario</option>
-  <option value="Corporativa">Corporativa</option>
-  </select>
-  </p>
-  
-  <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
+    <p>
+    <label for="nombre" class="colocar_nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Escribe nombre" required maxlength="30" minlength="3">
+    </p>
+    <p>
+    <label for="apellidos" class="colocar_apellidos">Apellidos: </label>
+    <input type="text" name="apellidos" id="apellidos" placeholder="Escribe apellidos" maxlength="60" required  minlength="3">
+    </p>
+    <p>
+    <label for="DNI" class="colocar_DNI">DNI:</label>
+    <input type="DNI" name="DNI" id="DNI" placeholder="Escribe tu DNI" required pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra">
+    </p>
+    <p>
+    <label for="correo" class="colocar_correo"><i class="fas fa-envelope"></i>Correo: </label> 
+    <input type="mail" name="correo" id="correo" required placeholder="Escribe correo" maxlength="60"  minlength="3">
+    </p>
+    <p>
+    <label for="telefono" class="colocar_telefono"><i class="fas fa-phone-alt"></i>Telefono: </label>
+    <input type="number" name="telefono" id="telefono" required placeholder="Escribe apellidos" maxlength="60"  minlength="3">
+    </p>
+    <p>
+    <label for="nombre_cuenta" class="colocar_nombre_cuenta"><i class="fas fa-user-circle"></i>Nombre de la cuenta:</label>
+    <input type="text" name="nombre_cuenta" id="nombre_cuenta" placeholder="Escribe nombre de la cuenta" required maxlength="30" minlength="3">
+    </p>
+    <p>
+    <label for="contraseña" class="colocar_contraseña"><i class="fas fa-key"></i>Contraseña:</label>
+    <input type="password" name="contraseña" id="contraseña" placeholder="Escribe contraseña" required maxlength="30" minlength="3">
+    </p>
+    <p>
+    <label for="cuenta" class="colocar_cuenta"><i class="fas fa-id-badge"></i>Tipo de cuenta:</label>
+    <br>
+    <select name="cuenta">
+      <option value="USER">Usuario</option>
+      <option value="COMPANY">Corporativa</option>
+    </select>
+    </p>
+    
+    <button type="submit" name="enviar_formulario" id="enviar"><a>ENVIAR</a></button>
   </form>
-  <script src=""></script>
   </div>
   </div>
   </div>
@@ -73,10 +73,10 @@ function customHead(){?>
   <div id="lista_contener">
     <div class="form-group has-search">
       <span class="fa fa-search form-control-feedback"></span>
-      <input type="text" class="form-control search" id="input_buscar" placeholder="Buscar" onkeyup="buscarUsuario()">
+      <input type="text" class="form-control search" id="input_buscar" placeholder="Buscar usuario..." onkeyup="buscarUsuario()">
     </div>
       <br>
-      <table class="table table-bordered " id="tabla">
+      <table class="table table-bordered" id="tabla">
       <thead>
         <tr>
           <th>Usuario</th>
@@ -85,15 +85,19 @@ function customHead(){?>
         </tr>
       </thead>
       <tbody id="myTable" name="myTable">
-
+        <!-- 
+      <tr id="sinResultado" style="display:none">
+        <td>no hay resulstados</td>
+        </tr>
+      -->
       </tbody>
       </table>
       </div>
 
   <!-- BOTONES DE DAR DE ALTA O DE BAJA -->
         <div class="container_opciones" id="container_opciones">
-        <div class="dar_alta" onclick="abrirFormulario()"><i class="fas fa-user-plus"></i><br>DAR DE ALTA</div>
-        <div class="dar_alta" id="baja_boton"onclick="baja()" ><i class="fas fa-user-minus"></i>DAR DE BAJA</div>
+          <div class="dar_alta" onclick="abrirFormulario()"><i class="fas fa-user-plus"></i><br>DAR DE ALTA</div>
+          <div class="dar_alta" id="baja_boton"onclick="baja()" ><i class="fas fa-user-minus"></i>DAR DE BAJA</div>
       </div>
     </div>
     <?php include_once './includes/footer.php';?>
@@ -102,26 +106,26 @@ function customHead(){?>
   <script>
   function buscarUsuario() {
     var input, filter, table, tr, td, i, txtValue, notFound;
+
     input = document.getElementById("input_buscar");
     filter = input.value.toUpperCase();
-    table = document.getElementById("tabla");
-    tr = table.getElementsByClassName("tr_user");
-    notFound = document.getElementById("sin_resultados")
-    
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    //notFound = document.getElementById("sinResultado")
+ 
     for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[1];  /*BUSCA SIMILITUD CON LA COLUMNA CLIENTE*/
+      td = tr[i].getElementsByTagName("td")[0];
       if (td) {
         txtValue = td.textContent || td.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
           tr[i].style.display = "";
         } else {
-          tr[i].style.display = "none";
-          notFound.style.display = "";
+          tr[i].style.display = "none"; 
         }
       }
     }
   }
-  
+
   function abrirFormulario() {
     document.getElementById("lista_contener").style.display = "none";
     document.getElementById("container_opciones").style.display = "none";
@@ -132,10 +136,6 @@ function customHead(){?>
     document.getElementById("lista_contener").style.display = "block";
     document.getElementById("container_opciones").style.display = "flex";
     document.getElementById("formulario_contacto").style.display = "none";
-    document.getElementById("body").style.overflow = "scroll";
-    document.getElementById("contenido call_to_action").style.filter = "none";
-    document.getElementById("boton_abajo").style.display = "flex";
-    document.getElementById("menu-btn").disabled = false;
   }
 
   function baja(){
@@ -152,8 +152,7 @@ function customHead(){?>
       x[i].style.display = "none";
     }
     document.getElementById("baja_boton").onclick = baja;
-  }
-  
+  }  
   </script>
 
   <script>
@@ -161,28 +160,8 @@ function customHead(){?>
     removeMe.innerHTML = '';
   </script>
 
-  <script>
-  window.addEventListener("load", function(){
-    fetch("./api/v1/customers", {
-      method: "GET"
-    }).then(function (result) {
-      if(result.ok) return result.json();
-    }).then(function (data) {
-      if(data != null){
-        for (let i = 0; i < data.length; i++) {
-          const e = data[i];
-          myTable.innerHTML += "<tr>" + 
-          "<td><img src='./images/admin_general/usuario.png'/>" + e.name + "</td>" + 
-          "<td>" + e.dni + "</td></tr>" +
-          "<td class='rol_y_baja'>"+ e.role + "<div class='eliminar_casilla' id='eliminar-casilla'><button class='eliminar' id='eliminar_boton'><i class='fas fa-trash-alt'></i></button></div></td> " +
-          "</tr>";
-        }
-      }
-    });
-  });
-  </script>
   <!------------------CERRAR SESIÓN----------------------->
   <script src="./js/closeSession.js"></script>
-  
-  
+  <script src="./js/adminCustomer.js"></script>
+  <script src="./js/checkAdminLogin.js"></script>
 </html> 

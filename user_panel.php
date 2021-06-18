@@ -57,9 +57,11 @@ function customHead(){?>
     <!----------------BOTON VOLVER ATRÁS-------------------->
 
     <div class="botones_panel-usuario">
+        <!--
         <button class="boton_centrar">
-            <img src="./images/icons/centrar_icon.png" alt="boton de centrar">
+            <img src="./images/icons/centrar_icon.png" onclick="recenterMap()" alt="boton de centrar">
         </button>
+        -->
         <button class="boton_volver_atras" id="resetMap" onclick="resetMap()">
             <img src="./images/icons/return_icon.png" alt="boton volver atrás">
         </button>
@@ -75,8 +77,8 @@ function customHead(){?>
         <div class="dropdown-menu">
             <a class="dropdown-item">
                 <div id="nsens">
-                    <p class="num">
-                        10
+                    <p id="numSensores" class="num">
+                        -1
                     </p>
                     <p class="texto">
                         nº de sensores
@@ -84,8 +86,8 @@ function customHead(){?>
                 </div>
                 <hr class="line2">
                 <div id="mterr">
-                    <p class="num">
-                        10.385
+                    <p id="m2Terreno" class="num">
+                        -1
                     </p>
                     <p class="texto">
                         m² de terreno
@@ -163,6 +165,15 @@ function customHead(){?>
     <!--------------------------------------Login-------------------------------------------->
 
 	<script>
+        var viewUser = null;
+        <?php
+        if(isset($_GET['viewAsUser'])){
+            ?>
+            viewUser = "<?php echo $_GET['viewAsUser']; ?>";
+            <?php
+        }
+        ?>
+
 		window.addEventListener("load", function(){
 			fetch("./api/v1/session", {
 				method: "GET"
@@ -174,8 +185,14 @@ function customHead(){?>
 				}
 			}).then(async function (data) {
 				if(data != null){
-					await initMap();
-					addCustomerMap(data.name);
+                    if(viewUser != null  && data.role == "USER"){
+                        location.href = "./user_panel.php";
+                        return;     
+                    }
+
+                    await initMap();
+                    if(viewUser != null && data.role == "ADMIN") addCustomerMap(viewUser);    
+                    else addCustomerMap(data.name);
 				}
 			});
 		});

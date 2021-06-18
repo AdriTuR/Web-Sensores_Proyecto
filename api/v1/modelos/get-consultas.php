@@ -1,33 +1,22 @@
 <?php
 
-$method = $_SERVER['REQUEST_METHOD'];
+if(!isset($conn)) die();
 
-require_once 'connection.php';
+$sql = "SELECT * FROM `inquiries`";
+$result = mysqli_query($conn, $sql);
 
-
-     $sql = "SELECT * FROM `inquiries`";
-
-     $result = mysqli_query($conn, $sql);
 if(empty($result)){
-
-    $http_code = 402;
-
+    http_response_code(404);
+    exit();
 }else{
-
-    $http_code = 200;
-
-    while($fila = mysqli_fetch_assoc($result)){
+    while($row = mysqli_fetch_assoc($result)){
         $inquiries = array(
-            "name" => $fila['name'],
-            "surname" => $fila['surname'],
-            "message" => $fila['message'],
-            "date" => $fila['date']
+            "name" => $row['name'],
+            "surname" => $row['surname'],
+            "message" => $row['message'],
+            "date" => $row['date']
         );
 
-        array_push($salida, $inquiries);
-
+        array_push($data, $inquiries);
     }
-
 }
-
-

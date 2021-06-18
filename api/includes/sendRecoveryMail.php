@@ -32,7 +32,7 @@ if($method == 'POST'){
 
             $body = utf8_decode(file_get_contents("../../includes/mail_templates/mail.html"));
             $body = str_replace("%nombre%", "Jose Juan", $body); 
-            $body = str_replace("%recoverLink%", "http://localhost/recover.php?token=". $token, $body); 
+            $body = str_replace("%recoverLink%", "http://kbaczek.upv.edu.es/recover.php?token=". $token, $body); 
 
             $template = [];
             $template["title"] = 'GTI Sensores - Cambio de contraseña';

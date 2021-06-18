@@ -104,14 +104,7 @@ function customHead(){?>
         <!------------------------------------------------------------->
         <!---------------------Listado Usuarios------------------------>
         <table cellpadding="0" cellspacing="0" border="0" id="tabla">
-            <tbody>
-            <tr class="tr_user">
-                <td class="listado_icono-cuenta"><i class="fas fa-user-circle" id="user"></i></td>
-                <td class="listado_cliente">Adrián Tur Rubio</td>
-                <td class="listado_DNI">20960381K</td>
-                <td class="listado_sensores">14</td>
-                <td class="listado_icono-visualizar"><i class="far fa-eye fa-2x"></i></td>
-            </tr>
+            <tbody id="tablaUsers">
             </tbody>
         </table>
     </div>
@@ -126,50 +119,58 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------SCRIPTS------------------------------------------------------->
 
-<!--------------------------------------Login-------------------------------------------->
-<script>
-    window.addEventListener("load", function(){
-        fetch("./api/v1/", {
-            method: "GET"
-        }).then(function (result) {
-            if(result.status == 200){
-                return result.json();
-            }
-        }).then(function (data) {
-            if(data != null){
-                if(data.role == "USER"){
-                    location.href = "./user_panel.php";
-                }
-            }
-        });
-    });
-</script>
 <!-------------------------------Cerrar Sesion------------------------------------------->
 <script src="./js/closeSession.js"></script>
+<script src="./js/checkAdminLogin.js"></script>
 <!------------------------------Buscar Usuario------------------------------------------->
 <script>
-    function buscarUsuario() {
+  function buscarUsuario() {
+    var input, filter, table, tr, td, i, txtValue, notFound;
 
-        var input, filter, table, tr, td, i, txtValue, notFound;
-        input = document.getElementById("input_buscar");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("tabla");
-        tr = table.getElementsByClassName("tr_user");
-        notFound = document.getElementById("sin_resultados")
-
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];  /*BUSCA SIMILITUD CON LA COLUMNA CLIENTE*/
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                    notFound.style.display = "";
-                }
-            }
+    input = document.getElementById("input_buscar");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tablaUsers");
+    tr = table.getElementsByClassName("tr_user");
+ 
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none"; 
         }
+      }
     }
+  }
+
+  window.addEventListener("load", function(){
+    fetch("./api/v1/customer", {
+      method: "GET"
+    }).then(function (result) {
+      if(result.ok) return result.json();
+    }).then(function (data) {
+      if(data != null){
+        for (let i = 0; i < data.length; i++) {
+          const e = data[i];
+          tablaUsers.innerHTML += 
+          "<tr class='tr_user'>" + 
+                "<td class='listado_icono-cuenta'><i class='fas fa-user-circle' id='user'></i></td>" +
+                "<td class='listado_cliente'>" + e.name + " " + e.surname + "</td>"+
+                "<td class='listado_DNI'>"+ e.dni +"</td>" + 
+                "<td class='listado_sensores'>" + e.qtyProbes + "</td>" +
+                "<td class='listado_icono-visualizar'><button onclick='showUserField(\"" + e.username + "\")'><i class='far fa-eye fa-2x'></i></button></td></tr>"   
+        }
+      }
+    });
+  });
+
+  function showUserField(username){
+    window.open("./user_panel.php?viewAsUser=" + username, '_blank').focus();
+  }
+
+
 </script>
 <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -182,9 +183,3 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
 <!-------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-

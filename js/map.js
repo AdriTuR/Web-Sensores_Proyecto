@@ -4,6 +4,7 @@ let map;
 let userName;
 let fieldData;
 let infowindow;
+let centerLocation;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -33,10 +34,13 @@ function initMap() {
 function drawUserField(fieldData, lblName){
     var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(fieldData.location)));
     var bounds = createBounds(shape);
+    numSensores.innerHTML = 0;
+    m2Terreno.innerHTML = fieldData.m2;
     
     addMarkerFieldClick(addMarker(bounds.getCenter(), lblName, "field"), bounds, function(){
         var formData = new FormData();
         formData.append('fieldID', fieldData.fieldID);
+        centerLocation = bounds;
         fetchData(formData, "plot", function(res){
             for (let i = 0; i < res.length; i++) {
                 drawUserPlot(res[i], shape, "Parcela " + (i+1));
@@ -170,6 +174,13 @@ function parseJSONLocationFormat(data){
     return data;
 }
 
+function recenterMap(){
+    if(centerLocation != null) 
+    var data = parseJSONLocationFormat(centerLocation);
+    console.log(data)
+    //map.setCenter(new google.maps.LatLng(data[0].lat, data[0].lng));
+}
+
 function resetMap(){
     setTimeout(() => {
         showUserFields();
@@ -177,6 +188,7 @@ function resetMap(){
     map.setCenter(new google.maps.LatLng(39.0085631, -4.0779268));
     map.setZoom(5);
     map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+    centerLocation = null;
 }
 
 function fetchData(formData, type, cb){

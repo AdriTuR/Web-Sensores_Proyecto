@@ -60,7 +60,7 @@ function customHead(){?>
                 <a href="admin_consultas.php">
                     <i class="far fa-eye fa-4x "></i>
                     <div class="stat_indicador"><?php echo $todayInquiries?></div>
-                    <p class="stat_texto">Nº de consultas</p>
+                    <p class="stat_texto">Nº de consultas Hoy</p>
                 </a>
             </div>
             <div class="carousel-item">
@@ -96,7 +96,7 @@ function customHead(){?>
             <a href="admin_consultas.php">
                 <i class="far fa-eye fa-4x"></i>
                 <div class="stat_indicador"><?php echo $todayInquiries?></div>
-                <p class="stat_texto">Nº de consultas</p>
+                <p class="stat_texto">Nº de consultas Hoy</p>
             </a>
         </div>
         <div class="stat_box">
@@ -119,24 +119,9 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------SCRIPTS------------------------------------------------------->
 
-<!--------------------------------------Login-------------------------------------------->
-<script>
-    window.addEventListener("load", function(){
-        fetch("./api/v1/session", {
-            method: "GET"
-        }).then(function (result) {
-            if(result.ok) return result.json();
-        }).then(function (data) {
-            if(data != null){
-                if(data.role == "USER"){
-                    location.href = "./user_panel.php";
-                }
-            }
-        });
-    });
-</script>
 <!-------------------------------Cerrar Sesion------------------------------------------->
 <script src="./js/closeSession.js"></script>
+<script src="./js/checkAdminLogin.js"></script>
 <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
