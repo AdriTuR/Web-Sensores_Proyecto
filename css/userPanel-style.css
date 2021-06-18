@@ -162,6 +162,7 @@ label #cancel{
     width: 100%;
     position: relative;
     bottom: 0;
+    display: none;
 
 }
 .btn-secondary{
@@ -232,7 +233,7 @@ label #cancel{
 /*----------------------------------------------- MAPA --------------------------------------------------------------*/
 
 #map {
-    height: 84vh;
+    height: 90vh;
     z-index: 50;
 }
 
@@ -583,8 +584,8 @@ option{
 
     .grafica_panel{
         width: 70%;
-        height: 55%;
-        left: 20%;
+        height: 70%;
+        left: 15%;
         top: 23%;
     }
 
