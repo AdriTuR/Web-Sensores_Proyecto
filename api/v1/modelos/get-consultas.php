@@ -11,9 +11,9 @@ if(empty($result)){
 }else{
     while($row = mysqli_fetch_assoc($result)){
         $inquiries = array(
-            "name" => $row['name'],
-            "surname" => $row['surname'],
-            "message" => $row['message'],
+            "name" => utf8_encode($row['name']),
+            "surname" => utf8_encode($row['surname']),
+            "message" => utf8_encode($row['message']),
             "date" => $row['date']
         );
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-06-2021 a las 10:19:31
+-- Tiempo de generación: 18-06-2021 a las 10:44:55
 -- Versión del servidor: 5.7.33-0ubuntu0.16.04.1
 -- Versión de PHP: 7.3.27
 
@@ -63,7 +63,9 @@ CREATE TABLE `inquiries` (
 
 INSERT INTO `inquiries` (`id`, `name`, `surname`, `email`, `message`, `date`) VALUES
 (1, 'Juan', 'Huerta', 'huertajuan@hotmail.es', 'Buenas tardes, me gustaría adquirir unas 100 sondas para mi campo.', '2021-05-14 08:41:30'),
-(2, 'Julio', '', 'julio@hotmail.com', 'Me gustaría consultar el precio de las sondas para mi campo de 10.000 m2.', '2021-05-14 08:43:51');
+(2, 'Julio', 'aa', 'julio@hotmail.com', 'Me gustaría consultar el precio de las sondas para mi campo de 10.000 m2.', '2021-05-14 08:43:51'),
+(3, 'Alejandro', 'Noguera', 'alejandronogbel@gmail.com', 'Hola esto es un mensaje de prueba para la gestión de consultas', '2021-06-18 08:20:31'),
+(4, 'Adrian', 'Tur', 'adria.tur.rubio@gmail.com', 'Esto es una consulta de prueba para comprobar que la tabla de gestionar consultas funciona', '2021-06-18 08:29:41');
 
 -- --------------------------------------------------------
 
@@ -369,7 +371,7 @@ ALTER TABLE `field`
 -- AUTO_INCREMENT de la tabla `inquiries`
 --
 ALTER TABLE `inquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `plot`
