@@ -4,7 +4,8 @@ $name = "Panel Admin";
 include_once './includes/header.php';
 
 function customHead(){?>
-    <link rel="stylesheet" href="./css/adminc-style.css">
+    <link rel="stylesheet" href="./css/adminInquiries-style.css">
+    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/panelMenu-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -12,6 +13,7 @@ function customHead(){?>
 ?>
 <body>
 <section class="conjunto">
+
     <script>
         var removeMe = document.getElementById("consult");
         removeMe.innerHTML = '';

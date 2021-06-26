@@ -1,6 +1,6 @@
 <?php
 $t = 5;
-$name = "Panel Usuario - Mapa Interactivo";
+$name = "Panel Usuario - Terrenos";
 include_once './includes/header.php';
 
 //--------------------------------------------------------------------------------------------------------------------//
@@ -32,7 +32,6 @@ function customHead(){?>
     var removeMe = document.getElementById("userpanel");
     removeMe.innerHTML = '';
 </script>
-
 <!-------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------CONTENIDO PANEL DE USUARIO-------------------------------------------------->
 

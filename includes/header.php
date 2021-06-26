@@ -34,7 +34,7 @@
     }
 
     if(isset($t) && $t == 2){
-        include './includes/menu_app.php';
+        include './includes/menu_admin.php';
     }
     if(isset($t) && $t == 4){
         include './includes/menu_app_gene.php';

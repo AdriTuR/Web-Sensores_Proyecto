@@ -13,9 +13,17 @@ body{
     height: 100%;
     overflow-x:hidden;
 }
+
 p {
     margin-bottom: 0px;
 }
+
+/*----Icono Visualizar-----*/
+.fa-eye{
+    color: var(--color_principal);
+    opacity: 70%;
+}
+
 /*----------------------------------------------------------------------*/
 /*------------------------------BIENVENIDA------------------------------*/
 

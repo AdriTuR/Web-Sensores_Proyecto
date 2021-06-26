@@ -389,8 +389,9 @@
         transform: scale(1);
     }
 }
+
 /*-------------------------------------------------------------------------------------------------------------------*/
-/*                                                 LISTADOS DE ADMIN                                                 */
+/*                                                 LISTADO DE ADMIN                                                  */
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 .listado{
@@ -407,11 +408,17 @@
 
 .listado_cliente{
     display: none;
+    padding: 20px;
+    text-align: left;
 }
 
-.listado_icono-cuenta, .listado_icono-visualizar{
+.listado_icono-cuenta{
     width: 15%;
     padding: 0px;
+}
+
+.listado_botones{
+    width: 10%;
 }
 
 
@@ -451,12 +458,39 @@ td{
     border-bottom: solid 1px rgba(255,255,255,0.3);
 }
 
-/*-----------SCROLL TABLA----------*/
+/*-----------------------------------------------------*/
+/*------------------BOTONES LISTADO--------------------*/
+
+
+
+
+
+/*-----------------------------------------------------*/
+/*--------------------SCROLL TABLA---------------------*/
+
 .scrollbar_table {
     position: relative;
     height: 60vh;
     overflow: auto;
 }
+
+.scrollbar_table::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.scrollbar_table::-webkit-scrollbar-thumb {
+    background: #999999;
+}
+
+.scrollbar_table::-webkit-scrollbar-track {
+    background: #e1e1e1;
+}
+
+.scrollbar_table::-webkit-scrollbar-track:hover,
+.scrollbar_table::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}
+
 
 /*-----------------------------------------------------*/
 /*-------------AVISO DE NO EXISTE USUARIO--------------*/
@@ -494,50 +528,6 @@ td{
 #user{
     color: var(--color_principal);
 }
-.fa-eye{
-    color: var(--color_principal);
-    opacity: 70%;
-}
-
-/*-------------------------------------------------------------------------------------------------------------------*/
-/*                                                 CAMPO DE BUSQUEDA                                                 */
-/*-------------------------------------------------------------------------------------------------------------------*/
-
-.form-group{
-    display: flex;
-}
-
-.has-search .form-control {
-    padding-left: 2.375rem;
-    margin: 0 auto;
-    margin-top: 0.5rem;
-    width: 90%;
-    height: 3.5rem;
-    background-color: rgba(255,255,255,0.9);
-    border: 1px solid var(--color_principal);
-    color: var(--color_negro);
-    font-family: var(--fuente_texto);
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    left: 5%;
-    margin-top: 1rem;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: var(--color_principal);
-    padding-top: 0;
-}
-
-::placeholder{
-    color: var(--color_principal);
-}
-
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                                    RESPONSIVE                                                     */

@@ -22,13 +22,13 @@
 .banner img{
     width:2.5rem;
     float: left;
-    
+
 }
 /* CUADRADOS USUARIO */
 p{
     color:white;
     font-size:larger;
-    
+
 }
 hr{
     border: 1px solid #830053;
@@ -58,7 +58,7 @@ body{
 }
 footer{
     position: absolute;
-	bottom: 0;
+    bottom: 0;
 }
 
 /*--------------LISTA/TABLA ---------------*/
@@ -130,12 +130,12 @@ html{
     margin: 0 auto;
     margin-bottom: 5%;
     margin-top: 5%;
-    
+
 }
 .dar_alta{
     background-color:#830053;
     margin: 0 auto;
-    padding:20px;    
+    padding:20px;
     flex-direction:column;
     width:140px;
     height:150px;
@@ -165,7 +165,7 @@ html{
     overflow-y: hidden !important;
     /*height:400px !important;*/
     width: 29%;
-    
+
 }
 .cerrar-formulario{
     /* ajusta el icono de cerrar el cual se movia al incluir scroll */
@@ -192,7 +192,7 @@ input {
     box-sizing: border-box;
     background-color: rgba(236, 157, 157, 0.47);
     border: solid 1px #830053;
-    
+
 }
 textarea {
     font-family: 'Poppins', sans-serif;
@@ -258,7 +258,7 @@ a {
     font-size: 10px !important;
     padding: 5%;
     position: inherit;
-    
+
 }
 
 /*ICONOS DEL FORMULARIO*/
@@ -303,7 +303,7 @@ button, input, optgroup, select, textarea {
     color: #830053 !important;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    
+
 }
 
 .modal-hora{
@@ -343,7 +343,7 @@ button, input, optgroup, select, textarea {
     color: white !important;
     font-family: 'Poppins', sans-serif;
     padding: 10px 35px !important;
-    
+
 }
 
 /*--------------MODAL RESPONDER---------------*/
@@ -410,23 +410,23 @@ input{
 /*RESPONSIVE*/
 @media only screen and (max-width: 600px) {
     .container{
-        
+
         padding-left:0px !important;
     }
-    
+
     body{
         background-size:cover !important ;
         background-repeat: no-repeat;
         margin:0;
         padding:0;
-        
+
     }
     .table{
         width:110% !important;
         margin-left:2%;
     }
     .dar_alta{
-        
+
         width:25%;
         height:20% !important;
         margin:0 auto !important;
@@ -447,8 +447,8 @@ input{
     .popup-formulario{
         align-items:baseline !important;
         position: inherit;
-        
-    }  
+
+    }
     .eliminar_casilla{
         left: 30% !important;
     }
@@ -459,19 +459,19 @@ input{
     .cerrar-formulario{
         margin-right:40px;
     }
-    
+
     html{
         overflow-x:hidden !important;
     }
-    
+
     #myTable tr td{
         background-color: rgba(255,255,255,0.7);
-        font-size: 2rem;  
-    } 
+        font-size: 2rem;
+    }
 }
 
 @media screen and (min-width: 900px){
-    
+
     .eliminar_casilla{
         left: 20% !important;
     }
@@ -483,19 +483,19 @@ input{
         height:5.5vh!important;
         font-size:larger !important;
     }
-    
+
     #Tnombre{
         font-size: 26px !important;
-        
+
     }
     #Tfecha{
-        font-size: 16px !important;  
+        font-size: 16px !important;
     }
-    
+
     #Tconsulta{
         font-size: 22px !important;
     }
-    
+
     .fa-sync{
         padding: 12px !important;
     }
@@ -534,7 +534,7 @@ input{
 #Tfecha{
     color: gray;
     font-size: 14px;
-    
+
 }
 
 #Tconsulta{
@@ -618,7 +618,7 @@ option{
     background: rgba(255,255,255,0.7);
 }
 
-.scrollbar_table::-webkit-scrollbar-track:hover, 
+.scrollbar_table::-webkit-scrollbar-track:hover,
 .scrollbar_table::-webkit-scrollbar-track:active{
     background: #d4d4d4;
 }

@@ -24,12 +24,24 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- POPUP CERRAR SESION--------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
+
 <?php include_once './includes/panelsesion.php';?>
+
 <!-------------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
 
 <body id="body">
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------MENU------------------------------------------------------------>
+
+<?php include_once './includes/menu_admin.php';?>
+
+<script>
+    var removeMe = document.getElementById("inicio_panel_admin");
+    removeMe.innerHTML = '';
+</script>
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------CONTENIDO PANEL DE USUARIO----------------------------------------------->
@@ -54,7 +66,7 @@ function customHead(){?>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="admin_clientes.php">
+                <a href="admin_management.php">
                     <i class="far fa-eye fa-4x"></i>
                     <div class="stat_indicador"><?php echo $nCustomers?></div>
                     <p class="stat_texto">Nº de usuarios</p>
@@ -68,7 +80,7 @@ function customHead(){?>
                 </a>
             </div>
             <div class="carousel-item">
-                <a href="admin_plots.php">
+                <a href="admin_management.php">
                     <i class="far fa-eye fa-4x"></i>
                     <div class="stat_indicador">70</div>
                     <p class="stat_texto">Nº de sensores</p>
@@ -90,7 +102,7 @@ function customHead(){?>
 
     <div class="stat_container justify-content-center">
         <div class="stat_box">
-            <a href="admin_clientes.php">
+            <a href="admin_management.php">
                 <i class="far fa-eye fa-4x"></i>
                 <div class="stat_indicador"><?php echo $nCustomers?></div>
                 <p class="stat_texto">Nº de usuarios</p>
@@ -104,7 +116,7 @@ function customHead(){?>
             </a>
         </div>
         <div class="stat_box">
-            <a href="admin_plots.php">
+            <a href="admin_management.php">
                 <i class="far fa-eye fa-4x"></i>
                 <div class="stat_indicador">70</div>
                 <p class="stat_texto">Nº de sensores</p>
