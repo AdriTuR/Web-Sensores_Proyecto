@@ -44,11 +44,12 @@ function customHead(){?>
         </button>
     </div> 
 
-
-<table class="table table-bordered " id="tablacons">
+<div class="scrollbar_table">
+<table class="table table-bordered" id="tablacons">
     <tbody id="myTable2">
     </tbody>
 </table>
+</div>
 </div>
 
 <!-- Button trigger modal -->

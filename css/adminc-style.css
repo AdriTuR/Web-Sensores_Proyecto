@@ -92,6 +92,7 @@ thead{
     margin-right:10px !important;
 }
 
+
 /*FONDO DE TABLA*/
 
 /*BOTON*/
@@ -497,7 +498,11 @@ input{
     
     .fa-sync{
         padding: 12px !important;
-    } 
+    }
+
+    tr td:hover{
+        background-color: rgba(255, 255, 255,0.3);
+    }
 }
 
 
@@ -507,6 +512,10 @@ input{
 #tablacons{
     width: 100% !important;
     margin-left: 0;
+}
+
+.table{
+    margin-bottom: 0px !important;
 }
 
 .arriba{
@@ -583,4 +592,33 @@ option{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+
+#selectComparation{
+    padding: 10px;
+}
+
+.scrollbar_table{
+    position: relative;
+    height: 50vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.scrollbar_table::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.scrollbar_table::-webkit-scrollbar-thumb{
+    background: #999999;
+}
+
+.scrollbar_table::-webkit-scrollbar-track{
+    background: rgba(255,255,255,0.7);
+}
+
+.scrollbar_table::-webkit-scrollbar-track:hover, 
+.scrollbar_table::-webkit-scrollbar-track:active{
+    background: #d4d4d4;
 }
