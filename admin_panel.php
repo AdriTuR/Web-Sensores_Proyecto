@@ -54,49 +54,6 @@ function customHead(){?>
         <hr class="line_admin">
         <p class="texto_panel_admin">Desde aquí podrás gestionar y administrar todas las cuentas de tus clientes y ver las consultas que se hayan realizado.</p>
     </div>
-
-    <!------------------------------------------------------------------------------->
-    <!-----------------------------STATS SLIDER-------------------------------------->
-    
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href="admin_management.php">
-                    <i class="far fa-eye fa-4x"></i>
-                    <div class="stat_indicador"><?php echo $nCustomers?></div>
-                    <p class="stat_texto">Nº de usuarios</p>
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="admin_consultas.php">
-                    <i class="far fa-eye fa-4x "></i>
-                    <div class="stat_indicador"><?php echo $todayInquiries?></div>
-                    <p class="stat_texto">Nº de consultas Hoy</p>
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="admin_management.php">
-                    <i class="far fa-eye fa-4x"></i>
-                    <div class="stat_indicador">70</div>
-                    <p class="stat_texto">Nº de sensores</p>
-                </a>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="fa fa-angle-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="fa fa-angle-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-
     <!------------------------------------------------------------------------------->
     <!------------------------STATS MODO DESKTOP------------------------------------->
 

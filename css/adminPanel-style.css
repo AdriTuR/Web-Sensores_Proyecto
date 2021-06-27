@@ -82,7 +82,7 @@ p {
 }
 
 .stat_indicador{
-    font-size: 22vh;
+    font-size: 10vh;
     font-family: var(--fuente_titulo);
     color: var(--color_principal);
     margin-top: 2rem;
@@ -93,7 +93,6 @@ p {
     font-family: var(--fuente_titulo);
     font-weight: bold;
     color: var(--color_principal);
-    margin-top: -2.5rem;
 }
 
 .fa-eye{
@@ -135,18 +134,16 @@ a:active{
 /*----------------------------------------------------STATS DESKTOP--------------------------------------------------*/
 
 .stat_container{
-    display: none;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     margin: 6vh 5vh 0 5vh;
 }
 .stat_box{
-    width: 45%;
     height: 45%;
     background-color:rgba(255, 255, 255, 0.6);
     border-radius: 20px;
-    padding: 8vh;
-    margin: 0 4rem 0 4rem;
     text-align:center;
+    margin-bottom: 10%;
 }
 .stat_box:hover {
     transform: scale(1.125);
@@ -157,9 +154,8 @@ a:active{
 /*--------------------------------FOOTER--------------------------------*/
 
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
-    margin-top: 30%
 }
 
 
@@ -217,7 +213,13 @@ footer{
 
     .stat_container{
         display: flex;
+        flex-direction: row;
         margin-top: 2.5%;
+    }
+    .stat_box{
+        width: 45%;
+        padding: 8vh;
+        margin: 0 4rem 0 4rem;
     }
 
     #carouselExampleIndicators{
