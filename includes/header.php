@@ -37,7 +37,7 @@
         include './includes/menu_admin.php';
     }
     if(isset($t) && $t == 4){
-        include './includes/menu_app_gene.php';
+        include './includes/menu_admin2.php';
     }
     if(isset($t) && $t == 5){
         include './includes/menu_user.php';
