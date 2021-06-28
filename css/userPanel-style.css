@@ -591,6 +591,9 @@ option{
 
 
     /*-----------Gráfico-------------*/
+    #grafico{
+        width: 135vh;
+    }
 
     .grafico_box{
         width: 1100px;
@@ -599,7 +602,8 @@ option{
     }
 
     .header_grafica{
-        margin-left: -5vh;
+        margin-left: -1vh;
+        margin-top: 10vh;
     }
 
     /*---Botones filtrar parametros--*/
@@ -615,7 +619,7 @@ option{
 
     #dataTitle{
         margin-top: 1.5rem;
-        font-size: 2.20rem;
+        font-size: 2rem;
     }
 
     /*------------Max/Min------------*/
@@ -631,7 +635,7 @@ option{
     }
 
     #hValue, #lValue{
-        font-size: 3.2rem;
+        font-size: 2rem;
     }
 
     #hHourValue, #lHourValue{
@@ -647,7 +651,6 @@ option{
     }
 
     .filtrar_por_fecha, .comparar_por_fechas, select,  option {
-        font-size: 1.5rem;
         margin-right: 1rem;
         margin-left: 1rem;
     }
