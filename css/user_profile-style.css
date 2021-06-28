@@ -1,202 +1,267 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                          CSS - PANEL USUARIO (Ver Perfil)                                         */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------*/
 /*---------------------------GENERAL-------------------------*/
 body{
     display: flex;
     flex-direction: column;
 }
+
 .btn_logout {
     margin-bottom: 0px;
 }
-.banner{
-    width: 65%;
-}
 
-.texto1{
-    font-family: 'Poppins', sans-serif !important;
-    color: #830053;
-    font-size: 14px;
-    margin-right: 15%;
-    margin-left: 15%;
-}
-
-.line {
-    margin: auto;
-    width: 80%;
-    color: #830053;
-    margin-bottom: 2vh;
-}
-
-footer{
-    position: relative;
-    bottom: 0;
-    z-index: 200;
-}
+/*-----------------------------------------------------------*/
+/*---------------------------MENU----------------------------*/
 
 #iconomapainteractivo{
     width: 15%;
 }
 
-/*---------------------------PANEL CERRAR SESIÓN-------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------BACKGROUND------------------------------------------------------*/
 
-.modal-content{
-    border-radius: 20px;
+.background_perfil{
+    background: url("../images/user_panel/user-profile.jpg") no-repeat ;
+    background-size: cover;
+    height: 20vh;
+    border-top: solid 2px var(--color_principal);
+
 }
 
-#titulo1{
-    font-family: 'Montserrat', sans-serif !important;
-    color: #830053;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-}
+/*---------------------------*/
+/*-------Icono Usuario-------*/
 
-.modal-header{
-    display: block;
-    border-color: transparent;
-    justify-content: center;
-    
-}
-
-.line {
-    margin: auto;
-    width: 62%;
-    color: #830053;
-}
-
-#texto1{
-    font-family: 'Poppins', sans-serif;
-    color: black;
-    text-align: center;
-    font-size: 18px;
-    word-spacing: 1px;
-    margin-top: 20px;
-}
-
-.modal-footer{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    border-top: transparent;
-}
-
-.boton {
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    line-height: 28px;
-    padding: 12px;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-color: #830053;
-    display: inline-block;
-    border-width: 0px;
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 6vh;
-    margin-bottom: 3vh;
-}
-
-.boton:hover {
-    background: #77004b;
-    transform: scale(1.05);
-    transition: 150ms;
-}
-
-.boton:active {
-    background: #660041;
-    transform: scale(1.06);
-}
-
-/*---------------------------CONTENEDOR 1-------------------------*/
-
-#iconouser{
+#icono_usuario{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    top: 30%;
 }
 
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------BOTON EDITAR PERFIL--------------------------------------------------*/
+
+.inline{
+    display:inline-block;
+}
+
+.editable{
+    color:#00000093;
+    font-size:smaller;
+}
+
+.div{
+    display: flex;
+    justify-content: right;
+}
+
+#boton_editar{
+    background-color: var(--color_principal);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 0.50rem;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    margin-left: 0.50rem;
+    margin-bottom: 0.5rem;
+    color: var(--color_blanco)!important;
+}
+
+#icono_editar{
+    margin-right: 0;
+    margin-left: 0.25rem;
+}
+
+.boton-confirmar{
+    background-color: var(--color_principal);
+    font-size: 1.5rem;
+    color: var(--color_blanco);
+    border-radius: 10px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------CONTENIDO PERFIL USUARIO------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------------*/
+/*----------------------------SEPARADORES------------------------------------------*/
+
+.line_perfil1 {
+    margin: auto;
+    width: 80%;
+    height: 1px ;
+    color: var(--color_principal);
+    margin-bottom: 2vh;
+    background-color: var(--color_principal);
+}
+
+.line_perfil2{
+    display: none;
+    width: 0px;
+    height: 300px; /* or height in % */
+    border-left: 3px solid var(--color_principal);
+    margin-right: -300px;
+    margin-left: -300px;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*-------------------------BANNER DATOS PERSONALES--------------------------------*/
+
+.banner{
+    width: 75%;
+    font-size: 1rem;
+    display: flex;
+    margin-top: 5%;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*-----------------------------DATOS PERSONALES-----------------------------------*/
+
+.contenedor_datos_usuario{
+    border: solid 2px var(--color_principal);
+    border-right: none;
+    border-left: none;
+}
+
+#contenedor2, #contenedor3, #contenedor4{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.datos_personales{
+    display: flex;
+}
+
+.datos{
+    color: var(--color_negro);
+    font-family: var(--fuente_texto);
+    font-size: 1rem;
+}
+
+/*----------------------------------*/
+/*--------------TEXTOS--------------*/
+
+.texto1{
+    font-family:  var(--fuente_titulo)!important;
+    color: var(--color_principal);
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 15%;
+}
+
+/*---------------------------------*/
+/*--------------ICONOS-------------*/
+
+i{
+    margin-right: 0.25rem;
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*---------------------------ELEMENTOS CONTENEDOR 1-------------------------*/
+
 #nombre{
-    font-family: 'Montserrat', sans-serif !important;
-    color: #830053;
+    font-family: var(--fuente_titulo) !important;
+    color: var(--color_principal);
     font-size: 30px;
     text-align: center;
     margin-bottom: initial;
+    margin-top: 2rem;
 }
 
 #iduser{
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: var(--fuente_titulo) !important;
     color: #830053;
     font-size: 14px;
     text-align: center;
 }
 
-
-/*------------------------------BANNER----------------------------*/
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
-}
-
-/*---------------------------CONTENEDOR 2-------------------------*/
+/*--------------------------------------------------------------------------*/
+/*---------------------------ELEMENTOS CONTENEDOR 2-------------------------*/
 
 #identidad{
     display: flex;
 
 }
 
-/*---------------------------CONTENEDOR 3-------------------------*/
-
-
-
-/*---------------------------CONTENEDOR 4-------------------------*/
-
-
-/*---------------------------TEXTO EDITABLE----------------------*/
-.inline{
-    display:inline-block;
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------FOOTER-----------------------------------------------------------*/
+footer{
+    position: relative;
+    bottom: 0;
+    z-index: 200;
 }
-.editable{
-    color:#00000093;
-    font-size:smaller;
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                        MEDIA QUERY - PERFIL USUARIO                                               */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- FORMATO DESKTOP -----------------------------------------------------*/
+
+
+@media (max-width: 384px){
+    .registro{
+        font-size: 0.75rem;
+    }
+    #registro{
+        font-size: 0.75rem;
+    }
 }
-#boton-editar{
-    text-decoration: none;
-    border:none;
-    font-size:2.5rem;
-    height:10%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
+
+@media (min-height: 1000px){
+
+    #icono_usuario{
+        top:50%;
+    }
+
+    .contenedor_datos_usuario{
+        height: 57vh;
+    }
+
 }
-.boton-confirmar{
-    background-color:#660041;
-    color:white;
-    border-radius:10px;
-}
-/*---------------------------RESPONSIVE-------------------------*/
 
 @media(min-width:1000px){
+
+    /*--------------------------------------------------*/
+    /*------------Configuración Background-------------*/
+    .background_perfil{
+        background: url("../images/user_panel/user-profile(desktop).jpg") no-repeat ;
+    }
+
+    #icono_usuario{
+        height: 180px ;
+        width: 180px;
+    }
 
     #cont1{
         display: flex;
         flex-direction: column;
+
     }
-    
+
     #contenedor1{
         order:2;
-        margin-bottom: 5%;
-
+        margin-top: 3.5rem;
     }
 
     .banner{
         order:1;
-        margin-top: 2%;
-        width: 20%;
+        margin-top: 2vh;
+        width: 30%;
+        font-size: 1.5rem;
     }
 
     #cont2{
@@ -205,10 +270,10 @@ h1 {
         justify-content: space-around;
     }
 
-    .line{
+    .line_perfil1{
         display: none;
     }
-    
+
     .texto1{
         font-size: 18px;
         margin-right: 0px;
@@ -216,8 +281,34 @@ h1 {
         margin-bottom: 4vh;
     }
 
+    .datos{
+        font-size: 18px;
+        margin-left: 1rem;
+    }
+
     #identidad{
         flex-direction: column;
     }
+
+    #nombre{
+        margin-top: 1rem;
+    }
+
+    @media(min-width:1600px){
+        .line_perfil2{
+            display: flex;
+        }
+
+        .texto1{
+            font-size: 1.5rem;
+        }
+        .datos{
+            font-size: 1.5rem;
+            margin-left: 1rem;
+        }
+    }
 }
+
+
+
 

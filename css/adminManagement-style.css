@@ -819,6 +819,9 @@ footer{
 
     input{
         width: 390px;
+    }
+
+    input::placeholder{
         font-size: 1.2rem;
     }
 

@@ -26,12 +26,21 @@ function customHead(){?>
 <!-------------------------------------------------------------------------------------------------------------------->
 
 <body>
+
+
 <!-------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------MENU------------------------------------------------------------>
 <script>
     var removeMe = document.getElementById("gestion_clientes");
     removeMe.innerHTML = '';
 </script>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- POPUP CERRAR SESION--------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<?php include_once './includes/panelsesion.php';?>
+
 <!-------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------CONTENIDO GESTION DE CLIENTES-------------------------------------------->
 
@@ -40,16 +49,16 @@ function customHead(){?>
     <div id="contenido_gestion_clientes">
         <h1 class="banner">GESTIÓN DE CLIENTES</h1>
 
-<!---------------------------------------------------------------------------------------->
-<!--------------------------------------BUSQUEDA------------------------------------------>
+        <!---------------------------------------------------------------------------------------->
+        <!--------------------------------------BUSQUEDA------------------------------------------>
 
 
         <div class="form-group has-search">
             <span class="fa fa-search form-control-feedback"></span>
             <input type="text" class="form-control search" id="input_buscar" placeholder="Buscar" onkeyup="buscarUsuario()">
 
-<!---------------------------------------------------------->
-<!-------------BOTONES GESTIÓN DE CLIENTES PC--------------->
+            <!---------------------------------------------------------->
+            <!-------------BOTONES GESTIÓN DE CLIENTES PC--------------->
 
             <div class="botones_gestion-clientes-desktop" id="botones_gestion-clientes_desktop">
                 <button class="boton_dar_de_alta_desktop" onclick="abrirPopUp()">
@@ -71,13 +80,13 @@ function customHead(){?>
         </div>
 
 
-<!---------------------------------------------------------------------------------------->
-<!---------------------------------LISTADO DE USUARIOS------------------------------------>
+        <!---------------------------------------------------------------------------------------->
+        <!---------------------------------LISTADO DE USUARIOS------------------------------------>
 
         <div class="listado">
 
-        <!-------------------------------------------------------------->
-        <!-----------------------Header listado------------------------->
+            <!-------------------------------------------------------------->
+            <!-----------------------Header listado------------------------->
             <div class="listado-header">
                 <table cellpadding="0" cellspacing="0" border="0" >
                     <thead>
@@ -95,8 +104,8 @@ function customHead(){?>
                 </table>
             </div>
             <div class="listado_contenido scrollbar_table" >
-        <!------------------------------------------------------------->
-        <!--------------Aviso de Usuario no existente------------------>
+                <!------------------------------------------------------------->
+                <!--------------Aviso de Usuario no existente------------------>
                 <table cellpadding="0" cellspacing="0" border="0" id="sin_resultados">
                     <tbody>
                     <tr>
@@ -108,8 +117,8 @@ function customHead(){?>
                     </tr>
                     </tbody>
                 </table>
-        <!------------------------------------------------------------->
-        <!---------------------Listado Usuarios------------------------>
+                <!------------------------------------------------------------->
+                <!---------------------Listado Usuarios------------------------>
                 <table cellpadding="0" cellspacing="0" border="0" id="tabla">
                     <tbody id="tablaUsers">
                     </tbody>
@@ -117,8 +126,8 @@ function customHead(){?>
             </div>
         </div>
 
-<!---------------------------------------------------------------------------------------->
-<!-------------------------BOTONES GESTION CLIENTES MOBILE-------------------------------->
+        <!---------------------------------------------------------------------------------------->
+        <!-------------------------BOTONES GESTION CLIENTES MOBILE-------------------------------->
 
         <div class="botones_gestion-clientes_mobile" id="botones_gestion-clientes_mobile">
             <button class="boton_dar_de_alta" onclick="abrirPopUp()">
@@ -140,8 +149,8 @@ function customHead(){?>
 
     </div>
 
-<!-------------------------------------------------------------------------------------------------------------------->
-<!------------------------------------------FORMULARIO DAR DE ALTA---------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------FORMULARIO DAR DE ALTA---------------------------------------------------->
 
     <div id="panel_dar_alta" class="popup-formulario">
 
@@ -205,13 +214,13 @@ function customHead(){?>
                     <!-------------------Contraseña--------------------->
                     <div class="text_label form-group">
                         <label for="contraseña" class="colocar_contraseña"><i class="fas fa-key" id="iconos_dar_alta"></i>Introduce una contraseña:</label>
-                        <input type="text" name="introducir_contraseña" id="contraseña" placeholder="Escribe una contraseña" required maxlength="255">
+                        <input type="password" name="introducir_contraseña" id="contraseña" placeholder="Escribe una contraseña" required maxlength="255">
                     </div>
 
                     <!--------------Confirmar Contraseña---------------->
                     <div class="text_label form-group">
                         <label for="contraseña_confirmar" class="colocar_contraseña_confirmar"><i class="fas fa-key" id="iconos_dar_alta"></i>Repite la contraseña:</label>
-                        <input type="text" name="introducir_contraseña_confirmar" id="contraseña_confirmar" placeholder="Escribe otra vez la contraseña"  required maxlength="255">
+                        <input type="password" name="introducir_contraseña_confirmar" id="contraseña_confirmar" placeholder="Escribe otra vez la contraseña"  required maxlength="255">
                     </div>
                 </div>
                 <div id="datos_formulario_alta6">
@@ -267,8 +276,8 @@ function customHead(){?>
         }
     }
 
-/*---------------------------------------------------------------------------------------*/
-/*------------------------------Rellenar Tabla-------------------------------------------*/
+    /*---------------------------------------------------------------------------------------*/
+    /*------------------------------Rellenar Tabla-------------------------------------------*/
 
     window.addEventListener("load", function(){
         fetch("./api/v1/customer", {
