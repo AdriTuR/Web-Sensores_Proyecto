@@ -67,3 +67,19 @@
     border-top-style: initial;
     border-top-color: transparent;
 }
+/* CONFIRMACION DE PANEL DE DAR DE BAJA */
+#confirmacion_final .modal-content{
+    background-color: #830053;
+    color:white !important;
+}
+#confirmacion_final .modal-title{
+    color:white !important;
+}
+#confirmacion_final #texto1{
+    color:white !important;
+}
+#confirmacion_final .boton{
+    margin:0 auto;
+    padding:0;
+    font-size:x-large;
+}

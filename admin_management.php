@@ -239,6 +239,57 @@ function customHead(){?>
         </div>
 
 </section>
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- POPUP CERRAR SESION--------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<?php include_once './includes/panelsesion.php';?>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- POPUP CONFIRMAR DAR DE BAJA------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<div class="modal" id="panelAlert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titulo1">VAS A DAR DE BAJA A UN CLIENTE</h5>
+                    
+                </div>
+                <div class="modal-body">
+                    <p id="texto1">
+                        ¿Estás seguro de que quieres eliminar a este usuario?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="boton" data-toggle='modal' data-target='#panelInformar'data-dismiss="modal">SI</button>
+                    <button type="button" class="boton" data-dismiss="modal">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- CONFIRMACION FINAL------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+<div class="modal" id="panelInformar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" id="confirmacion_final">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titulo1">CONFIRMADO</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="texto1">
+                    El usuario ha sido eliminado
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="boton" data-dismiss="modal">cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------FOOTER-------------------------------------------------------->
@@ -297,7 +348,7 @@ function customHead(){?>
                         "<td class='listado_sensores'>" + e.qtyProbes + "</td>" +
                         "<td class='listado_botones'><button id='boton_perfil'><i class='fas fa-id-card' id='icono_boton_perfil'></i></button></td>" +
                         "<td class='listado_botones' ><button  id='boton_mapa' onclick='showUserField(\"" + e.username + "\")'><img src='images/icons/gestion_clientes/map_customer_icon.png' id='icono_boton_mapa' ></button></td>" +
-                        "<td class='delete_usuario_td'><button data-toggle='modal' data-target='#panelsesion'><i class='bi bi-trash-fill'></i></button></td></tr>"
+                        "<td class='delete_usuario_td'><button data-toggle='modal' data-target='#panelAlert'><i class='bi bi-trash-fill'></i></button></td></tr>"
                 }
             }
         });
@@ -419,6 +470,7 @@ function customHead(){?>
     }
 
 </script>
+
 <!----------------------------------------------------------------------------------------------->
 <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

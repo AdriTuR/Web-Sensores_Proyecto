@@ -625,6 +625,7 @@ footer{
 
 
 
+
 @media screen and (min-width: 900px){
 
     /*-------------------------------CONFIGURACIÓN BACKGROUND-------------------------------------*/
@@ -692,7 +693,7 @@ footer{
     /*--------------------CONFIGURACIÓN HEIGHT DEL SCROLLEABLE LA LISTA------------------------*/
 
     .scrollbar_table{
-        height: 60vh !important;
+        height: 48vh !important;
     }
 
     /*--------------------------CONFIGURACIÓN CAMPO DE BUSQUEDA---------------------------------*/
