@@ -39,7 +39,6 @@ h1 {
 }
 
 
-
 .introtext{
     font-size: 14px;
     margin-top: 25px;
@@ -60,6 +59,12 @@ h1 {
 
 #textobienvenido{
     display: none;
+}
+
+#loginBtn{
+    margin-left: 5%;
+    margin-top: 7%;
+    margin-bottom: 3%;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -106,13 +111,15 @@ h1 {
 /*PASSWD TEXT */
 
 #login-form #box #box2 #olvidado {
-    text-align: right;
+    
     color: #830053;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 13px;
     margin-right: 40px;
     padding:10px;
+    float: right;
+
 }
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
@@ -360,10 +367,11 @@ input[type=text], input[type=password]{
         width: 22% !important;
         padding: 19px !important;
         min-width: 200px;
+        margin-left: 10%;
     }
 
     input[type=text], input[type=password]{
-        width: 75%;
+        width: 80%;
         padding: 10px 10px;
         display: inline-block;
         border: 1px solid #ccc;
