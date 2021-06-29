@@ -52,7 +52,7 @@ function customHead(){?>
             </select>
         </form>
 
-        <button id="refresh">
+        <button id="refresh" onClick="updateList()">
             <i class="fas fa-sync fa-1.5x"></i>
         </button>
     </div> 
@@ -65,10 +65,6 @@ function customHead(){?>
 </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mensaje">
-  boton prueba
-</button>
 
 <!-- Modal -->
 <div class="modal" id="mensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
@@ -76,17 +72,15 @@ function customHead(){?>
     <div class="modal-content">
       <div class="modal-header">
         <div class="modeal-header1">
-          <h5 class="modal-title" id="exampleModalCenteredLabel">Eusebio Ballester</h5>
-          <p class="modal-correo">eusebio.bataller@gmail.com</p>
+          <h5 class="modal-title" id="customerName"></h5>
+          <p class="modal-correo" id="mail"></p>
         </div>
-        <p class="modal-hora">09/05/2021 17:09</p >
+        <p class="modal-hora" id="date"></p >
       </div>
 
       <div class="modal-body">
-        <p class="modal-registro">Usuario no registrado</p>
-        <p class="modal-mensaje">Buenas tardes, <br><br> acabo de encontrar esta página y he leido sobre todo lo que ofreceis,
-           estaria interesado en obtener un paquete completo con 10 sensores para mi zona de cultivo.<br><br>
-          Muchas gracias.</p>
+        <p class="modal-registro" id="registryStatus"></p>
+        <p class="modal-mensaje" id="message"></p>
       </div>
 
       <div class="modal-footer">
@@ -110,16 +104,16 @@ function customHead(){?>
       <div class="modal-body">
         <div class="modal-seccion">
           <p class="modal-labels">Para:</p>
-          <p class="modal-correo2"> eusebio.bataller@gmail.com</p>
+          <p class="modal-correo2" id="mailAnswer"> </p>
         </div>
         <hr class="line">
         <div class="modal-seccion">
           <p class="modal-labels">Asunto:</p>
-          <input>
+          <input id="subjectAnswer">
         </div>
         <hr class="line">
           <p class="modal-labels">Respuesta:</p>
-          <textarea id="respuesta"></textarea>
+          <textarea id="respuesta" id="textAnswer"></textarea>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Enviar</button>
@@ -129,27 +123,44 @@ function customHead(){?>
 </div>
 
 <script>
+    let consultData;
   window.addEventListener("load", function(){
-    fetch("./api/v1/consultas", {
-      method: "GET"
-    }).then(function (result) {
-      if(result.ok) return result.json();
-    }).then(function (data) {
-      if(data != null){
-        for (let i = 0; i < data.length; i++) {
-          const e = data[i];
-          myTable2.innerHTML += 
-          "<tr><td>" +
-                "<div class='arriba'>" +
-                "<div id='Tnombre'>" + e.name + " " + e.surname + "</div>" +
-                "<div id='Tfecha'>" + e.date + "</div>" +
-                "</div>" +
-                "<div id='Tconsulta'>" + e.message + "<div>" +
-                "</td></tr>"
-        }
-      }
-    });
+      updateList();
   });
+
+  function updateList(){
+      myTable2.innerHTML = "";
+      fetch("./api/v1/consultas", {
+          method: "GET"
+      }).then(function (result) {
+          if(result.ok) return result.json();
+      }).then(function (data) {
+          if(data != null){
+              consultData = data;
+              for (let i = 0; i < data.length; i++) {
+                  var e = data[i];
+                  myTable2.innerHTML +=
+                      "<tr onclick='updateModal(" + i + ")'><td>" +
+                      "<div class='arriba'>" +
+                      "<div id='Tnombre'>" + e.name + " " + e.surname + "</div>" +
+                      "<div id='Tfecha'>" + e.date + "</div>" +
+                      "</div>" +
+                      "<div id='Tconsulta'>" + e.message + "<div>" +
+                      "</td></tr>";
+              }
+          }
+      });
+  }
+  function updateModal(i){
+      customerName.innerHTML = consultData[i].name;
+      mail.innerHTML = consultData[i].mail;
+      mailAnswer.innerHTML = consultData[i].mail;
+      date.innerHTML = consultData[i].date;
+      registryStatus.innerHTML = "aaaa"
+      message.innerHTML = consultData[i].message;
+      $('#mensaje').modal();
+  }
+
 </script>
 <!---------------CERRAR SESIÓN----------------->
     <script src="./js/closeSession.js"></script>

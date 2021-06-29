@@ -14,6 +14,7 @@ if(empty($result)){
             "name" => utf8_encode($row['name']),
             "surname" => utf8_encode($row['surname']),
             "message" => utf8_encode($row['message']),
+            "mail" => utf8_encode($row['email']),
             "date" => $row['date']
         );
 

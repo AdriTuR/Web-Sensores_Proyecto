@@ -2,7 +2,6 @@
 $t = 2;
 $name = "Panel Admin - Inicio";
 include_once './includes/header.php';
-include_once './api/includes/adminStats.php';
 
 //--------------------------------------------------------------------------------------------------------------------//
 //---------------------------------------------HEADER DE LA PÁGINA----------------------------------------------------//
@@ -59,23 +58,23 @@ function customHead(){?>
 
     <div class="stat_container justify-content-center">
         <div class="stat_box">
+            <a href="admin_management.php">
+                <i class="far fa-eye"></i>
+                <div class="stat_indicador"><span id="nCustomers"></span></div>
+                <p class="stat_texto">Nº de usuarios</p>
+            </a>
+        </div>
+        <div class="stat_box">
             <a href="admin_consultas.php">
-                <i class="far fa-eye "></i>
-                <div class="stat_indicador"><?php echo $todayInquiries?></div>
+                <i class="far fa-eye"></i>
+                <div class="stat_indicador"><span id="todayInquiries"></span></div>
                 <p class="stat_texto">Nº de consultas Hoy</p>
             </a>
         </div>
         <div class="stat_box">
             <a href="admin_management.php">
                 <i class="far fa-eye"></i>
-                <div class="stat_indicador"><?php echo $nCustomers?></div>
-                <p class="stat_texto">Nº de usuarios</p>
-            </a>
-        </div>
-        <div class="stat_box">
-            <a href="admin_management.php">
-                <i class="far fa-eye"></i>
-                <div class="stat_indicador">70</div>
+                <div class="stat_indicador"><span id="totalSensors"></span></div>
                 <p class="stat_texto">Nº de sensores</p>
             </a>
         </div>
@@ -93,8 +92,27 @@ function customHead(){?>
 <!------------------------------------------------------SCRIPTS------------------------------------------------------->
 
 <!-------------------------------Cerrar Sesion------------------------------------------->
+<script>
+    window.addEventListener("load", function(){
+        fetch("./api/v1/adminStats", {
+            method: "GET"
+        }).then(function (result) {
+            if(result.ok) return result.json();
+        }).then(function (data) {
+            if(data != null){
+                nCustomers.innerHTML = data.nCustomers;
+                todayInquiries.innerHTML = data.todayInquiries;
+                totalSensors.innerHTML = data.totalSensors;
+                
+
+            }
+        });
+    });
+
+</script>
 <script src="./js/closeSession.js"></script>
 <script src="./js/checkAdminLogin.js"></script>
+
 <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
