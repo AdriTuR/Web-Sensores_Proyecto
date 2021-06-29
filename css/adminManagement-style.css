@@ -24,7 +24,6 @@ body{
     margin-bottom: 0px;
 }
 
-
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*---------------------------------------------- CAMPO DE BUSQUEDA --------------------------------------------------*/
 
@@ -167,6 +166,7 @@ body{
     display: none;
     margin-right: 4rem;
     margin-block-start: auto;
+    z-index: 1;
 }
 
 #text_boton_cancelar_desktop{
@@ -571,6 +571,14 @@ footer{
 
     /*------------------CONFIGURACIÓN FORMULARIO DAR DE ALTA------------------*/
 
+    #panel_dar_alta{
+        z-index: 1;
+    }
+
+    #icono_cerrar{
+        z-index: 1;
+    }
+
     .header_panel_dar_alta {
         width: 60vh;
         margin-top: 4.5vh/*6.5vh*/;
@@ -693,7 +701,7 @@ footer{
     /*--------------------CONFIGURACIÓN HEIGHT DEL SCROLLEABLE LA LISTA------------------------*/
 
     .scrollbar_table{
-        height: 48vh !important;
+        height: 42vh !important;
     }
 
     /*--------------------------CONFIGURACIÓN CAMPO DE BUSQUEDA---------------------------------*/
@@ -704,6 +712,7 @@ footer{
         height: 55px;
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
+        z-index: 1;
     }
     .has-search .form-control-feedback{
         left: 5vh;
@@ -718,6 +727,7 @@ footer{
 
     .botones_gestion-clientes-desktop{
         display: flex;
+        z-index: 1;
     }
 
     #icono_boton_dar_baja_usuario, #icono_boton_dar_alta_usuario{

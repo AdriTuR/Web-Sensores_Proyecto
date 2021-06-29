@@ -3,9 +3,9 @@
 /*-------------------------------------------------------------------------------------------------------------------*/
 
 .banner{
-    width: 70%5 !important;
+    width: 70% !important;
     margin-top: 5vh !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 2% !important;
 }
 
 
@@ -78,7 +78,9 @@ thead{
 
 
 /*FONDO DE TABLA*/
-
+td{
+    background-color: rgba(255,255,255,0.8);
+}
 /*BOTON*/
 .eliminar {
     background-color:#83002c;
@@ -187,7 +189,7 @@ textarea {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    background-color: rgb(229, 217, 217, 47%);
+    background-color: rgb(229, 217, 217, 80%);
     border: solid 1px #830053;
     resize: none;
 }
@@ -462,7 +464,7 @@ input{
 
     .banner{
         margin-top: 3rem;
-        width: 450px;
+        width: 450px !important;
         font-size: 1.5rem;
     }
 
@@ -494,9 +496,6 @@ input{
         padding: 12px !important;
     }
 
-    tr td:hover{
-        background-color: rgba(255, 255, 255,0.3);
-    }
 }
 
 
@@ -571,6 +570,7 @@ option{
     font-variant: normal;
     cursor: pointer;
     transition-duration: 0.4s;
+    z-index: 1;
 }
 
 #refresh:hover{
@@ -580,6 +580,10 @@ option{
 .fa-sync{
     color: white;
     padding: 8px;
+}
+
+#Cfiltro{
+    z-index: 1;
 }
 
 #filtroboton{

@@ -68,7 +68,7 @@ function customHead(){?>
             <a href="admin_consultas.php">
                 <i class="far fa-eye"></i>
                 <div class="stat_indicador"><span id="todayInquiries"></span></div>
-                <p class="stat_texto">Nº de consultas Hoy</p>
+                <p class="stat_texto">Consultas de hoy</p>
             </a>
         </div>
         <div class="stat_box">

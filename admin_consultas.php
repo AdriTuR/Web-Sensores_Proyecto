@@ -146,7 +146,7 @@ function customHead(){?>
               for (let i = 0; i < data.length; i++) {
                   var e = data[i];
                   myTable2.innerHTML +=
-                      "<tr onclick='updateModal(" + i + ")'><td>" +
+                      "<tr onclick='updateModal(" + i + "), leido()'><td id='leido'>" +
                       "<div class='arriba'>" +
                       "<div id='Tnombre'>" + e.name + " " + e.surname + "</div>" +
                       "<div id='Tfecha'>" + e.date + "</div>" +
@@ -165,6 +165,9 @@ function customHead(){?>
       registryStatus.innerHTML = "aaaa"
       message.innerHTML = consultData[i].message;
       $('#mensaje').modal();
+  }
+  function leido(){
+    document.getElementById("leido").style.backgroundColor="rgba(255,255,255,0.6)"
   }
 
 </script>
