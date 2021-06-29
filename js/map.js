@@ -118,14 +118,14 @@ function addMarkerSensorClick(marker, sensorData){
     var content =
     "<div id=\"infow\">" + "<p id=\"sensor_id\">SENSOR " + sensorData.id + "</p>" +
     "<ul><li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + " Cº" +
+    "<img src=\"./images/map_icons/parameters/t.png\"><p class='medidas_numero'> " + sensorData.temperature + "Cº" +
     "</p>" +
     "</li>" +
     "<li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + " %" +
+    "<img src=\"./images/map_icons/parameters/h.png\"><p class='medidas_numero'>" + sensorData.humidity + "%" +
     "</p></li>" +
     "<li class=\"infobox\">" +
-    "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + " %" +
+    "<img src=\"./images/map_icons/parameters/s.png\"><p class='medidas_numero'> " + sensorData.salinity + "%" +
     "</p></li>" +
     "<li class=\"infobox\">" +
     "<img src=\"./images/map_icons/parameters/l.png\"><p class='medidas_numero'>" + sensorData.luminity +
