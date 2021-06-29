@@ -59,22 +59,22 @@ function customHead(){?>
 
     <div class="stat_container justify-content-center">
         <div class="stat_box">
-            <a href="admin_management.php">
-                <i class="far fa-eye fa-4x"></i>
-                <div class="stat_indicador"><?php echo $nCustomers?></div>
-                <p class="stat_texto">Nº de usuarios</p>
-            </a>
-        </div>
-        <div class="stat_box">
             <a href="admin_consultas.php">
-                <i class="far fa-eye fa-4x"></i>
+                <i class="far fa-eye "></i>
                 <div class="stat_indicador"><?php echo $todayInquiries?></div>
                 <p class="stat_texto">Nº de consultas Hoy</p>
             </a>
         </div>
         <div class="stat_box">
             <a href="admin_management.php">
-                <i class="far fa-eye fa-4x"></i>
+                <i class="far fa-eye"></i>
+                <div class="stat_indicador"><?php echo $nCustomers?></div>
+                <p class="stat_texto">Nº de usuarios</p>
+            </a>
+        </div>
+        <div class="stat_box">
+            <a href="admin_management.php">
+                <i class="far fa-eye"></i>
                 <div class="stat_indicador">70</div>
                 <p class="stat_texto">Nº de sensores</p>
             </a>
