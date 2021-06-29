@@ -13,6 +13,8 @@
     background-color: #830053;
     display: inline-block;
     border-width: 0px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
     height: 7vh;
     width: 12vh;
     margin-bottom: 3vh;
@@ -46,6 +48,7 @@
     display: block;
     border-color: transparent;
     justify-content: center;
+    border-bottom: 0 !important;
 }
 .modal-content {
     border-radius: 20px;

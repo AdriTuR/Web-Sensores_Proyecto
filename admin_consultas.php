@@ -20,6 +20,12 @@ function customHead(){?>
 
 <?php include_once './includes/panelsesion.php';?>
 
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- POPUP CONFIRMACIÓN--------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<?php include_once './includes/confirm.php';?>
 <!-------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------->
 
@@ -116,7 +122,7 @@ function customHead(){?>
           <textarea id="respuesta" id="textAnswer"></textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Enviar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#confirm">Enviar</button>
       </div>
     </div>
   </div>
