@@ -129,8 +129,8 @@ label #cancel{
 }
 
 
-/*----------------------------------------------------------*/
-/*------------------- BOTONES DEL MAPA ---------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------- BOTONES DEL MAPA --------------------------------------------------*/
 
 .botones_panel-usuario{
     display:flex;
@@ -140,7 +140,8 @@ label #cancel{
     right: 10px;
 }
 
-.boton_volver_atras, .boton_centrar{
+.boton_volver_atras, .boton_centrar, .botones_gestion, #confirmar_campo, #cerrar_campo,
+#confirmar_parcela, #cerrar_parcela, #confirmar_sensor, #cerrar_sensor{
     height: 80px;
     width: 80px;
     background-color: var(--color_principal);
@@ -154,6 +155,97 @@ label #cancel{
 .boton_volver_atras:hover, .boton_centrar:hover{
     transform: scale(1.15);
 }
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------- BOTONES DEL GESTION ---------------------------------------------------*/
+
+.botones_panel-gestion{
+    position: absolute;
+    z-index: 200;
+    bottom: 2%;
+}
+
+.botones_gestion{
+    height: 80px;
+    width: 80px;
+    padding: 0;
+    margin: 0.5rem;
+}
+
+#icono_terreno, #icono_parcela{
+    width: 65px;
+    margin: 0 auto;
+}
+
+#icono_sensor{
+    width: 55px;
+}
+
+#botones_panel_gestion2{
+    display: none;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------- AVISOS GESTION ----------------------------------------------------*/
+
+#aviso_gestion_campo, #aviso_gestion_parcela, #aviso_gestion_sensor{
+    position: absolute;
+    z-index: 200;
+    display: none;
+}
+
+.alert-warning{
+    color: var(--color_principal);
+    background-color: var(--color_blanco);
+    border: 0;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.alert{
+    padding:  1rem 1rem;
+}
+
+.contenido-aviso{
+    display: grid;
+    margin-top: 0.15rem;
+}
+
+#text1_aviso{
+    font-family: var(--fuente_titulo);
+    margin: 0 auto;
+}
+
+#text2_aviso{
+    font-family: var(--fuente_texto);
+    font-size: 0.75rem;
+    color: var(--color_negro);
+    margin: 10px auto;
+    text-align: center;
+}
+
+#botones_confirmar_cerrar_campo, #botones_confirmar_cerrar_parcela, #botones_confirmar_cerrar_sensor{
+    position: absolute;
+    z-index: 200;
+    bottom: 2%;
+    display: none;
+}
+
+#confirmar_campo, #cerrar_campo, #confirmar_parcela, #cerrar_parcela, #confirmar_sensor, #cerrar_sensor{
+    height: 8.5vh;
+    width: 20vh;
+    margin: 0.5rem;
+}
+
+.botones_cancelar_confirmar{
+    margin-bottom: 0;
+    color: var(--color_blanco);
+    font-family: var(--fuente_titulo);
+}
+
+
 
 /*-----------------------------------------------------------*/
 /*--------------------- IFO - BOX ---------------------------*/
@@ -583,7 +675,7 @@ option{
     border: 1px solid #830053;
     margin: 0 auto;
     resize: none;
-    
+
 }
 
 #enviar{
@@ -623,6 +715,34 @@ option{
 }
 
 @media (min-width: 700px) {
+
+    /*-----------------------------------------------------------------*/
+    /*-------------------------AVISO GESTION---------------------------*/
+
+    #aviso_gestion_campo, #aviso_gestion_parcela, #aviso_gestion_sensor{
+        height: 12vh;
+        width: 40vh;
+    }
+
+    #text1_aviso{
+        font-size: 1.2rem;
+
+    }
+
+    #text2_aviso{
+        font-size: 0.90rem;
+    }
+
+    .botones_cancelar_confirmar{
+        font-size: 1.2rem;
+    }
+
+    .botones_gestion{
+        width: 100px;
+        height: 100px;
+        margin: 1rem
+    }
+
     /*-----------------------------------------------------------------*/
     /*----------------------CONTENIDO DE LA GRÁFICA--------------------*/
 

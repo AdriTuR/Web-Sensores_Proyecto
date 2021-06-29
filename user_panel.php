@@ -42,10 +42,42 @@ function customHead(){?>
     <!------------------------------------------------------->
     <!-----------------WIDGET FECHA/HORA--------------------->
 
-    <div class="widget_banner" id="widget_reloj-fecha">
+    <div class="widget_banner" id="widget_reloj-fecha" onclick="aparecerBotonesParcelaAndSensor()">
         <div id="fecha"></div>
         <div id="reloj"></div>
     </div>
+    <!------------------------------------------------------------------------------------>
+    <!---------------------------------------AVISOS--------------------------------------->
+
+    <!------------------------------------------------>
+    <!-----------------AVISO CAMPO-------------------->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="aviso_gestion_campo">
+
+        <div class="contenido-aviso">
+            <strong id="text1_aviso">VAS A AÑADIR UN CAMPO</strong>
+            <p id="text2_aviso">Selecciona un minimo de 3 puntos para delimitar el nuevo campo. Asegurate de selecionarlos en orden.</p>
+        </div>
+    </div>
+    <!------------------------------------------------>
+    <!----------------AVISO PARCELA------------------->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="aviso_gestion_parcela">
+
+        <div class="contenido-aviso">
+            <strong id="text1_aviso">VAS A AÑADIR UNA PARCELA</strong>
+            <p id="text2_aviso">Selecciona un minimo de 3 puntos para delimitar la nueva parcela. Asegurate de selecionarlos en orden.</p>
+        </div>
+    </div>
+    <!------------------------------------------------>
+    <!----------------AVISO SENSOR-------------------->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="aviso_gestion_sensor">
+
+        <div class="contenido-aviso">
+            <strong id="text1_aviso">VAS A AÑADIR UN SENSOR</strong>
+            <p id="text2_aviso">Selecciona una parcela y después seleciona un punto para colocar el sensor</p>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------>
+    <!---------------------------------------ALERTS--------------------------------------->
 
     <!------------------------------------------------------>
     <!-----------------------MAPA--------------------------->
@@ -56,16 +88,85 @@ function customHead(){?>
     <!------------------------------------------------------>
     <!----------------BOTON VOLVER ATRÁS-------------------->
 
-    <div class="botones_panel-usuario">
+    <div class="botones_panel-usuario" id="boton_panel_usuario">
         <!--
         <button class="boton_centrar">
             <img src="./images/icons/centrar_icon.png" onclick="recenterMap()" alt="boton de centrar">
         </button>
         -->
-        <button class="boton_volver_atras" id="resetMap" onclick="resetMap()">
+        <button class="boton_volver_atras" id="resetMap" onclick="resetMap(), aparecerBotonCampo()">
             <img src="./images/icons/return_icon.png" alt="boton volver atrás">
         </button>
     </div>
+
+    <!------------------------------------------------------>
+    <!---------------BOTONES GESTION ADMIN------------------>
+
+    <div class="botones_panel-gestion">
+
+        <!------------------------------------------------>
+        <!---------------AÑADIR CAMPO------------------->
+        <button class="botones_gestion" id="boton_anyadir_campo" onclick="mostrarAnyadirCampo()">
+            <img src="./images/icons/gestion_mapa/terreno.png" alt="boton añadir terreno" id="icono_terreno">
+        </button>
+
+        <div id="botones_panel_gestion2">
+            <!------------------------------------------------>
+            <!---------------AÑADIR PARCELA------------------->
+            <button class="botones_gestion" id="boton_anyadir_parcela" onclick="mostrarAnyadirParcela()">
+                <img src="./images/icons/gestion_mapa/parcela.png" alt="boton añadir terreno" id="icono_parcela">
+            </button>
+            <!------------------------------------------------>
+            <!----------------AÑADIR SENSOR------------------->
+            <button class="botones_gestion" id="boton_anyadir_sensor" onclick="mostrarAnyadirSensor()">
+                <img src="./images/icons/gestion_mapa/sensor.png" alt="boton añadir terreno" id="icono_sensor">
+            </button>
+        </div>
+
+    </div>
+
+    <!------------------------------------------------>
+    <!-----------BOTONES DE AÑADIR Y CERRAR----------->
+
+    <div id="botones_confirmar_cerrar_campo">
+        <!------------------------------------------------>
+        <!---------------CONFIRMAR CAMPO------------------>
+        <button  id="confirmar_campo" onclick="ocultarAnyadirCampo()">
+            <p class="botones_cancelar_confirmar">Confirmar</p>
+        </button>
+        <!------------------------------------------------>
+        <!-----------------CERRAR CAMPO------------------->
+        <button  id="cerrar_campo" onclick="ocultarAnyadirCampo()">
+            <p class="botones_cancelar_confirmar">Cerrar</p>
+        </button>
+    </div>
+
+    <div id="botones_confirmar_cerrar_parcela">
+        <!------------------------------------------------>
+        <!--------------CONFIRMAR PARCELA----------------->
+        <button  id="confirmar_parcela" onclick="ocultarAnyadirParcela()">
+            <p class="botones_cancelar_confirmar">Confirmar</p>
+        </button>
+        <!------------------------------------------------>
+        <!----------------CERRAR PARCELA------------------>
+        <button  id="cerrar_parcela" onclick="ocultarAnyadirParcela()">
+            <p class="botones_cancelar_confirmar">Cerrar</p>
+        </button>
+    </div>
+
+    <div id="botones_confirmar_cerrar_sensor">
+        <!------------------------------------------------>
+        <!--------------CONFIRMAR PARCELA----------------->
+        <button  id="confirmar_sensor" onclick="ocultarAnyadirSensor()">
+            <p class="botones_cancelar_confirmar">Confirmar</p>
+        </button>
+        <!------------------------------------------------>
+        <!----------------CERRAR PARCELA------------------>
+        <button  id="cerrar_sensor" onclick="ocultarAnyadirSensor()">
+            <p class="botones_cancelar_confirmar">Cerrar</p>
+        </button>
+    </div>
+
 
     <!------------------------------------------------------>
     <!---------------------IFO-BOX-------------------------->
@@ -97,46 +198,46 @@ function customHead(){?>
         </div>
     </div>
 
-    
-<!-- Panel Consulta -->
-<div class="modal" id="consulta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
 
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="HCons">CONSÚLTANOS</h5>
-        
-        <hr class="line">
-        
-      </div>
+    <!-- Panel Consulta -->
+    <div class="modal" id="consulta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
 
-      <div class="modal-body">
-        <p id="CT1">Ponte en contacto con nosotros y atenderemos tu consulta en un plazo de 24 horas</p>
-        <select id="tipo_consulta">
-            <option value="solicitar_sensores">Solicitar sensores</option>
-            <option value="modificar_terrenos">Modificar terrenos/parcelas</option>
-            <option value="problemas_cuenta">Problemas con la cuenta</option>
-            <option value="problemas_sensores">Problemas con los sensores</option>
-            <option value="otro">Otro</option>
-        </select>
-        
-        <form id="form_consult">
-            <p class="modal-labels">Escribe tu consulta:</p>
-            <textarea id="respuesta"></textarea>
-        </form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="HCons">CONSÚLTANOS</h5>
 
-      </div>
+                    <hr class="line">
 
-      <div class="modal-footer">
-        <button type="submit" name="enviar_formulario" id="enviar" class="btn btn-primary">ENVIAR</button>
-      </div>
+                </div>
 
+                <div class="modal-body">
+                    <p id="CT1">Ponte en contacto con nosotros y atenderemos tu consulta en un plazo de 24 horas</p>
+                    <select id="tipo_consulta">
+                        <option value="solicitar_sensores">Solicitar sensores</option>
+                        <option value="modificar_terrenos">Modificar terrenos/parcelas</option>
+                        <option value="problemas_cuenta">Problemas con la cuenta</option>
+                        <option value="problemas_sensores">Problemas con los sensores</option>
+                        <option value="otro">Otro</option>
+                    </select>
+
+                    <form id="form_consult">
+                        <p class="modal-labels">Escribe tu consulta:</p>
+                        <textarea id="respuesta"></textarea>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" name="enviar_formulario" id="enviar" class="btn btn-primary">ENVIAR</button>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <!------------------------------------------------------>
     <!--------------POPUP CERRAR SESIÓN--------------------->
@@ -165,6 +266,7 @@ function customHead(){?>
     <!----------------------------------------------------- SCRIPTS ------------------------------------------------------>
     <!-------------------------------------------------------------------------------------------------------------------->
 
+    <!---------------------------------------------------------------------------------------->
     <!---------------------------------Widget Hora/Fecha-------------------------------------->
 
     <script>
@@ -203,55 +305,130 @@ function customHead(){?>
 
     </script>
 
+    <!--------------------------------------------------------------------------------------->
     <!--------------------------------------Login-------------------------------------------->
 
-	<script>
+    <script>
         var viewUser = null;
         <?php
         if(isset($_GET['viewAsUser'])){
-            ?>
-            viewUser = "<?php echo $_GET['viewAsUser']; ?>";
-            <?php
+        ?>
+        viewUser = "<?php echo $_GET['viewAsUser']; ?>";
+        <?php
         }
         ?>
 
-		window.addEventListener("load", function(){
-			fetch("./api/v1/session", {
-				method: "GET"
-			}).then(function (result) {
-				if(result.ok){
-					return result.json();
-				}else{
-					location.href = "./login.php";
-				}
-			}).then(async function (data) {
-				if(data != null){
+        window.addEventListener("load", function(){
+            fetch("./api/v1/session", {
+                method: "GET"
+            }).then(function (result) {
+                if(result.ok){
+                    return result.json();
+                }else{
+                    location.href = "./login.php";
+                }
+            }).then(async function (data) {
+                if(data != null){
                     if(viewUser != null  && data.role == "USER"){
                         location.href = "./user_panel.php";
-                        return;     
+                        return;
                     }
 
                     await initMap();
-                    if(viewUser != null && data.role == "ADMIN") addCustomerMap(viewUser);    
+                    if(viewUser != null && data.role == "ADMIN") addCustomerMap(viewUser);
                     else addCustomerMap(data.name);
-				}
-			});
-		});
+                }
+            });
+        });
 
-		function addCustomerMap(username){
-			userName = username;
-			var formData = new FormData();
+        function addCustomerMap(username){
+            userName = username;
+            var formData = new FormData();
 
-			fetchData(formData, "field", function(data){
-				fieldData = data;
-				showUserFields();
-			})
-		}
-	</script>
+            fetchData(formData, "field", function(data){
+                fieldData = data;
+                showUserFields();
+            })
+        }
+    </script>
+    <!---------------------------------------------------------------------------------------->
     <!----------------------------------Cerrar Sesión----------------------------------------->
     <script src="./js/closeSession.js"></script>
+    <!---------------------------------------------------------------------------------------->
     <!-------------------------------Mapa Interactivo----------------------------------------->
     <script src="./js/map.js"></script>
+    <!---------------------------------------------------------------------------------------->
+    <!--------------------------------Botones Gestion----------------------------------------->
+    <script>
+
+        /*----------------Aparicion de los Botones----------------*/
+
+        function aparecerBotonesParcelaAndSensor(){
+            document.getElementById('botones_panel_gestion2').style.display = "flex"
+
+            document.getElementById('boton_anyadir_campo').style.display = "none"
+        }
+
+        function aparecerBotonCampo(){
+            document.getElementById('botones_panel_gestion2').style.display = "none"
+            document.getElementById('boton_anyadir_campo').style.display = "block"
+        }
+
+        /*---------------------Activar Aviso---------------------*/
+
+        function mostrarAnyadirCampo(){
+            document.getElementById('aviso_gestion_campo').style.display = "flex"
+            document.getElementById('botones_confirmar_cerrar_campo').style.display = "flex"
+            document.getElementById('boton_anyadir_campo').style.display = "none"
+            document.getElementById('widget_reloj-fecha').style.display = "none"
+            document.getElementById('boton_panel_usuario').style.display = "none"
+        }
+
+        function ocultarAnyadirCampo(){
+            document.getElementById('aviso_gestion_campo').style.display = "none"
+            document.getElementById('botones_confirmar_cerrar_campo').style.display = "none"
+            document.getElementById('boton_anyadir_campo').style.display = "block"
+            document.getElementById('boton_panel_usuario').style.display = "flex"
+            document.getElementById('widget_reloj-fecha').style.display = "flex"
+        }
+
+        function mostrarAnyadirParcela(){
+            document.getElementById('aviso_gestion_parcela').style.display = "flex"
+            document.getElementById('botones_confirmar_cerrar_parcela').style.display = "flex"
+            document.getElementById('botones_panel_gestion2').style.display = "none"
+            document.getElementById('widget_reloj-fecha').style.display = "none"
+            document.getElementById('boton_panel_usuario').style.display = "none"
+        }
+
+        function ocultarAnyadirParcela(){
+            document.getElementById('aviso_gestion_parcela').style.display = "none"
+            document.getElementById('botones_confirmar_cerrar_parcela').style.display = "none"
+            document.getElementById('botones_panel_gestion2').style.display = "block"
+            document.getElementById('boton_panel_usuario').style.display = "flex"
+            document.getElementById('widget_reloj-fecha').style.display = "flex"
+        }
+
+        function mostrarAnyadirSensor(){
+            document.getElementById('aviso_gestion_sensor').style.display = "flex"
+            document.getElementById('botones_confirmar_cerrar_sensor').style.display = "flex"
+            document.getElementById('botones_panel_gestion2').style.display = "none"
+            document.getElementById('widget_reloj-fecha').style.display = "none"
+            document.getElementById('boton_panel_usuario').style.display = "none"
+        }
+
+        function ocultarAnyadirSensor(){
+            document.getElementById('aviso_gestion_sensor').style.display = "none"
+            document.getElementById('botones_confirmar_cerrar_sensor').style.display = "none"
+            document.getElementById('botones_panel_gestion2').style.display = "block"
+            document.getElementById('boton_panel_usuario').style.display = "flex"
+            document.getElementById('widget_reloj-fecha').style.display = "flex"
+        }
+
+
+
+
+    </script>
+    <!---------------------------------------------------------------------------------------->
     <!------------------------------------- Iframe ------------------------------------------->
     <script>
         function abrirIframe(id){
@@ -262,6 +439,7 @@ function customHead(){?>
             document.getElementById("grafica_panel").remove();
         }
     </script>
+    <!---------------------------------------------------------------------------------------->
     <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -269,6 +447,7 @@ function customHead(){?>
             integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
             integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!-------------------------------------------------------------------------------------------------------------------->
     <!-------------------------------------------------------------------------------------------------------------------->
 
 </body>
