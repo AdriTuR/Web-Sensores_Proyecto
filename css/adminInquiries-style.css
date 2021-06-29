@@ -2,28 +2,13 @@
 /*                                             BANNER DEL TITULO                                              */
 /*-------------------------------------------------------------------------------------------------------------------*/
 
-.banner {
-    background-color: #830053;
-    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
-    margin: -500px 0;
-    padding: 0.5em 1em;
-    width: 60%;
-    color: white;
-    font-size: 17px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    margin-top: 7vh;
-    margin-bottom: 2vh;
-    font-family: 'Poppins', sans-serif;
-    font-size: 187%;
+.banner{
+    width: 70%5 !important;
+    margin-top: 5vh !important;
+    margin-bottom: 0 !important;
 }
-.banner img{
-    width:2.5rem;
-    float: left;
 
-}
+
 /* CUADRADOS USUARIO */
 p{
     color:white;
@@ -50,9 +35,9 @@ body h1 {
 
 /*  BODY   */
 body{
-    background-image: url("../images/admin_general/hierba.jpg");
+    background-image: url("../images/admin_general/admin_panel2.jpg") ;
     background-repeat: no-repeat;
-    background-size: 2000px 200% ;
+    background-size: cover ;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
@@ -470,6 +455,16 @@ input{
 }
 
 @media screen and (min-width: 900px){
+
+    body{
+        background-image: url("../images/admin_general/admin_panel2-desktop.jpg") ;
+    }
+
+    .banner{
+        margin-top: 3rem;
+        width: 450px;
+        font-size: 1.5rem;
+    }
 
     .eliminar_casilla{
         left: 20% !important;
