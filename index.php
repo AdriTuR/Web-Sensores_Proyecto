@@ -62,7 +62,7 @@ function customHead(){?>
                     <div class="text_label">
                         <label for="correo" class="colocar_correo">Correo:</label>
                         <input type="correo" name="introducir_correo" id="correo" placeholder="Escribe tu correo" required maxlength="50"  minlength="5">
-                        <div class="text_label">
+                    </div>
                     </p>
                     <p>
                     <div class="text_label">
@@ -255,14 +255,15 @@ function customHead(){?>
         document.getElementById("contenido call_to_action").style.filter = "none";
         document.getElementById("boton_abajo").style.display = "flex";
         document.getElementById("menu-btn").disabled = false;
+        limpiarFormulario();
     }
     //-----------------FUNCIÓN MOSTRAR CONFIRMACION-------------------//
     function mostrarConfirmacion(){
+        cerrarFormulario();
         document.getElementById("mensaje_confirmacion").style.display = "flex";
         document.getElementById("body").style.overflow = "hidden"
         document.getElementById("contenido call_to_action").style.filter = "blur(8px)"
         document.getElementById("menu-btn").disabled = true;
-        cerrarFormulario();
     }
     //-----------------FUNCIÓN CERRAR CONFIRMACION-------------------//
     function cerrarConfirmacion(){

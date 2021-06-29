@@ -539,16 +539,15 @@ textarea {
         right: -50%;
     }
     #box-confirmacion #content-confirm-box #cerrar_confirmacion {
-        margin-left: 40%;
-        margin-top: 15%;
         display: flex;
+        margin: 15% auto;
     }
     .banner {
         font-size: 3vh;
         width: 35%
     }
     .box_confirmacion {
-        width: 70%;
+        width: 30%;
     }
     .call_to_action {
         background-image: url("../images/landing_page/landing_page1(PC).jpg");
@@ -716,9 +715,6 @@ textarea {
         margin-left: 5%;
         margin-top: 1%;
         height: 25vh;
-    }
-    .submit{
-        margin-left: 25%;
     }
     .contactar{
         font-size: 5vh !important;
