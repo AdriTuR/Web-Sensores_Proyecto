@@ -1,6 +1,12 @@
 +/*EL FORMULARIO DE CONSULTA */
     /*--------------------------*/
-
+.sidebar{
+    z-index: 300 !important;
+    background: transparent;
+}
+.sidebar ul{
+    min-height: 90vh;
+} 
 .conjunto{
     text-align: center;
     justify-content: center;

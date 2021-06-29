@@ -68,11 +68,13 @@ label #cancel{
 /*---------------------------------------------------SIDERBAR--------------------------------------------------------*/
 
 .sidebar{
-    z-index: 3;
+    z-index: 300;
     position: absolute;
     max-height: 0;
     transition: max-height .2s ease-out;
     width: 265px;
+    background: #830053;
+    min-height: -webkit-fill-available;
 }
 
 /*--------------------------------------------------------*/
@@ -104,14 +106,17 @@ label #cancel{
 .sidebar ul{
     background-color: #830053;
     margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh
 }
 .sidebar ul a{
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 70px;
+    line-height: 50px;
     font-size: 18px;
-    color: white;
+    color: white !important;
     padding-left: 20px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -120,6 +125,8 @@ label #cancel{
 .sidebar li a{
     background-color: #830053;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 /*---------------------------------*/
@@ -154,6 +161,9 @@ label #cancel{
     transition: max-width .2s ease-out;
     margin-top: 18%;
 }
+#usuario{
+    margin-top: auto;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -174,7 +184,12 @@ label #cancel{
     ul li:hover a{
         border-bottom: 8px solid var(--color_blanco);
     }
-
+    .line_panel{
+        display: none;
+    }
+    .sidebar{
+        background: transparent;
+    }
     .sidebar header {
         display: none;
     }
@@ -194,7 +209,13 @@ label #cancel{
         background-color: transparent;
         margin-top: 1.2em;
         margin-bottom: 1em;
-        margin-right: 0.5em
+        margin-right: 0.5em;
+        flex-direction: row;
+        min-height: 0px;
+        height: 20%;
+    }
+    #usuario{
+        margin-top: 0px;
     }
     .btn_logout{
         margin-bottom: 0px;
