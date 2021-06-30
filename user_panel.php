@@ -282,6 +282,7 @@ function customHead(){?>
         ?>
 
         window.addEventListener("load", function(){
+            desaparecerBotonCampo2();
             fetch("./api/v1/session", {
                 method: "GET"
             }).then(function (result) {
@@ -301,7 +302,7 @@ function customHead(){?>
                     await initMap();
                     if(viewUser != null && data.role == "ADMIN"){
                         addCustomerMap(viewUser);
-                        mostrarAnyadirCampo();
+                        aparecerBotonCampo2();
                     }else addCustomerMap(data.name);
 
                 }
