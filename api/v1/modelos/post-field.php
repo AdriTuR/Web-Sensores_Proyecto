@@ -2,26 +2,17 @@
 
 if(!isset($conn)) die();
 
-$owner = trim($_POST['user']);
+$owner = $_POST['owner'];
+$location= $_POST['location'];
+//$m2 = $_POST['mail'];
 
-$sql = "SELECT `id`, `location`, `m2` FROM `field` WHERE `owner` = '$owner';";
+
+$sql = "INSERT INTO `field` (`owner`, `location`) VALUES ('$owner', '$location');";
 $result = mysqli_query($conn, $sql);
 
-class Field {
-    public $fieldID;
-    public $m2; 
-    public $location; 
-    
-    function __construct($a, $b, $c) {
-      $this->fieldID = $a;
-      $this->m2 = $b;
-      $this->location = $c;
-    }
-  }
-
-if(!empty($result) && mysqli_num_rows($result) > 0){
-    while($row = mysqli_fetch_array($result)) {
-        $field = new Field($row["id"], $row["m2"], $row["location"]);
-        array_push($data, $field);
-    }
+if($result){
+    http_response_code(200);
+}else{
+    http_response_code(404);
 }
+

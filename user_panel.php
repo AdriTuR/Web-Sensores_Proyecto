@@ -10,7 +10,7 @@ include_once './includes/header.php';
 function customHead(){?>
 
     <!---------------------------------------GOOGLE MAPS-------------------------------------------------->
-    <script src="https://maps.googleapis.com/maps/api/js" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing" async defer></script>
 
     <!-----------------------------------------BOOSTRAP--------------------------------------------------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -19,6 +19,7 @@ function customHead(){?>
     <!------------------CSS-------------------->
     <link rel="stylesheet" href="./css/panelMenu-style.css">
     <link rel="stylesheet" href="css/userPanel-style.css">
+
 
 <?php }
 ?>
@@ -131,39 +132,39 @@ function customHead(){?>
     <div id="botones_confirmar_cerrar_campo">
         <!------------------------------------------------>
         <!---------------CONFIRMAR CAMPO------------------>
-        <button  id="confirmar_campo" onclick="ocultarAnyadirCampo()">
+        <button  id="confirmar_campo" onclick="ocultarAnyadirCampo(1)">
             <p class="botones_cancelar_confirmar">Confirmar</p>
         </button>
         <!------------------------------------------------>
         <!-----------------CERRAR CAMPO------------------->
-        <button  id="cerrar_campo" onclick="ocultarAnyadirCampo()">
-            <p class="botones_cancelar_confirmar">Cerrar</p>
+        <button  id="cerrar_campo" onclick="ocultarAnyadirCampo(2)">
+            <p class="botones_cancelar_confirmar">Cancelar</p>
         </button>
     </div>
 
     <div id="botones_confirmar_cerrar_parcela">
         <!------------------------------------------------>
         <!--------------CONFIRMAR PARCELA----------------->
-        <button  id="confirmar_parcela" onclick="ocultarAnyadirParcela()">
+        <button  id="confirmar_parcela" onclick="ocultarAnyadirParcela(1)">
             <p class="botones_cancelar_confirmar">Confirmar</p>
         </button>
         <!------------------------------------------------>
         <!----------------CERRAR PARCELA------------------>
-        <button  id="cerrar_parcela" onclick="ocultarAnyadirParcela()">
-            <p class="botones_cancelar_confirmar">Cerrar</p>
+        <button  id="cerrar_parcela" onclick="ocultarAnyadirParcela(2)">
+            <p class="botones_cancelar_confirmar">Cancelar</p>
         </button>
     </div>
 
     <div id="botones_confirmar_cerrar_sensor">
         <!------------------------------------------------>
         <!--------------CONFIRMAR PARCELA----------------->
-        <button  id="confirmar_sensor" onclick="ocultarAnyadirSensor()">
+        <button  id="confirmar_sensor" onclick="ocultarAnyadirSensor(1)">
             <p class="botones_cancelar_confirmar">Confirmar</p>
         </button>
         <!------------------------------------------------>
         <!----------------CERRAR PARCELA------------------>
-        <button  id="cerrar_sensor" onclick="ocultarAnyadirSensor()">
-            <p class="botones_cancelar_confirmar">Cerrar</p>
+        <button  id="cerrar_sensor" onclick="ocultarAnyadirSensor(2)">
+            <p class="botones_cancelar_confirmar">Cancelar</p>
         </button>
     </div>
 
@@ -200,45 +201,7 @@ function customHead(){?>
 
 
     <!-- Panel Consulta -->
-    <div class="modal" id="consulta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h5 class="modal-title" id="HCons">CONSÚLTANOS</h5>
-
-                    <hr class="line">
-
-                </div>
-
-                <div class="modal-body">
-                    <p id="CT1">Ponte en contacto con nosotros y atenderemos tu consulta en un plazo de 24 horas</p>
-                    <select id="tipo_consulta">
-                        <option value="solicitar_sensores">Solicitar sensores</option>
-                        <option value="modificar_terrenos">Modificar terrenos/parcelas</option>
-                        <option value="problemas_cuenta">Problemas con la cuenta</option>
-                        <option value="problemas_sensores">Problemas con los sensores</option>
-                        <option value="otro">Otro</option>
-                    </select>
-
-                    <form id="form_consult">
-                        <p class="modal-labels">Escribe tu consulta:</p>
-                        <textarea id="respuesta"></textarea>
-                    </form>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="submit" name="enviar_formulario" id="enviar" class="btn btn-primary">ENVIAR</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
+    <?php  include_once './includes/popupConsult.php';  ?>
     <!------------------------------------------------------>
     <!--------------POPUP CERRAR SESIÓN--------------------->
 
@@ -318,6 +281,7 @@ function customHead(){?>
         }
         ?>
 
+
         window.addEventListener("load", function(){
             fetch("./api/v1/session", {
                 method: "GET"
@@ -335,8 +299,11 @@ function customHead(){?>
                     }
 
                     await initMap();
-                    if(viewUser != null && data.role == "ADMIN") addCustomerMap(viewUser);
-                    else addCustomerMap(data.name);
+                    if(viewUser != null && data.role == "ADMIN"){
+                        addCustomerMap(viewUser);
+                        mostrarAnyadirCampo();
+                    }else addCustomerMap(data.name);
+
                 }
             });
         });
@@ -367,6 +334,7 @@ function customHead(){?>
             document.getElementById('botones_panel_gestion2').style.display = "flex"
 
             document.getElementById('boton_anyadir_campo').style.display = "none"
+
         }
 
         function aparecerBotonCampo(){
@@ -382,14 +350,28 @@ function customHead(){?>
             document.getElementById('boton_anyadir_campo').style.display = "none"
             document.getElementById('widget_reloj-fecha').style.display = "none"
             document.getElementById('boton_panel_usuario').style.display = "none"
+
+            activateDrawBar(false);
+
         }
 
-        function ocultarAnyadirCampo(){
+        function ocultarAnyadirCampo(t){
             document.getElementById('aviso_gestion_campo').style.display = "none"
             document.getElementById('botones_confirmar_cerrar_campo').style.display = "none"
             document.getElementById('boton_anyadir_campo').style.display = "block"
             document.getElementById('boton_panel_usuario').style.display = "flex"
             document.getElementById('widget_reloj-fecha').style.display = "flex"
+
+            if(t == 1){
+                //save
+                saveFieldPolygon();
+            }else{
+                //delete
+                clearDrawings();
+            }
+
+            disableDrawBar();
+
         }
 
         function mostrarAnyadirParcela(){
@@ -398,14 +380,26 @@ function customHead(){?>
             document.getElementById('botones_panel_gestion2').style.display = "none"
             document.getElementById('widget_reloj-fecha').style.display = "none"
             document.getElementById('boton_panel_usuario').style.display = "none"
+            activateDrawBar(false);
+            plotPolygon = true;
         }
 
-        function ocultarAnyadirParcela(){
+        function ocultarAnyadirParcela(t){
             document.getElementById('aviso_gestion_parcela').style.display = "none"
             document.getElementById('botones_confirmar_cerrar_parcela').style.display = "none"
             document.getElementById('botones_panel_gestion2').style.display = "block"
             document.getElementById('boton_panel_usuario').style.display = "flex"
             document.getElementById('widget_reloj-fecha').style.display = "flex"
+
+            if(t == 1){
+                //save
+                savePlotPolygon();
+            }else{
+                //delete
+                clearDrawings();
+            }
+            plotPolygon = false;
+            disableDrawBar();
         }
 
         function mostrarAnyadirSensor(){
@@ -414,18 +408,26 @@ function customHead(){?>
             document.getElementById('botones_panel_gestion2').style.display = "none"
             document.getElementById('widget_reloj-fecha').style.display = "none"
             document.getElementById('boton_panel_usuario').style.display = "none"
+            activateDrawBar(true);
         }
 
-        function ocultarAnyadirSensor(){
+        function ocultarAnyadirSensor(t){
             document.getElementById('aviso_gestion_sensor').style.display = "none"
             document.getElementById('botones_confirmar_cerrar_sensor').style.display = "none"
             document.getElementById('botones_panel_gestion2').style.display = "block"
             document.getElementById('boton_panel_usuario').style.display = "flex"
             document.getElementById('widget_reloj-fecha').style.display = "flex"
+
+            if(t == 1){
+                //save
+                saveProbesMarker();
+            }else{
+                //delete
+                clearDrawings();
+            }
+
+            disableDrawBar();
         }
-
-
-
 
     </script>
     <!---------------------------------------------------------------------------------------->

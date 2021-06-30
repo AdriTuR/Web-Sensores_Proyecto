@@ -5,6 +5,18 @@ let userName;
 let fieldData;
 let infowindow;
 let centerLocation;
+let drawingManager;
+let actualFieldID;
+let actualPlotID;
+let plotPolygon = false;
+
+let mapPolygons = []
+let drawedPolygons = {
+    coordinates: []
+};
+
+let drawedPlotPolygons = []
+
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -29,6 +41,56 @@ function initMap() {
     });
     
     infowindow = new google.maps.InfoWindow();
+
+    drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.NONE,
+        drawingControl: false,
+        drawingControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER,
+            drawingModes: [
+                google.maps.drawing.OverlayType.MARKER,
+                google.maps.drawing.OverlayType.POLYGON
+            ],
+            polygonOptions: {
+                editable: true
+            },
+        },
+        markerOptions: {
+            icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        }
+    });
+
+    drawingManager.setMap(map);
+
+    google.maps.event.addListener(drawingManager, "overlaycomplete", function(event) {
+        var newShape = event.overlay;
+        newShape.type = event.type;
+
+        mapPolygons.push(newShape)
+
+        if (newShape.type == google.maps.drawing.OverlayType.POLYGON) {
+            var allObjs = []
+            for (let point of newShape.getPath().getArray()) {
+                    var obj = {
+                        lat: point.lat(),
+                        lng: point.lng()
+                    };
+
+                if(!plotPolygon) drawedPolygons.coordinates.push(obj)
+                else{ allObjs.push(obj)}
+            }
+            if(plotPolygon) {
+                drawedPlotPolygons.push(allObjs);
+            }
+        }else if(newShape.type == google.maps.drawing.OverlayType.MARKER){
+                var obj = {
+                    lat: newShape.position.lat(),
+                    lng: newShape.position.lng()
+                };
+
+                drawedPlotPolygons.push(obj)
+        }
+    });
 }
 
 function drawUserField(fieldData, lblName){
@@ -36,15 +98,18 @@ function drawUserField(fieldData, lblName){
     var bounds = createBounds(shape);
     numSensores.innerHTML = 0;
     m2Terreno.innerHTML = fieldData.m2;
-    
+
     addMarkerFieldClick(addMarker(bounds.getCenter(), lblName, "field"), bounds, function(){
         var formData = new FormData();
+        actualFieldID = fieldData.fieldID;
         formData.append('fieldID', fieldData.fieldID);
         centerLocation = bounds;
         fetchData(formData, "plot", function(res){
             for (let i = 0; i < res.length; i++) {
                 drawUserPlot(res[i], shape, "Parcela " + (i+1));
             }
+            //SE MUESTRA BOTON PARA AÑADIR PARCELA AL ACCEDER AL CAMPO
+            aparecerBotonesParcelaAndSensor();
         })
     });
 }
@@ -52,10 +117,11 @@ function drawUserField(fieldData, lblName){
 function drawUserPlot(plotData, fieldShape, lblName){
     var shape = createCoordShape(parseJSONLocationFormat(JSON.parse(plotData.location)));
     var bounds = createBounds(shape);
-    
+
     addMarkerPlotClick(addMarker(bounds.getCenter(), lblName, "plot"), fieldShape, bounds, function(){
         var formData = new FormData();
         formData.append('plotID', plotData.id);
+        actualPlotID = plotData.id;
         fetchData(formData, "probe", function(res){
             for (let i = 0; i < res.length; i++) {
                 addMarkerSensorClick(addMarker(JSON.parse(res[i].location), " ", "probe", true), res[i]);
@@ -192,10 +258,21 @@ function resetMap(){
 }
 
 function fetchData(formData, type, cb){
-    formData.append('user', userName);
-    fetch("./api/v1/" + type, {
-        method: "POST",
-        body: formData
+    var url;
+
+    switch (type){
+        case "field":
+            url = userName;
+            break;
+        case "plot":
+            url = formData.get("fieldID");;
+            break;
+        case "probe":
+            url = formData.get("plotID");
+            break;
+    }
+
+    fetch("./api/v1/" + type + "/" + url, {
     }).then(function (result) {
         if(result.ok) return result.json();
     }).then(async function (data) {
@@ -204,3 +281,74 @@ function fetchData(formData, type, cb){
         }
     });
 }
+
+function saveFieldPolygon(){
+    if (drawedPolygons.coordinates.length > 0) {
+        var fd = new FormData();
+        fd.append("owner", userName);
+        fd.append("location", JSON.stringify(drawedPolygons.coordinates));
+        postData(fd, "field");
+    }
+}
+
+function savePlotPolygon(){
+    if (drawedPlotPolygons.length > 0) {
+        for(var i = 0; i < drawedPlotPolygons.length; i++){
+            const e = drawedPlotPolygons[i];
+            var fd = new FormData();
+            fd.append("fieldID", actualFieldID);
+            fd.append("location", JSON.stringify(e));
+            postData(fd, "plot");
+        }
+    }
+}
+
+function saveProbesMarker(){
+    if (drawedPlotPolygons.length > 0) {
+        for(var i = 0; i < drawedPlotPolygons.length; i++){
+            const e = drawedPlotPolygons[i];
+            var fd = new FormData();
+            fd.append("plotID", actualPlotID);
+            fd.append("location", JSON.stringify(e));
+            postData(fd, "probe");
+        }
+    }
+}
+
+function clearDrawings() {
+    if (mapPolygons.length > 0) {
+        mapPolygons.forEach(function (e) {
+            e.setMap(null);
+        });
+    }
+}
+
+function activateDrawBar(marker){
+    if(!marker){
+        drawingManager.setOptions({
+            drawingMode: google.maps.drawing.OverlayType.POLYGON,
+            drawingControl: false
+        });
+    }else{
+        drawingManager.setOptions({
+            drawingMode: google.maps.drawing.OverlayType.MARKER,
+            drawingControl: false
+        });
+    }
+
+}
+
+function disableDrawBar(){
+    drawingManager.setOptions({
+        drawingMode: google.maps.drawing.OverlayType.NONE,
+        drawingControl: false
+    });
+}
+function postData(data, type){
+    fetch("./api/v1/" + type, {
+        method : "POST",
+        body: data
+    })
+}
+
+

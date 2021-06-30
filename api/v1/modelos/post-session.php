@@ -25,6 +25,7 @@ if(mysqli_num_rows($result) > 0){
 
     $_SESSION["name"] = $row["username"];
     $_SESSION["role"] = $row["role"];
+    $_SESSION["email"] = $row["email"];
     
 }else{
     $data["error"] = "Usuario no existente";
