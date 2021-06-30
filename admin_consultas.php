@@ -42,37 +42,38 @@ function customHead(){?>
 <!--  -------------------------------    -->
 <div class="container" id="container_lista">
 
-<div id="lista_contener">
-    <div id="filtroboton">
-        <form id=Cfiltro>
-            <select id="selectComparation">
-                <option>Todas las consultas</option>
-                <option>Consultas sin leer</option>
-                <option>Consultas de hoy</option>
-                <option>Usuarios no registrados</option>
-                <option>Usuarios registrados</option>
-                <option>Solicitar sensores</option>
-                <option>Modificar terrenos/parcelas</option>
-                <option>Problemas con la cuenta</option>
-                <option>Problemas con los sensores</option>
-            </select>
-        </form>
+    <!--
+    <div id="lista_contener">
+        <div id="filtroboton">
+            <form id=Cfiltro>
+                <select id="selectComparation">
+                    <option>Todas las consultas</option>
+                    <option>Consultas sin leer</option>
+                    <option>Consultas de hoy</option>
+                    <option>Usuarios no registrados</option>
+                    <option>Usuarios registrados</option>
+                    <option>Solicitar sensores</option>
+                    <option>Modificar terrenos/parcelas</option>
+                    <option>Problemas con la cuenta</option>
+                    <option>Problemas con los sensores</option>
+                </select>
+            </form>
 
-        <button id="refresh" onClick="updateList()">
-            <i class="fas fa-sync fa-1.5x"></i>
-        </button>
-    </div> 
+            <button id="refresh" onClick="updateList()">
+                <i class="fas fa-sync fa-1.5x"></i>
+            </button>
+        </div>
+ -->
+    <div class="scrollbar_table">
+    <table class="table table-bordered" id="tablacons">
+        <tbody id="myTable2">
+        </tbody>
+    </table>
+    </div>
+    </div>
 
-<div class="scrollbar_table">
-<table class="table table-bordered" id="tablacons">
-    <tbody id="myTable2">
-    </tbody>
-</table>
-</div>
-</div>
 
-
-<!-- Modal -->
+    <!-- Modal -->
 <div class="modal" id="mensaje" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -91,7 +92,7 @@ function customHead(){?>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#responder">Responder</button>
+          <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#responder">Responder</button> -->
       </div>
     </div>
   </div>
@@ -162,7 +163,7 @@ function customHead(){?>
       mail.innerHTML = consultData[i].mail;
       mailAnswer.innerHTML = consultData[i].mail;
       date.innerHTML = consultData[i].date;
-      registryStatus.innerHTML = "aaaa"
+      registryStatus.innerHTML = ""
       message.innerHTML = consultData[i].message;
       $('#mensaje').modal();
   }

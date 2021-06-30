@@ -207,7 +207,7 @@ function customHead(){?>
                     <!--------------Nombre de la cuenta---------------->
                     <div class="text_label form-group" id="container_label_nombre_cuenta">
                         <label for="cuenta" class="colocar_nombre_cuenta"><i class='fas fa-user-circle' id="iconos_dar_alta"></i>Nombre de la cuenta:</label>
-                        <input type="text" name="introducir_cuenta" id="cuenta" placeholder="Escribe el nombre de la cuenta" required maxlength="255"  minlength="5">
+                        <input type="text" name="introducir_cuenta" id="username" placeholder="Escribe el nombre de la cuenta" required maxlength="255"  minlength="5">
                     </div>
                 </div>
                 <div id="datos_formulario_alta5">
@@ -218,10 +218,11 @@ function customHead(){?>
                     </div>
 
                     <!--------------Confirmar Contraseña---------------->
-                    <div class="text_label form-group">
+                    <!--<div class="text_label form-group">
                         <label for="contraseña_confirmar" class="colocar_contraseña_confirmar"><i class="fas fa-key" id="iconos_dar_alta"></i>Repite la contraseña:</label>
                         <input type="password" name="introducir_contraseña_confirmar" id="contraseña_confirmar" placeholder="Escribe otra vez la contraseña"  required maxlength="255">
                     </div>
+                    -->
                 </div>
                 <div id="datos_formulario_alta6">
                     <div class="text_label form-group" id="container_label_tipo_cuenta">
@@ -262,7 +263,7 @@ function customHead(){?>
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="boton" data-toggle='modal' data-target='#panelInformar'data-dismiss="modal">SI</button>
+                    <button type="button" onclick="deleteUser()" class="boton" data-toggle='modal' data-target='#panelInformar'data-dismiss="modal">SI</button>
                     <button type="button" class="boton" data-dismiss="modal">NO</button>
                 </div>
             </div>
@@ -346,7 +347,7 @@ function customHead(){?>
                         "<td class='listado_DNI' id='listado_DNI'>"+ e.dni +"</td>" +
                         "<td class='listado_tipo' id='listado_tipo'>" + translateType(e.type) + "</td>" +
                         "<td class='listado_sensores'>" + e.qtyProbes + "</td>" +
-                        "<td class='listado_botones'><button id='boton_perfil'><i class='fas fa-id-card' id='icono_boton_perfil'></i></button></td>" +
+                       // "<td class='listado_botones'><button id='boton_perfil'><i class='fas fa-id-card' id='icono_boton_perfil'></i></button></td>" +
                         "<td class='listado_botones' ><button  id='boton_mapa' onclick='showUserField(\"" + e.username + "\")'><img src='images/icons/gestion_clientes/map_customer_icon.png' id='icono_boton_mapa' ></button></td>" +
                         "<td class='delete_usuario_td'><button data-toggle='modal' data-target='#panelAlert'><i class='bi bi-trash-fill'></i></button></td></tr>"
                 }
@@ -470,7 +471,7 @@ function customHead(){?>
     }
 
 </script>
-
+<script src="./js/adminCustomer.js"></script>
 <!----------------------------------------------------------------------------------------------->
 <!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
