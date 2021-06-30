@@ -43,7 +43,7 @@ function customHead(){?>
     <!------------------------------------------------------->
     <!-----------------WIDGET FECHA/HORA--------------------->
 
-    <div class="widget_banner" id="widget_reloj-fecha" onclick="aparecerBotonesParcelaAndSensor()">
+    <div class="widget_banner" id="widget_reloj-fecha">
         <div id="fecha"></div>
         <div id="reloj"></div>
     </div>
@@ -341,6 +341,15 @@ function customHead(){?>
             document.getElementById('botones_panel_gestion2').style.display = "none"
             document.getElementById('boton_anyadir_campo').style.display = "block"
         }
+
+        function aparecerBotonCampo2(){
+            document.getElementById('boton_anyadir_campo').style.display = "block"
+        }
+
+        function desaparecerBotonCampo2(){
+            document.getElementById('boton_anyadir_campo').style.display = "none"
+        }
+
 
         /*---------------------Activar Aviso---------------------*/
 

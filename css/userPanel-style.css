@@ -182,7 +182,7 @@ label #cancel{
     width: 55px;
 }
 
-#botones_panel_gestion2{
+#botones_panel_gestion2, #boton_anyadir_campo{
     display: none;
 }
 
