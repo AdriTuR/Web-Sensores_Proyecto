@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-06-2021 a las 10:44:55
+-- Tiempo de generación: 30-06-2021 a las 09:34:53
 -- Versión del servidor: 5.7.33-0ubuntu0.16.04.1
 -- Versión de PHP: 7.3.27
 
@@ -54,6 +54,8 @@ CREATE TABLE `inquiries` (
   `surname` varchar(60) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `message` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `readed` tinyint(1) NOT NULL DEFAULT '0',
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -61,11 +63,13 @@ CREATE TABLE `inquiries` (
 -- Volcado de datos para la tabla `inquiries`
 --
 
-INSERT INTO `inquiries` (`id`, `name`, `surname`, `email`, `message`, `date`) VALUES
-(1, 'Juan', 'Huerta', 'huertajuan@hotmail.es', 'Buenas tardes, me gustaría adquirir unas 100 sondas para mi campo.', '2021-05-14 08:41:30'),
-(2, 'Julio', 'aa', 'julio@hotmail.com', 'Me gustaría consultar el precio de las sondas para mi campo de 10.000 m2.', '2021-05-14 08:43:51'),
-(3, 'Alejandro', 'Noguera', 'alejandronogbel@gmail.com', 'Hola esto es un mensaje de prueba para la gestión de consultas', '2021-06-18 08:20:31'),
-(4, 'Adrian', 'Tur', 'adria.tur.rubio@gmail.com', 'Esto es una consulta de prueba para comprobar que la tabla de gestionar consultas funciona', '2021-06-18 08:29:41');
+INSERT INTO `inquiries` (`id`, `name`, `surname`, `email`, `message`, `type`, `readed`, `date`) VALUES
+(1, 'asdadasd', 'adasdad', 'asdasdad', 'adsdasdasd', '', 0, '2021-05-14 08:41:30'),
+(2, 'csadasds', 'sadasdasdasda', 'asdasdsad', 'asdasdsad', '', 0, '2021-05-14 08:43:51'),
+(3, 'asdasdasd', 'adasdsad', 'asdadasd', 'asdasdasd', '', 0, '2021-05-14 08:43:57'),
+(4, 'csadasds', 'sdad', 'sadas', 'adsdada', '', 0, '2021-05-14 08:44:03'),
+(5, 'a', 'a', 'asss', '', 'solicitar_sensores', 0, '2021-06-30 01:27:00'),
+(6, 'a', 'a', 'aa', '', 'solicitar_sensores', 0, '2021-06-30 06:40:24');
 
 -- --------------------------------------------------------
 
@@ -245,7 +249,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `role`, `type`, `lastLogin`) VALUES
-(1, 'user', '$2y$10$jJzjh6E1f1LDsqzH6dzzyOX5yBDOjQdk3axSoBdsDoQxkS9oUmpDy', 'user@gmail.com', 'USER', 'USER', '2021-05-03 07:35:24'),
+(1, 'user', '$2y$10$jJzjh6E1f1LDsqzH6dzzyOX5yBDOjQdk3axSoBdsDoQxkS9oUmpDy', 'krystian8844@gmail.com', 'USER', 'USER', '2021-05-03 07:35:24'),
 (2, 'admin', '$2y$10$jJzjh6E1f1LDsqzH6dzzyOX5yBDOjQdk3axSoBdsDoQxkS9oUmpDy', 'admin@admin.es', 'ADMIN', 'USER', '2021-05-03 07:37:41'),
 (3, 'AdriTur', '$2y$10$ee5XpAo.tPeAe1jBKL1EwuxSQkmkkzwLU44fwoUkC7eO33udoUUOC', 'adria.tur.rubio@gmail.com', 'USER', 'USER', '2021-05-13 14:07:44'),
 (4, 'Maria_Hernandez', '$2y$10$jJzjh6E1f1LDsqzH6dzzyOX5yBDOjQdk3axSoBdsDoQxkS9oUmpDy', 'maria.hernandez@gmail.com', 'USER', 'COMPANY', '2021-06-04 07:42:03'),
@@ -299,7 +303,8 @@ CREATE TABLE `user_recovery` (
 --
 
 INSERT INTO `user_recovery` (`userID`, `token`, `expiration_time`) VALUES
-(1, '7b722b33ed1f19a353ea94181bc51120e6ff8591146aee9f4e41283761901813f9a620575d8d2eaa1d4f39de8b74288029a50e0c9c35e8ef836be13340dce995', '2021-06-18 19:05:08');
+(1, 'ff5c35a1ef87baf90bb06a6be4f7e3aaf7fd2927bf99f36256aa71f01e3980adbd6e92dd93d784e2d5a40773f74f595a065fb53b9b172c9cad4034c73c7c1e3e', '2021-06-27 04:04:41'),
+(3, '2e90a7dad0c65d1412fc83afa56fe252d347adadf9b032b234c25a57b3ac89dfec87bc0d39c952cda90c79f57ed345b477b8b56328e8f83348ca5938a297cd04', '2021-06-23 04:31:39');
 
 --
 -- Índices para tablas volcadas
@@ -371,7 +376,7 @@ ALTER TABLE `field`
 -- AUTO_INCREMENT de la tabla `inquiries`
 --
 ALTER TABLE `inquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `plot`
@@ -389,7 +394,7 @@ ALTER TABLE `probe`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
