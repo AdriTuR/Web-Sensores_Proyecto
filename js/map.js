@@ -309,7 +309,7 @@ function saveProbesMarker(){
             const e = drawedPlotPolygons[i];
             var fd = new FormData();
             fd.append("plotID", actualPlotID);
-            fd.append("location", JSON.stringify(e));
+            fd.append("location", "[" + JSON.stringify(e) + "]");
             postData(fd, "probe");
         }
     }

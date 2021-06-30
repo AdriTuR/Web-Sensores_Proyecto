@@ -281,7 +281,6 @@ function customHead(){?>
         }
         ?>
 
-
         window.addEventListener("load", function(){
             fetch("./api/v1/session", {
                 method: "GET"
@@ -294,6 +293,7 @@ function customHead(){?>
             }).then(async function (data) {
                 if(data != null){
                     if(viewUser != null  && data.role == "USER"){
+                        ocultarAnyadirCampoInit();
                         location.href = "./user_panel.php";
                         return;
                     }
@@ -353,6 +353,10 @@ function customHead(){?>
 
             activateDrawBar(false);
 
+        }
+
+        function ocultarAnyadirCampoInit() {
+            document.getElementById('boton_anyadir_campo').style.display = "none"
         }
 
         function ocultarAnyadirCampo(t){
