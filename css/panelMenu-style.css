@@ -1,3 +1,8 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                CSS - MENU PANEL                                                   */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
 *{
     margin: 0;
     padding: 0;
@@ -5,66 +10,12 @@
     text-decoration: none;
 }
 
-
-.sidebar{
-    z-index: 2;
-    position: fixed;
-    left: -225px;  /**/
-    width: 225px;
-    height: 100%;
-    background: #830053;
-    transition: .3s;
-}
-
-.sidebar ul a{
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 70px;
-    font-size: 18px;
-    color: white;
-    padding-left: 20px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.sidebar header{
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    line-height: 60px;
-    font-family: 'Montserrat', sans-serif;
-    background: #680042;
-
-}
-
-.sidebar footer{
-    font-size: 18px;
-    color: white;
-    line-height: 60px;
-    font-family: 'Montserrat', sans-serif;
-    background: #680042;
-    text-align: center;
-
-}
-
-.btn_logout{
-    margin-bottom: 40vh;
-}
-
-.line {
-    margin: auto;
-    width: 100%;
-    color: white;
-}
-
 ul li:hover a{
-    padding-left: 25px;
+    /* padding-left: 10px; */
 }
 
-.sidebar ul a i{
-    margin-right: 16px;
-}
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------BOTON MENU--------------------------------------------------------*/
 
 #check{
     display: none;
@@ -108,4 +59,178 @@ label #cancel{
 
 #check:checked ~ label #cancel{
     left: 83%;
+}
+.encabezado .menu-btn:checked ~ .sidebar {
+    max-width: 256px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------SIDERBAR--------------------------------------------------------*/
+
+.sidebar{
+    z-index: 300;
+    position: absolute;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    width: 265px;
+    background: #830053;
+    min-height: -webkit-fill-available;
+}
+
+/*--------------------------------------------------------*/
+/*------------------ELEMENTOS DEL SLIDER------------------*/
+
+
+/*---------------------------------*/
+/*-------------Header--------------*/
+.sidebar header{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background: #830053;
+}
+/*---------------------------------*/
+/*-----------Separadores-----------*/
+
+.line_panel {
+    margin: auto;
+    width: 85%;
+    background-color: white;
+}
+
+/*---------------------------------*/
+/*------------Secciones------------*/
+
+.sidebar ul{
+    background-color: #830053;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 18px;
+    color: white !important;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 8px;
+}
+.sidebar li a{
+    background-color: #830053;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/*---------------------------------*/
+/*--------------Footer-------------*/
+
+.sidebar footer{
+    font-size: 18px;
+    color: white;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background: #830053;
+    text-align: center;
+    position: inherit;
+}
+
+.btn_logout{
+    margin-bottom: 40vh;
+}
+
+.line_panel {
+    margin: auto;
+    width: 85%;
+    color: white;
+}
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+
+.encabezado .sidebar {
+    max-width: 0;
+    transition: max-width .2s ease-out;
+    margin-top: 18%;
+}
+#usuario{
+    margin-top: auto;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                              MEDIA QUERY - MENU PANEL                                             */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+@media (min-width: 500px){
+    .encabezado .sidebar{
+        margin-top: 113px;
+    }
+}
+
+@media (min-width: 1100px){
+
+
+    ul li:hover a{
+        border-bottom: 8px solid var(--color_blanco);
+    }
+    .line_panel{
+        display: none;
+    }
+    .sidebar{
+        background: transparent;
+    }
+    .sidebar header {
+        display: none;
+    }
+    .sidebar footer {
+        display: none;
+    }
+    .encabezado .sidebar {
+        margin-top: 1.1%;
+        display: flex;
+        width: 100%;
+        width: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        justify-content: flex-end;
+        z-index: 0;
+    }
+    .sidebar ul{
+        background-color: transparent;
+        margin-top: 1.2em;
+        margin-bottom: 1em;
+        margin-right: 0.5em;
+        flex-direction: row;
+        min-height: 0px;
+        height: 20%;
+    }
+    #usuario{
+        margin-top: 0px;
+    }
+    .btn_logout{
+        margin-bottom: 0px;
+    }
+    .sidebar ul a{
+        line-height: normal;
+        font-size: 2.5vh;
+
+    }
+    .sidebar li a{
+        display: flex;
+        justify-content: flex-end
+    }
+    .fa, .fas {
+        padding-top: 2%;
+    }
 }

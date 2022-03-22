@@ -1,0 +1,622 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                             BANNER DEL TITULO                                              */
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.banner{
+    width: 70% !important;
+    margin-top: 5vh !important;
+    margin-bottom: 2% !important;
+}
+
+
+/* CUADRADOS USUARIO */
+p{
+    color:white;
+    font-size:larger;
+
+}
+hr{
+    border: 1px solid #830053;
+}
+body h1 {
+    color:white;
+    text-align: center;
+}
+
+.texto_debajo_titulo {
+    color:white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container{
+    width:100% !important;
+}
+
+/*  BODY   */
+body{
+    background-image: url("../images/admin_general/admin_panel2.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+footer{
+    position: absolute;
+}
+
+/*--------------LISTA/TABLA ---------------*/
+
+/*el search*/
+.form-control{
+    background-image: url("../images/admin_general/search.png") !important;
+    background-size:12px 12px;
+    background-repeat:no-repeat;
+    background-position-y:center;
+    background-position-x:10px;
+    width:auto !important;
+    margin: 0 auto !important;
+    border:1px #830053 solid !important;
+}
+/* tipos de datos de la tabla*/
+thead{
+    background-color:#830053;
+    color:white;
+    border:none;
+    font-size:larger !important;
+}
+/* texto de la tabla de datos */
+#myTable tr td{
+    background-color: rgba(255,255,255,0.3);
+    font-size: 2rem;
+}
+/*IMAGENES DE USUARIO*/
+#myTable tr td img{
+    height:2rem;
+    margin-right:10px !important;
+}
+
+
+/*FONDO DE TABLA*/
+td{
+    background-color: rgba(255,255,255,0.8);
+}
+/*BOTON*/
+.eliminar {
+    background-color:#83002c;
+    border: none;
+    color: white !important;
+    padding: 1px 10px;
+    text-decoration: none;
+    margin-left: 4vh;
+}
+
+.eliminar_casilla{
+    display: none;
+}
+
+.rol_y_baja{
+    display: flex;
+}
+
+/*QUITAR SCROLL EN MOvIL*/
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    margin: 0;
+    padding : 0;
+}
+
+/*----------------------------*/
+/*BOTONES DE DAR DE ALTA O DAR DE BAJA*/
+.container_opciones{
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+
+}
+.dar_alta{
+    background-color:#830053;
+    margin: 0 auto;
+    padding:20px;
+    flex-direction:column;
+    width:140px;
+    height:150px;
+    border-radius:20px;
+    color:white;
+}
+.fa-user-minus{
+    font-size:75px;
+    margin-left:10px;
+    margin-top:10px;
+    padding:5px;
+}
+.fa-user-plus{
+    font-size:75px;
+    margin-left:10px;
+    margin-top:10px;
+    padding:5px;
+}
+
+/*EL FORMULARIO DE DAR DE ALTA */
+/*----------------------------*/
+
+.box{
+    border-radius: 0px !important;
+    /* hace que se pueda scrollear*/
+    overflow: hidden;
+    overflow-y: hidden !important;
+    /*height:400px !important;*/
+    width: 29%;
+
+}
+.cerrar-formulario{
+    /* ajusta el icono de cerrar el cual se movia al incluir scroll */
+    margin-top:50px;
+    margin-right:20px;
+}
+label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    color:#830053;
+    float: left;
+    padding: 9px 5px 1px;
+    margin-left: 12px;
+}
+input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 40px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgba(236, 157, 157, 0.47);
+    border: solid 1px #830053;
+
+}
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    width: 90%;
+    height: 150px;
+    padding: 6px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgb(229, 217, 217, 80%);
+    border: solid 1px #830053;
+    resize: none;
+}
+.cursiva{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+a {
+    text-decoration: none;
+    font-size:3vh;
+    width:20%;
+}
+
+/* boton de enviar */
+#enviar{
+    background-color: #830053;
+    text-decoration: none !important;
+    border:none !important;
+    width:50%;
+    height:50% !important;
+    margin-bottom:20px;
+    border-radius: 20px;
+}
+#enviar a{
+    color:white !important;
+}
+.popup-formulario{
+    margin-right: 50%;
+    font-size: 10px !important;
+    padding: 5%;
+    position: inherit;
+
+}
+
+/*ICONOS DEL FORMULARIO*/
+.fa-key{
+    /*esto hace que el icono de llave del formulario este al reves */
+    display: inline-block;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+/*SELECTOR DE CUENTA EN EL FORMULARIO*/
+#cuenta{
+    color:black;
+}
+
+/* ARREGLAR ERROR */
+button, input, optgroup, select, textarea {
+    color:black !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border:none !important;
+    border-bottom: solid 1px rgba(255,255,255,0.3) !important;
+}
+
+.has-search .form-control-feedback {
+    display:none;
+}
+
+
+/*--------------MODAL CONSULTAS---------------*/
+
+.modal-header{
+    border-bottom: 2px solid #830053 !important;
+}
+
+.modal-header1{
+    display: flex;
+}
+
+.modal-title{
+    color: #830053 !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+
+}
+
+.modal-hora{
+    color: gray;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+.modal-correo{
+    color: gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.modal-registro{
+    color: gray;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.modal-mensaje{
+    color: gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.modal-footer{
+    justify-content: space-evenly !important;
+    border-top: 0px !important;
+}
+
+.btn{
+    background-color: #830053 !important;
+    color: white !important;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 35px !important;
+
+}
+
+/*--------------MODAL RESPONDER---------------*/
+
+#modal-header2{
+    background-color: #4F0230;
+    display: flex;
+    border-bottom: transparent !important;
+}
+
+.modal-title2{
+    color: white !important;
+    margin-top: 1vh;
+}
+
+.close{
+    color: white !important;
+    font-size: 2rem !important;
+    text-align: right;
+}
+
+.modal-seccion{
+    display: flex;
+}
+
+.modal-labels{
+    color: #830053;
+    margin-bottom: 0;
+    margin-top: 0.5vh;
+    margin-right: 1vh;
+}
+
+.modal-correo2{
+    color: gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 1vh;
+}
+
+.line {
+    margin: auto;
+    height: 20%;
+    width: 100%;
+    color: #830053;
+    margin-bottom: 2vh;
+}
+
+input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+#respuesta{
+    height: 200px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 600px) {
+    .container{
+
+        padding-left:0px !important;
+    }
+
+    body{
+        background-size:cover !important ;
+        background-repeat: no-repeat;
+        margin:0;
+        padding:0;
+
+    }
+    .table{
+        width:110% !important;
+        margin-left:2%;
+    }
+    .dar_alta{
+
+        width:25%;
+        height:20% !important;
+        margin:0 auto !important;
+        font-size:12px;
+    }
+    .fa-user-minus{
+        font-size:40px;
+        margin-left:0px;
+        margin-top:0px;
+        padding:5px;
+    }
+    .fa-user-plus{
+        font-size:40px;
+        margin-left:0px;
+        margin-top:0px;
+        padding:5px;
+    }
+    .popup-formulario{
+        align-items:baseline !important;
+        position: inherit;
+
+    }
+    .eliminar_casilla{
+        left: 30% !important;
+    }
+    .box{
+        width: 80% !important;
+        /* height: 400px !important; */
+    }
+    .cerrar-formulario{
+        margin-right:40px;
+    }
+
+    html{
+        overflow-x:hidden !important;
+    }
+
+    #myTable tr td{
+        background-color: rgba(255,255,255,0.7);
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 900px){
+
+    body{
+        background-image: url("../images/admin_general/admin_panel2-desktop.jpg") ;
+    }
+
+    .banner{
+        margin-top: 3rem;
+        width: 450px !important;
+        font-size: 1.5rem;
+    }
+
+    .eliminar_casilla{
+        left: 20% !important;
+    }
+
+    .has-search .form-control {
+        margin-top:5vh !important;
+        margin-left: 5vh !important;
+        width: 45vh !important;
+        height:5.5vh!important;
+        font-size:larger !important;
+    }
+
+    #Tnombre{
+        font-size: 26px !important;
+
+    }
+    #Tfecha{
+        font-size: 16px !important;
+    }
+
+    #Tconsulta{
+        font-size: 22px !important;
+    }
+
+    .fa-sync{
+        padding: 12px !important;
+    }
+
+}
+
+
+/*----------------------------*/
+/*FORMULARIO DE CONSULTAS*/
+
+#tablacons{
+    width: 100% !important;
+    margin-left: 0;
+}
+
+.table{
+    margin-bottom: 0px !important;
+}
+
+.arriba{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+#Tnombre{
+    color: var(--color_principal);
+    font-size: 20px;
+
+}
+
+#Tfecha{
+    color: gray;
+    font-size: 14px;
+
+}
+
+#Tconsulta{
+    color: gray;
+    font-size: 16px;
+    text-align: left;
+}
+
+select{
+    background: var(--color_principal);
+    font-size: 18px;
+    color: white !important;
+    font-family: 'Poppins', sans-serif;
+    border-color: var(--color_principal);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+select:hover{
+    background-color: var(--color_secundario);
+    border-color: var(--color_secundario);
+}
+
+option{
+    text-align: center !important;
+    background: white;
+    color: var(--color_principal);
+    border-color: var(--color_principal);
+    text-transform: none;
+}
+
+#refresh{
+    background-color: var(--color_principal);
+    border: none;
+    border-color: var(--color_principal);
+    border-radius: 5px;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    z-index: 1;
+}
+
+#refresh:hover{
+    background-color: var(--color_secundario);
+}
+
+.fa-sync{
+    color: white;
+    padding: 8px;
+}
+
+#Cfiltro{
+    z-index: 1;
+}
+
+#filtroboton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#selectComparation{
+    padding: 10px;
+}
+
+.scrollbar_table{
+    position: relative;
+    height: 50vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.scrollbar_table::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.scrollbar_table::-webkit-scrollbar-thumb{
+    background: #999999;
+}
+
+.scrollbar_table::-webkit-scrollbar-track{
+    background: rgba(255,255,255,0.7);
+}
+
+.scrollbar_table::-webkit-scrollbar-track:hover,
+.scrollbar_table::-webkit-scrollbar-track:active{
+    background: #d4d4d4;
+}

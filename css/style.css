@@ -28,10 +28,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden !important;
+    overflow: visible;
+    
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
@@ -52,7 +56,7 @@ div {
 .justifyText {
     text-align: justify;
     word-spacing: -2px;
-    
+
 
     margin-left: 35px !important;
     margin-right: 35px !important;
@@ -71,26 +75,6 @@ div {
 }
 
 /*-------------------------------------------------------------------------------------------------------------------*/
-/*                                             BANNER DE LOS TITULOS                                                 */
-/*-------------------------------------------------------------------------------------------------------------------*/
-
-.banner {
-    background-color: #830053;
-    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 87% 100%, 0% 100%);
-    margin: -500px 0;
-    padding: 0.5em 1em;
-    width: 80%;
-    color: white;
-    font-size: 17px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    margin-top: 7vh;
-    margin-bottom: 2vh;
-}
-
-/*-------------------------------------------------------------------------------------------------------------------*/
 /*                                                Estilo de los BOTONES                                              */
 /*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -98,7 +82,7 @@ div {
 /*-----------------------Botones morados-----------------------*/
 .boton {
     color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 16px;
     line-height: 28px;
     padding: 17px;
     border-radius: 7px;
@@ -124,53 +108,104 @@ div {
     transform: scale(1.06);
 }
 
-/*--------------------------------------------------------------*/
-/*------------------ Botón de Ir Arriba/Abajo ------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------- Botón de Ir Arriba/Abajo ---------------------------------------------*/
+
 
 #boton_ir_arriba {
     display: none;
     position: fixed;
-    bottom: 20px;
     right: 30px;
+    bottom: 2rem;
     z-index: 99;
-    font-size: 16px;
-    border: none;
+    font-size: 2rem;
+    background-color: rgba(255,255,255,0.9);
+    border:  none;
     outline: none;
-    background-color: #830053;
-    color: white;
+    color: var(--color_principal);
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50px;
-}
-#boton_abajo{
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    background-color: #830053;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
+    padding: 7px 20px;
     border-radius: 50px;
 }
 
-/*--------------------------------------------------------------*/
+#boton_abajo{
+    position: fixed;
+    left: 45%;
+    bottom: 2rem;
+    z-index: 99;
+    font-size: 2rem;
+    background-color: var(--color_blanco);
+    border: none;
+    outline: none;
+    color: var(--color_principal);
+    cursor: pointer;
+    padding: 7px 20px;
+    border-radius: 50px;
+
+}
+
+.fa-angle-down{
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+
+.fa-angle-up{
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------ANIMACIÓN FLECHA-------------------------------*/
+
+@keyframes flecha-animada {
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(8px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*-------------------------------MEDIA QUERY - ARRIBA/ABAJO-------------------------------*/
+
+/*Esto es para hacer que el botón de ir abajo se quede en el
+        centro cuando el ancho de pantalla cambia*/
+
+@media (max-width: 450px)  {
+    #boton_abajo{
+        left: 39%;
+    }
+}
+
+@media (max-width: 500px)  {
+    #boton_abajo{
+        left: 42%;
+    }
+}
+
+@media (min-width: 48em){
+    #boton_abajo{
+        left: 48%;
+    }
+}
+
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                      Elementos de la PRIMERA SECCIÓN                                              */
 /*-------------------------------------------------------------------------------------------------------------------*/
-
 .call_to_action {
-    background-image: url("../images/landing_page/landing_page1.jpg");
+    background: url("../images/landing_page/landing_page1.jpg") no-repeat top center;
     background-size: cover;
     height: 93vh;
 }
 
 .call_to_action .fistText {
-    margin-top: 8vh;
+    margin-top: 15vh;
     margin-bottom: 5vh;
     margin-left: 10px;
     margin-right: 10px;
@@ -180,6 +215,7 @@ div {
     margin-bottom: 5vh;
     margin-left: 40px;
     margin-right: 40px;
+    text-align: center;
 }
 
 
@@ -208,6 +244,7 @@ div {
     margin-left: 35px !important;
     margin-right: 35px !important;
 }
+
 /*------------- Margenes textos -------------*/
 .mas_informacion p{
     margin-left: 2%;
@@ -229,7 +266,15 @@ div {
     background-size: cover;
     font-size: 14px;
 }
-
+.iconosensor{
+    width: 23%;
+}
+.iconoherramienta{
+    width: 12%;
+}
+.iconopersona{
+    width: 12%;
+}
 #informacion_web #contenido_informacion_web #headSection{
     margin-top: 5vh;
     margin-bottom: 4vh;
@@ -283,8 +328,8 @@ div {
 /*----------------------------*/
 
 .acerca1 {
-    
-    margin-bottom: 4vh;
+
+    margin-bottom: 7vh;
 
 }
 
@@ -295,7 +340,7 @@ div {
 
 .acerca1 i {
     margin-top: 3vh;
-   
+
 }
 
 .datos_contacto {
@@ -313,6 +358,12 @@ div {
     transform: scale(1.15);
     transition: 0.3s;
 }
+.texto_pc{
+    display: none;
+}
+.acerca_de_nosotros .fa-users{
+    display: block !important;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*                                       Estilo del FORMULARIO DE CONTACTO                                           */
@@ -323,8 +374,8 @@ div {
 
 /*common*/
 .box{
-    width: 349px !important;
-    height: 625px !important;
+    width: 349px;
+    height: 625px;
 }
 
 /*---------------------------------------------------------------------*/
@@ -356,7 +407,7 @@ input {
     font-size: 12px;
     width: 90%;
     height: 40px;
-    padding: 6px 5px;
+    padding: 6px 16px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -370,7 +421,7 @@ textarea {
     font-size: 12px;
     width: 90%;
     height: 150px;
-    padding: 6px 5px;
+    padding: 6px 16px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -464,11 +515,215 @@ textarea {
         line-height: 18px;
         padding: 10px;
     }
-    
+
     .datos_contacto{
         margin-bottom: 1vh;
     }
 }
+
+/*------------------------RESPONSIVE--------------------------------*/
+
+@media (min-width: 48em) {
+
+    .popup-formulario{
+        top: 15%;
+        left: 27%;
+        width: 50%;
+        height: 80%;
+    }
+    .box {
+        width: 63%;
+        height: 100%
+    }
+    .cerrar-formulario {
+        right: -50%;
+    }
+    #box-confirmacion #content-confirm-box #cerrar_confirmacion {
+        display: flex;
+        margin: 15% auto;
+    }
+    .banner {
+        font-size: 3vh;
+        width: 35%
+    }
+    .box_confirmacion {
+        width: 30%;
+    }
+    .call_to_action {
+        background-image: url("../images/landing_page/landing_page1(PC).jpg");
+        width: 100%;
+    }
+    .call_to_action .fistText{
+        text-align: center;
+        font-size: 3em;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .call_to_action .secondText {
+        text-align: center;
+    }
+    .mas_informacion {
+        background-image: url("../images/landing_page/landing_page2(PC).jpg");
+        background-size: cover;
+        width: 100%;
+    }
+    .secondText{
+        margin-left: 40vh !important;
+        margin-right: 40vh !important;
+        text-align: justify;
+        padding-right: 5%;
+        padding-left: 5%;
+        font-size: 22px;
+    }
+
+    .thirdtext{
+        display: flex;
+        padding-left: 10%;
+    }
+    .iconosensor{
+        width: 60%;
+        padding-top: 12%;
+    }
+    .iconoherramienta{
+        padding-top: 22%;
+        padding-bottom: 20%;
+        width: 30%;
+    }
+    .iconopersona{
+        padding-top: 13%;
+        padding-bottom: 10%;
+        width: 24%;
+    }
+    .informacion_web{
+        background-image: url("../images/landing_page/landing_page3(PC).jpg");
+        width: 100%;
+    }
+    #informacion_web #contenido_informacion_web #headSection{
+        text-align: start;
+    }
+    #mapa_interactivo-apartado{
+        padding-left: 10%;
+    }
+    .blanco .justifyText #texto1_información_web{
+        text-align: center;
+    }
+    #informacion_web #contenido_informacion_web #mapa_interactivo-apartado #iconomapainteractivo {
+        width: 50%;
+        height: 45%;
+        margin-top: 10vh;
+    }
+    #informacion_web #contenido_informacion_web #grafico-apartado #texto2_información_web {
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    #grafico-apartado{
+        padding-right: 10%;
+    }
+    #texto2_información_web{
+        text-align: center;
+    }
+    #informacion_web #contenido_informacion_web #grafico-apartado #iconografico {
+        width: 30%;
+        height: 51%;
+        margin-top: 8vh;
+    }
+    .conteidoInfo{
+        display: flex;
+        padding-left: 10%;
+
+    }
+    .acerca1{
+        width: 55%;
+        margin-left: 2%;
+        margin-top: 3%;
+    }
+    .acerca1 i{
+        display: none;
+    }
+    .objetivos {
+        padding-left: 2%;
+        width: 55%
+    }
+    .acerca_de_nosotros {
+        background-image: url("../images/landing_page/landing_page4(PC).jpg");
+        width: 100%;
+        height: fit-content;
+    }
+    h2{
+        padding-left: 5.7%;
+        text-align: left;
+        font-weight: 500;
+        font-size: x-large;
+    }
+    .datos_contacto {
+        display: table;
+        padding-left: 10%;
+    }
+    .datos_contacto p{
+        padding-left: 2em;
+        font-size: 1.3em;
+    }
+    .caja1{
+        display: flex;
+    }
+    .caja2{
+        margin-top: 12%;
+        padding-bottom: 50%
+    }
+    .telefono{
+        flex-direction: row;
+        display: -webkit-inline-box;
+    }
+    .correo{
+        flex-direction: row;
+        display: -webkit-inline-box;
+    }
+    .acerca_de_nosotros i {
+        font-size: 2.5em;
+    }
+    .texto_movil{
+        display: none;
+    }
+    .texto_pc{
+        display: block;
+    }
+    .acerca_de_nosotros .fa-users{
+        display: none !important;
+    }
+    #footertext {
+        font-size: 15px;
+        color: #830053;
+        padding-top: 1.5%;
+        padding-bottom: 2.5%;
+    }
+    p {
+        font-size: 2.5vh;
+    }
+    .text_label{
+        display: flex;
+    flex-direction: column;
+    }
+    input{
+        margin-left: 5%;
+    }
+    label{
+        margin-top: 1%;
+        margin-left: 25px;
+    }
+    textarea{
+        margin-left: 5%;
+        margin-top: 1%;
+        height: 25vh;
+    }
+    .contactar{
+        font-size: 5vh !important;
+    }
+    .popup-formulario #box-contacto #header-box #intro-tex{
+        font-size: 1.5rem !important;
+    }
+}
+
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------------------------------------------------------------------------------------------------*/
 

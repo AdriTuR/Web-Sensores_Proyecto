@@ -9,12 +9,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-----------------------------------------FUENTES---------------------------------------------------->
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!------------------------------------------ICONOS---------------------------------------------------->
     <script src="https://kit.fontawesome.com/5842e39ab5.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -23,6 +27,20 @@
     <?php
     if(isset($t) && $t == 1){
         include './includes/menu.php';
+    }
+
+    if(isset($t) && $t == 3){
+        include './includes/menu-login.php';
+    }
+
+    if(isset($t) && $t == 2){
+        include './includes/menu_admin.php';
+    }
+    if(isset($t) && $t == 4){
+        include './includes/menu_admin2.php';
+    }
+    if(isset($t) && $t == 5){
+        include './includes/menu_user.php';
     }
     ?>
     </header>

@@ -1,76 +1,126 @@
 <?php
 $t = 2;
-$name = "Panel Admin";
+$name = "Panel Admin - Inicio";
 include_once './includes/header.php';
-include_once './api/includes/adminStats.php';
+
+//--------------------------------------------------------------------------------------------------------------------//
+//---------------------------------------------HEADER DE LA PÁGINA----------------------------------------------------//
+//--------------------------------------------------------------------------------------------------------------------//
+
 function customHead(){?>
-    <link rel="stylesheet" href="./css/adminp-style.css">
+
+    <!-----------------------------------------BOOSTRAP--------------------------------------------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!------------------CSS-------------------->
+
+    <link rel="stylesheet" href="./css/adminPanel-style.css">
     <link rel="stylesheet" href="./css/panelMenu-style.css">
+
 <?php }
 ?>
-<body>
-    <input type="checkbox" id="check">
-    <label for="check">
-        <id class="fas fa-bars menuIcon" id="btn"></i>
-        <i class="fas fa-times menuIcon" id="cancel"></i>
-    </label>
-    <div class="sidebar">
-    <header> PANEL DE ADMIN </header>   
-    <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Panel</a></li>
-        <li><a href="#"><i class="fas fa-users"></i>Gestionar Clientes</a></li>
-        <li><a href="#"><i class="fas fa-tractor"></i>Gestionar Parcelas</a></li>
-        <li><a href="#"><i class="fas fa-comment-alt"></i>Consultas</a></li>
-        <li><a class="btn_logout" type="button" onclick="disconnect()"><i class="fas fa-sign-out-alt"></i>CERRAR SESIÓN</a></li>
-    </ul>
-    <br>
-        <hr class="line">
-        <footer> <i class="fas fa-user-circle"></i> <span class="usuario"> Joseba Jimenez </span></footer> 
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- POPUP CERRAR SESION--------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<?php include_once './includes/panelsesion.php';?>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- BODY DE LA PÁGINA ---------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<body id="body">
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------MENU------------------------------------------------------------>
+
+<?php include_once './includes/menu_admin.php';?>
+
+<script>
+    var removeMe = document.getElementById("inicio_panel_admin");
+    removeMe.innerHTML = '';
+</script>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------CONTENIDO PANEL DE USUARIO----------------------------------------------->
+<div id="contenido_panel-admin">
+    <!------------------------------------------------------------------------------->
+    <!----------------------------APARTADO DE BIENVENIDA----------------------------->
+
+    <div class="apartado_bienvenida_admin">
+        <h1 class="titulo_panel_admin">BIENVENIDO AL PANEL DE ADMINISTRADOR</h1>
+        <hr class="line_admin">
+        <p class="texto_panel_admin">Desde aquí podrás gestionar y administrar todas las cuentas de tus clientes y ver las consultas que se hayan realizado.</p>
+    </div>
+    <!------------------------------------------------------------------------------->
+    <!------------------------STATS MODO DESKTOP------------------------------------->
+
+    <div class="stat_container justify-content-center">
+        <div class="stat_box">
+            <a href="admin_management.php">
+                <i class="far fa-eye"></i>
+                <div class="stat_indicador"><span id="nCustomers"></span></div>
+                <p class="stat_texto">Nº de usuarios</p>
+            </a>
+        </div>
+        <div class="stat_box">
+            <a href="admin_consultas.php">
+                <i class="far fa-eye"></i>
+                <div class="stat_indicador"><span id="todayInquiries"></span></div>
+                <p class="stat_texto">Consultas de hoy</p>
+            </a>
+        </div>
+        <div class="stat_box">
+            <a href="admin_management.php">
+                <i class="far fa-eye"></i>
+                <div class="stat_indicador"><span id="totalSensors"></span></div>
+                <p class="stat_texto">Nº de sensores</p>
+            </a>
+        </div>
     </div>
 
-    <h1>BIENVENIDO AL PANEL DE ADMINISTRADOR</h1>
-    <hr>
-    <div class="texto_debajo_titulo">
-        <h3>Desde aqui podras gestionar y administrar todas las cuentas de tus
-            clientes y ver las consultas que hayan realizado</h3>
-    </div>
-    
-    <div class="container">
-        <div class="box">
-          <h1><?php echo $nCustomers?></h1>
-          <p>Nº de clientes</p>
-        </div>
-        <div class="box">
-        <h1><?php echo $nCompanies?></h1>
-        <p>Nº de corporativas</p>
-        </div>
-        <div class="box">
-        <h1><?php echo $todayInquiries?></h1>
-        <p>Nº de consultas enviadas hoy</p>
-        </div>
-        <div class="box">
-        <h1>78</h1>
-        <p>Nº de sensores en funcionamiento</p>
-        </div>
-    </div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------FOOTER-------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<?php include_once './includes/footer.php';?>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------SCRIPTS------------------------------------------------------->
+
+<!-------------------------------Cerrar Sesion------------------------------------------->
 <script>
     window.addEventListener("load", function(){
-        fetch("./api/v1/", {
+        fetch("./api/v1/adminStats", {
             method: "GET"
         }).then(function (result) {
-            if(result.status == 200){
-                return result.json();
-            }
+            if(result.ok) return result.json();
         }).then(function (data) {
             if(data != null){
-                if(data.role == "USER"){
-                    location.href = "./user_panel.php";
-                }
+                nCustomers.innerHTML = data.nCustomers;
+                todayInquiries.innerHTML = data.todayInquiries;
+                totalSensors.innerHTML = data.totalSensors;
+                
+
             }
         });
     });
+
 </script>
-<?php include_once './includes/footer.php';?>
-</body>
 <script src="./js/closeSession.js"></script>
-</html>
+<script src="./js/checkAdminLogin.js"></script>
+
+<!---------------------------- Separate Popper and Boostrap JS ---------------------------------->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<!-------------------------------------------------------------------------------------------------------------------->
+
+</body>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------- FIN BODY DE LA PÁGINA ------------------------------------------------>
+<!-------------------------------------------------------------------------------------------------------------------->

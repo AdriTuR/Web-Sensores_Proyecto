@@ -1,0 +1,857 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                          CSS - ADMIN GESTIÓN DE CLIENTES                                          */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------*/
+/*-------------------- BODY BACKGROUND --------------------*/
+
+body{
+    background: url("../images/admin_general/admin_panel3.jpg") no-repeat top center ;
+    background-size: cover;
+    height: 100%;
+    overflow-x:hidden;
+}
+
+/*-------------------------------------------------------*/
+/*-----------------BANNER DE LOS TITULOS-----------------*/
+
+.banner{
+    width: 270px;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------- CAMPO DE BUSQUEDA --------------------------------------------------*/
+
+.form-group{
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    margin: 0 auto;
+    margin-top: 0.75rem;
+    width: 90%;
+    height: 2.8rem;
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid var(--color_principal);
+    color: var(--color_negro);
+    font-family: var(--fuente_texto);
+}
+
+#input_buscar:focus{
+    border: var(--color_principal);
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    left: 5%;
+    margin-top: 1rem;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: var(--color_principal);
+    padding-top: 0;
+}
+
+::placeholder{
+    color: var(--color_principal);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------BOTONES GESTION CLIENTES---------------------------------------------*/
+
+/*-------------------------------------------------------------------------*/
+/*-----------------------------------MOBILE--------------------------------*/
+
+.botones_gestion-clientes_mobile{
+    display: flex;
+    margin: 0.40rem auto;
+}
+
+/*------------------------------------------------*/
+/*-------------DAR DE BAJA Y ALTA-----------------*/
+
+.boton_dar_de_alta, .boton_dar_de_baja{
+    height: 70px;
+    width: 200px;
+    background-color: var(--color_principal);
+    border: none;
+    border-radius: 15px;
+    box-shadow: none;
+    margin-top: 0.2rem;
+    padding: 0.55rem;
+    font-size: 12px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.boton_dar_de_baja p, .boton_dar_de_alta p{
+    font-family: var(--fuente_titulo);
+    color: var(--color_blanco);
+    margin-top: 0.25rem;
+}
+
+#boton_cancelar_baja_mobile{
+    display: none;
+    margin: 1.5rem auto;
+}
+
+/*------------------------------------------------*/
+/*-------------------CANCELAR---------------------*/
+
+.boton_cancelar_baja{
+    height: 50px;
+    width: 200px;
+    background-color: var(--color_principal);
+    border: none;
+    border-radius: 15px;
+    padding: 0.75rem;
+}
+
+.boton_cancelar_baja p{
+    font-family: var(--fuente_titulo);
+    color: var(--color_blanco);
+}
+
+/*-----------------------------------------------------------------------*/
+/*--------------------------------DESKTOP--------------------------------*/
+
+.botones_gestion-clientes-desktop{
+    display:none;
+    margin-right: 2.5rem;
+}
+
+/*------------------------------------------------*/
+/*-------------DAR DE BAJA Y ALTA-----------------*/
+.boton_dar_de_alta_desktop, .boton_dar_de_baja_desktop{
+    display: flex;
+    height: 70px;
+    width: 250px;
+    background-color: var(--color_principal);
+    border: none;
+    border-radius: 18px;
+    box-shadow: none;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 0.65rem 1rem 0.65rem 1rem;
+}
+
+.boton_dar_de_alta_desktop p, .boton_dar_de_baja_desktop p{
+    font-family: var(--fuente_titulo);
+    color: var(--color_blanco);
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-left: 0.75rem;
+}
+
+.boton_dar_de_alta_desktop:hover, .boton_dar_de_baja_desktop:hover{
+    transform: scale(1.1);
+    background-color: var(--color_secundario);
+}
+
+/*------------------------------------------------*/
+/*-------------------CANCELAR---------------------*/
+
+#boton_cancelar_baja_desktop{
+    display: none;
+    margin-right: 4rem;
+    margin-block-start: auto;
+    z-index: 1;
+}
+
+#text_boton_cancelar_desktop{
+    font-size: 1.25rem !important;
+    margin-top: 10px;
+}
+
+.desktop{
+    height: 78px !important;
+    width: 278px !important;
+}
+
+.desktop:hover{
+    transform: scale(1.1);
+    background-color: var(--color_secundario);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------  LISTADO DE ADMIN ---------------------------------------------------*/
+
+.listado{
+    width: 95%;
+    margin: 0 auto;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------HEADER - LISTADO---------------------------------------*/
+
+.listado-header{
+    background-color: #830053;
+}
+
+.listado_cliente{
+    display: none;
+    padding: 20px;
+    text-align: left;
+}
+
+.listado_icono-cuenta{
+    width: 15%;
+    padding: 0px;
+}
+
+
+.listado_sensores{
+    display: none;
+    width: 10%;
+}
+
+.listado_botones{
+    width: 13%;
+    padding: 0;
+}
+
+#tablaUsers button{
+    background: none;
+    border: none;
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*---------------------------------------CONTENIDO - LISTADO-----------------------------------*/
+
+.listado_contenido{
+    overflow-x:auto;
+}
+
+/*-----------------------------------------------------*/
+/*----------------ESTRUCTURA DE LA TABLA---------------*/
+
+table{
+    width:100%;
+    table-layout: fixed;
+}
+
+th{
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    font-family: var(--fuente_titulo);
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td{
+    padding: 0.80rem 0rem;
+    background-color: rgba(255,255,255,0.7);
+    text-align: center;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 14px;
+    font-family: var(--fuente_texto);
+    color: var(--color_negro);
+    border-bottom: solid 1px rgba(255,255,255,0.3);
+}
+
+/*--------------ICONO DE CUENTA-----------------*/
+#user{
+    color: var(--color_principal);
+    font-size: 20px ;
+}
+
+
+/*-----------------------------------------------------*/
+/*------------------BOTONES LISTADO--------------------*/
+
+#boton_mapa, #boton_perfil{
+    width: 30px;
+    height: 30px;
+    background-color: var(--color_principal) !important;
+    border-radius: 40px;
+}
+
+#icono_boton_perfil{
+    color: var(--color_blanco);
+    font-size: 15px;
+}
+
+#icono_boton_mapa{
+    margin-bottom: 4px;
+    width: 19px ;
+    height: 19px ;
+}
+
+/*-----------------------------------------------------*/
+/*-------------AVISO DE NO EXISTE USUARIO--------------*/
+
+#sin_resultados{
+    display: none;
+    font-family: var(--fuente_titulo);
+    color: var(--color_principal);
+    width: 100%;
+    height: 100%;
+}
+
+#sin_resultados-texto1{
+    font-family: var(--fuente_titulo);
+    font-size: 5vh;
+    color: var(--color_principal);
+    font-weight: bold;
+    margin-bottom: 0 ;
+}
+
+#sin_resultados-texto2{
+    font-family: var(--fuente_titulo);
+    font-size: 0.7rem;
+    color: var(--color_principal);
+}
+
+.fa-user-alt-slash{
+    margin-top: 1rem;
+    color: var(--color_principal);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------- DELETE USUARIO -------------------------------------------------------*/
+
+.delete_usuario_th{
+    display: none;
+    width: 50px;
+}
+
+.delete_usuario_td{
+    display: none;
+    background-color: #9B2222;
+    padding: 0;
+    width: 50px;
+    cursor: pointer;
+}
+
+.bi-trash-fill{
+    color: var(--color_blanco);
+    font-size: 1.5rem;
+}
+/*------------------------------------------------------*/
+/*--------------------ANIMACIÓN SLIDE-------------------*/
+
+@keyframes slide-in {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------  FORMULARIO DAR DE ALTA ------------------------------------------------*/
+
+.popup-formulario{
+    position: inherit;
+}
+
+/*---------------------------------------------------------------------------*/
+/*---------------------------HEADER FORMULARIO-------------------------------*/
+
+.header_panel_dar_alta{
+    background-color: var(--color_principal);
+    display: flex;
+    width: 90%;
+    height: 3.5rem;
+    padding: 0.80rem 1.5rem;
+    margin: 1rem auto 0;
+    border-top-right-radius: 15px ;
+    border-top-left-radius: 15px;
+}
+
+#titulo_dar_alta{
+    font-size: 1.5rem;
+    font-family: var(--fuente_titulo);
+    color: var(--color_blanco);
+    margin: 0 auto;
+}
+
+/*-----¿COMON?-------*/
+#icono_cerrar{
+    width: 20px ;
+    height: 20px;
+    margin-top: 0.25rem;
+}
+
+/*---------------------------------------------------------------------------*/
+/*--------------------------CONTENIDO FORMULARIO-----------------------------*/
+
+
+.box{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 0px;
+    border-bottom-right-radius: 7px ;
+    border-bottom-left-radius: 7px;
+}
+
+.headsection_formulario p{
+    font-family: var(--fuente_texto);
+    font-size: 1rem;
+    color: var(--color_negro);
+    padding: 1.75rem 0.25rem;
+    margin-bottom: -25px;
+    margin-left: 1rem ;
+    margin-right: 1rem;
+}
+
+.text_label{
+    display: grid;
+    margin: 0.75rem auto;
+}
+
+/*-----------------------------------------------------*/
+/*----------------CAMPOS DE FORMULARIO-----------------*/
+
+label{
+    font-family: var(--fuente_texto);
+    font-size: 16px;
+    text-align: left;
+    float: left;
+    padding: 9px 5px 1px;
+    margin-left: 7%;
+    margin-bottom: 0.2rem;
+}
+
+input{
+    font-family: var(--fuente_texto);
+    font-size: 12px;
+    width: 85%;
+    height: 40px;
+    padding: 6px 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: var(--color_inputs-background);
+    border: solid 1px #830053;
+    margin: 0 auto;
+    outline: none;
+}
+
+#tipo_usuario{
+    width: 170px;
+    height: 40px;
+    font-family: var(--fuente_texto);
+    border: solid 1px #830053;
+    background-color: #E5D9D9;
+    margin-left: 28px;
+    color: var(--color_principal);
+    outline: none;
+    padding: 0.25rem;
+}
+
+option{
+    font-family: var(--fuente_texto);
+}
+
+/*--------Iconos--------*/
+
+#iconos_dar_alta{
+    color: var(--color_negro);
+    opacity: 90%;
+    margin-right: 0.25rem;
+}
+
+/*-----------------------------------------------------*/
+/*--------------------BOTON AÑADIR---------------------*/
+
+.submit{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 13px;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------SCROLL TABLA/FORMULARIO--------------------------------------------------*/
+
+.scrollbar_table, .scrollbar_form {
+    position: relative;
+    height: 60vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.scrollbar_table::-webkit-scrollbar, .scrollbar_form::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.scrollbar_table::-webkit-scrollbar-thumb, .scrollbar_form::-webkit-scrollbar-thumb {
+    background: #999999;
+}
+
+.scrollbar_form::-webkit-scrollbar-thumb{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.scrollbar_table::-webkit-scrollbar-track, .scrollbar_form::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.7);
+}
+
+.scrollbar_form::-webkit-scrollbar-track{
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.scrollbar_table::-webkit-scrollbar-track:hover, .scrollbar_table::-webkit-scrollbar-track:active,
+.scrollbar_form::-webkit-scrollbar-track:hover, .scrollbar_form::-webkit-scrollbar-track:active  {
+    background: #d4d4d4;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------  FOOTER -----------------------------------------------------*/
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                        MEDIA QUERY - GESTIONAR PARCELAS                                           */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- FORMATO MOBILE ------------------------------------------------------*/
+
+/*--------------------------------REDUCIÓN DE TAMAÑO DE TABLA-----------------------------------*/
+
+@media (min-height: 600px){
+    .scrollbar_table{
+        height: 38vh;
+    }
+}
+
+@media (max-height: 600px){
+    .scrollbar_table{
+        height: 27vh;
+    }
+    .scrollbar_form{
+        height: 50vh ;
+    }
+}
+
+@media (min-width: 500px){
+    .botones_gestion-clientes_mobile{
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 600px){
+    .botones_gestion-clientes_mobile{
+        margin-left: 20%;
+    }
+
+    td{
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 700px){
+
+    /*------------------CONFIGURACIÓN FORMULARIO DAR DE ALTA------------------*/
+
+    #panel_dar_alta{
+        z-index: 1;
+    }
+
+    #icono_cerrar{
+        z-index: 1;
+    }
+
+    .header_panel_dar_alta {
+        width: 60vh;
+        margin-top: 4.5vh/*6.5vh*/;
+    }
+
+    .headsection_formulario p{
+        font-size: 1.25rem;
+    }
+    #content-form-box{
+        width: 60vh;
+        padding-right: 10vh;
+        padding-left: 10vh;
+    }
+
+    input{
+        width: 380px;
+        height: 55px;
+        font-size: 1rem;
+    }
+
+    ::placeholder{
+        font-size: 0.50rem;
+    }
+
+    label{
+        font-size: 1.25rem;
+        margin-left: 8px;
+    }
+
+    #tipo_usuario{
+        width: 250px;
+        height: 55px;
+        margin-left: 15px;
+    }
+
+    .submit{
+        font-size: 1.15rem;
+        padding: 0.5rem;
+        height: 4rem;
+        width: 60%;
+    }
+
+    select{
+        font-size: 1.15rem;
+    }
+
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- FORMATO DESKTOP -----------------------------------------------------*/
+
+
+
+
+@media screen and (min-width: 900px){
+
+    /*-------------------------------CONFIGURACIÓN BACKGROUND-------------------------------------*/
+
+    body{
+        background: url("../images/admin_general/admin_panel3-desktop.jpg") no-repeat top ;
+        background-size: cover;
+    }
+
+    /*----------------------------CONFIGURACIÓN BANNER TITULO------------------------------------*/
+
+    .banner{
+        margin-top: 3rem;
+        width: 450px;
+        font-size: 1.5rem;
+    }
+
+    /*---------------------APARICIÓN DE APARTADOS OCULTOS DEL LISTADO---------------------------*/
+
+    .listado_cliente{
+        display: flex;
+    }
+
+    .listado_sensores{
+        width: 10%;
+        display: table-cell;
+    }
+
+
+    /*---------------CONFIGURACIÓN APARTADOS DEL HEADER Y CONTENIDO DEL LISTADO-----------------*/
+
+    td{
+        font-size: 1rem;
+    }
+
+    th{
+        font-size: 0.75rem;
+    }
+
+
+    .listado_botones{
+        width: 8%;
+    }
+
+    .listado_tipo{
+        width: 15%;
+    }
+
+    .listado_icono-cuenta{
+        width: 8%;
+    }
+
+    .fa-user-circle{
+        padding: 0;
+    }
+
+
+    /*---------Botones----------*/
+
+    #boton_mapa:hover, #boton_perfil:hover{
+        background-color: var(--color_secundario)!important;
+        transform: scale(1.15);
+    }
+
+    /*--------------------CONFIGURACIÓN HEIGHT DEL SCROLLEABLE LA LISTA------------------------*/
+
+    .scrollbar_table{
+        height: 42vh !important;
+    }
+
+    /*--------------------------CONFIGURACIÓN CAMPO DE BUSQUEDA---------------------------------*/
+
+    .has-search .form-control{
+        margin-left: 5vh;
+        width: 45vh;
+        height: 55px;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        z-index: 1;
+    }
+    .has-search .form-control-feedback{
+        left: 5vh;
+        margin-top: 2rem;
+    }
+
+    /*------------------------CONFIGURACIÓN BOTONES GESTION DE CLIENTES----------------------*/
+
+    .botones_gestion-clientes_mobile{
+        display: none;
+    }
+
+    .botones_gestion-clientes-desktop{
+        display: flex;
+        z-index: 1;
+    }
+
+    #icono_boton_dar_baja_usuario, #icono_boton_dar_alta_usuario{
+        margin-top: 8.5px;
+        margin-left: 20px;
+    }
+
+    /*------------------------CONFIGURACIÓN BOTON DELETE----------------------*/
+    .delete_usuario_th{
+        width: 90px;
+    }
+
+    .delete_usuario_td{
+        width: 90px;
+    }
+
+    /*------------------CONFIGURACIÓN FORMULARIO DAR DE ALTA------------------*/
+
+
+
+
+}
+
+@media screen and (min-width: 1300px){
+
+    /*---------------CONFIGURACIÓN APARTADOS DEL HEADER Y CONTENIDO DEL LISTADO-----------------*/
+
+    td{
+        font-size: 1.5rem;
+    }
+
+    th{
+        font-size: 1rem;
+    }
+
+    .listado_botones{
+        width: 5%;
+    }
+
+    .listado_DNI{
+        width: 30%;
+    }
+
+    #user{
+        font-size: 25px;
+    }
+
+    /*-------- Botones ---------*/
+    #boton_mapa, #boton_perfil{
+        width: 45px;
+        height: 45px;
+    }
+
+    #icono_boton_perfil{
+        font-size: 20px;
+    }
+
+    #icono_boton_mapa{
+        width: 25px ;
+        height: 25px ;
+    }
+
+    /*------------------CONFIGURACIÓN FORMULARIO DAR DE ALTA------------------*/
+
+    .header_panel_dar_alta {
+        width: 90vh;
+    }
+
+    .headsection_formulario{
+        margin: 1.5rem 0.75rem 0 0.75rem;
+    }
+
+    .headsection_formulario p{
+        font-size: 1.5rem;
+    }
+
+    #content-form-box{
+        width: 90vh;
+        padding-right: 5vh;
+        padding-left: 5vh;
+    }
+
+    #datos_formulario_alta1, #datos_formulario_alta2, #datos_formulario_alta3,
+    #datos_formulario_alta4, #datos_formulario_alta5, #datos_formulario_alta6 {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    #datos_formulario_alta4{
+        margin-top: 2rem;
+    }
+
+    .text_label{
+        margin: 3rem auto auto 2rem;
+    }
+
+    label{
+        font-size: 1.5rem;
+    }
+
+    input{
+        width: 390px;
+    }
+
+    input::placeholder{
+        font-size: 1.2rem;
+    }
+
+    #tipo_usuario{
+        width: 300px;
+        font-size: 1.2rem;
+    }
+
+    option{
+        font-size: 1rem;
+    }
+
+    .submit{
+        width: 30%;
+        height: 78px;
+        margin-top: 3.5rem;
+    }
+
+}
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/

@@ -1,0 +1,332 @@
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                                CSS - ADMIN PANEL                                                  */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------*/
+/*---------------------------- BODY BACKGROUND ---------------------------*/
+
+body{
+    background: url("../images/admin_general/admin_panel1.jpg") no-repeat ;
+    background-size: cover;
+    height: 100%;
+    overflow-x:hidden;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+/*----Icono Visualizar-----*/
+.fa-eye{
+    color: var(--color_principal);
+    opacity: 70%;
+    /*margin-top: 0.6rem;*/
+    position: absolute;
+    left: 22%;
+    font-size: 2rem;
+}
+
+/*----------------------------------------------------------------------*/
+/*------------------------------BIENVENIDA------------------------------*/
+
+.apartado_bienvenida_admin{
+    margin: 2rem 0.70rem 0.5rem 0.70rem;
+    text-align: center;
+}
+
+.titulo_panel_admin{
+    color: var(--color_principal);
+    font-family: var(--fuente_titulo);
+    font-size: 1.6rem;
+    font-weight: bold;
+
+}
+
+.line_admin{
+    margin: auto;
+    width: 95%;
+    height: 1px;
+    background-color: var(--color_principal);
+}
+
+.texto_panel_admin{
+    color: var(--color_principal);
+    font-family: var(--fuente_texto);
+    font-size: 1.15rem;
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------STATS SLIDER---------------------------------------------------*/
+
+
+#carouselExampleIndicators{
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 75%;
+    height: 47vh;
+    z-index: 2;
+}
+
+
+/*--------------------------------------------------------------------------------*/
+/*--------------------------ELEMENTOS DE DENTRO DEL SLIDER------------------------*/
+
+.carousel-item{
+    height: 47vh;
+    width: 100%;
+    background-color:rgba(255, 255, 255, 0.6);
+    padding:30px;
+    text-align:center;
+}
+
+.carousel-inner{
+    border-radius: 20px;
+}
+
+.stat_indicador{
+    font-size: 15vh;
+    font-family: var(--fuente_titulo);
+    color: var(--color_principal);
+}
+
+.stat_texto{
+    font-size: 1rem;
+    font-family: var(--fuente_titulo);
+    color: var(--color_negro);
+}
+
+
+
+/*--------Para eliminar un efecto hover que hace boostrap a los enlaces--------*/
+
+a:hover{
+    color: transparent;
+}
+a:active{
+    color: transparent;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*------------------------------FLECHAS DEL SLIDER--------------------------------*/
+
+
+.fa-angle-right, .fa-angle-left{
+    color: var(--color_principal);
+    font-size: 3rem;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*----------------------------INDICADORES DEL SLIDER------------------------------*/
+
+.carousel .carousel-indicators li {
+    background-color: #BD7695;
+    opacity: 70%;
+}
+
+.carousel .carousel-indicators li.active {
+    background-color: var(--color_principal);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------STATS DESKTOP--------------------------------------------------*/
+
+.stat_container{
+    display: flex;
+    flex-direction: column;
+    margin: 6vh 10vh 0 10vh;
+}
+
+.stat_box{
+    height: 45%;
+    background-color:rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    text-align:center;
+    margin-bottom: 10%;
+    padding: 1rem 3rem 1rem 3rem
+}
+
+
+/*----------------------------------------------------------------------*/
+/*--------------------------------FOOTER--------------------------------*/
+
+footer{
+    position: relative;
+    bottom: 0;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*                                        MEDIA QUERY - PANEL ADMIN                                                  */
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- FORMATO DESKTOP -----------------------------------------------------*/
+
+@media (max-width: 640px){
+    .texto_panel_admin{
+        font-size: 0.75rem;
+        margin-left: 0.5rem ;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+    .titulo_panel_admin{
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 640px){
+    .texto_panel_admin{
+        font-size: 0.95rem;
+    }
+    .stat_container{
+        margin-right: 20vh;
+        margin-left: 20vh;
+    }
+    .fa-eye{
+        left: 30%;
+    }
+    .stat_texto{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+
+    /*--------------------------CONFIGURACIÓN APARTADO BIENVENIDA--------------------------------*/
+
+    .titulo_panel_admin{
+        font-size: 2rem;
+    }
+    footer{
+        margin-top: 10%;
+    }
+
+}
+
+
+@media screen and (min-width: 1200px){
+
+    /*-------------------------------CONFIGURACIÓN BACKGROUND-------------------------------------*/
+
+    body{
+        background: url("../images/admin_general/admin_panel1-desktop.jpg") no-repeat top ;
+        background-size: cover;
+    }
+
+    /*--------------------------CONFIGURACIÓN APARTADO BIENVENIDA2--------------------------------*/
+
+    .apartado_bienvenida_admin{
+        margin: 5rem 1.3rem 1rem 1.3rem;
+    }
+
+    .titulo_panel_admin{
+        font-size: 3rem;
+    }
+
+    .texto_panel_admin{
+        color: var(--color_principal);
+        font-family: var(--fuente_texto);
+        font-size: 1.3rem;
+        margin: 1.5rem 2rem 1rem 2rem;
+    }
+
+
+
+    /*--------------------CONFIGURACIÓN CAMBIO MODO VISUALIZAR ESTADISTICAS----------------------*/
+
+    .stat_container{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2.5%;
+    }
+
+    .users_stat_container{
+        display: contents;
+    }
+
+    .stat_box{
+        width: 45%;
+        padding: 8vh;
+        margin: 0 4rem 0 4rem;
+        z-index: 1;
+    }
+
+    .stat_box:hover {
+        transform: scale(1.125);
+    }
+
+    #carouselExampleIndicators{
+        display: none;
+    }
+
+    .stat_indicador{
+        font-size: 12.5vh;
+        margin-top: -3rem;
+    }
+
+    .stat_texto{
+        font-size: 1.75rem ;
+    }
+
+    /*------------ICONO DE VISUALIZAR---------------*/
+    .fa-eye{
+        position: relative;
+        left: -50%;
+        top: -1rem;
+        font-size: 3.5rem;
+    }
+
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------CONFIGURACIÓN EN OTROS FORMATOS---------------------------------------------*/
+
+@media screen and (min-width: 900px){
+
+    .line_admin{
+        width: 90%;
+    }
+
+}
+@media screen and (min-width: 1500px){
+
+    .line_admin{
+        width: 80%;
+    }
+
+    .stat_box{
+        width: 25%;
+        padding: 5vh;
+    }
+
+    .stat_indicador{
+        font-size: 18.5vh;
+    }
+
+    .stat_texto{
+        font-size: 2rem ;
+    }
+
+}
+
+@media screen and (min-width: 1900px){
+    .line_admin{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 2100px){
+    .line_admin{
+        width: 55%;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/

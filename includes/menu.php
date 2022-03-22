@@ -3,10 +3,10 @@
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     
     <ul class="menu">
-        <li onclick="menucerrar()"><a href="#mas_informacion">Qué te ofrecemos</a></li>
-        <li onclick="menucerrar()"><a href="#informacion_web">Más información</a></li>
-        <li onclick="menucerrar()"><a href="#acerca_de_nosotros">Acerca de nosotros</a></li>
-        <li onclick="menucerrar()"><a href="login.php">Area de cliente</a></li>
+        <li onclick="menucerrar()"><div class="menu_icon"><i class="fas fa-hand-holding"></i><a href="#mas_informacion">Qué te ofrecemos</a></div></li>
+        <li onclick="menucerrar()"><div class="menu_icon"><i class="fas fa-info-circle"></i><a href="#informacion_web">Más información</a></div></li>
+        <li onclick="menucerrar()"><div class="menu_icon"><i class="fas fa-users"></i><a href="#acerca_de_nosotros">Acerca de nosotros</a></div></li>
+        <li onclick="menucerrar()"><div class="menu_icon"><i class="fas fa-user-circle" id="usermenu"></i><a href="login.php">Area de cliente</a></div></li>
     </ul>
 </nav>
 

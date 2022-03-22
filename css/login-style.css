@@ -1,6 +1,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*                                  CSS-login.html                                   */
 /*-----------------------------------------------------------------------------------*/
+
 body {
     background: url(../images/login_page/login_form.jpg) no-repeat;
     background-size: cover;
@@ -8,13 +9,15 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 header{
     background-color: white;
+    z-index: 1;
 }
 footer{
-    position: absolute;
+    position: unset;
     bottom: 0;
 }
 
@@ -35,6 +38,7 @@ h1 {
     margin-bottom: 2px;
 }
 
+
 .introtext{
     font-size: 14px;
     margin-top: 25px;
@@ -50,24 +54,32 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     text-align: left;
-    margin-left: 6vh;
-    margin-bottom: 0.5vh;
+    margin: 1vh 6.5vh 0.5vh;
 }
 
+#textobienvenido{
+    display: none;
+}
+
+#loginBtn{
+    margin-left: 5%;
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
 /* MAIN BOX */
 
 #login-form #box {
-    margin-top: 8vh;
+    margin-top: 15vh;
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 19vh;
     display: flex;
     flex-direction: column;
     border-radius: 20%;
-    
+
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -99,12 +111,15 @@ h1 {
 /*PASSWD TEXT */
 
 #login-form #box #box2 #olvidado {
-    text-align: right;
+    
     color: #830053;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 13px;
     margin-right: 40px;
+    padding:10px;
+    float: right;
+
 }
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/
@@ -113,41 +128,21 @@ h1 {
 /*----------------- FIELDS -----------------*/
 input[type=text], input[type=password]{
     width: 75%;
-    padding: 6px 5px;
+    height: 42px;
+    padding: 6px 16px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
     background-color: rgb(229, 217, 217, 47%);
     border: solid 1px #830053;
 }
-/*------------------------------------------*/
 
-/*-------------- SUBMIT BUTTON -------------*/
-#login-form #box #box2 input[type=submit] {
-    width: 50%;
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    display: inline-block;
-    background-color: #830053;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    border: solid 1px #830053;
-    border-radius: 5px;
-}
-
-#login-form #box #box2 input[type=submit]:hover {
-    background-color: #520335;
-    transition: 0.3s;
-}
 
 #loginError{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     color: red !important;
     font-weight: bold;
-    margin-left: 20% !important;
     float: left;
 }
 
@@ -169,17 +164,30 @@ input[type=text], input[type=password]{
 /*---------------------------------------------------------------------*/
 /*------------------------------ MAIN BOX -----------------------------*/
 .box {
-    width: 43vh !important;
-    height: 40vh;
+    width: 40%;
+    height: 50%;
     position: relative;
-    top: -65px;
     background-color:white !important;
+    margin-top: 15vh;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 19vh
 }
 
 .line {
     margin: auto;
     width: 62%;
     color: #830053;
+}
+.cerrar-formulario {
+    position: relative;
+    left: 50% !important;
+    bottom: 7% !important;
+}
+.centrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*---------------------------------------------------------------------*/
 /*----------------------- ELEMENTOS DE LA BOX -------------------------*/
@@ -193,7 +201,10 @@ input[type=text], input[type=password]{
 .box_confirmacion{
     width: 40vh !important; /* */
     height: 49vh !important; /* */
-    
+
+}
+.popup-formulario{
+    position: inherit !important;
 }
 
 /*------------- Elementos BOX -------------*/
@@ -204,7 +215,7 @@ input[type=text], input[type=password]{
 /*------------- Boton cerrar -------------*/
 #box-confirmacion #content-confirm-box #cerrar_confirmacion {
     margin: 30px 200px 100px 95px !important; /* */
-    
+
 }
 
 
@@ -212,12 +223,11 @@ input[type=text], input[type=password]{
 .correo_formulario_olvidar{
     font-family: 'Poppins', sans-serif;
     float: left;
-    margin-left: 18px;
+    margin: 1vh 3.5vh 0.5vh;
 }
 /*El texto de abajo del titulo"*/
 .container_text_olvidar p {
     font-family: 'Poppins', sans-serif;
-    
 }
 
 /*El titulo de "¿Has olvidado tu contraseña?"*/
@@ -230,9 +240,15 @@ input[type=text], input[type=password]{
 /*Donde se escribe el correo*/
 .colocar_correo_olvidar{
     width: 85% !important;
-    
-}
 
+}
+#boton_cerrar{
+    display: none;
+}
+/*------------ESPACIO-----------------------*/
+#espacio{
+    display: none;
+}
 
 /*------------------ANIMACIONES------------------*/
 @keyframes shake {
@@ -255,22 +271,172 @@ input[type=text], input[type=password]{
 
 /*--------------------------------------------------*/
 /*RESPONSIVE */
-@media (min-width: 48em) {
-footer {
-    position: fixed;
-    bottom: 0;
- }
-header{
-    background-color: #830053;
- }
-#login-form #box{
-    width: 500px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
+@media (min-width: 68em) {
+    .cerrar-formulario{
+        display: none !important;
+    }
 
- }
+    body{
+        background: transparent;
+        
+    }
 
+    header{
+        background-color: #830053;
+    }
+    footer{
+        position: inherit;
+        z-index: 1;
+    }
+
+    #main{
+        display: flex;
+        position: relative;
+    }
+
+    #textobienvenido{
+        background: url(../images/login_page/login_formPC2.jpeg) no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #textobienvenido h1{
+        font-size: 45px;
+        margin-top: 17%;
+    }
+
+    #textobienvenido p{
+        font-size: 20px;
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #login-form #box{
+        width: 100vh;
+        margin-right: auto;
+        z-index: 0;
+        margin-top: 0px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+   }
+    #login-form #box1 h1{
+        margin-top: 12%;
+        font-size: 37px;
+    }
+
+    #login-form #box1{
+        border: transparent !important;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        
+    }
+
+    #login-form #box2{
+        border: transparent !important;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .line{
+        margin-bottom: 5%;
+    }
+
+    .introtext{
+        font-size: 17px;
+        margin-top: 10%;
+    }
+
+    .textologin{
+        margin-top: 5%;
+        margin-left: 13%;
+    }
+
+    #olvidado{
+        margin-top: 2%;
+        margin-bottom: 7%;
+    }
+
+    #loginBtn{
+        margin-bottom: 20vh !important;
+        width: 22% !important;
+        padding: 19px !important;
+        min-width: 200px;
+        margin-left: 10%;
+    }
+
+    input[type=text], input[type=password]{
+        width: 80%;
+        padding: 10px 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        background-color: rgb(229, 217, 217, 47%);
+        border: solid 1px #830053;
+    }
+
+    #box-contacto{
+        margin-left: auto;
+        z-index: 0;
+        top: 0px;
+        width: 100vh;
+        height: 90%;
+        border: none;
+        border-radius: 0px;
+        margin-right: 0px;
+    }
+    .popup-formulario{
+        top: 90px !important;
+        position: absolute !important;
+    }
+    .titulo_olvidar{
+        margin-top: 10% !important;
+    }
+    #content-form-box{
+        margin-top: 8%;
+    }
+    #enviar_recuperar-contarseña{
+        margin: 0px;
+        margin-top: 10%;
+        display: block;
+        margin-left: 8%;
+        width: 40%;
+    }
+    #boton_cerrar{
+        margin: 0px;
+        margin-top: 10%;
+        display: block;
+        margin-left: 8%;
+        width: 36.5%;
+    }
+    .botones{
+        display: flex;
+    }
+    #botones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+     #espacio{
+        background: url(../images/login_page/login_formPC2.jpeg) no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+         visibility: hidden;
+    }
+    #espacio p{
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    .correo_formulario_olvidar{
+        margin-right: 83%;
+    }
+}    
 /*-----------------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------*/

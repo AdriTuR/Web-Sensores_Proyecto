@@ -1,9 +1,7 @@
 function disconnect(){
-    fetch("./api/v1/", {
+    fetch("./api/v1/session", {
         method: "DELETE"
     }).then(function (result) {
-        if(result.status == 200){
-            location.href = "./login.php";
-        }
+        if(result.ok) location.href = "./login.php";
     }); 
 }
